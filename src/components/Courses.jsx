@@ -138,7 +138,9 @@ const Courses = () => {
                             <a href="#" className="inline-flex mt-4 items-center text-blue-500 px-3 py-1 md:px-4 md:py-2 rounded border border-blue-500 hover:bg-blue-600 hover:text-white transition-all self-start">
                                 Learn more <FaArrowRight className="ml-1 md:ml-2" />
                             </a>
+                            
                         </div>
+                        
                     </div>
                 ))}
             </div>

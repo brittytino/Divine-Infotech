@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { FiInstagram, FiLinkedin, FiTwitter, FiFacebook } from 'react-icons/fi';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
 import Logo from '../images/logo.png';
 
 const Footer = () => {
@@ -16,12 +15,7 @@ const Footer = () => {
           </div>
           
           {/* Center Section: Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-left md:text-left"
-          >
+          <div className="text-left md:text-left">
             <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
             <p className="text-gray-600 mb-2">Have questions or need more information? We're here to help!</p>
             <div className="flex items-center justify-left md:justify-start space-x-4 mb-4">
@@ -42,15 +36,10 @@ const Footer = () => {
             >
               Contact Form
             </a>
-          </motion.div>
+          </div>
           
           {/* Right Section: Social Media Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center justify-center md:justify-end mt-16 md:mt-0"
-          >
+          <div className="flex items-center justify-center md:justify-end mt-16 md:mt-0">
             <div className="flex space-x-4">
               <a href="#" className="text-gray-600 hover:text-blue-500 transition-all">
                 <FiInstagram className="text-2xl" />
@@ -65,7 +54,7 @@ const Footer = () => {
                 <FiFacebook className="text-2xl" />
               </a>
             </div>
-          </motion.div>
+          </div>
           
         </div>
       </div>

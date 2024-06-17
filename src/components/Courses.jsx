@@ -9,12 +9,11 @@ import Java from '../images/course/java.webp';
 import fundamentals from '../images/course/fundamental.png';
 import promptEngineering from '../images/course/prompt-engineering.jpeg';
 import gitGithub from '../images/course/git-github.jpg';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
 
 const courses = [
     {
         img: mern, 
-        icon: <FaLaptopCode className="text-4xl text-blue-500" />,
+        icon: <FaLaptopCode className="text-3xl md:text-4xl text-blue-500" />,
         title: "Fullstack Web Development",
         price: "₹50,000",
         description: [
@@ -25,7 +24,7 @@ const courses = [
     },
     {
         img: pythonFullstack,
-        icon: <FaPython className="text-4xl text-yellow-500" />,
+        icon: <FaPython className="text-3xl md:text-4xl text-yellow-500" />,
         title: "Fullstack Python",
         price: "₹45,000",
         description: [
@@ -36,7 +35,7 @@ const courses = [
     },
     {
         img: gameDev,
-        icon: <FaGamepad className="text-4xl text-green-500" />,
+        icon: <FaGamepad className="text-3xl md:text-4xl text-green-500" />,
         title: "Game Development",
         price: "₹60,000",
         description: [
@@ -47,7 +46,7 @@ const courses = [
     },
     {
         img: digitalMarketing,
-        icon: <FaBullhorn className="text-4xl text-pink-500" />,
+        icon: <FaBullhorn className="text-3xl md:text-4xl text-pink-500" />,
         title: "Digital Marketing",
         price: "₹30,000",
         description: [
@@ -58,7 +57,7 @@ const courses = [
     },
     {
         img: stockMarket,
-        icon: <FaChartLine className="text-4xl text-red-500" />,
+        icon: <FaChartLine className="text-3xl md:text-4xl text-red-500" />,
         title: "Stock Market",
         price: "₹25,000",
         description: [
@@ -69,7 +68,7 @@ const courses = [
     },
     {
         img: Java,
-        icon: <FaJava className="text-4xl text-blue-600" />,
+        icon: <FaJava className="text-3xl md:text-4xl text-blue-600" />,
         title: "Java",
         price: "₹35,000",
         description: [
@@ -80,7 +79,7 @@ const courses = [
     },
     {
         img: fundamentals, 
-        icon: <FaCode className="text-4xl text-purple-500" />,
+        icon: <FaCode className="text-3xl md:text-4xl text-purple-500" />,
         title: "Fundamentals of Major Programming Languages",
         price: "₹20,000",
         description: [
@@ -91,7 +90,7 @@ const courses = [
     },
     {
         img: promptEngineering,
-        icon: <FaRobot className="text-4xl text-teal-500" />,
+        icon: <FaRobot className="text-3xl md:text-4xl text-teal-500" />,
         title: "Prompt Engineering",
         price: "₹40,000",
         description: [
@@ -102,7 +101,7 @@ const courses = [
     },
     {
         img: gitGithub,
-        icon: <FaGithub className="text-4xl text-gray-700" />,
+        icon: <FaGithub className="text-3xl md:text-4xl text-gray-700" />,
         title: "Git and GitHub",
         price: "₹15,000",
         description: [
@@ -115,18 +114,12 @@ const courses = [
 
 const Courses = () => {
     return (
-        <div className="py-16 px-4 md:px-24 bg-gray-100">
+        <div className="py-8 md:py-16 px-4 md:px-24 bg-gray-100">
             <h2 className="text-3xl font-semibold mb-8 text-center text-[#282828] underline underline-offset-8 decoration-[#453fe1]">Our Courses</h2>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {courses.map((course, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 * index }}
-                        className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all flex flex-col"
-                    >
-                        <div className="mb-4 overflow-hidden rounded-t-lg" style={{height: '200px'}}>
+                    <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all">
+                        <div className="mb-2 md:mb-4 overflow-hidden rounded-t-lg" style={{ height: '200px' }}>
                             <img 
                                 src={course.img} 
                                 alt={course.title} 
@@ -134,19 +127,19 @@ const Courses = () => {
                                 style={{ borderBottomLeftRadius: '2px', borderBottomRightRadius: '2px' }}
                             />
                         </div>
-                        <div className='px-4 pb-6 pt-3'>
-                            <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-                            <p className="text-blue-500 font-semibold mb-4">{course.price}</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 flex-grow">
+                        <div className='px-4 pb-4 md:pb-6 pt-3'>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2">{course.title}</h3>
+                            <p className="text-blue-500 font-semibold mb-2">{course.price}</p>
+                            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-2 md:mb-4">
                                 {course.description.map((desc, idx) => (
                                     <li key={idx}>{desc}</li>
                                 ))}
                             </ul>
-                            <a href="#" className="inline-flex items-center text-blue-500 px-4 py-2 rounded border border-blue-500 hover:bg-blue-600 hover:text-white transition-all self-start mt-4">
-                                Learn more <FaArrowRight className="ml-2" />
+                            <a href="#" className="inline-flex mt-4 items-center text-blue-500 px-3 py-1 md:px-4 md:py-2 rounded border border-blue-500 hover:bg-blue-600 hover:text-white transition-all self-start">
+                                Learn more <FaArrowRight className="ml-1 md:ml-2" />
                             </a>
                         </div>
-                    </motion.div>
+                    </div>
                 ))}
             </div>
         </div>

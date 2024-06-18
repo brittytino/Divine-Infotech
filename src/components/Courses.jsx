@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaLaptopCode, FaPython, FaGamepad, FaBullhorn, FaChartLine, FaJava, FaCode, FaRobot, FaGithub, FaArrowRight } from 'react-icons/fa';
 import mern from '../images/course/mern.png';
 import pythonFullstack from '../images/course/python-fullstack.png';
 import gameDev from '../images/course/gamedev.jpg';
@@ -12,139 +11,82 @@ import gitGithub from '../images/course/git-github.jpg';
 
 const courses = [
     {
-        img: mern, 
-        icon: <FaLaptopCode className="text-3xl md:text-4xl text-blue-500" />,
+        img: mern,
         title: "Fullstack Web Development",
         price: "₹50,000",
-        description: [
-            "Master both frontend and backend development.",
-            "Learn HTML, CSS, JavaScript, React, Node.js, and more.",
-            "Industry-relevant projects and real-world applications."
-        ]
+        description: "Master frontend and backend development with HTML, CSS, JavaScript, React, Node.js, and more. Includes industry-relevant projects."
     },
     {
         img: pythonFullstack,
-        icon: <FaPython className="text-3xl md:text-4xl text-yellow-500" />,
         title: "Fullstack Python",
         price: "₹45,000",
-        description: [
-            "Comprehensive training in Python for web development.",
-            "Focus on Django, Flask, APIs, and data-driven applications.",
-            "Hands-on projects and interactive learning."
-        ]
+        description: "Comprehensive Python training for web development focusing on Django, Flask, APIs, and data-driven applications. Hands-on projects."
     },
     {
         img: gameDev,
-        icon: <FaGamepad className="text-3xl md:text-4xl text-green-500" />,
         title: "Game Development",
         price: "₹60,000",
-        description: [
-            "Dive into game design, development, and deployment.",
-            "Learn Unity, Unreal Engine, C#, and game physics.",
-            "Build your own games from scratch."
-        ]
+        description: "Explore game design, development, and deployment with Unity, Unreal Engine, C#, and game physics. Build your own games."
     },
     {
         img: digitalMarketing,
-        icon: <FaBullhorn className="text-3xl md:text-4xl text-pink-500" />,
         title: "Digital Marketing",
         price: "₹30,000",
-        description: [
-            "Strategies for SEO, SEM, social media, and content marketing.",
-            "Real-world case studies and practical exercises.",
-            "Enhance your online presence and drive business growth."
-        ]
+        description: "Strategies for SEO, SEM, social media, and content marketing with real-world case studies and practical exercises. Enhance your online presence."
     },
     {
         img: stockMarket,
-        icon: <FaChartLine className="text-3xl md:text-4xl text-red-500" />,
         title: "Stock Market",
         price: "₹25,000",
-        description: [
-            "Understanding stock trading, investment strategies, and market analysis.",
-            "Hands-on experience with trading tools and platforms.",
-            "Learn risk management and financial planning."
-        ]
+        description: "Understand stock trading, investment strategies, and market analysis with hands-on experience using trading tools and platforms. Learn risk management."
     },
     {
         img: Java,
-        icon: <FaJava className="text-3xl md:text-4xl text-blue-600" />,
         title: "Java",
         price: "₹35,000",
-        description: [
-            "In-depth knowledge of Java programming language.",
-            "Focus on OOP concepts, data structures, and algorithms.",
-            "Build robust applications and software solutions."
-        ]
+        description: "Gain in-depth knowledge of Java programming language focusing on OOP concepts, data structures, and algorithms. Build robust applications."
     },
     {
-        img: fundamentals, 
-        icon: <FaCode className="text-3xl md:text-4xl text-purple-500" />,
+        img: fundamentals,
         title: "Fundamentals of Major Programming Languages",
         price: "₹20,000",
-        description: [
-            "Basics of C, C++, JavaScript, and Python.",
-            "Essential for beginners and those looking to broaden their skills.",
-            "Interactive coding sessions and projects."
-        ]
+        description: "Explore basics of C, C++, JavaScript, and Python essential for beginners and skill broadening. Includes interactive coding sessions."
     },
     {
         img: promptEngineering,
-        icon: <FaRobot className="text-3xl md:text-4xl text-teal-500" />,
         title: "Prompt Engineering",
         price: "₹40,000",
-        description: [
-            "Learn to design, build, and maintain interactive AI systems.",
-            "Focus on NLP, ML algorithms, and AI integration.",
-            "Hands-on projects with cutting-edge technology."
-        ]
+        description: "Learn to design, build, and maintain interactive AI systems with focus on NLP, ML algorithms, and AI integration. Hands-on projects."
     },
     {
         img: gitGithub,
-        icon: <FaGithub className="text-3xl md:text-4xl text-gray-700" />,
         title: "Git and GitHub",
         price: "₹15,000",
-        description: [
-            "Master version control and collaborative coding.",
-            "Learn branching, merging, pull requests, and more.",
-            "Essential for team projects and open-source contributions."
-        ]
+        description: "Master version control and collaborative coding, including branching, merging, pull requests, and more. Essential for team projects."
     }
 ];
 
 const Courses = () => {
     return (
-        <div className="py-8 md:py-16 px-4 md:px-24 bg-gray-100">
-            <h2 className="text-3xl font-semibold mb-8 text-center text-[#282828] underline underline-offset-8 decoration-[#453fe1]">Our Courses</h2>
-            <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
+            <h2 className="text-3xl font-semibold mb-8 text-center text-gray-800">Our Courses</h2>
+
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {courses.map((course, index) => (
-                    <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all">
-                        <div className="mb-2 md:mb-4 overflow-hidden rounded-t-lg" style={{ height: '200px' }}>
-                            <img 
-                                src={course.img} 
-                                alt={course.title} 
-                                className="w-full h-full object-cover" 
-                                style={{ borderBottomLeftRadius: '2px', borderBottomRightRadius: '2px' }}
-                            />
+                    <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img className="w-full h-48 object-cover" src={course.img} alt="Course Image" />
+                        <div className="p-6">
+                            <h2 className="text-xl font-bold mb-2">{course.title}</h2>
+                            <p className="text-gray-700 mb-4 leading-relaxed">{course.description}</p>
+                            <div className="flex items-center justify-between">
+                                <span className="text-lg font-semibold text-blue-600">{course.price}</span>
+                                <button className="bg-blue-600 text-white py-2 px-4 rounded">Enroll Now</button>
+                            </div>
                         </div>
-                        <div className='px-4 pb-4 md:pb-6 pt-3'>
-                            <h3 className="text-lg md:text-xl font-semibold mb-2">{course.title}</h3>
-                            <p className="text-blue-500 font-semibold mb-2">{course.price}</p>
-                            <ul className="list-disc list-inside text-gray-700 space-y-2 mb-2 md:mb-4">
-                                {course.description.map((desc, idx) => (
-                                    <li key={idx}>{desc}</li>
-                                ))}
-                            </ul>
-                            <a href="#" className="inline-flex mt-4 items-center text-blue-500 px-3 py-1 md:px-4 md:py-2 rounded border border-blue-500 hover:bg-blue-600 hover:text-white transition-all self-start">
-                                Learn more <FaArrowRight className="ml-1 md:ml-2" />
-                            </a>
-                            
-                        </div>
-                        
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

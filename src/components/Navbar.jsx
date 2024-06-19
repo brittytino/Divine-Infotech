@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDownIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
 import Logo from '../images/logo.png';
-import ScrollToTop from './ScrollToTop'; // Assuming you have implemented ScrollToTop component
+import ScrollToTop from './ScrollToTop';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -9,13 +9,32 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   const navItems = [
-    { title: "Home", href: "#" },
-    { title: "Courses", items: ["Fullstack Web Development", "Fullstack Python", "Game Development", "Digital Marketing", "Stock Market", "Java", "Fundamentals of Major Programming Languages", "Prompt Engineering", "Git and GitHub"] },
-    { title: "Services", items: ["Web Development", "UI/UX Designing", "Data Analysis"] },
+    { title: "Home", href: "/" },
+    { 
+      title: "Courses", 
+      items: [
+        { title: "Fullstack Development", href: "/fullstack" },
+        { title: "Python Fullstack", href: "#python-fullstack" },
+        { title: "Game Development", href: "#game-development" },
+        { title: "Digital Marketing", href: "#digital-marketing" },
+        { title: "Stock Market", href: "#stock-market" },
+        { title: "Java", href: "#java" },
+        { title: "Fundamentals of Major Programming Languages", href: "#programming-languages" },
+        { title: "Prompt Engineering", href: "#prompt-engineering" },
+        { title: "Git & GitHub", href: "#git-github" }
+      ] 
+    },
+    { 
+      title: "Services", 
+      items: [
+        { title: "Web Development", href: "#web-development" },
+        { title: "UI/UX Designing", href: "#ui-ux-designing" },
+        { title: "Data Analysis", href: "#data-analysis" }
+      ] 
+    },
     { title: "Faculty", href: "#" },
     { title: "Support", href: "#" },
     { title: "About Us", href: "#about" },
-    // { title: "Contact", href: "#" },
   ];
 
   const handleDropdownToggle = (index) => {
@@ -54,11 +73,11 @@ const Navbar = () => {
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
                 </button>
                 {dropdownOpen === index && (
-                  <div className="absolute mt-2 w-72 bg-white shadow-lg rounded-lg p-4 z-50"> {/* Increased z-index */}
+                  <div className="absolute mt-2 w-72 bg-white shadow-lg rounded-lg p-4 z-50">
                     <div className="grid grid-cols-2 gap-4">
                       {item.items.map((subItem, subIndex) => (
-                        <a key={subIndex} href="#" className="block px-4 py-2 text-gray-600 hover:text-[#453fe1] transition-all">
-                          {subItem}
+                        <a key={subIndex} href={subItem.href} className="block px-4 py-2 text-gray-600 hover:text-[#453fe1] transition-all">
+                          {subItem.title}
                         </a>
                       ))}
                     </div>
@@ -78,10 +97,10 @@ const Navbar = () => {
               {item.title}
             </a>
           ))}
-          <button className="bg-[#453fe1] py-2 px-4 rounded-md text-[#f8f8fd]">Contact</button>
+          <button className="bg-blue-700 hover:bg-blue-800 py-2 px-4 rounded-md text-[#f8f8fd]">Contact</button>
         </div>
         <button className="lg:hidden" onClick={() => setOpenNav(!openNav)}>
-          {openNav ? <XMarkIcon className="h-6 w-6" strokeWidth={2} /> : <Bars3Icon className="h-6 w-6" strokeWidth={2} />}
+          {openNav ? <MenuIcon className="h-6 w-6" strokeWidth={2} /> : <MenuIcon className="h-6 w-6" strokeWidth={2} />}
         </button>
       </div>
       {openNav && (
@@ -97,8 +116,8 @@ const Navbar = () => {
                   <ul className="mt-2 bg-white shadow-lg rounded-lg">
                     {item.items.map((subItem, subIndex) => (
                       <li key={subIndex} className="hover:bg-gray-100">
-                        <a href="#" className="block px-4 py-2 text-gray-900 hover:text-blue-500 transition-all">
-                          {subItem}
+                        <a href={subItem.href} className="block px-4 py-2 text-gray-900 hover:text-blue-500 transition-all">
+                          {subItem.title}
                         </a>
                       </li>
                     ))}
@@ -113,7 +132,7 @@ const Navbar = () => {
           ))}
         </div>
       )}
-      <ScrollToTop /> {/* Assuming you have implemented ScrollToTop component */}
+      <ScrollToTop />
     </nav>
   );
 };

@@ -80,7 +80,7 @@ const Courses = () => {
                             <p className="text-gray-700 mb-4 leading-relaxed">{course.description}</p>
                             <div className="flex items-center justify-between">
                                 <span className="text-lg font-semibold text-blue-600">{course.price}</span>
-                                <button className="bg-blue-600 text-white py-2 px-4 rounded">Enroll Now</button>
+                                <button className="bg-blue-600 text-white py-2 px-4 rounded transition-all hover:bg-blue-700  ">Enroll Now</button>
                             </div>
                         </div>
                     </div>

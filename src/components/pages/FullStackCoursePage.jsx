@@ -1,64 +1,138 @@
-import React from 'react';
-import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaHtml5, FaNodeJs, FaDatabase, FaCloud, FaGithub, FaHandsHelping, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import videoFile from './videos/MERN.mp4';
+import ClassRating from '../classRating';
+import FullstackSyllabusFAQ from './FullstackSyllabus';
+import sideImg from './img/side.png';
 
-const CoursePage = () => {
-  return (
-    <div className="bg-gray-100 text-gray-900">
-      <header className="bg-blue-600 text-white py-12 text-center">
-        <h1 className="text-5xl font-bold">Our Premium Courses</h1>
-        <p className="text-xl mt-4">Learn from the best instructors and enhance your skills</p>
-      </header>
+const Fullstack = () => {
+    const [activeTab, setActiveTab] = useState('learningOutcomes');
 
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Course Card Example */}
-          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img className="w-full h-48 object-cover" src="https://via.placeholder.com/400x200" alt="Course Image" />
-            <div className="p-6">
-              <h2 className="text-2xl font-bold mb-2">Course Title</h2>
-              <p className="text-gray-700 mb-4">Brief course description goes here. This should be enticing and informative.</p>
-              <div className="flex items-center justify-between">
-                <span className="text-lg font-semibold text-blue-600">$99.99</span>
-                <button className="bg-blue-600 text-white py-2 px-4 rounded">Enroll Now</button>
-              </div>
+    return (
+        <div className="bg-gray-200 text-gray-900">
+            <div className="bg-gray-50 text-gray-900">
+                {/* Header Section */}
+                <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 className="text-4xl font-bold mb-2">Full-Stack Development</h1>
+                        <p className="text-lg">Become a proficient Full-stack web developer</p>
+                    </div>
+                </header>
+
+                {/* Video Section */}
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
+                    <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
+                        <video controls className="absolute top-0 left-0 w-full h-full">
+                            <source src={videoFile} type="video/mp4" />
+                        </video>
+                    </div>
+                </section>
+
+                {/* Syllabus FAQ */}
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <FullstackSyllabusFAQ />
+                </section>
+
+                {/* Dynamic content */}
+                {/* Buttons for switching content */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center space-x-4">
+                    <button
+                        onClick={() => setActiveTab('learningOutcomes')}
+                        className={`px-4 py-2 font-semibold rounded-lg transition-all ${activeTab === 'learningOutcomes' ? 'bg-blue-700 text-white' : 'bg-white text-blue-700 border border-blue-700'}`}
+                    >
+                        Learning Outcomes
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('keyFeatures')}
+                        className={`px-4 py-2 font-semibold rounded-lg transition-all ${activeTab === 'keyFeatures' ? 'bg-blue-700 text-white' : 'bg-white text-blue-700 border border-blue-700'}`}
+                    >
+                        Key Features
+                    </button>
+                </div>
+
+                {/* Learning Outcomes Section */}
+                {activeTab === 'learningOutcomes' && (
+                    <section className="bg-gray-100 py-12 transition-all">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-3xl font-semibold mb-6">Learning Outcomes</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaHtml5 className="text-2xl text-blue-600 mr-4" />
+                                    <p>Build and style responsive websites using HTML, CSS, and JavaScript.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
+                                    <p>Develop server-side applications with Node.js and Express.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaDatabase className="text-2xl text-yellow-600 mr-4" />
+                                    <p>Manage databases using MongoDB and Mongoose.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
+                                    <p>Implement RESTful APIs for seamless communication between front-end and back-end.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaGithub className="text-2xl text-gray-800 mr-4" />
+                                    <p>Utilize version control with Git and collaborate on projects using GitHub.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                )}
+
+                {/* Key Features Section */}
+                {activeTab === 'keyFeatures' && (
+                    <section className="bg-gray-100 py-12 transition-all">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-3xl font-semibold mb-6">Key Features</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
+                                    <p>Real-world projects to build your portfolio.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive modules covering both front-end and back-end development.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
+                                    <p>In-depth tutorials on deploying web applications to cloud servers.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
+                                    <p>Guidance on industry best practices and coding standards.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to a community of learners and professional mentors.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                )}
+
+                <ClassRating />
+
+                {/* Contact Section */}
+                <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-12">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
+                        <p className="text-lg mb-6">For more information or support, contact us 24/7.</p>
+                        <div className="flex items-center space-x-4">
+                            <FaPhoneAlt className="text-2xl" />
+                            <span>+123 456 7890</span>
+                        </div>
+                        <div className="flex items-center space-x-4 mt-4">
+                            <FaEnvelope className="text-2xl" />
+                            <span>support@divineinfotech.com</span>
+                        </div>
+                    </div>
+                </section>
             </div>
-          </div>
-          {/* Repeat Course Cards as needed */}
         </div>
-      </section>
-
-      <section className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {/* FAQ Item */}
-            <div className="bg-gray-50 p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">What is the duration of the courses?</h3>
-              <p className="text-gray-700">Our courses vary in length but are designed to be comprehensive and flexible, allowing you to learn at your own pace.</p>
-            </div>
-            {/* Repeat FAQ Items as needed */}
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-blue-600 text-white py-12">
-        <div className="max-w-7xl mx-auto text-center">
-          <p className="mb-4">Follow us on social media</p>
-          <div className="flex justify-center space-x-4">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook className="text-2xl hover:text-blue-800" />
-            </a>
-            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter className="text-2xl hover:text-blue-400" />
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin className="text-2xl hover:text-blue-700" />
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+    );
 };
 
-export default CoursePage;
+export default Fullstack;

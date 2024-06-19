@@ -6,6 +6,7 @@ import WhyChooseDivineInfotech from './WhyChoose'
 import Footer from './Footer'
 import Testimonial from './Testimonial'
 
+
 const Home=()=>{
     return (
         <div>

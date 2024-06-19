@@ -4,6 +4,9 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ScrollToTop from './components/ScrollToTop';
 import Fullstack from './components/pages/FullStackCoursePage';
+import Footer from './components/Footer';
+import PythonFullstack from './components/pages/PythonFullstack';
+import DigitalMarketing from './components/pages/DigitalMarketing';
 
 const App = () => {
   return (
@@ -13,7 +16,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fullstack" element={<Fullstack />} />
+        <Route path="/pythondev" element={<PythonFullstack />} />
+        <Route path="/digitalmarketing" element={<DigitalMarketing />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 };

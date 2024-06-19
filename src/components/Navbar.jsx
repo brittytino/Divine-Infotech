@@ -14,9 +14,9 @@ const Navbar = () => {
       title: "Courses", 
       items: [
         { title: "Fullstack Development", href: "/fullstack" },
-        { title: "Python Fullstack", href: "#python-fullstack" },
+        { title: "Python Fullstack", href: "/pythondev" },
         { title: "Game Development", href: "#game-development" },
-        { title: "Digital Marketing", href: "#digital-marketing" },
+        { title: "Digital Marketing", href: "/digitalmarketing" },
         { title: "Stock Market", href: "#stock-market" },
         { title: "Java", href: "#java" },
         { title: "Fundamentals of Major Programming Languages", href: "#programming-languages" },
@@ -73,10 +73,10 @@ const Navbar = () => {
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
                 </button>
                 {dropdownOpen === index && (
-                  <div className="absolute mt-2 w-72 bg-white shadow-lg rounded-lg p-4 z-50">
+                  <div className="absolute mt-2 w-96 bg-white shadow-lg rounded-lg p-4 z-50">
                     <div className="grid grid-cols-2 gap-4">
                       {item.items.map((subItem, subIndex) => (
-                        <a key={subIndex} href={subItem.href} className="block px-4 py-2 text-gray-600 hover:text-[#453fe1] transition-all">
+                        <a key={subIndex} href={subItem.href} className="block px-4 py-2 hover:bg-gray-100 text-gray-600 hover:text-black transition-all">
                           {subItem.title}
                         </a>
                       ))}

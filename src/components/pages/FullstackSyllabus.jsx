@@ -223,7 +223,7 @@ const FullstackSyllabusFAQ = () => {
         <div key={index} className="mb-6 border-b border-gray-300 pb-4">
           <button
             onClick={() => handleToggle(index)}
-            className="flex items-center justify-between w-full text-left text-xl font-medium text-gray-700 hover:text-[#453fe1] transition-all"
+            className="flex items-center justify-between w-full text-left text-sm md:text-base font-medium text-gray-700 hover:text-[#453fe1] transition-all"
           >
             {module.module}
             <ChevronDownIcon className={`h-6 w-6 transition-transform ${openModule === index ? 'rotate-180' : ''}`} />

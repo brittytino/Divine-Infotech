@@ -1,12 +1,25 @@
 import React, { useState } from 'react';
 import { FaHtml5, FaNodeJs, FaDatabase, FaCloud, FaGithub, FaHandsHelping, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import videoFile from './videos/MERN.mp4';
+import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
 import FullstackSyllabusFAQ from './FullstackSyllabus';
-import sideImg from './img/side.png';
 
 const Fullstack = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
+
+    const courseData = {
+        mostLiked: [
+          { count: 350, text: 'Clear explanations' },
+          { count: 312, text: 'Dedicated Mentor Support' },
+          { count: 150, text: 'Project-based learning' },
+        ],
+        expectationsMet: [
+          { label: 'Exceeded', percentage: '85%' },
+          { label: 'Yes', percentage: '75%' },
+          { label: 'Somewhat', percentage: '10%' },
+          { label: 'Not Really', percentage: '1%' },
+        ],
+      };
 
     return (
         <div className="bg-gray-200 text-gray-900">
@@ -23,12 +36,15 @@ const Fullstack = () => {
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
                     <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
-                        <video controls className="absolute top-0 left-0 w-full h-full">
+                        <video controls className="absolute top-0 left-0 w-full h-full border-2 md:border-4 border-blue-500 rounded-md shadow-lg">
                             <source src={videoFile} type="video/mp4" />
                         </video>
                     </div>
                 </section>
-
+                <div className=' flex flex-col items-center justify-center gap-3'>
+                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'> <button className=' font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button></a>
+                    <button className=' font-medium py-2 px-4 rounded-md text-2xl  transition-all text-blue-500 mt-5 hover:text-blue-700 underline underline-offset-4 decoration-blue-600'>Contact Us ?</button>
+                </div>
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <FullstackSyllabusFAQ />
@@ -113,23 +129,15 @@ const Fullstack = () => {
                     </section>
                 )}
 
-                <ClassRating />
+            {/* Class rating  */}
+            <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
-                {/* Contact Section */}
-                <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-12">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
-                        <p className="text-lg mb-6">For more information or support, contact us 24/7.</p>
-                        <div className="flex items-center space-x-4">
-                            <FaPhoneAlt className="text-2xl" />
-                            <span>+123 456 7890</span>
-                        </div>
-                        <div className="flex items-center space-x-4 mt-4">
-                            <FaEnvelope className="text-2xl" />
-                            <span>support@divineinfotech.com</span>
-                        </div>
-                    </div>
-                </section>
+            <div className=' flex flex-col items-center justify-center gap-3'>
+                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'> <button className=' font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button></a>
+                    <button className=' font-medium py-2 px-4 rounded-md text-2xl  transition-all text-blue-500 mt-5 hover:text-blue-700 underline underline-offset-4 decoration-blue-600'>Contact Us ?</button>
+                </div>
+
+                
             </div>
         </div>
     );

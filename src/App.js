@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import ScrollToTop from './components/ScrollToTop';
-import Fullstack from './components/pages/FullStackCoursePage';
+import MernStack from './components/pages/MernStack';
 import Footer from './components/Footer';
 import PythonFullstack from './components/pages/PythonFullstack';
 import DigitalMarketing from './components/pages/DigitalMarketing';
@@ -15,7 +15,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/fullstack" element={<Fullstack />} />
+        <Route path="/MernStack" element={<MernStack />} />
         <Route path="/pythondev" element={<PythonFullstack />} />
         <Route path="/digitalmarketing" element={<DigitalMarketing />} />
       </Routes>

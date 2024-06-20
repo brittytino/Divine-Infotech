@@ -13,7 +13,7 @@ const Navbar = () => {
     { 
       title: "Courses", 
       items: [
-        { title: "Fullstack Development", href: "/fullstack" },
+        { title: "Fullstack Development", href: "/Mernstack" },
         { title: "Python Fullstack", href: "/pythondev" },
         { title: "Game Development", href: "#game-development" },
         { title: "Digital Marketing", href: "/digitalmarketing" },

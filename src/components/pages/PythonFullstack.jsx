@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPython, FaProjectDiagram, FaDatabase, FaCloud, FaGithub, FaTasks, } from 'react-icons/fa';
+import { FaPython, FaProjectDiagram, FaDatabase, FaCloud, FaGithub, FaTasks, FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock, FaFolderOpen } from 'react-icons/fa';
 import videoFile from './videos/python-fullstack.mp4';
 import ClassRating from '../classRating';
 import PythonSyllabus from './PythonSyllabus';
@@ -21,7 +21,6 @@ const PythonFullstack = () => {
         ],
     };
 
-
     return (
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
@@ -33,19 +32,55 @@ const PythonFullstack = () => {
                     </div>
                 </header>
 
-                {/* Video Section */}
+                {/* video section  */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
-                    <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
-                        <video controls className="absolute top-0 left-0 w-full h-full border-2 md:border-4 border-blue-500 rounded-md shadow-lg">
-                            <source src={videoFile} type="video/mp4" />
-                        </video>
-                    </div>
-                </section>
+    <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
+    <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-4">
+        <div className="relative lg:w-2/3">
+            <div style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}>
+                <video controls className="absolute top-0 left-0 w-full h-full object-cover border-2 md:border-4 border-blue-500 rounded-md shadow-lg">
+                    <source src={videoFile} type="video/mp4" />
+                </video>
+            </div>
+        </div>
+        <div className="mt-8 lg:mt-0 lg:w-1/3 bg-white p-6 rounded-md shadow-lg">
+            <h3 className="text-2xl font-semibold mb-4">Course Highlights</h3>
+            <ul className="space-y-2 text-gray-800">
+                <li className="flex items-start">
+                    <FaRegLightbulb className="text-xl text-blue-600 mr-3" />
+                    <p>Master Python from basics to advanced topics.</p>
+                </li>
+                <li className="flex items-start">
+                    <FaGraduationCap className="text-xl text-blue-600 mr-3" />
+                    <p>Learn both front-end and back-end development.</p>
+                </li>
+                <li className="flex items-start">
+                    <FaFolderOpen className="text-xl text-blue-600 mr-3" />
+                    <p>Work on real-world projects to build your portfolio.</p>
+                </li>
+                <li className="flex items-start">
+                    <FaHandsHelping className="text-xl text-blue-600 mr-3" />
+                    <p>Get 24x7 mentor support and guidance.</p>
+                </li>
+                <li className="flex items-start">
+                    <FaRegClock className="text-xl text-blue-600 mr-3" />
+                    <p>Access comprehensive course materials and resources.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-                <div className=' flex flex-col items-center justify-center gap-3'>
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'> <button className=' font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button></a>
-                    <button className=' font-medium py-2 px-4 rounded-md text-2xl  transition-all text-blue-500 mt-5 hover:text-blue-700 underline underline-offset-4 decoration-blue-600'>Contact Us ?</button>
+
+                <div className='flex flex-col items-center justify-center gap-3'>
+                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='_blank' rel='noopener noreferrer'>
+                        <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>
+                            Enroll Now
+                        </button>
+                    </a>
+                    <button className='font-medium py-2 px-4 rounded-md text-2xl transition-all text-blue-500 mt-5 hover:text-blue-700 underline underline-offset-4 decoration-blue-600'>
+                        Contact Us ?
+                    </button>
                 </div>
 
                 {/* Syllabus FAQ */}
@@ -135,12 +170,7 @@ const PythonFullstack = () => {
                 {/* Class rating  */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
-                <div className=' flex flex-col items-center justify-center gap-3'>
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'> <button className=' font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button></a>
-                    <button className=' font-medium py-2 px-4 rounded-md text-2xl  transition-all text-blue-500 mt-5 hover:text-blue-700 underline underline-offset-4 decoration-blue-600'>Contact Us ?</button>
-                </div>
-
-
+            
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDownIcon } from '@heroicons/react/outline';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
   {
@@ -98,50 +98,55 @@ const syllabus = [
 ];
 
 const MernSyllabus = () => {
-  const [openPhase, setOpenPhase] = useState(null);
+  const [openSections, setOpenSections] = useState([false, false, false, false, false]);
   const contentRefs = useRef([]);
 
-  const handleToggle = (index) => {
-    setOpenPhase(openPhase === index ? null : index);
+  const toggleSection = (index) => {
+    setOpenSections((prevOpenSections) =>
+      prevOpenSections.map((isOpen, i) => (i === index ? !isOpen : isOpen))
+    );
   };
 
   return (
-    <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-        <h1 className="text-3xl font-semibold underline underline-offset-4 decoration-blue-700 mb-4 md:mb-0 text-center md:text-left">Course Syllabus</h1>
-       
-      </div>
-      {syllabus.map((phase, index) => (
-        <div key={index} className="mb-6 border-b border-gray-300 pb-4">
-          <button
-            onClick={() => handleToggle(index)}
-            className="flex items-center justify-between w-full text-left text-sm md:text-base font-medium text-gray-700 hover:text-[#453fe1] transition-all"
-          >
-            {phase.phase}
-            <ChevronDownIcon className={`h-6 w-6 transition-transform ${openPhase === index ? 'rotate-180' : ''}`} />
-          </button>
-          <div
-            ref={el => (contentRefs.current[index] = el)}
-            style={{
-              maxHeight: openPhase === index ? `${contentRefs.current[index].scrollHeight}px` : '0',
-              transition: 'max-height 0.3s ease',
-              overflow: 'hidden',
-            }}
-            className="mt-4"
-          >
-            {phase.topics.map((topic, idx) => (
-              <div key={idx} className="mb-4">
-                <h2 className="text-lg font-semibold text-gray-700">{topic.title}</h2>
-                <ul className="list-disc list-inside pl-4 mt-2">
-                  {topic.details.map((detail, i) => (
-                    <li key={i} className="text-gray-600">{detail}</li>
-                  ))}
-                </ul>
+    <div className="max-w-7xl mx-auto py-8 px-2 sm:px-6 lg:px-8">
+      <h2 className="text-3xl font-semibold mb-6">Course Syllabus</h2>
+      <div className="space-y-4">
+        {syllabus.map((phase, index) => (
+          <div key={index} className="border border-gray-300 rounded-lg shadow-sm">
+            <div
+              className="flex items-center justify-between bg-gray-200 px-4 py-3 cursor-pointer"
+              onClick={() => toggleSection(index)}
+            >
+              <h3 className="md:text-xl text-base md:font-semibold font-medium">{phase.phase}</h3>
+              {openSections[index] ? (
+                <FaChevronUp className="text-xl" />
+              ) : (
+                <FaChevronDown className="text-xl" />
+              )}
+            </div>
+            <div
+              ref={(el) => (contentRefs.current[index] = el)}
+              className={`transition-max-height duration-500 ease-in-out overflow-hidden ${
+                openSections[index] ? 'max-h-screen' : 'max-h-0'
+              }`}
+              style={{ transitionProperty: 'max-height' }}
+            >
+              <div className="bg-white px-4 py-3">
+                {phase.topics.map((topic, idx) => (
+                  <div key={idx} className="mb-4">
+                    <h4 className="text-lg font-semibold text-gray-700">{topic.title}</h4>
+                    <ul className="list-disc list-inside pl-4 mt-2 space-y-2">
+                      {topic.details.map((detail, i) => (
+                        <li key={i} className="text-gray-600">{detail}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

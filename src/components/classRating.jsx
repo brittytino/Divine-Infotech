@@ -5,7 +5,7 @@ import { FaHeart } from 'react-icons/fa';
 const ClassRating = ({ mostLiked, expectationsMet }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-3xl font-semibold mb-6">Class Rating</h2>
+      <h2 className="md:text-3xl text-2xl font-semibold mb-6">Class Rating</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-[#ffffff] p-6 shadow-xl rounded-lg">
           <h3 className="text-xl font-semibold mb-4 text-center">Most Liked</h3>

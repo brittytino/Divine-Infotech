@@ -5,9 +5,8 @@ import Home from './components/Home';
 import ScrollToTop from './components/ScrollToTop';
 import MernStack from './components/pages/MernStack';
 import Footer from './components/Footer';
-import PythonFullstack from './components/pages/PythonFullstack';
-import DigitalMarketing from './components/pages/DigitalMarketing';
 import FrontendEssentials from './components/pages/FrontendEssentials';
+import CoursesPage from './components/pages/Courses';
 
 const App = () => {
   return (
@@ -17,11 +16,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/MernStack" element={<MernStack />} />
-        <Route path="/pythondev" element={<PythonFullstack />} />
-        <Route path="/digitalmarketing" element={<DigitalMarketing />} />
-        <Route path='/frontend' element={<FrontendEssentials/>} />
+        <Route path='/frontend' element={<FrontendEssentials />} />
+        <Route path='/courses' element={<CoursesPage />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 };

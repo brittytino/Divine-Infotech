@@ -36,10 +36,10 @@ const CoursesPage = () => {
             <div className="max-w-7xl mx-auto mb-8">
                 <h2 className="text-3xl font-semibold text-center text-gray-800">Our Courses</h2>
                 <div className="relative inline-block text-left w-full md:w-auto">
-                    <div>
+                    <div className='flex items-center justify-center pt-10'>
                         <button
                             type="button"
-                            className="inline-flex justify-center w-full md:w-auto rounded-md shadow-sm px-4 py-2 bg-blue-600 text-white text-sm font-medium focus:outline-none"
+                            className="inline-flex justify-center w-auto md:w-auto rounded-md shadow-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-all text-white text-sm font-medium focus:outline-none"
                             id="options-menu"
                             aria-haspopup="true"
                             aria-expanded={isDropdownOpen ? 'true' : 'false'}
@@ -62,7 +62,7 @@ const CoursesPage = () => {
                                 {categories.map((category, index) => (
                                     <button
                                         key={index}
-                                        className={`block px-4 py-2 text-sm text-gray-700 hover:text-black hover:font-medium hover:bg-gray-100 w-full text-left`}
+                                        className={`block px-4 py-2 text-sm text-gray-700 hover:text-black transition-all hover:font-medium hover:bg-blue-100 w-full text-left`}
                                         role="menuitem"
                                         onClick={() => handleCategoryChange(category)}
                                     >
@@ -82,8 +82,8 @@ const CoursesPage = () => {
                         <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
                             <img className="w-full h-48 object-fill object-center" src={course.img} alt="Course Image" />
                             <div className="p-6">
-                                <h2 className="text-xl font-semibold mb-2">{course.title}</h2>
-                                <p className="text-gray-700 mb-4 text-sm md:text-base leading-relaxed">{course.description}</p>
+                                <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
+                                <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
                                 <div className="flex justify-between items-center">
                                     <span className="text-lg font-semibold text-blue-600">{course.price}</span>
                                   <a href={course.url}>  <button className="bg-blue-600 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">

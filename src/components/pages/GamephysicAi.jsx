@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
-
+import { FaBookOpen, FaCogs, FaLightbulb, FaProjectDiagram, FaCode, FaServer, FaUsers , FaTools} from 'react-icons/fa';
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
-import MernSyllabus from './MernSyllabus';
+// Updated import
+import GamephysicAiSyllabus from './GamephysicAiSyllabus';
 
-
-const MernStack = () => {
+const GamePhysicsAI = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
@@ -30,8 +29,8 @@ const MernStack = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Mastering the MERN Stack</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Become a proficient MERN Stack developer</p>
+                        <h1 className="text-4xl font-bold mb-2">Game Physics and AI</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Master the fundamentals of Game Physics and AI</p>
                     </div>
                 </header>
 
@@ -47,55 +46,52 @@ const MernStack = () => {
                             </div>
                         </div>
 
-                        {/* course Highlights */}
+                        {/* Course Highlights */}
                         <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col justify-between bg-white p-8 rounded-md shadow-lg border border-blue-400">
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master MongoDB, Express.js, and React from basics to advanced.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Explore fundamental principles and engines of Game Physics.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build RESTful APIs and dynamic UIs with state management.</p>
+                                        <FaBookOpen className="text-2xl text-blue-600 mr-3" />
+                                        <p>Hands-on practice with Rigid Body and Soft Body Dynamics.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Implement authentication using JWT for secure applications.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy MERN stack apps and optimize performance.</p>
+                                        <FaCogs className="text-2xl text-blue-600 mr-3" />
+                                        <p>Learn advanced AI techniques: Finite State Machines and Behavior Trees.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore real-time applications with WebSocket and Socket.IO.</p>
+                                        <p>Integrate AI with realistic physics-based movements.</p>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <FaProjectDiagram className="text-2xl text-blue-600 mr-3" />
+                                        <p>Develop a final game project combining Physics and AI.</p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-
-
                     </div>
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000</span>
-                    <span className="text-xl font-semibold">Duration: 50 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹8,000</span>
+                    <span className="text-xl font-semibold">Duration: 35 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                  {/* <a href="#footer"><button className='font-medium py-2 px-4 rounded-md text-xs transition-all text-blue-500 mt-5 hover:text-blue-700 '>Need more info ?</button></a>   */}
                 </div>
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <MernSyllabus />
+                    <GamephysicAiSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -119,27 +115,27 @@ const MernStack = () => {
                 {activeTab === 'learningOutcomes' && (
                     <section className="bg-gray-100 py-12 transition-all">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                            <h2 className=" text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use MongoDB for managing databases and CRUD operations.</p>
+                                    <FaBookOpen className="text-2xl text-green-600 mr-4" />
+                                    <p>Understand core principles of game physics.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop server-side applications with Node.js and Express.js.</p>
+                                    <FaCogs className="text-2xl text-green-600 mr-4" />
+                                    <p>Implement various physics systems like Rigid Body and Soft Body Dynamics.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Build dynamic front-end applications using React.</p>
+                                    <FaLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Develop AI systems using Finite State Machines and Behavior Trees.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy full-stack applications to cloud platforms like Heroku or AWS.</p>
+                                    <FaCode className="text-2xl text-teal-600 mr-4" />
+                                    <p>Create realistic AI behaviors that interact with the game world.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaTools className="text-2xl text-gray-800 mr-4" />
-                                    <p>Implement RESTful APIs for communication between front-end and back-end.</p>
+                                    <FaServer className="text-2xl text-gray-800 mr-4" />
+                                    <p>Optimize game performance for both physics calculations and AI.</p>
                                 </li>
                             </ul>
                         </div>
@@ -148,29 +144,29 @@ const MernStack = () => {
 
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                    <section className="bg-gray-100 py-12 transition-all">
+                    <section className="bg-gray-100 py-12">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                    <p>Hands-on real-world projects to build your portfolio.</p>
+                                    <p>In-depth understanding of game physics engines and AI systems.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaCode className="text-2xl text-blue-600 mr-4" />
-                                    <p>Comprehensive coverage of both front-end and back-end development.</p>
+                                    <p>Hands-on projects to implement game physics and AI techniques.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaServer className="text-2xl text-blue-600 mr-4" />
-                                    <p>In-depth tutorials on deploying web applications to cloud servers.</p>
+                                    <p>Guidance on integrating physics and AI for realistic game behavior.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaTools className="text-2xl text-blue-600 mr-4" />
-                                    <p>Guidance on industry best practices and coding standards.</p>
+                                    <p>Insights into performance optimization for physics and AI in games.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                    <p>Access to a community of learners and professional mentors.</p>
+                                    <p>Access to a community of game developers and professional mentors.</p>
                                 </li>
                             </ul>
                         </div>
@@ -184,11 +180,10 @@ const MernStack = () => {
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                   
                 </div>
             </div>
         </div>
     );
 };
 
-export default MernStack;
+export default GamePhysicsAI;

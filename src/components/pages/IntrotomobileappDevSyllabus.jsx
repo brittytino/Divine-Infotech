@@ -3,133 +3,119 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
   {
-    phase: "Phase 1: HTML Basics (Days 1-6)",
+    phase: "Phase 1: Introduction to Mobile App Development (Days 1-3)",
     topics: [
       {
-        title: "Introduction to HTML",
+        title: "Overview of Mobile App Development",
         details: [
-          "Understanding the structure of HTML documents",
-          "Basic HTML tags: headings, paragraphs, links, lists",
+          "Understanding different types of mobile apps: native, hybrid, and web apps",
+          "Platforms: iOS vs. Android",
+          "Development tools and environments",
         ],
       },
       {
-        title: "HTML Elements and Attributes",
+        title: "Setting Up Development Environment",
         details: [
-          "Working with attributes and elements",
-          "Creating tables and forms",
-        ],
-      },
-      {
-        title: "Multimedia in HTML",
-        details: [
-          "Embedding images, audio, and video",
+          "Installing necessary software (Android Studio, Xcode, etc.)",
+          "Introduction to Integrated Development Environments (IDEs)",
         ],
       },
     ],
   },
   {
-    phase: "Phase 2: CSS Fundamentals (Days 7-12)",
+    phase: "Phase 2: Basics of Mobile UI/UX Design (Days 4-6)",
     topics: [
       {
-        title: "Introduction to CSS",
+        title: "Mobile Design Principles",
         details: [
-          "Understanding CSS syntax and selectors",
-          "Applying styles to HTML elements",
+          "Introduction to mobile UI/UX design principles",
+          "Designing for different screen sizes and resolutions",
+          "Understanding touch interactions and gestures",
         ],
       },
       {
-        title: "CSS Box Model",
+        title: "Prototyping Tools",
         details: [
-          "Margins, borders, padding, and content",
-        ],
-      },
-      {
-        title: "Layout Techniques",
-        details: [
-          "Using float, flexbox, and grid layout",
-          "Responsive Design",
+          "Introduction to prototyping tools (Figma, Sketch, Adobe XD)",
+          "Creating simple mobile app prototypes",
         ],
       },
     ],
   },
   {
-    phase: "Phase 3: Advanced CSS Techniques (Days 13-18)",
+    phase: "Phase 3: Introduction to Programming Languages (Days 7-9)",
     topics: [
       {
-        title: "CSS3 Enhancements",
+        title: "JavaScript Basics",
         details: [
-          "Transitions, transformations, and animations",
+          "Basic syntax, variables, and data types",
+          "Functions, loops, and conditionals",
+          "Introduction to ES6 features",
         ],
       },
       {
-        title: "CSS Preprocessors",
+        title: "Introduction to Dart (for Flutter) or Swift (for iOS)",
         details: [
-          "Introduction to SASS/SCSS",
-          "Variables, nesting, and mixins",
-        ],
-      },
-      {
-        title: "Design Patterns",
-        details: [
-          "Implementing common design patterns",
+          "Basic syntax and structure",
+          "Writing simple programs",
         ],
       },
     ],
   },
   {
-    phase: "Phase 4: JavaScript Basics (Days 19-24)",
+    phase: "Phase 4: Building Simple Mobile Apps (Days 10-12)",
     topics: [
       {
-        title: "Introduction to JavaScript",
+        title: "Using Frameworks",
         details: [
-          "JavaScript syntax and variables",
-          "Data types and operators",
+          "Introduction to popular frameworks (React Native, Flutter)",
+          "Setting up a new project in chosen framework",
         ],
       },
       {
-        title: "Control Structures",
+        title: "Creating Simple Applications",
         details: [
-          "Conditionals, loops, and functions",
-        ],
-      },
-      {
-        title: "DOM Manipulation",
-        details: [
-          "Selecting and modifying DOM elements",
-          "Event handling and listeners",
+          "Building a 'Hello World' app",
+          "Understanding the project structure",
+          "Basic navigation and user interface elements",
         ],
       },
     ],
   },
   {
-    phase: "Phase 5: Integrating HTML, CSS, and JavaScript (Days 25-30)",
+    phase: "Phase 5: Testing and Debugging (Days 13-15)",
     topics: [
       {
-        title: "Building Interactive Web Pages",
+        title: "Testing Mobile Apps",
         details: [
-          "Combining HTML, CSS, and JavaScript to create interactive web pages",
+          "Introduction to testing methodologies",
+          "Writing and running unit tests",
         ],
       },
       {
-        title: "Project Development",
+        title: "Debugging Techniques",
         details: [
-          "Developing a small project from scratch",
-          "Implementing responsive design and interactivity",
+          "Using debugging tools in IDEs",
+          "Common issues and troubleshooting tips",
         ],
       },
+    ],
+  },
+  {
+    phase: "Final Project",
+    topics: [
       {
-        title: "Best Practices",
+        title: "Developing a small, functional mobile app incorporating all learned concepts",
         details: [
-          "Code organization and version control with Git",
-          "Debugging and troubleshooting common issues",
+          "Presenting and reviewing the project",
         ],
       },
     ],
   },
 ];
 
-const FrontendSyllabus = () => {
-  const [openSections, setOpenSections] = useState([false, false, false, false, false]);
+const IntrotomobileappDevSyllabus = () => {
+  const [openSections, setOpenSections] = useState([false, false, false, false, false, false]);
   const contentRefs = useRef([]);
 
   const toggleSection = (index) => {
@@ -182,4 +168,4 @@ const FrontendSyllabus = () => {
   );
 };
 
-export default FrontendSyllabus;
+export default IntrotomobileappDevSyllabus;

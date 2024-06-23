@@ -3,132 +3,135 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
   {
-    phase: "Phase 1: HTML Basics (Days 1-6)",
+    phase: "Phase 1: Introduction to HTML (Days 1-5)",
     topics: [
       {
-        title: "Introduction to HTML",
+        title: "HTML Structure and Syntax",
         details: [
-          "Understanding the structure of HTML documents",
-          "Basic HTML tags: headings, paragraphs, links, lists",
+          "Basic HTML document structure",
+          "Common HTML tags: headings, paragraphs, lists, links",
         ],
       },
       {
-        title: "HTML Elements and Attributes",
+        title: "Working with HTML Elements",
         details: [
-          "Working with attributes and elements",
-          "Creating tables and forms",
+          "Images, tables, and forms",
+          "Semantic HTML tags",
         ],
       },
       {
-        title: "Multimedia in HTML",
+        title: "HTML5 Features",
         details: [
-          "Embedding images, audio, and video",
+          "New elements and attributes in HTML5",
         ],
       },
     ],
   },
   {
-    phase: "Phase 2: CSS Fundamentals (Days 7-12)",
+    phase: "Phase 2: Fundamentals of CSS (Days 6-10)",
     topics: [
       {
-        title: "Introduction to CSS",
+        title: "CSS Syntax and Selectors",
         details: [
-          "Understanding CSS syntax and selectors",
-          "Applying styles to HTML elements",
+          "Basic CSS syntax",
+          "Different types of selectors: class, ID, element",
         ],
       },
       {
-        title: "CSS Box Model",
+        title: "Styling HTML Elements",
         details: [
-          "Margins, borders, padding, and content",
+          "Applying styles: color, font, and text properties",
+          "Box model: margin, border, padding, and content",
         ],
       },
       {
-        title: "Layout Techniques",
+        title: "Layout and Positioning",
         details: [
-          "Using float, flexbox, and grid layout",
-          "Responsive Design",
+          "Understanding display properties",
+          "Introduction to flexbox and grid layout",
         ],
       },
     ],
   },
   {
-    phase: "Phase 3: Advanced CSS Techniques (Days 13-18)",
+    phase: "Phase 3: Advanced CSS Techniques (Days 11-15)",
     topics: [
       {
-        title: "CSS3 Enhancements",
+        title: "Responsive Design",
         details: [
-          "Transitions, transformations, and animations",
+          "Media queries for different screen sizes",
+          "Mobile-first design principles",
         ],
       },
       {
-        title: "CSS Preprocessors",
+        title: "CSS3 Features",
         details: [
-          "Introduction to SASS/SCSS",
-          "Variables, nesting, and mixins",
+          "Transitions and transformations",
+          "Animations and keyframes",
         ],
       },
       {
-        title: "Design Patterns",
+        title: "CSS Preprocessors (Optional)",
         details: [
-          "Implementing common design patterns",
+          "Introduction to SASS/SCSS basics",
         ],
       },
     ],
   },
   {
-    phase: "Phase 4: JavaScript Basics (Days 19-24)",
+    phase: "Phase 4: JavaScript Basics (Days 16-20)",
     topics: [
       {
-        title: "Introduction to JavaScript",
+        title: "JavaScript Syntax and Basics",
         details: [
-          "JavaScript syntax and variables",
-          "Data types and operators",
+          "Variables, data types, and operators",
+          "Control structures: conditionals and loops",
         ],
       },
       {
-        title: "Control Structures",
+        title: "Functions and Scope",
         details: [
-          "Conditionals, loops, and functions",
+          "Defining and invoking functions",
+          "Understanding scope and closures",
         ],
       },
       {
         title: "DOM Manipulation",
         details: [
           "Selecting and modifying DOM elements",
-          "Event handling and listeners",
+          "Event handling and event listeners",
         ],
       },
     ],
   },
   {
-    phase: "Phase 5: Integrating HTML, CSS, and JavaScript (Days 25-30)",
+    phase: "Phase 5: Integrating HTML, CSS, and JavaScript (Days 21-25)",
     topics: [
       {
-        title: "Building Interactive Web Pages",
+        title: "Combining HTML, CSS, and JavaScript",
         details: [
-          "Combining HTML, CSS, and JavaScript to create interactive web pages",
+          "Building interactive web pages",
+          "Adding dynamic content with JavaScript",
         ],
       },
       {
         title: "Project Development",
         details: [
-          "Developing a small project from scratch",
-          "Implementing responsive design and interactivity",
+          "Developing a small project incorporating all three technologies",
         ],
       },
       {
-        title: "Best Practices",
+        title: "Best Practices and Debugging",
         details: [
-          "Code organization and version control with Git",
-          "Debugging and troubleshooting common issues",
+          "Writing clean and maintainable code",
+          "Debugging techniques and tools",
         ],
       },
     ],
   },
 ];
 
-const FrontendSyllabus = () => {
+const HtmlcssJsSyllabus = () => {
   const [openSections, setOpenSections] = useState([false, false, false, false, false]);
   const contentRefs = useRef([]);
 
@@ -182,4 +185,4 @@ const FrontendSyllabus = () => {
   );
 };
 
-export default FrontendSyllabus;
+export default HtmlcssJsSyllabus;

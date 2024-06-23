@@ -109,7 +109,7 @@ const MernSyllabus = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-8 px-2 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-semibold mb-6">Course Syllabus</h2>
+      <h2 className="md:text-3xl text-2xl font-semibold mb-6">Course Syllabus</h2>
       <div className="space-y-4">
         {syllabus.map((phase, index) => (
           <div key={index} className="border border-gray-300 rounded-lg shadow-sm">
@@ -117,7 +117,7 @@ const MernSyllabus = () => {
               className="flex items-center justify-between bg-gray-200 px-4 py-3 cursor-pointer"
               onClick={() => toggleSection(index)}
             >
-              <h3 className="md:text-xl text-base md:font-semibold font-medium">{phase.phase}</h3>
+              <h3 className="md:text-xl text-sm font-medium">{phase.phase}</h3>
               {openSections[index] ? (
                 <FaChevronUp className="text-xl" />
               ) : (

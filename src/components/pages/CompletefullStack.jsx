@@ -1,26 +1,24 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
-
+import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
-import MernSyllabus from './MernSyllabus';
+import CompletefullStackSyllabus from './CompletefullStackSyllabus'; // Assuming FullStackSyllabus component exists and contains the new syllabus data
 
-
-const MernStack = () => {
+const CompletefullStack = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
         mostLiked: [
-            { count: 350, text: 'Clear explanations' },
-            { count: 312, text: 'Dedicated Mentor Support' },
-            { count: 150, text: 'Project-based learning' },
+            { count: 142, text: 'Clear explanations' },
+            { count: 233, text: 'Dedicated Mentor Support' },
+            { count: 110, text: 'Project-based learning' },
         ],
         expectationsMet: [
             { label: 'Exceeded', percentage: '85%' },
             { label: 'Yes', percentage: '75%' },
             { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '1%' },
+            { label: 'Not Really', percentage: '0%' },
         ],
     };
 
@@ -30,8 +28,8 @@ const MernStack = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Mastering the MERN Stack</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Become a proficient MERN Stack developer</p>
+                        <h1 className="text-4xl font-bold mb-2">Complete Full Stack Development</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Become a proficient full stack developer</p>
                     </div>
                 </header>
 
@@ -47,26 +45,26 @@ const MernStack = () => {
                             </div>
                         </div>
 
-                        {/* course Highlights */}
+                        {/* Course Highlights */}
                         <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col justify-between bg-white p-8 rounded-md shadow-lg border border-blue-400">
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master MongoDB, Express.js, and React from basics to advanced.</p>
+                                        <p>Master full stack development from basics to advanced.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build RESTful APIs and dynamic UIs with state management.</p>
+                                        <p>Build SPA and manage state with popular frameworks.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Implement authentication using JWT for secure applications.</p>
+                                        <p>Implement secure authentication using JWT and cookies.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy MERN stack apps and optimize performance.</p>
+                                        <p>Deploy applications to cloud platforms and optimize performance.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaCode className="text-2xl text-blue-600 mr-3" />
@@ -75,27 +73,23 @@ const MernStack = () => {
                                 </ul>
                             </div>
                         </div>
-
-
-
                     </div>
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000</span>
-                    <span className="text-xl font-semibold">Duration: 50 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹15,000</span>
+                    <span className="text-xl font-semibold">Duration: 60 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                  {/* <a href="#footer"><button className='font-medium py-2 px-4 rounded-md text-xs transition-all text-blue-500 mt-5 hover:text-blue-700 '>Need more info ?</button></a>   */}
                 </div>
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <MernSyllabus />
+                    <CompletefullStackSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -123,7 +117,7 @@ const MernStack = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use MongoDB for managing databases and CRUD operations.</p>
+                                    <p>Understand and use databases for managing data and performing CRUD operations.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaNodeJs className="text-2xl text-green-600 mr-4" />
@@ -131,11 +125,11 @@ const MernStack = () => {
                                 </li>
                                 <li className="flex items-start">
                                     <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Build dynamic front-end applications using React.</p>
+                                    <p>Build dynamic front-end applications using popular frameworks.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy full-stack applications to cloud platforms like Heroku or AWS.</p>
+                                    <p>Deploy full-stack applications to cloud platforms like AWS or Heroku.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaTools className="text-2xl text-gray-800 mr-4" />
@@ -146,7 +140,7 @@ const MernStack = () => {
                     </section>
                 )}
 
-                {/* Key Features Section */}
+
                 {activeTab === 'keyFeatures' && (
                     <section className="bg-gray-100 py-12 transition-all">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -158,11 +152,11 @@ const MernStack = () => {
                                 </li>
                                 <li className="flex items-start">
                                     <FaCode className="text-2xl text-blue-600 mr-4" />
-                                    <p>Comprehensive coverage of both front-end and back-end development.</p>
+                                    <p>Comprehensive coverage of frontend and backend development.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaServer className="text-2xl text-blue-600 mr-4" />
-                                    <p>In-depth tutorials on deploying web applications to cloud servers.</p>
+                                    <p>In-depth tutorials on deploying applications to cloud servers.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaTools className="text-2xl text-blue-600 mr-4" />
@@ -176,19 +170,18 @@ const MernStack = () => {
                         </div>
                     </section>
                 )}
-
-                {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
                 <div className='flex flex-col items-center justify-center gap-3'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                   
+
                 </div>
             </div>
         </div>
     );
 };
 
-export default MernStack;
+export default CompletefullStack;
+

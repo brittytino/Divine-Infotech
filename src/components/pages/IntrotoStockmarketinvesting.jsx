@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaRegLightbulb } from 'react-icons/fa';
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
-
 import IntrotoStockmarketinvestingSyllabus from './IntrotoStockmarketinvestingSyllabus';
-
-
 
 const IntrotoStockmarketinvesting = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
@@ -31,8 +28,8 @@ const IntrotoStockmarketinvesting = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Android App Development from Scratch</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn Android app development step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Introduction to Stock Market Investing</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Learn the essentials of stock market investing</p>
                     </div>
                 </header>
 
@@ -55,23 +52,23 @@ const IntrotoStockmarketinvesting = () => {
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master Android platform and ecosystem.</p>
+                                        <p>Introduction to stock markets and key indices.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to design UI/UX for various Android devices.</p>
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Learn different investment strategies.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build Android apps from scratch.</p>
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Understand fundamental and technical analysis.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy and optimize Android apps.</p>
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Create and manage an investment portfolio.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced Android frameworks.</p>
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Simulate stock market investments.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -81,8 +78,8 @@ const IntrotoStockmarketinvesting = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹5,500</span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹3,800</span>
+                    <span className="text-xl font-semibold">Duration: 15 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
@@ -120,24 +117,24 @@ const IntrotoStockmarketinvesting = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use different types of mobile app architectures.</p>
+                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
+                                    <p>Understand the structure and functions of stock markets.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCode className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop mobile applications with robust UI/UX designs.</p>
+                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
+                                    <p>Learn various investment strategies and risk management.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Implement native functionality using Dart or Swift.</p>
+                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
+                                    <p>Analyze financial statements and key ratios.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy mobile apps to different platforms and environments.</p>
+                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
+                                    <p>Apply technical analysis using charts and indicators.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaTools className="text-2xl text-gray-800 mr-4" />
-                                    <p>Optimize mobile app performance and user experience.</p>
+                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
+                                    <p>Create and manage a diversified investment portfolio.</p>
                                 </li>
                             </ul>
                         </div>
@@ -146,48 +143,46 @@ const IntrotoStockmarketinvesting = () => {
 
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                     <section className="bg-gray-100 py-12">
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
-                         <ul className="space-y-4">
-                             <li className="flex items-start">
-                                 <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                 <p>Hands-on projects to apply Android development skills.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaCode className="text-2xl text-blue-600 mr-4" />
-                                 <p>Comprehensive coverage of Android UI/UX design and development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaServer className="text-2xl text-blue-600 mr-4" />
-                                 <p>Guidance on deploying Android applications across platforms.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaTools className="text-2xl text-blue-600 mr-4" />
-                                 <p>Insights into industry standards and best practices for Android development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                 <p>Access to a community of learners and professional mentors.</p>
-                             </li>
-                         </ul>
-                     </div>
-                 </section>
+                    <section className="bg-gray-100 py-12">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive coverage of stock market basics.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>In-depth learning of fundamental and technical analysis.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on projects to simulate stock market investments.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Expert guidance on creating and managing portfolios.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to a community of learners and professional mentors.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 )}
 
-               {/* Class Rating */}
+                {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
                 <div className='flex flex-col items-center justify-center gap-3'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-
                 </div>
             </div>
         </div>
     );
 };
 
-export default IntrotoStockmarketinvesting; 
-  
+export default IntrotoStockmarketinvesting;

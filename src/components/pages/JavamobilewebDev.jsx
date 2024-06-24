@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaJava, FaBook, FaProjectDiagram, FaHandsHelping, FaGraduationCap, FaRegClock } from 'react-icons/fa';
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
- // syllabus 
-import AndroidappdevSyllabus from './AndroidappdevSyllabus';
+// syllabus 
+import JavamobilewebDevSyllabus from './JavamobilewebDevSyllabus';
 
-
-const Androidappdev = () => {
+const JavamobilewebDev = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
@@ -30,8 +29,8 @@ const Androidappdev = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Android App Development from Scratch</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn Android app development step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Java for Web & Mobile Development</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Learn Java development for web and mobile applications step-by-step</p>
                     </div>
                 </header>
 
@@ -53,24 +52,24 @@ const Androidappdev = () => {
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master Android platform and ecosystem.</p>
+                                        <FaJava className="text-2xl text-blue-600 mr-3" />
+                                        <p>Master Java programming for web and mobile development.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to design UI/UX for various Android devices.</p>
+                                        <p>Learn to build web applications with Spring and Hibernate.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build Android apps from scratch.</p>
+                                        <p>Develop Android apps from scratch.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy and optimize Android apps.</p>
+                                        <p>Deploy and optimize Java applications.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced Android frameworks.</p>
+                                        <FaBook className="text-2xl text-blue-600 mr-3" />
+                                        <p>Explore advanced Java frameworks and libraries.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -80,7 +79,7 @@ const Androidappdev = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹5,500 (Online)</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹8,000</span>
                     <span className="text-xl font-semibold">Duration: 30 days</span>
                 </div>
 
@@ -92,7 +91,7 @@ const Androidappdev = () => {
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <AndroidappdevSyllabus />
+                    <JavamobilewebDevSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -119,62 +118,62 @@ const Androidappdev = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use different types of mobile app architectures.</p>
+                                    <FaBook className="text-2xl text-green-600 mr-4" />
+                                    <p>Understand Java fundamentals and best practices.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop mobile applications with robust UI/UX designs.</p>
+                                    <FaBook className="text-2xl text-green-600 mr-4" />
+                                    <p>Develop robust web applications using Java technologies.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Implement native functionality using Dart or Swift.</p>
+                                    <FaBook className="text-2xl text-green-600 mr-4" />
+                                    <p>Build and deploy Android applications.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy mobile apps to different platforms and environments.</p>
+                                    <FaBook className="text-2xl text-green-600 mr-4" />
+                                    <p>Integrate databases with Java applications using JDBC and Hibernate.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaTools className="text-2xl text-gray-800 mr-4" />
-                                    <p>Optimize mobile app performance and user experience.</p>
+                                    <FaBook className="text-2xl text-green-600 mr-4" />
+                                    <p>Optimize and secure Java applications for production.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
 
+
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                     <section className="bg-gray-100 py-12">
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
-                         <ul className="space-y-4">
-                             <li className="flex items-start">
-                                 <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                 <p>Hands-on projects to apply Android development skills.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaCode className="text-2xl text-blue-600 mr-4" />
-                                 <p>Comprehensive coverage of Android UI/UX design and development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaServer className="text-2xl text-blue-600 mr-4" />
-                                 <p>Guidance on deploying Android applications across platforms.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaTools className="text-2xl text-blue-600 mr-4" />
-                                 <p>Insights into industry standards and best practices for Android development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                 <p>Access to a community of learners and professional mentors.</p>
-                             </li>
-                         </ul>
-                     </div>
-                 </section>
+                    <section className="bg-gray-100 py-12">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive coverage of Java web and mobile development.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on projects to apply Java development skills.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Learn to build and deploy web applications using Spring and Hibernate.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Develop Android applications from scratch.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to a community of learners and professional mentors.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 )}
-
-               {/* Class Rating */}
+                {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
                 <div className='flex flex-col items-center justify-center gap-3'>
@@ -188,4 +187,4 @@ const Androidappdev = () => {
     );
 };
 
-export default Androidappdev; 
+export default JavamobilewebDev; 

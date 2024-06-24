@@ -31,6 +31,27 @@ import IntrotoStockmarketinvesting from './components/pages/IntrotoStockmarketin
 import AnalysisforInvestor from './components/pages/Fundamental&Technicalanalysisforinvestor';
 import AdvancestockTrading from './components/pages/AdvancestockTrading';
 
+//UiUx  
+import IntrotoUiux from './components/pages/IntrotoUiux';
+import AdvanceUiux from './components/pages/AdvanceUiux';
+
+//Python 
+import PythonBeginner from './components/pages/PythonBeginner';
+import DataanalysisPython from './components/pages/DataanalysisPython';
+import WebdevPython from './components/pages/WebdevPython';
+import AdvancePython from './components/pages/AdvancePython';
+import FullstackPython from './components/pages/FullstackPython';
+
+//Java Programming 
+import JavaBeginner from './components/pages/JavaBeginner';
+import JavamobilewebDev from './components/pages/JavamobilewebDev';
+import AdvanceJava from './components/pages/AdvanceJava';
+
+import ProgrammingFundamentals from './components/pages/ProgrammingFundamentals';
+import Digitalmarketing from './components/pages/Digitalmarketing';
+import PromptEngineering from './components/pages/PromptEngineering';
+import Gitgithub from './components/pages/Gitgithub';
+
 
 
 const App = () => {
@@ -57,6 +78,21 @@ const App = () => {
         <Route path='/IntrotoStockmarketinvesting' element={<IntrotoStockmarketinvesting />} />
         <Route path='/AnalysisforInvestor' element={<AnalysisforInvestor />} />
         <Route path='/AdvancestockTrading' element={<AdvancestockTrading />} />
+        <Route path='/IntrotoUiux' element={<IntrotoUiux />} />
+        <Route path='/AdvanceUiux' element={<AdvanceUiux />} />
+        <Route path='/PythonBeginner' element={<PythonBeginner />} />
+        <Route path='/DataanalysisPython' element={<DataanalysisPython />} />
+        <Route path='/WebdevPython' element={<WebdevPython />} />
+        <Route path='/AdvancePython' element={<AdvancePython />} />
+        <Route path='/FullstackPython' element={<FullstackPython />} />
+        <Route path='/JavaBeginner' element={<JavaBeginner />} />
+        <Route path='/JavamobilewebDev' element={<JavamobilewebDev />} />
+        <Route path='/AdvanceJava' element={<AdvanceJava />} />
+        <Route path='/ProgrammingFundamentals' element={<ProgrammingFundamentals />} />
+        <Route path='/Digitalmarketing' element={<Digitalmarketing />} />
+        <Route path='/PromptEngineering' element={<PromptEngineering />} />
+        <Route path='/Gitgithub' element={<Gitgithub />} />
+
 
       </Routes>
       <Footer />

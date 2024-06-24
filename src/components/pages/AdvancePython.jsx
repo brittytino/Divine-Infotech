@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaDatabase, FaPython, FaCog, FaCodeBranch, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
- // syllabus 
-import AndroidappdevSyllabus from './AndroidappdevSyllabus';
+import AdvancePythonSyllabus from './AdvancePythonSyllabus';
 
-
-const Androidappdev = () => {
+const AdvancePython = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
@@ -20,7 +18,7 @@ const Androidappdev = () => {
             { label: 'Exceeded', percentage: '85%' },
             { label: 'Yes', percentage: '75%' },
             { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '1%' },
+            { label: 'Not Really', percentage: '0%' },
         ],
     };
 
@@ -30,8 +28,8 @@ const Androidappdev = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Android App Development from Scratch</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn Android app development step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Advanced Python Programming</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Master Python programming with advanced concepts</p>
                     </div>
                 </header>
 
@@ -54,23 +52,23 @@ const Androidappdev = () => {
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master Android platform and ecosystem.</p>
+                                        <p>Solidify Python fundamentals.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to design UI/UX for various Android devices.</p>
+                                        <p>Explore advanced data structures and algorithms.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build Android apps from scratch.</p>
+                                        <p>Master exception handling and debugging.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy and optimize Android apps.</p>
+                                        <p>Dive into Python libraries and frameworks.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced Android frameworks.</p>
+                                        <p>Learn concurrency and asynchronous programming.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -80,8 +78,8 @@ const Androidappdev = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹5,500 (Online)</span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000</span>
+                    <span className="text-xl font-semibold">Duration: 40 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
@@ -92,7 +90,7 @@ const Androidappdev = () => {
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <AndroidappdevSyllabus />
+                    <AdvancePythonSyllabus />  
                 </section>
 
                 {/* Dynamic content */}
@@ -120,23 +118,23 @@ const Androidappdev = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use different types of mobile app architectures.</p>
+                                    <p>Solidify understanding of Python and OOP concepts.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop mobile applications with robust UI/UX designs.</p>
+                                    <FaPython className="text-2xl text-green-600 mr-4" />
+                                    <p>Master advanced data structures and algorithms in Python.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Implement native functionality using Dart or Swift.</p>
+                                    <FaCog className="text-2xl text-green-600 mr-4" />
+                                    <p>Become proficient in exception handling and debugging techniques.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy mobile apps to different platforms and environments.</p>
+                                    <FaCodeBranch className="text-2xl text-green-600 mr-4" />
+                                    <p>Explore Python libraries and frameworks for various applications.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaTools className="text-2xl text-gray-800 mr-4" />
-                                    <p>Optimize mobile app performance and user experience.</p>
+                                    <FaProjectDiagram className="text-2xl text-green-600 mr-4" />
+                                    <p>Learn concurrency and asynchronous programming in Python.</p>
                                 </li>
                             </ul>
                         </div>
@@ -145,31 +143,31 @@ const Androidappdev = () => {
 
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                     <section className="bg-gray-100 py-12">
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
-                         <ul className="space-y-4">
-                             <li className="flex items-start">
-                                 <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                 <p>Hands-on projects to apply Android development skills.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaCode className="text-2xl text-blue-600 mr-4" />
-                                 <p>Comprehensive coverage of Android UI/UX design and development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaServer className="text-2xl text-blue-600 mr-4" />
-                                 <p>Guidance on deploying Android applications across platforms.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaTools className="text-2xl text-blue-600 mr-4" />
-                                 <p>Insights into industry standards and best practices for Android development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                 <p>Access to a community of learners and professional mentors.</p>
-                             </li>
-                         </ul>
+                    <section className="bg-gray-100 py-12">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on projects to apply Python programming skills.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaCode className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive coverage of Python libraries and frameworks.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaServer className="text-2xl text-blue-600 mr-4" />
+                                    <p>Guidance on deploying Python applications across platforms.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaTools className="text-2xl text-blue-600 mr-4" />
+                                    <p>Insights into industry standards and best practices for Python development.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaUsers className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to a community of learners and professional mentors.</p>
+                                </li>
+                            </ul>
                      </div>
                  </section>
                 )}
@@ -188,4 +186,4 @@ const Androidappdev = () => {
     );
 };
 
-export default Androidappdev; 
+export default AdvancePython; 

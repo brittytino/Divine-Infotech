@@ -208,6 +208,7 @@ const courses = [
         category: "UI/UX Design",
         price: " FREE (Online)",
         duration: "10 days",
+        url:'/IntrotoUiux',
         description: "Learn UI/UX design fundamentals, from user research to prototyping, and create a final project in this comprehensive course."
     },
     {
@@ -216,6 +217,7 @@ const courses = [
         category: "UI/UX Design",
         price: "₹8,000",
         duration: "25 days",
+        url:'/AdvanceUiux',
         description: "Master advanced UI/UX design techniques, from user research to motion design, and complete a real-world project in this comprehensive course."
     },
 
@@ -226,6 +228,7 @@ const courses = [
         category: "Python Programming",
         price: "FREE (Online)",
         duration: "15 days",
+        url:'/PythonBeginner',
         description: "Learn Python programming from basics to data analysis, culminating in a final project in this comprehensive course."
     },
     {
@@ -234,6 +237,7 @@ const courses = [
         category: "Python Programming",
         price: "₹7,000",
         duration: "30 days",
+        url:'/DataanalysisPython',
         description: "Master data analysis with Python, from data manipulation to visualization and statistical analysis, in this comprehensive 30-day course."
     },
 
@@ -243,6 +247,7 @@ const courses = [
         category:"Python Programming",
         price: "₹10,000",
         duration: "35 days",
+        url:'/WebdevPython',
         description:"Learn web development from Python fundamentals to building and deploying web applications in this comprehensive course."
     },
     {
@@ -251,6 +256,7 @@ const courses = [
         category:"Python Programming",
         price: "₹12,000",
         duration:"40 days",
+        url:'/AdvancePython',
         description:"Enhance your Python skills with advanced OOP, data structures, libraries, concurrency, and a final project in this comprehensive course."
     },
     {
@@ -259,6 +265,7 @@ const courses = [
         category:"Python Programming",
         price: "₹15,000",
         duration:"60 days",
+        url:'/FullstackPython',
         description:"Learn Full Stack development with Python and JavaScript in a comprehensive 10-week course, covering backend basics, Flask, React.js, and advanced topics."
     },
 
@@ -269,6 +276,7 @@ const courses = [
         category:"Java Programming",
         price: "FREE (Online)",
         duration:"15 days",
+        url:'/JavaBeginner',
         description:"Learn Java basics and object-oriented programming, including file handling, GUI programming with Swing, and basic data structures/algorithms in a 15-day course."
     },
     {
@@ -277,6 +285,7 @@ const courses = [
         category:"Java Programming",
         price: "₹8,000",
         duration:"30 days",
+        url:'/JavamobilewebDev',
         description:"Master Java for web and mobile development in 30 days: from basics and servlets/JSP to Spring, Hibernate, Android, and project deployment."
     },
     {
@@ -285,6 +294,7 @@ const courses = [
         category:"Java Programming",
         price: "₹10,000",
         duration:"35 days",
+        url:'/AdvanceJava',
         description:"Master advanced Java programming in 35 days, covering design patterns, concurrency, JPA, Java EE, web services, Spring, performance tuning, and a final project."
     },
 
@@ -295,6 +305,7 @@ const courses = [
         category:"Programming Fundamentals",
         price: "₹6,000",
         duration:"25 days",
+        url:'/ProgrammingFundamentals',
         description:"Master programming basics and advanced concepts in C, C++, Python, and Java with a final integrated project in this 25-day course."
     },
 
@@ -305,6 +316,7 @@ const courses = [
         category:"Digital Marketing Fundamentals",
         price: "₹12,000",
         duration:"30 days",
+        url:'/Digitalmarketing',
         description:"Explore digital marketing essentials including website strategy, content creation, social media tactics, paid advertising, and analytics in this comprehensive course."
     },
     {
@@ -313,6 +325,7 @@ const courses = [
         category:"Prompt Engineering",
         price: "₹6,000",
         duration:"20 days",
+        url:'/PromptEngineering',
         description:"Learn programming basics, functions, data structures, OOP principles, and project development with Git in this comprehensive course."
     },
 
@@ -323,6 +336,7 @@ const courses = [
         category:"Git and GitHub",
         price: "₹2,500",
         duration:"7 days",
+        url:'/Gitgithub',
         description:"Explore Git and GitHub: Includes setup, essential commands, teamwork basics, advanced topics like conflict resolution and workflows, and real-world application in development."
     },
 

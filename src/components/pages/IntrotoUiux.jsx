@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
-
+import { FaLightbulb, FaProjectDiagram, FaUserCheck } from 'react-icons/fa';
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
- // syllabus 
-import AndroidappdevSyllabus from './AndroidappdevSyllabus';
+import IntrotoUiuxSyllabus from './IntrotoUiuxSyllabus';
 
-
-const Androidappdev = () => {
+const IntrotoUiux = () => {     
+    
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
@@ -18,9 +16,9 @@ const Androidappdev = () => {
         ],
         expectationsMet: [
             { label: 'Exceeded', percentage: '85%' },
-            { label: 'Yes', percentage: '75%' },
+            { label: 'Yes', percentage: '65%' },
             { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '1%' },
+            { label: 'Not Really', percentage: '0%' },
         ],
     };
 
@@ -30,8 +28,8 @@ const Androidappdev = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Android App Development from Scratch</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn Android app development step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Introduction to UI/UX Design Principles</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Master the basics of UI/UX design in just 10 days</p>
                     </div>
                 </header>
 
@@ -53,35 +51,34 @@ const Androidappdev = () => {
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master Android platform and ecosystem.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Understand the fundamentals of UI/UX design.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to design UI/UX for various Android devices.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Learn to conduct user research and analysis.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build Android apps from scratch.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Create effective wireframes and prototypes.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy and optimize Android apps.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Apply visual design principles to your projects.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced Android frameworks.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Design for different platforms and devices.</p>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹5,500 (Online)</span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: FREE (Online)</span>
+                    <span className="text-xl font-semibold">Duration: 10 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
@@ -92,7 +89,7 @@ const Androidappdev = () => {
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <AndroidappdevSyllabus />
+                    <IntrotoUiuxSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -119,24 +116,24 @@ const Androidappdev = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaDatabase className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use different types of mobile app architectures.</p>
+                                    <FaUserCheck className="text-2xl text-green-600 mr-4" />
+                                    <p>Understand the core principles of UI and UX design.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop mobile applications with robust UI/UX designs.</p>
+                                    <FaUserCheck className="text-2xl text-green-600 mr-4" />
+                                    <p>Conduct effective user research and analysis.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
-                                    <p>Implement native functionality using Dart or Swift.</p>
+                                    <FaUserCheck className="text-2xl text-green-600 mr-4" />
+                                    <p>Create structured information architectures.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaCloud className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy mobile apps to different platforms and environments.</p>
+                                    <FaUserCheck className="text-2xl text-green-600 mr-4" />
+                                    <p>Design interactive wireframes and prototypes.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaTools className="text-2xl text-gray-800 mr-4" />
-                                    <p>Optimize mobile app performance and user experience.</p>
+                                    <FaUserCheck className="text-2xl text-green-600 mr-4" />
+                                    <p>Apply visual design principles effectively.</p>
                                 </li>
                             </ul>
                         </div>
@@ -146,46 +143,45 @@ const Androidappdev = () => {
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
                      <section className="bg-gray-100 py-12">
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
-                         <ul className="space-y-4">
-                             <li className="flex items-start">
-                                 <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                 <p>Hands-on projects to apply Android development skills.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaCode className="text-2xl text-blue-600 mr-4" />
-                                 <p>Comprehensive coverage of Android UI/UX design and development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaServer className="text-2xl text-blue-600 mr-4" />
-                                 <p>Guidance on deploying Android applications across platforms.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaTools className="text-2xl text-blue-600 mr-4" />
-                                 <p>Insights into industry standards and best practices for Android development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                 <p>Access to a community of learners and professional mentors.</p>
-                             </li>
-                         </ul>
-                     </div>
-                 </section>
+                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
+                             <ul className="space-y-4">
+                                 <li className="flex items-start">
+                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                     <p>Hands-on projects to apply UI/UX design skills.</p>
+                                 </li>
+                                 <li className="flex items-start">
+                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                     <p>Comprehensive coverage of UI/UX design principles.</p>
+                                 </li>
+                                 <li className="flex items-start">
+                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                     <p>Guidance on using popular design tools like Sketch and Figma.</p>
+                                 </li>
+                                 <li className="flex items-start">
+                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                     <p>Insights into industry standards and best practices.</p>
+                                 </li>
+                                 <li className="flex items-start">
+                                     <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                     <p>Access to a community of learners and professional mentors.</p>
+                                 </li>
+                             </ul>
+                         </div>
+                     </section>
                 )}
 
-               {/* Class Rating */}
+                {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
                 <div className='flex flex-col items-center justify-center gap-3'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-
                 </div>
             </div>
         </div>
     );
 };
 
-export default Androidappdev; 
+export default IntrotoUiux;

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaDatabase,FaCode, FaPython, FaCloud, FaChartLine, FaProjectDiagram ,FaUsers,FaTools,FaServer,} from 'react-icons/fa'; // Updated icons
 
 import videoFile from './videos/fullstack.mp4';
 import ClassRating from '../classRating';
- // syllabus 
-import AndroidappdevSyllabus from './AndroidappdevSyllabus';
+import DataanalysisPythonSyllabus from './DataanalysisPythonSyllabus';  // Updated syllabus import
 
-
-const Androidappdev = () => {
+const DataanalysisPython = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
 
     const courseData = {
@@ -20,7 +18,7 @@ const Androidappdev = () => {
             { label: 'Exceeded', percentage: '85%' },
             { label: 'Yes', percentage: '75%' },
             { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '1%' },
+            { label: 'Not Really', percentage: '0%' },
         ],
     };
 
@@ -30,8 +28,8 @@ const Androidappdev = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Android App Development from Scratch</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn Android app development step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Data Analysis with Python</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Learn data analysis step-by-step</p>
                     </div>
                 </header>
 
@@ -53,24 +51,24 @@ const Androidappdev = () => {
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master Android platform and ecosystem.</p>
+                                        <FaProjectDiagram className="text-2xl text-blue-600 mr-3" />
+                                        <p>Hands-on projects to apply data analysis skills.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to design UI/UX for various Android devices.</p>
+                                        <FaChartLine className="text-2xl text-blue-600 mr-3" />
+                                        <p>Comprehensive coverage of data visualization.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build Android apps from scratch.</p>
+                                        <FaPython className="text-2xl text-blue-600 mr-3" />
+                                        <p>Learn Python fundamentals for data analysis.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy and optimize Android apps.</p>
+                                        <FaDatabase className="text-2xl text-blue-600 mr-3" />
+                                        <p>Master data manipulation with Pandas.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced Android frameworks.</p>
+                                        <FaChartLine className="text-2xl text-blue-600 mr-3" />
+                                        <p>Explore advanced statistical analysis.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -80,7 +78,7 @@ const Androidappdev = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹5,500 (Online)</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹7,000</span>
                     <span className="text-xl font-semibold">Duration: 30 days</span>
                 </div>
 
@@ -92,7 +90,7 @@ const Androidappdev = () => {
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <AndroidappdevSyllabus />
+                    <DataanalysisPythonSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -123,11 +121,11 @@ const Androidappdev = () => {
                                     <p>Understand and use different types of mobile app architectures.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaNodeJs className="text-2xl text-green-600 mr-4" />
+                                    <FaPython className="text-2xl text-green-600 mr-4" />
                                     <p>Develop mobile applications with robust UI/UX designs.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaReact className="text-2xl text-blue-600 mr-4" />
+                                    <FaChartLine className="text-2xl text-blue-600 mr-4" />
                                     <p>Implement native functionality using Dart or Swift.</p>
                                 </li>
                                 <li className="flex items-start">
@@ -145,34 +143,35 @@ const Androidappdev = () => {
 
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                     <section className="bg-gray-100 py-12">
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                         <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
-                         <ul className="space-y-4">
-                             <li className="flex items-start">
-                                 <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
-                                 <p>Hands-on projects to apply Android development skills.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaCode className="text-2xl text-blue-600 mr-4" />
-                                 <p>Comprehensive coverage of Android UI/UX design and development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaServer className="text-2xl text-blue-600 mr-4" />
-                                 <p>Guidance on deploying Android applications across platforms.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaTools className="text-2xl text-blue-600 mr-4" />
-                                 <p>Insights into industry standards and best practices for Android development.</p>
-                             </li>
-                             <li className="flex items-start">
-                                 <FaUsers className="text-2xl text-blue-600 mr-4" />
-                                 <p>Access to a community of learners and professional mentors.</p>
-                             </li>
-                         </ul>
-                     </div>
-                 </section>
+                    <section className="bg-gray-100 py-12">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
+                            <ul className="space-y-4">
+                                <li className="flex items-start">
+                                    <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on projects to apply Android development skills.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaCode className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive coverage of Android UI/UX design and development.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaServer className="text-2xl text-blue-600 mr-4" />
+                                    <p>Guidance on deploying Android applications across platforms.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaTools className="text-2xl text-blue-600 mr-4" />
+                                    <p>Insights into industry standards and best practices for Android development.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaUsers className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to a community of learners and professional mentors.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 )}
+
 
                {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
@@ -188,4 +187,4 @@ const Androidappdev = () => {
     );
 };
 
-export default Androidappdev; 
+export default DataanalysisPython; 

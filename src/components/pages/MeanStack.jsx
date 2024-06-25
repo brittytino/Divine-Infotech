@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaNodeJs, FaAngular, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/MeanStack.mp4';
 import ClassRating from '../classRating';
 import MeanstackSyllabus from './MeanstackSyllabus'; // Assuming MeanSyllabus is correctly implemented as per the new syllabus structure
 

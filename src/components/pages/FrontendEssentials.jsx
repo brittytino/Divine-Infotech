@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/FrontendEssential.mp4';
 import ClassRating from '../classRating';
 import FrontendSyllabus from './FrontendSyllabus';
 

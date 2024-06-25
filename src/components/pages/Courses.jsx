@@ -34,7 +34,7 @@ const CoursesPage = () => {
     return (
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
             <div className="max-w-7xl mx-auto mb-8">
-                <h2 className="text-3xl font-semibold text-center text-gray-800">Our Courses</h2>
+                <h2 className="text-3xl font-semibold text-center text-gray-800  underline underline-offset-4 decoration-blue-500">Our Courses</h2>
                 <div className="relative inline-block text-left w-full md:w-auto">
                     <div className='flex items-center justify-center pt-10'>
                         <button

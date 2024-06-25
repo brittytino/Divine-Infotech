@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Completefullstack.mp4';
 import ClassRating from '../classRating';
 import CompletefullStackSyllabus from './CompletefullStackSyllabus'; // Assuming FullStackSyllabus component exists and contains the new syllabus data
 

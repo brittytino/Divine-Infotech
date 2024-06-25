@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/CrossplatformappDev.mp4';
 import ClassRating from '../classRating';
 import CrossplatformappdevSyllabus from './CrossplatformappdevSyllabus'; // Updated import for course syllabus
 

@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock, FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+import React, { useState, useRef } from 'react';
 
-import videoFile from './videos/fullstack.mp4';
+import { FaPlay, FaPause } from 'react-icons/fa';
+import { FaProjectDiagram, FaTools,FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
+
+import videoFile from './videos/HtmlCssJs.mp4';
 import ClassRating from '../classRating';
 import HtmlCssJsSyllabus from './HtmlcssJsSyllabus';
 
@@ -22,6 +24,21 @@ const HtmlCssJs = () => {
         ],
     };
 
+    //video 
+    const videoRef = useRef(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+
+    const handlePlayPause = () => {
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
+            setIsPlaying(!isPlaying);
+        }
+    };
+
     return (
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
@@ -38,8 +55,23 @@ const HtmlCssJs = () => {
                     <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 gap-5 md:gap-10">
                         <div className="relative lg:w-2/3">
-                            <div style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}>
-                                <video controls className="absolute top-0 left-0 w-full h-full object-cover border-2 border-blue-400 rounded-md shadow-lg">
+                            <div className="relative w-full overflow-hidden rounded-md shadow-lg">
+                                <div
+                                    className="absolute inset-0 z-10 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 cursor-pointer"
+                                    onClick={handlePlayPause}
+                                >
+                                    {isPlaying ? (
+                                        <FaPause className="text-white text-3xl" />
+                                    ) : (
+                                        <FaPlay className="text-white text-3xl" />
+                                    )}
+                                </div>
+                                <video
+                                    ref={videoRef}
+                                    className="w-full h-full object-cover border-2 border-blue-500 rounded-md"
+                                    controls
+                                    controlsList="nodownload"
+                                >
                                     <source src={videoFile} type="video/mp4" />
                                 </video>
                             </div>

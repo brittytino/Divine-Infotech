@@ -50,7 +50,7 @@ const courses = [
     {
         img: frontendEssentials,
         title: "Frontend Development Essentials",
-        category: "Web Development",
+        category: ["Web Development", "Best Selling"],
         price: "₹5,500",
         duration: "30 days",
         description: "Master Frontend Development Essentials with HTML, CSS, and JavaScript to create stunning web interfaces.",
@@ -68,7 +68,7 @@ const courses = [
     {
         img: fullStack,
         title: "Complete Full Stack Development",
-        category: "Web Development",
+        category:["Web Development", "Best Selling"],
         price: "₹15,000",
         duration: "60 days",
         url:'/CompletefullStack',
@@ -136,7 +136,7 @@ const courses = [
     {
         img: GamePhysicsandAI,
         title: "Game Physics and AI",
-        category: "Game Development",
+        category: ["Game Development"],
         price: "₹8,000",
         duration: "35 days",
         url:'/GamePhysicsAI',
@@ -205,7 +205,7 @@ const courses = [
     {
         img: IntroductiontoUIUXDesignPrinciples,
         title: "Introduction to UI/UX Design Principles",
-        category: "UI/UX Design",
+        category:[ "UI/UX Design","Best Selling"],
         price: " FREE (Online)",
         duration: "10 days",
         url:'/IntrotoUiux',
@@ -234,7 +234,7 @@ const courses = [
     {
         img: DataAnalysiswithPython,
         title: "Data Analysis with Python",
-        category: "Python Programming",
+        category: ["Python Programming", "Best Selling"],
         price: "₹7,000",
         duration: "30 days",
         url:'/DataanalysisPython',
@@ -262,7 +262,7 @@ const courses = [
     {
         img:pythonFullstack   ,
         title: "Full Stack Python Development",
-        category:"Python Programming",
+        category:["Python Programming"],
         price: "₹15,000",
         duration:"60 days",
         url:'/FullstackPython',
@@ -322,7 +322,7 @@ const courses = [
     {
         img:promptEngineering ,
         title: "Prompt Engineering - Introduction to Programming",
-        category:"Prompt Engineering",
+        category:["Prompt Engineering", "Best Selling"],
         price: "₹6,000",
         duration:"20 days",
         url:'/PromptEngineering',
@@ -333,7 +333,7 @@ const courses = [
     {
         img:gitGithubEssentials ,
         title: "Git and GitHub Essentials",
-        category:"Git and GitHub",
+        category:["Git and GitHub", "Best Selling"],
         price: "₹2,500",
         duration:"7 days",
         url:'/Gitgithub',

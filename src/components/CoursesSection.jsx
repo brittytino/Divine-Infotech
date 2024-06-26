@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import courses from './coursesData';
+import courses from '../components/pages/coursesData';
 
-const CoursesPage = () => {
+const CoursesSection = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedCategory, setSelectedCategory] = useState("Best Selling");
 
     const categories = [
-        "All",
+        "Best Selling",
         "Web Development",
         "Mobile App Development",
         "Game Development",
@@ -31,6 +31,10 @@ const CoursesPage = () => {
         setIsDropdownOpen(false); // Close dropdown after selecting a category
     };
 
+    const filteredCourses = selectedCategory === "Best Selling" 
+        ? courses.filter(course => course.category.includes("Best Selling"))
+        : courses.filter(course => course.category.includes(selectedCategory));
+
     return (
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
             <div className="max-w-7xl mx-auto mb-8">
@@ -45,12 +49,11 @@ const CoursesPage = () => {
                             aria-expanded={isDropdownOpen ? 'true' : 'false'}
                             onClick={toggleDropdown}
                         >
-                            {selectedCategory === 'All' ? 'Select Courses' : selectedCategory}
+                            {selectedCategory === 'Best Selling' ? 'Best Selling' : selectedCategory}
                             <FaChevronDown className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                         </button>
                     </div>
 
-                    {/* Dropdown panel, show/hide based on dropdown state */}
                     {isDropdownOpen && (
                         <div
                             className="origin-top w-full md:w-auto md:right-0 mt-2 md:absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
@@ -76,35 +79,27 @@ const CoursesPage = () => {
             </div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-8">
-                {courses
-                    .filter(course => {
-                        if (selectedCategory === "All") {
-                            return true;
-                        }
-                        if (Array.isArray(course.category)) {
-                            return course.category.includes(selectedCategory);
-                        }
-                        return course.category === selectedCategory;
-                    })
-                    .map((course, index) => (
-                        <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img className="w-full h-48 object-fill object-center" src={course.img} alt="Course Image" />
-                            <div className="p-6">
-                                <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
-                                <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-lg font-semibold text-blue-600">{course.price}</span>
-                                  <a href={course.url}>  <button className="bg-blue-600 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                {filteredCourses.map((course, index) => (
+                    <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <img className="w-full md:h-48 h-40 object-fill object-center" src={course.img} alt="Course Image" />
+                        <div className="p-6">
+                            <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
+                            <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
+                            <div className="flex justify-between items-center">
+                                <span className="md:text-lg text-base font-semibold text-blue-600">{course.price}</span>
+                                <a href={course.url}>
+                                    <button className="bg-blue-600 text-white py-1 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                                         Enroll Now
-                                    </button></a>
-                                </div>
-                                <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">Duration: {course.duration}</p>
+                                    </button>
+                                </a>
                             </div>
+                            <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">Duration: {course.duration}</p>
                         </div>
-                    ))}
+                    </div>
+                ))}
             </div>
         </section>
     );
 };
 
-export default CoursesPage;
+export default CoursesSection;

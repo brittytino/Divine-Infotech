@@ -1,81 +1,102 @@
 import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
-import { FiInstagram, FiLinkedin, FiTwitter, FiFacebook } from 'react-icons/fi';
-import Logo from '../images/logo.png';
+import { FaTwitter, FaFacebookSquare, FaGithub, FaLinkedin,FaDribbble } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const Footer = () => {
-  return (
-    <footer className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-12">
-      <div className="pb-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
-          {/* Left Section: Logo and Company Name */}
-          <div className="flex items-center mb-4 md:mb-0">
-            <img src={Logo} alt="Divine Infotech Logo" className="h-12 md:h-16 mr-2 border-2 border-yellow-400 rounded-full" />
-            <h1 className="text-xl md:text-2xl font-semibold underline underline-offset-4 decoration-yellow-500">Divine Infotech</h1>
-          </div>
-          
-          {/* Center Section: Contact Information */}
-          <div className="text-left md:text-left">
-            <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-            <p className="text-gray-100 mb-2">Have questions or need more information? We're here to help!</p>
-            <div className="flex items-center justify-left md:justify-start space-x-4 mb-4">
-              <FaEnvelope className="text-gray-100 text-lg" />
-              <a href="mailto:info@divineinfotech.com" className="text-gray-100 hover:underline">divineinfotech.edu@gmail.com</a>
-            </div>
-            <div className="flex items-center justify-start md:justify-start space-x-4 mb-4">
-              <FaPhone className="text-gray-100 text-lg" />
-              <span className="text-gray-100">+91 9042621178</span>
-            </div>
-            <div className="flex items-center justify-center md:justify-start space-x-4 mb-4">
-              <FaMapMarkerAlt className="text-gray-100 text-lg" />
-              <span className="text-gray-100">123 Tech Park, Silicon Valley, Bangalore, India</span>
-            </div>
-            <a
-              href="#"
-              className="inline-block bg-gradient-to-r from-blue-500 hover:to-blue-900 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
-            >
-              Contact Form
-            </a>
-          </div>
-          
-          {/* Right Section: Social Media Links */}
-          <div className="flex items-center justify-center md:justify-end mt-16 md:mt-0">
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-100 hover:text-yellow-500 transition-all">
-                <FiInstagram className="text-2xl" />
-              </a>
-              <a href="#" className="text-gray-100 hover:text-yellow-500 transition-all">
-                <FiLinkedin className="text-2xl" />
-              </a>
-              <a href="#" className="text-gray-100 hover:text-yellow-500 transition-all">
-                <FiTwitter className="text-2xl" />
-              </a>
-              <a href="#" className="text-gray-100 hover:text-yellow-500 transition-all">
-                <FiFacebook className="text-2xl" />
-              </a>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </footer>
+    const currentYear = new Date().getFullYear();
 
-  
-//     <section className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-12">
-//     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <h2 className="text-3xl font-semibold mb-6">Contact Us</h2>
-//         <p className="text-lg mb-6">For more information or support, contact us 24/7.</p>
-//         <div className="flex items-center space-x-4">
-//             <FaPhoneAlt className="text-2xl" />
-//             <span>+91 9042621178</span>
-//         </div>
-//         <div className="flex items-center space-x-4 mt-4">
-//             <FaEnvelope className="text-2xl" />
-//             <span>divineinfotech.edu@gmail.com</span>
-//         </div>
-//     </div>
-// </section>
-  );
+    const socialLinks = [
+        { name: 'Twitter', icon: <FaXTwitter className="text-gray-800 hover:text-black transform hover:scale-110 transition-transform duration-300" />, href: 'https://twitter.com' },
+        { name: 'Facebook', icon: <FaFacebookSquare className="text-blue-700 hover:text-blue-800 transform hover:scale-110 transition-transform duration-300" />, href: 'https://facebook.com' },
+        { name: 'Dribbble', icon: <FaLinkedin className="text-blue-500 hover:text-blue-600 transform hover:scale-110 transition-transform duration-300" />, href: 'https://dribbble.com' },
+        { name: 'GitHub', icon: <FaDribbble className="text-pink-600 hover:text-pink-700 transform hover:scale-110 transition-transform duration-300" />, href: 'https://github.com' },
+    ];
+
+    const usefulLinks = [
+        { name: 'About Us', href: '#' },
+        { name: 'Support', href: '#' },
+        { name: 'Courses', href: '/courses' },
+        { name: 'Services', href: '#' },
+    ];
+
+    const otherResources = [
+        { name: 'Faculty', href: '#' },
+        { name: 'Terms & Conditions', href: '#' },
+        { name: 'Privacy Policy', href: '#' },
+        { name: 'Contact Us', href: '#' },
+    ];
+
+    return (
+        <footer className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-8 md:pt-20 px-4 md:px-12">
+            <div className="container mx-auto">
+                <div className="flex flex-wrap text-left lg:text-left">
+                    <div className="w-full lg:w-6/12 px-20">
+                        <h4 className="text-3xl font-semibold text-gray-200 mb-4">Let's keep in touch!</h4>
+                        <h5 className="text-lg mb-6 text-gray-300">
+                            Find us on any of these platforms, we respond 1-2 business days.
+                        </h5>
+                        <div className="flex space-x-4">
+                            {socialLinks.map((social, index) => (
+                                <a
+                                    key={index}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-white shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none transform hover:scale-110 transition-transform duration-300"
+                                    aria-label={social.name}
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-6/12 mt-8 lg:mt-0">
+                        <div className="flex flex-wrap items-top">
+                            <div className="w-full lg:w-6/12 mb-8 lg:mb-0">
+                                <span className="block uppercase text-white text-sm font-semibold mb-2">Useful Links</span>
+                                <ul className="list-unstyled">
+                                    {usefulLinks.map((link, index) => (
+                                        <li key={index} className='pt-2'>
+                                            <a
+                                                href={link.href}
+                                                className="text-blue-300 hover:text-white font-semibold block text-sm transition-colors duration-300 hover:underline"
+                                            >
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div className="w-full lg:w-6/12">
+                                <span className="block uppercase text-white text-sm font-semibold mb-2">Other Resources</span>
+                                <ul className="list-unstyled">
+                                    {otherResources.map((link, index) => (
+                                        <li key={index} className='pt-2'>
+                                            <a
+                                                href={link.href}
+                                                className="text-blue-300 hover:text-white font-semibold block text-sm transition-colors duration-300 hover:underline"
+                                            >
+                                                {link.name}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr className="my-8 border-blue-400" />
+                <div className="flex flex-wrap items-center md:justify-between justify-center">
+                    <div className="w-full text-center">
+                        <div className="text-sm text-blue-300 font-semibold py-1">
+                            Copyright © {currentYear}  Divine Infotech.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
 };
 
 export default Footer;

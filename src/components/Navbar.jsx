@@ -12,17 +12,6 @@ const Navbar = () => {
     { title: "Home", href: "/" },
     { 
       title: "Courses", 
-      // items: [
-      //   { title: "Fullstack Development", href: "/Mernstack" },
-      //   { title: "Python Fullstack", href: "/pythondev" },
-      //   { title: "Game Development", href: "#game-development" },
-      //   { title: "Digital Marketing", href: "/digitalmarketing" },
-      //   { title: "Stock Market", href: "#stock-market" },
-      //   { title: "Java", href: "#java" },
-      //   { title: "Fundamentals of Major Programming Languages", href: "#programming-languages" },
-      //   { title: "Prompt Engineering", href: "#prompt-engineering" },
-      //   { title: "Git & GitHub", href: "#git-github" }
-      // ] 
       href : '/courses'
     },
     { 

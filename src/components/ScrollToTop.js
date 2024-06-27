@@ -33,7 +33,7 @@ const ScrollToTop = () => {
         <>
             {isVisible && (
                 <div
-                    className="fixed bottom-6 right-6 z-10 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full cursor-pointer transition-all duration-300"
+                    className="fixed bottom-6 right-6 z-10 bg-blue-500 hover:bg-blue-600  text-white p-3 rounded-full cursor-pointer transition-all duration-300"
                     onClick={scrollToTop}
                 >
                     <FiChevronUp className="text-3xl" />

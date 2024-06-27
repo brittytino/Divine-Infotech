@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronDown, FaArrowRight } from 'react-icons/fa';
 import courses from '../components/pages/coursesData';
 
 const CoursesSection = () => {
@@ -98,6 +98,16 @@ const CoursesSection = () => {
                     </div>
                 ))}
             </div>
+            <div className="flex justify-center mt-8">
+    <a 
+        href="/courses" 
+        className="inline-flex items-center bg-transparent border border-blue-600 duration-300 font-medium  decoration-blue-600 text-blue-800 hover:bg-blue-600 hover:text-white py-2 px-2 text-sm md:text-lg  md:px-4 rounded-full shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+        Explore more
+        <FaArrowRight className="ml-2 " />
+    </a>
+</div>
+
         </section>
     );
 };

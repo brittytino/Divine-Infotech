@@ -1,34 +1,50 @@
-import React from 'react';
-import { FiUserCheck, FiCode, FiDollarSign, FiBriefcase } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { FiUserCheck, FiCode, FiDollarSign, FiBriefcase, FiX } from 'react-icons/fi';
 
 const WhyChooseDivineInfotech = () => {
-  // Data for each feature
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedFeature, setSelectedFeature] = useState(null);
+
   const features = [
     {
       Icon: FiUserCheck,
       color: 'text-blue-500',
       title: 'Expert Faculty',
       description: 'Learn from industry professionals with hands-on experience.',
+      brief: 'Our expert faculty includes industry professionals who provide practical insights and hands-on training to ensure you gain the skills needed for your career.',
     },
     {
       Icon: FiCode,
       color: 'text-green-500',
       title: 'Practical Training',
       description: 'Hands-on projects and real-world applications.',
+      brief: 'Engage in hands-on projects and real-world applications that help you develop practical skills and a deep understanding of the subject matter.',
     },
     {
       Icon: FiDollarSign,
       color: 'text-yellow-500',
       title: 'Affordable Pricing',
       description: 'Competitive rates and flexible payment options.',
+      brief: 'We offer competitive rates and flexible payment options to make our courses accessible to everyone, without compromising on quality.',
     },
     {
       Icon: FiBriefcase,
       color: 'text-purple-500',
       title: 'Career Support',
       description: 'Job placement assistance and career counseling.',
+      brief: 'Our career support services include job placement assistance and career counseling to help you successfully transition into the tech industry.',
     },
   ];
+
+  const openModal = (feature) => {
+    setSelectedFeature(feature);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setSelectedFeature(null);
+  };
 
   return (
     <div className="bg-gray-100 py-12 md:py-20">
@@ -43,7 +59,11 @@ const WhyChooseDivineInfotech = () => {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md p-4 md:p-6 flex flex-col items-center justify-center">
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-md p-4 md:p-6 flex flex-col items-center justify-center cursor-pointer  hover:shadow-lg transition-all"
+              onClick={() => openModal(feature)}
+            >
               <div className={`flex items-center justify-center h-16 w-16 rounded-full ${feature.color} bg-${feature.color.split('-')[1]}-100 mb-4`}>
                 <feature.Icon className="text-3xl md:text-4xl" />
               </div>
@@ -62,6 +82,27 @@ const WhyChooseDivineInfotech = () => {
             Contact Us
           </button>
         </div>
+      </div>
+
+      {/* Only show modal on mobile devices */}
+      <div className="md:hidden">
+        {modalIsOpen && selectedFeature && (
+          <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center z-50 px-6">
+            <div className="bg-white  backdrop-filter backdrop-blur-lg border border-white border-opacity-30 rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+              <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onClick={closeModal}>
+                <FiX className="text-2xl" />
+              </button>
+              <div className="flex flex-col items-center">
+                <div className={`flex items-center justify-center h-16 w-16 rounded-full ${selectedFeature.color} bg-${selectedFeature.color.split('-')[1]}-100 mb-4`}>
+                  <selectedFeature.Icon className="text-3xl md:text-4xl" />
+                </div>
+                <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mb-3">{selectedFeature.title}</h3>
+                <p className="text-gray-600 text-sm  text-center">{selectedFeature.brief}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
       </div>
     </div>
   );

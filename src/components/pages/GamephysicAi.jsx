@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaBookOpen, FaCogs, FaLightbulb, FaProjectDiagram, FaCode, FaServer, FaUsers , FaTools} from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Game Physics and AI.mp4';
 import ClassRating from '../classRating';
 // Updated import
 import GamephysicAiSyllabus from './GamephysicAiSyllabus';

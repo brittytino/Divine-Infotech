@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock,FaRegLightbulb, FaGraduationCap } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Mastering Tally Prime with GST.mp4';
 import ClassRating from '../classRating';
 // Updated import
 import MasteringtallyprimewithGstSyllabus from './MasteringtallyprimewithGstSyllabus';

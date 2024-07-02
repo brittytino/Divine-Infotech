@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaNodeJs, FaGamepad, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaCloud, FaHandsHelping, FaRegClock } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Mobile Game Development Mastery.mp4';
 import ClassRating from '../classRating';
 // Updated import
 import MobilegameMasterySyllabus from './MobilegameMasterySyllabus';

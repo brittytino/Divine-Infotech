@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaRegLightbulb } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Introduction to Stock Market Investing.mp4';
 import ClassRating from '../classRating';
 import IntrotoStockmarketinvestingSyllabus from './IntrotoStockmarketinvestingSyllabus';
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaBook, FaList, FaChartLine, FaTasks, FaGraduationCap, FaProjectDiagram,FaServer,FaTools } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/Tally Fundamentals & Applications.mp4';
 import ClassRating from '../classRating';
 import TallyfundamentalsSyllabus from './TallyfundamentalsSyllabus';
 

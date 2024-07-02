@@ -28,7 +28,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-8 px-5 md:pt-20 md:px-20 ">
+        <footer id='footer' className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-8 px-5 md:pt-20 md:px-20 ">
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-between lg:justify-evenly">
                     <div className="w-full lg:w-4/12 px-4 mb-8 lg:mb-0">

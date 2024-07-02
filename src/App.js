@@ -51,6 +51,7 @@ import ProgrammingFundamentals from './components/pages/ProgrammingFundamentals'
 import Digitalmarketing from './components/pages/Digitalmarketing';
 import PromptEngineering from './components/pages/PromptEngineering';
 import Gitgithub from './components/pages/Gitgithub';
+import Services from './components/Services';
 
 
 
@@ -92,6 +93,7 @@ const App = () => {
         <Route path='/Digitalmarketing' element={<Digitalmarketing />} />
         <Route path='/PromptEngineering' element={<PromptEngineering />} />
         <Route path='/Gitgithub' element={<Gitgithub />} />
+        <Route path='/Services' element={<Services/>}/>
 
 
       </Routes>

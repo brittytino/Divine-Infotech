@@ -2,25 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
 import Logo from '../images/logo.png';
 import ScrollToTop from './ScrollToTop';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isSticky, setIsSticky] = useState(false);
 
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+  }
+
   const navItems = [
     { title: "Home", href: "/" },
-    { 
-      title: "Courses", 
-      href : '/courses'
+    {
+      title: "Courses",
+      href: '/courses'
     },
-    { 
-      title: "Services", 
-      items: [
-        { title: "Web Development", href: "#web-development" },
-        { title: "UI/UX Designing", href: "#ui-ux-designing" },
-        { title: "Data Analysis", href: "#data-analysis" }
-      ] 
+    {
+      title: "Services",
+      href: '/services'
     },
     { title: "Faculty", href: "#" },
     { title: "Support", href: "#" },
@@ -50,10 +52,10 @@ const Navbar = () => {
   return (
     <nav className={`bg-[#fafafc] shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all duration-300' : ''}`}>
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
-        <a href="#" className="text-xl font-semibold flex items-center gap-2 text-[#272727]">
+        <div onClick={() => handleNavigation('/')} className="text-xl hover:cursor-pointer font-semibold flex items-center gap-2 text-[#272727]">
           <img src={Logo} alt="Divine Infotech Logo" className='h-14 md:h-16' />
           Divine Infotech
-        </a>
+        </div>
         <div className="hidden lg:flex space-x-6 text-[#212832]">
           {navItems.slice(0, 5).map((item, index) => (
             item.items ? (

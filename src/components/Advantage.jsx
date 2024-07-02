@@ -25,7 +25,7 @@ const AdvantagesSection = () => {
 
   return (
     <div className="bg-gray-100 py-8 md:py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {advantages.map((advantage, index) => (
           <div
             key={index}
@@ -36,7 +36,7 @@ const AdvantagesSection = () => {
             </div>
             <div className="mt-6 md:mt-10">
               <h3 className="text-lg md:text-xl font-semibold text-gray-900">{advantage.title}</h3>
-              <p className="mt-2 md:mt-4 text-sm md:text-base text-gray-800">{advantage.description}</p>
+              <p className="mt-2 md:mt-4 text-sm lg:text-base text-gray-800">{advantage.description}</p>
             </div>
           </div>
         ))}

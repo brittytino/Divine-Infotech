@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaPython,FaTools, FaHtml5, FaServer, FaProjectDiagram ,FaCloud } from 'react-icons/fa';
-
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import WebdevPythonSyllabus from './WebdevPythonSyllabus';
 

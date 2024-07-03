@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaPython, FaCog, FaCodeBranch, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
-
-import videoFile from './videos/fullstack.mp4';
+import { FaDatabase, FaPython, FaCog, FaCodeBranch, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import FullstackPythonSyllabus from './FullstackPythonSyllabus';// Assuming this component is created for the syllabus
 
@@ -52,7 +51,7 @@ const FullstackPython = () => {
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Solidify Python fundamentals.</p>
+                                        <p>Comprehensive curriculum covering full stack development with Python</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
@@ -68,7 +67,7 @@ const FullstackPython = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn concurrency and asynchronous programming in Python.</p>
+                                        <p>Preparation of a full stack Python development portfolio</p>
                                     </li>
                                 </ul>
                             </div>
@@ -78,8 +77,8 @@ const FullstackPython = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹15,000 (Online)</span>
-                    <span className="text-xl font-semibold">Duration: 60 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹14,500</span>
+                    <span className="text-xl font-semibold">Duration: 50 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

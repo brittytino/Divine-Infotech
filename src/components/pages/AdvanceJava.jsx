@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock } from 'react-icons/fa';
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import AdvanceJavaSyllabus from './AdvanceJavaSyllabus';
 
@@ -52,15 +52,15 @@ const AdvanceJava = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn Java EE and web services.</p>
+                                        <p>Hands-on projects and practical applications</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Concurrency and multithreading.</p>
+                                        <p>Guidance from experienced instructors.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Performance tuning and optimization.</p>
+                                        <p>Preparation of an advanced Java programming portfolio.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -69,8 +69,8 @@ const AdvanceJava = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹10,000 (Online)</span>
-                    <span className="text-xl font-semibold">Duration: 35 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹10,000</span>
+                    <span className="text-xl font-semibold">Duration: 40 days</span> 
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

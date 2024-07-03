@@ -3,152 +3,118 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 
 const syllabus = [
-    {
-      phase: "Phase 1: Introduction to Tally Prime and Basic Accounting (Days 1-8)",
-      topics: [
-        {
-          title: "Introduction to Tally Prime",
-          details: [
-            "Overview of Tally Prime features",
-            "Installation and initial setup",
-            "Navigating the Tally Prime interface",
-          ],
-        },
-        {
-          title: "Basic Accounting Principles",
-          details: [
-            "Understanding fundamental accounting concepts",
-            "Double-entry system of accounting",
-            "Types of accounts and their rules",
-          ],
-        },
-        {
-          title: "Creating and Configuring Company Accounts",
-          details: [
-            "Creating a new company in Tally Prime",
-            "Configuring company settings and security controls",
-            "Setting up financial years",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Advanced Accounting in Tally Prime (Days 9-16)",
-      topics: [
-        {
-          title: "Managing Ledgers and Groups",
-          details: [
-            "Creating and managing ledgers and groups",
-            "Configuring chart of accounts",
-            "Recording various types of vouchers (sales, purchase, receipt, payment)",
-          ],
-        },
-        {
-          title: "Banking and Reconciliation",
-          details: [
-            "Managing bank accounts and transactions",
-            "Performing bank reconciliation",
-            "Configuring and generating cheque printing",
-          ],
-        },
-        {
-          title: "Cost Centers and Cost Categories",
-          details: [
-            "Setting up cost centers and categories",
-            "Allocating costs and analyzing expenditures",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Inventory Management (Days 17-24)",
-      topics: [
-        {
-          title: "Inventory Configuration",
-          details: [
-            "Creating stock groups, categories, items, and units of measure",
-            "Configuring stock valuation methods",
-          ],
-        },
-        {
-          title: "Inventory Transactions",
-          details: [
-            "Recording inventory transactions (inward and outward)",
-            "Managing stock transfers, adjustments, and reorders",
-          ],
-        },
-        {
-          title: "Inventory Reporting",
-          details: [
-            "Generating inventory reports",
-            "Analyzing stock movement and valuation",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: GST Implementation in Tally Prime (Days 25-32)",
-      topics: [
-        {
-          title: "Introduction to GST",
-          details: [
-            "Overview of GST and its components",
-            "Understanding GST compliance requirements",
-          ],
-        },
-        {
-          title: "Configuring GST in Tally Prime",
-          details: [
-            "Setting up GST details for the company",
-            "Creating GST-compliant ledgers and stock items",
-          ],
-        },
-        {
-          title: "Recording GST Transactions",
-          details: [
-            "Recording sales and purchase transactions with GST",
-            "Managing advance receipts and payments under GST",
-          ],
-        },
-        {
-          title: "Generating GST Returns and Reports",
-          details: [
-            "Generating GSTR-1, GSTR-2, and GSTR-3B",
-            "Reconciling GST returns with books of accounts",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Payroll, Reporting, and Final Project (Days 33-40)",
-      topics: [
-        {
-          title: "Payroll Management",
-          details: [
-            "Setting up payroll in Tally Prime",
-            "Creating employee records and salary structures",
-            "Processing payroll and generating payslips",
-          ],
-        },
-        {
-          title: "Financial Reporting and Analysis",
-          details: [
-            "Generating financial statements (Balance Sheet, Profit & Loss Account)",
-            "Creating and customizing management reports",
-            "Analyzing financial performance and ratios",
-          ],
-        },
-        {
-          title: "Final Project",
-          details: [
-            "Developing a comprehensive project incorporating all learned concepts",
-            "Simulating real-world accounting, inventory, and GST scenarios",
-            "Project presentation and review",
-          ],
-        },
-      ],
-    },
-  ];
+  {
+    phase: "Phase 1: Introduction to Tally Prime (Days 1-5)",
+    topics: [
+      {
+        title: "Objective: Gain familiarity with Tally Prime software and its basic functionalities.",
+        details: [
+          "Overview of Tally Prime",
+          "Introduction to Tally Prime interface and navigation",
+          "Setting up a company in Tally Prime",
+          "Basics of creating and managing ledgers, groups, and vouchers",
+        ],
+      },
+      {
+        title: "Advanced Company Operations",
+        details: [
+          "Configuring company settings in Tally Prime",
+          "Managing multiple companies and data security",
+          "Backup and restore operations in Tally Prime",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Tally Prime Features and Customization (Days 6-15)",
+    topics: [
+      {
+        title: "Objective: Explore advanced features and customization options in Tally Prime.",
+        details: [
+          "Advanced Voucher Entries",
+          "Creating complex voucher entries (contra, payment, receipt, etc.)",
+          "Understanding voucher classes and types in Tally Prime",
+          "Customizing voucher formats and printing options",
+        ],
+      },
+      {
+        title: "Financial Reporting and Analysis",
+        details: [
+          "Generating and customizing financial reports (balance sheet, profit & loss statement)",
+          "Analyzing financial data using Tally Prime's reporting tools",
+          "Exporting reports and data integration with other software",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Goods and Services Tax (GST) Implementation (Days 16-25)",
+    topics: [
+      {
+        title: "Objective: Learn GST concepts and implementation using Tally Prime.",
+        details: [
+          "Introduction to GST",
+          "Overview of Goods and Services Tax (GST) in India",
+          "GST registration process and compliance requirements",
+          "GST rates and classification of goods and services",
+        ],
+      },
+      {
+        title: "GST Accounting in Tally Prime",
+        details: [
+          "Configuring GST in Tally Prime and GSTIN setup",
+          "Recording GST transactions (sales, purchases, reverse charge mechanism)",
+          "GST reconciliation and filing GST returns using Tally Prime",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Inventory Management (Days 26-35)",
+    topics: [
+      {
+        title: "Objective: Understand inventory management and control using Tally Prime.",
+        details: [
+          "Inventory Setup and Configuration",
+          "Creating and managing stock items in Tally Prime",
+          "Stock groups, units of measurement (UOM), and stock categories",
+          "Stock valuation methods and inventory tracking",
+        ],
+      },
+      {
+        title: "Advanced Inventory Features",
+        details: [
+          "Handling batch-wise and expiry management in Tally Prime",
+          "Stock transfer and physical stock verification processes",
+          "Inventory reports and analysis tools in Tally Prime",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Practical Application and Project Work (Days 36-45)",
+    topics: [
+      {
+        title: "Objective: Apply learned concepts through practical exercises and project work.",
+        details: [
+          "Practical Exercises",
+          "Hands-on practice with Tally Prime software",
+          "Real-world scenarios and case studies",
+          "Troubleshooting common issues in Tally Prime",
+        ],
+      },
+      {
+        title: "Capstone Project",
+        details: [
+          "Developing and implementing a comprehensive accounting and GST compliance project",
+          "Integration of advanced Tally Prime features and techniques",
+          "Presentation and evaluation of the project",
+        ],
+      },
+    ],
+  },
+];
+
   
 
 const MasteringtallyprimewithGstSyllabus = () => {

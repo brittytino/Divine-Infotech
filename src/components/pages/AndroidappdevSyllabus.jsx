@@ -3,138 +3,193 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
   {
-    phase: "Phase 1: Introduction to Android Development (Days 1-6)",
+    phase: "Phase 1: Introduction to Android Development (Days 1-7)",
     topics: [
       {
-        title: "Overview of Android",
+        title: "Overview of Android Development",
         details: [
           "Introduction to Android platform and ecosystem",
-          "Understanding different Android versions and API levels",
+          "Setting up the development environment (Android Studio)",
+          "Understanding the Android project structure",
         ],
       },
       {
-        title: "Setting Up Development Environment",
+        title: "Android Components and Architecture",
         details: [
-          "Installing Android Studio",
-          "Overview of Android Studio interface and tools",
-          "Creating and running a 'Hello World' app",
+          "Activities and their lifecycle",
+          "Intents and intent filters",
+          "Fragments and their lifecycle",
+          "Understanding Android Manifest",
         ],
       },
       {
-        title: "Basic Concepts",
+        title: "UI Design and Layouts",
         details: [
-          "Android project structure and components",
-          "Introduction to XML for UI design",
+          "Basic UI components (TextView, EditText, Button, etc.)",
+          "Layouts (LinearLayout, RelativeLayout, ConstraintLayout)",
+          "Creating adaptive layouts for different screen sizes",
+        ],
+      },
+      {
+        title: "Basic Navigation",
+        details: [
+          "Navigating between activities",
+          "Passing data between activities",
+          "Introduction to Android Navigation Component",
         ],
       },
     ],
   },
   {
-    phase: "Phase 2: Android User Interface Design (Days 7-12)",
+    phase: "Phase 2: Intermediate Android Development (Days 8-14)",
     topics: [
-      {
-        title: "Layouts and Views",
-        details: [
-          "Understanding different layout types: LinearLayout, RelativeLayout, ConstraintLayout",
-          "Working with basic UI elements: TextView, EditText, Button, ImageView",
-        ],
-      },
       {
         title: "Advanced UI Components",
         details: [
-          "RecyclerView and ListView for displaying lists",
-          "Handling user inputs and events",
-          "Styling and Themes: Applying styles and themes to Android apps, Using drawable resources for images and shapes"
+          "RecyclerView and Adapters",
+          "CardView for material design",
+          "Handling user inputs with forms",
+        ],
+      },
+      {
+        title: "Data Storage and Persistence",
+        details: [
+          "SharedPreferences for simple data storage",
+          "SQLite database for structured data",
+          "Room persistence library",
+        ],
+      },
+      {
+        title: "Networking and APIs",
+        details: [
+          "Introduction to RESTful APIs",
+          "Making network requests with Retrofit",
+          "Parsing JSON data",
+        ],
+      },
+      {
+        title: "Multithreading and Async Tasks",
+        details: [
+          "Understanding threads and handlers",
+          "Using AsyncTask for background operations",
+          "Introduction to Kotlin Coroutines",
         ],
       },
     ],
   },
   {
-    phase: "Phase 3: Android Components and Navigation (Days 13-18)",
+    phase: "Phase 3: Advanced Android Development (Days 15-21)",
     topics: [
       {
-        title: "Activities and Intents",
+        title: "MVVM Architecture",
         details: [
-          "Understanding the activity lifecycle",
-          "Navigating between activities using intents",
+          "Introduction to Model-View-ViewModel (MVVM)",
+          "Data binding and LiveData",
+          "ViewModel and its lifecycle",
         ],
       },
       {
-        title: "Fragments",
+        title: "Advanced Navigation",
         details: [
-          "Introduction to fragments and fragment lifecycle",
-          "Implementing fragments for flexible UI design",
+          "Deep linking and navigation graphs",
+          "Navigation with bottom navigation and side drawers",
+          "Handling backstack and up navigation",
         ],
       },
       {
-        title: "Navigation Components",
+        title: "Working with Sensors and Location",
         details: [
-          "Using the Navigation component for app navigation",
-          "Setting up navigation graphs and handling fragment transactions",
+          "Accessing device sensors (accelerometer, gyroscope)",
+          "Working with GPS and location services",
+          "Using Google Maps API",
+        ],
+      },
+      {
+        title: "Notifications and Background Tasks",
+        details: [
+          "Creating and managing notifications",
+          "Background tasks with WorkManager",
+          "AlarmManager and JobScheduler",
         ],
       },
     ],
   },
   {
-    phase: "Phase 4: Data Storage and Management (Days 19-24)",
+    phase: "Phase 4: Full App Development (Days 22-28)",
     topics: [
       {
-        title: "SharedPreferences",
+        title: "Planning and Designing the App",
         details: [
-          "Storing simple data using SharedPreferences",
+          "Defining app requirements and features",
+          "Creating wireframes and mockups",
+          "Setting up project structure and resources",
         ],
       },
       {
-        title: "SQLite Database",
+        title: "Building the App",
         details: [
-          "Introduction to SQLite database in Android",
-          "CRUD operations with SQLiteOpenHelper",
+          "Implementing UI and navigation",
+          "Integrating data storage and networking",
+          "Handling user interactions and input",
         ],
       },
       {
-        title: "Room Persistence Library",
+        title: "Testing and Debugging",
         details: [
-          "Using Room for database management",
-          "Implementing DAO (Data Access Object) and entities",
+          "Writing unit and instrumentation tests",
+          "Debugging with Android Studio tools",
+          "Handling crashes and ANRs (Application Not Responding)",
+        ],
+      },
+      {
+        title: "Optimization and Performance Tuning",
+        details: [
+          "Memory management and leak detection",
+          "Performance profiling and optimization",
+          "Best practices for efficient coding",
         ],
       },
     ],
   },
   {
-    phase: "Phase 5: Advanced Topics and Final Project (Days 25-30)",
+    phase: "Phase 5: Deployment and Advanced Topics (Days 29-35)",
     topics: [
       {
-        title: "Networking",
+        title: "Publishing the App",
         details: [
-          "Making HTTP requests using Retrofit or Volley",
-          "Parsing JSON data and displaying it in the app",
+          "Preparing the app for release",
+          "Signing and building APKs",
+          "Publishing on Google Play Store",
         ],
       },
       {
         title: "Firebase Integration",
         details: [
-          "Introduction to Firebase and its features",
-          "Implementing Firebase Authentication",
-          "Using Firebase Realtime Database or Firestore",
+          "Using Firebase Authentication",
+          "Cloud Firestore for real-time databases",
+          "Firebase Cloud Messaging for push notifications",
         ],
       },
       {
-        title: "Publishing the App",
+        title: "Advanced UI and Animations",
         details: [
-          "Preparing the app for release",
-          "Publishing the app on Google Play Store",
+          "Creating custom views and animations",
+          "Using MotionLayout for complex animations",
+          "Implementing transitions and shared element animations",
         ],
       },
       {
-        title: "Final Project",
+        title: "Capstone Project",
         details: [
-          "Developing a complete functional Android app incorporating all learned concepts",
-          "Project presentation and review",
+          "Developing a comprehensive final project",
+          "Applying all learned concepts in a real-world scenario",
+          "Project presentation and feedback",
         ],
       },
     ],
   },
 ];
+
 
 const AndroidappdevSyllabus = () => {
   const [openSections, setOpenSections] = useState(new Array(syllabus.length).fill(false));

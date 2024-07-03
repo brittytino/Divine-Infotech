@@ -57,7 +57,7 @@ const MasteringtallyprimewithGst = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to manage accounting with Tally Prime.</p>
+                                        <p>Hands-on practice with practical exercises and projects</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
@@ -69,7 +69,7 @@ const MasteringtallyprimewithGst = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaCogs className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced accounting and inventory techniques.</p>
+                                        <p>Preparation for Tally certification and career opportunities in accounting and finance</p>
                                     </li>
                                 </ul>
                             </div>
@@ -79,8 +79,8 @@ const MasteringtallyprimewithGst = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000 </span>
-                    <span className="text-xl font-semibold">Duration: 40 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹11,500 </span>
+                    <span className="text-xl font-semibold">Duration: 45 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

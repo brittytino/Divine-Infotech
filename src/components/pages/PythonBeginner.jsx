@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaLightbulb, FaRegClock } from 'react-icons/fa'; // Changed icons for learning outcomes and key features
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import PythonBeginnerSyllabus from './PythonBeginnerSyllabus'; // Assuming this file has been updated with new content
 

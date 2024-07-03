@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import GitgithubSyllabus from './GitgithubSyllabus';
 
@@ -79,7 +79,7 @@ const Gitgithub = () => {
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
                     <span className="text-xl font-semibold text-yellow-500">Fee: ₹2,500</span>
-                    <span className="text-xl font-semibold">Duration: 7 days</span>
+                    <span className="text-xl font-semibold">Duration: 10 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

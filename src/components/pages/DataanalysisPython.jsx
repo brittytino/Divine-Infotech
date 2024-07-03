@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaDatabase,FaCode, FaPython, FaCloud, FaChartLine, FaProjectDiagram ,FaUsers,FaTools,FaServer,} from 'react-icons/fa'; // Updated icons
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import DataanalysisPythonSyllabus from './DataanalysisPythonSyllabus';  // Updated syllabus import
 
@@ -64,11 +64,11 @@ const DataanalysisPython = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaDatabase className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master data manipulation with Pandas.</p>
+                                        <p>Guidance from experienced instructors.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaChartLine className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced statistical analysis.</p>
+                                        <p>Preparation of a data analysis portfolio.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -79,7 +79,7 @@ const DataanalysisPython = () => {
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
                     <span className="text-xl font-semibold text-yellow-500">Fee: ₹7,000</span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold">Duration: 35 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

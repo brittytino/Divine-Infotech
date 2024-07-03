@@ -2,180 +2,153 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Week 1-2: Advanced Object-Oriented Programming",
-      topics: [
-        {
-          title: "Design Patterns",
-          details: [
-            "Singleton, Factory, MVC, etc.",
-          ],
-        },
-        {
-          title: "Generics and Collections",
-          details: [
-            "Generics and collections in depth",
-          ],
-        },
-        {
-          title: "Advanced Exception Handling",
-          details: [
-            "Advanced exception handling and assertions",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 3-4: Concurrency in Java",
-      topics: [
-        {
-          title: "Introduction to Threads",
-          details: [
-            "Introduction to threads and multithreading",
-          ],
-        },
-        {
-          title: "Synchronization and Thread Safety",
-          details: [
-            "Synchronization and thread safety",
-          ],
-        },
-        {
-          title: "Concurrent Collections and Utilities",
-          details: [
-            "Concurrent collections and utilities",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 5-6: Java Persistence API (JPA)",
-      topics: [
-        {
-          title: "Introduction to JPA and ORM",
-          details: [
-            "Introduction to JPA and ORM concepts",
-          ],
-        },
-        {
-          title: "Mapping Entities",
-          details: [
-            "Mapping entities to database tables",
-          ],
-        },
-        {
-          title: "Advanced Querying",
-          details: [
-            "Advanced querying with JPQL",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 7-8: Java Enterprise Edition (Java EE)",
-      topics: [
-        {
-          title: "Introduction to Java EE",
-          details: [
-            "Introduction to Java EE platform",
-          ],
-        },
-        {
-          title: "Enterprise JavaBeans (EJB)",
-          details: [
-            "EJB (Enterprise JavaBeans)",
-          ],
-        },
-        {
-          title: "Java EE Application Servers",
-          details: [
-            "Java EE application servers (e.g., Tomcat, GlassFish)",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 9-10: Web Services in Java",
-      topics: [
-        {
-          title: "Introduction to Web Services",
-          details: [
-            "Introduction to SOAP and RESTful web services",
-          ],
-        },
-        {
-          title: "Developing and Consuming Web Services",
-          details: [
-            "Developing and consuming web services in Java",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 11-12: Advanced Spring Framework",
-      topics: [
-        {
-          title: "Spring Boot Fundamentals",
-          details: [
-            "Spring Boot fundamentals",
-          ],
-        },
-        {
-          title: "Microservices Architecture",
-          details: [
-            "Microservices architecture with Spring Cloud",
-          ],
-        },
-        {
-          title: "Securing Spring Applications",
-          details: [
-            "Securing Spring applications",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 13-14: Java Performance Tuning",
-      topics: [
-        {
-          title: "Profiling Java Applications",
-          details: [
-            "Profiling Java applications",
-          ],
-        },
-        {
-          title: "Memory Management",
-          details: [
-            "Memory management and garbage collection",
-          ],
-        },
-        {
-          title: "Optimizing Code and Queries",
-          details: [
-            "Optimizing code and database queries",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Week 15: Final Project and Presentation",
-      topics: [
-        {
-          title: "Designing a Complex Java Application",
-          details: [
-            "Designing and implementing a complex Java application",
-          ],
-        },
-        {
-          title: "Presentation and Review",
-          details: [
-            "Presentation and code review",
-          ],
-        },
-      ],
-    },
-  ];
-  
+  {
+    phase: "Phase 1: Java Fundamentals Review (Days 1-8)",
+    topics: [
+      {
+        title: "Review of Core Java Concepts",
+        details: [
+          "Recap of Java syntax, data types, and operators",
+          "Control flow statements (if-else, loops)",
+          "Methods, classes, and objects in Java",
+        ],
+      },
+      {
+        title: "Exception Handling",
+        details: [
+          "Handling exceptions in Java (try-catch, throws, throw)",
+          "Custom exceptions and best practices",
+          "Using Java's built-in exception classes",
+        ],
+      },
+      {
+        title: "Collections Framework",
+        details: [
+          "Overview of Java Collections (List, Set, Map)",
+          "Using iterators and enhancing for loops",
+          "Understanding the differences between collections",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Object-Oriented Programming in Depth (Days 9-16)",
+    topics: [
+      {
+        title: "Inheritance and Polymorphism",
+        details: [
+          "Implementing inheritance in Java classes",
+          "Method overriding and dynamic method dispatch",
+          "Understanding polymorphism and its practical applications",
+        ],
+      },
+      {
+        title: "Abstract Classes and Interfaces",
+        details: [
+          "Creating abstract classes and methods",
+          "Implementing interfaces for multiple inheritance",
+          "Using interfaces to define contracts and behaviors",
+        ],
+      },
+      {
+        title: "Design Patterns",
+        details: [
+          "Introduction to common design patterns (e.g., Singleton, Factory)",
+          "Applying design patterns to solve real-world problems",
+          "Benefits and drawbacks of design pattern usage",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Advanced Java Features (Days 17-26)",
+    topics: [
+      {
+        title: "Concurrency in Java",
+        details: [
+          "Introduction to threads and multithreading in Java",
+          "Synchronization and thread safety",
+          "Java's Executor framework and concurrent collections",
+        ],
+      },
+      {
+        title: "Java I/O and File Handling",
+        details: [
+          "Reading and writing files using Java I/O classes",
+          "Working with streams and readers/writers",
+          "Serialization and deserialization of objects",
+        ],
+      },
+      {
+        title: "Java Database Connectivity (JDBC)",
+        details: [
+          "Connecting Java applications to databases",
+          "Performing CRUD operations using JDBC",
+          "Handling transactions and batch processing",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Java Enterprise Edition (Java EE) (Days 27-35)",
+    topics: [
+      {
+        title: "Servlets and JSP",
+        details: [
+          "Creating dynamic web applications with Servlets",
+          "Integrating Java code with JSP pages",
+          "Session management and request handling",
+        ],
+      },
+      {
+        title: "Java Persistence API (JPA)",
+        details: [
+          "Introduction to JPA for object-relational mapping (ORM)",
+          "Configuring persistence units and entities",
+          "Performing CRUD operations with JPA",
+        ],
+      },
+      {
+        title: "Introduction to Spring Framework",
+        details: [
+          "Overview of Spring framework and its modules",
+          "Dependency Injection (DI) and Inversion of Control (IoC)",
+          "Integrating Spring with Java EE applications",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Advanced Topics and Application Development (Days 36-40)",
+    topics: [
+      {
+        title: "RESTful Web Services with JAX-RS",
+        details: [
+          "Designing and implementing RESTful APIs in Java",
+          "Using JAX-RS annotations for resource mapping",
+          "Consuming RESTful services in Java applications",
+        ],
+      },
+      {
+        title: "Testing and Debugging",
+        details: [
+          "Unit testing with JUnit framework",
+          "Debugging techniques and tools in Java IDEs",
+          "Writing effective test cases and test suites",
+        ],
+      },
+      {
+        title: "Capstone Project",
+        details: [
+          "Developing a complex Java application or module",
+          "Applying all learned concepts and best practices",
+          "Presenting the project and receiving feedback",
+        ],
+      },
+    ],
+  },
+];
+
 
 const AdvanceJavaSyllabus = () => {
     const [openSections, setOpenSections] = useState(new Array(syllabus.length).fill(false));

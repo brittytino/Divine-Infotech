@@ -2,124 +2,71 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Introduction to Version Control (Days 1-6)",
-      topics: [
-        {
-          title: "Understanding Version Control Systems",
-          details: [
-            "Introduction to version control systems",
-          ],
-        },
-        {
-          title: "Introduction to Git and GitHub",
-          details: [
-            "Overview of Git and GitHub",
-            "Setting up Git and configuring GitHub",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Basic Git Commands (Days 7-12)",
-      topics: [
-        {
-          title: "Initializing a Repository",
-          details: [
-            "Creating a new Git repository",
-          ],
-        },
-        {
-          title: "Adding and Committing Changes",
-          details: [
-            "Staging changes with git add",
-            "Committing changes with git commit",
-          ],
-        },
-        {
-          title: "Branching and Merging",
-          details: [
-            "Creating and switching branches",
-            "Merging branches",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Collaborating with GitHub (Days 13-18)",
-      topics: [
-        {
-          title: "Cloning Repositories",
-          details: [
-            "Cloning repositories from GitHub",
-          ],
-        },
-        {
-          title: "Pushing and Pulling Changes",
-          details: [
-            "Pushing local changes to GitHub",
-            "Pulling remote changes from GitHub",
-          ],
-        },
-        {
-          title: "Managing Branches and Pull Requests",
-          details: [
-            "Creating and managing pull requests",
-            "Reviewing and merging pull requests",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Advanced Git Topics (Days 19-24)",
-      topics: [
-        {
-          title: "Rebasing and Resolving Conflicts",
-          details: [
-            "Introduction to rebasing",
-            "Handling merge conflicts",
-          ],
-        },
-        {
-          title: "Working with Tags and Releases",
-          details: [
-            "Creating and using tags",
-            "Managing releases",
-          ],
-        },
-        {
-          title: "Git Workflows",
-          details: [
-            "Understanding GitFlow and other workflows",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Git in Real-World Applications (Days 25-30)",
-      topics: [
-        {
-          title: "Integrating Git into Development Workflows",
-          details: [
-            "Using Git in development projects",
-          ],
-        },
-        {
-          title: "Best Practices for Team Collaboration",
-          details: [
-            "Effective collaboration strategies with Git",
-          ],
-        },
-        {
-          title: "Continuous Integration and Deployment (CI/CD) Concepts",
-          details: [
-            "Overview of CI/CD",
-            "Integrating Git with CI/CD pipelines",
-          ],
-        },
-      ],
-    },
-  ];
+  {
+    phase: "Phase 1: Introduction to Version Control (Days 1-3)",
+    topics: [
+      {
+        title: "Understanding Version Control Systems",
+        details: [
+          "Importance of version control in software development",
+          "Overview of distributed version control systems (DVCS)",
+          "Git vs. other version control systems",
+        ],
+      },
+      {
+        title: "Getting Started with Git",
+        details: [
+          "Installing Git and setting up Git configuration",
+          "Initializing a Git repository (git init)",
+          "Basic Git commands (git add, git commit, git status)",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Working with Git (Days 4-7)",
+    topics: [
+      {
+        title: "Git Branching and Merging",
+        details: [
+          "Creating and managing branches in Git",
+          "Merging branches and resolving conflicts",
+          "Best practices for branching strategies",
+        ],
+      },
+      {
+        title: "Collaboration with Remote Repositories (GitHub)",
+        details: [
+          "Introduction to GitHub and its features",
+          "Cloning repositories (git clone)",
+          "Pushing and pulling changes to/from remote repositories",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Advanced Git Features (Days 8-10)",
+    topics: [
+      {
+        title: "Git Rebase and Interactive Rebase",
+        details: [
+          "Understanding Git rebase and its uses",
+          "Performing interactive rebase for history rewriting",
+          "Using rebase to manage feature branches",
+        ],
+      },
+      {
+        title: "Git Workflow Best Practices",
+        details: [
+          "Git workflow models (Gitflow, GitHub flow)",
+          "Integrating Git with CI/CD pipelines",
+          "Resolving merge conflicts and handling Git mistakes",
+        ],
+      },
+    ],
+  },
+];
+
 
 
 const GitgithubSyllabus = () => {

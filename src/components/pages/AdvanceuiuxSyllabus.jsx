@@ -2,109 +2,153 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Advanced User Research and Persona Development (Days 1-5)",
-      topics: [
-        {
-          title: "Advanced User Research Methods",
-          details: [
-            "Conducting contextual inquiries and ethnographic studies",
-            "Analyzing qualitative and quantitative data",
-          ],
-        },
-        {
-          title: "Persona Development",
-          details: [
-            "Creating detailed user personas based on research findings",
-            "Mapping user journeys and identifying pain points",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Information Architecture and Interaction Design (Days 6-10)",
-      topics: [
-        {
-          title: "Advanced Information Architecture",
-          details: [
-            "Creating complex information structures and taxonomies",
-            "Hierarchical organization of content and navigation",
-          ],
-        },
-        {
-          title: "Advanced Interaction Design",
-          details: [
-            "Designing complex interactions and micro-interactions",
-            "Using advanced prototyping tools for interaction design",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Advanced Visual Design Principles (Days 11-15)",
-      topics: [
-        {
-          title: "Advanced Typography and Visual Hierarchy",
-          details: [
-            "Experimenting with typography styles and combinations",
-            "Creating sophisticated visual hierarchies",
-          ],
-        },
-        {
-          title: "Advanced Color Theory and Application",
-          details: [
-            "Using color palettes effectively for branding and accessibility",
-            "Creating harmonious and impactful color schemes",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Motion Design and Animated UI (Days 16-20)",
-      topics: [
-        {
-          title: "Principles of Motion Design",
-          details: [
-            "Understanding principles of animation: timing, easing, and physics-based motion",
-            "Creating animated UI elements and transitions",
-          ],
-        },
-        {
-          title: "Prototyping Advanced Interactions",
-          details: [
-            "Using prototyping tools to simulate complex interactions and animations",
-            "Integrating motion design into interactive prototypes",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Usability Testing and Iterative Design (Days 21-25)",
-      topics: [
-        {
-          title: "Advanced Usability Testing",
-          details: [
-            "Conducting remote and moderated usability tests",
-            "Analyzing usability metrics and qualitative feedback",
-          ],
-        },
-        {
-          title: "Iterative Design Process",
-          details: [
-            "Implementing iterative design cycles based on user feedback",
-            "Collaborating with stakeholders and developers for design implementation",
-          ],
-        },
-        {
-          title: "Final Project and Portfolio Development",
-          details: [
-            "Applying advanced UI/UX design techniques to solve a real-world design challenge",
-            "Presenting the final project with detailed documentation and rationale",
-          ],
-        },
-      ],
-    },
-  ];
+  {
+    phase: "Phase 1: Understanding User-Centered Design (Days 1-6)",
+    topics: [
+      {
+        title: "Introduction to UI/UX Design",
+        details: [
+          "Overview of UI and UX design roles and responsibilities",
+          "Importance of user-centered design in product development",
+          "Differences between UI and UX design",
+        ],
+      },
+      {
+        title: "User Research and Analysis",
+        details: [
+          "Conducting user research (interviews, surveys, usability testing)",
+          "Analyzing user feedback and requirements",
+          "Creating user personas and user journey maps",
+        ],
+      },
+      {
+        title: "Information Architecture",
+        details: [
+          "Structuring information effectively for intuitive navigation",
+          "Card sorting and hierarchical organization",
+          "Creating sitemaps and flow diagrams",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Advanced UI Design Techniques (Days 7-12)",
+    topics: [
+      {
+        title: "Visual Design Principles",
+        details: [
+          "Color theory and psychology in UI design",
+          "Typography fundamentals and font pairing",
+          "Applying Gestalt principles for visual hierarchy",
+        ],
+      },
+      {
+        title: "UI Design Tools",
+        details: [
+          "Introduction to industry-standard tools (Sketch, Adobe XD, Figma)",
+          "Creating UI elements and components",
+          "Prototyping interactions and animations",
+        ],
+      },
+      {
+        title: "Responsive and Adaptive Design",
+        details: [
+          "Designing for different screen sizes and resolutions",
+          "Mobile-first and responsive design strategies",
+          "Using media queries and flexible grids",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Advanced UX Design Techniques (Days 13-18)",
+    topics: [
+      {
+        title: "Interaction Design",
+        details: [
+          "Principles of interaction design (affordance, feedback, constraints)",
+          "Designing intuitive user interactions and micro-interactions",
+          "Prototyping interactions with motion and animation",
+        ],
+      },
+      {
+        title: "Usability Testing and Feedback",
+        details: [
+          "Conducting usability tests and heuristic evaluations",
+          "Iterative design based on user feedback",
+          "A/B testing and multivariate testing",
+        ],
+      },
+      {
+        title: "Accessibility in Design",
+        details: [
+          "Designing for accessibility (WCAG guidelines)",
+          "Creating inclusive designs for users with disabilities",
+          "Tools and resources for accessibility testing",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Designing for Emerging Technologies (Days 19-24)",
+    topics: [
+      {
+        title: "Designing for Virtual and Augmented Reality",
+        details: [
+          "Principles of VR/AR interaction design",
+          "Creating immersive experiences and environments",
+          "UX challenges and considerations in VR/AR",
+        ],
+      },
+      {
+        title: "Designing for Voice Interfaces and AI",
+        details: [
+          "UX principles for voice interaction design",
+          "Designing conversational interfaces (chatbots, voice assistants)",
+          "Integrating AI and machine learning in UX design",
+        ],
+      },
+      {
+        title: "Designing for Cross-Platform Experiences",
+        details: [
+          "Strategies for consistent user experience across devices",
+          "Designing for web, mobile, and desktop applications",
+          "Using design systems for scalable and cohesive designs",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Advanced Topics and Career Development (Days 25-30)",
+    topics: [
+      {
+        title: "Portfolio Development",
+        details: [
+          "Showcasing projects and case studies effectively",
+          "Creating a personal brand as a UI/UX designer",
+          "Networking and job search strategies",
+        ],
+      },
+      {
+        title: "Industry Trends and Future of UI/UX",
+        details: [
+          "Current trends in UI/UX design (dark mode, micro-interactions)",
+          "Predicting future trends and technologies",
+          "Continuing education and professional development",
+        ],
+      },
+      {
+        title: "Capstone Project",
+        details: [
+          "Applying all learned concepts to a final UI/UX design project",
+          "Presenting the project and receiving feedback",
+          "Refining the project for inclusion in a professional portfolio",
+        ],
+      },
+    ],
+  },
+];
+  
   
 
 const AdvanceuiuxSyllabus = () => {

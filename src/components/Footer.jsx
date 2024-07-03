@@ -2,6 +2,7 @@ import React from 'react';
 import { FaTwitter, FaFacebookSquare, FaGithub, FaLinkedin, FaDribbble } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 
+
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
@@ -17,18 +18,22 @@ const Footer = () => {
         { name: 'About Us', href: '#' },
         { name: 'Support', href: '#' },
         { name: 'Courses', href: '/courses' },
-        { name: 'Services', href: '#' },
+        { name: 'Services', href: '/services' },
     ];
 
     const otherResources = [
         { name: 'Faculty', href: '#' },
-        { name: 'Terms & Conditions', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
+        { name: 'Terms & Conditions', href: '/terms' },
+        { name: 'Privacy Policy', href: '/privacypolicy' },
         { name: 'Contact Us', href: '#' },
     ];
 
     return (
+        <>
+        
+        
         <footer id='footer' className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-8 px-5 md:pt-20 md:px-20 ">
+            
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-between lg:justify-evenly">
                     <div className="w-full lg:w-4/12 px-4 mb-8 lg:mb-0">
@@ -36,7 +41,8 @@ const Footer = () => {
                         <h5 className="md:text-lg text-sm mb-6 text-gray-300 ">
                             Find us on any of these platforms, we respond 1-2 business days.
                         </h5>
-                        <div className="flex space-x-4 ">
+                      <a href=" mailto: divineinfotech.edu@gmail.com">  <h5 className='font-medium hover:underline underline-offset-4 decoration-white hover:cursor-pointer transition-all'>Mail : divineinfotech.edu@gmail.com </h5></a>
+                        <div className="flex mt-5 space-x-4 ">
                             {socialLinks.map((social, index) => (
                                 <a
                                     key={index}
@@ -68,7 +74,7 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div className="w-full lg:w-auto">
-                            <span className="block uppercase text-white text-sm font-semibold mb-2">Other Resources</span>
+                            <span className="block uppercase text-white text-sm font-semibold mb-2">Other</span>
                             <ul className="list-unstyled">
                                 {otherResources.map((link, index) => (
                                     <li key={index} className='pt-2'>
@@ -84,8 +90,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <hr className="my-8 border-blue-400" />
-                <div className="flex flex-wrap items-center justify-center md:justify-between">
+                <hr className="my-8 border-blue-400 " />
+                <div className="flex flex-wrap items-center  justify-center md:justify-between">
                     <div className="w-full text-center">
                         <div className="text-sm text-blue-300 font-semibold py-1">
                             Copyright © {currentYear} Divine Infotech.
@@ -94,6 +100,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
+        </>
     );
 };
 

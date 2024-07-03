@@ -38,7 +38,7 @@ const FaqServices = () => {
     return (
         <div className=" py-12">
             <div className=" flex flex-col justify-center items-center ">
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-8  underline underline-offset-4 md:underline-offset-8 decoration-green-600">Frequently Asked Questions</h2>
+                <h2 className="text-3xl font-bold text-center text-gray-800 mb-8  underline underline-offset-4 md:underline-offset-8 decoration-blue-600">Frequently Asked Questions</h2>
                 <div className="space-y-4 px-6 md:px-8 lg:w-2/3">
                     {faqs.map((faq, index) => (
                         <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">

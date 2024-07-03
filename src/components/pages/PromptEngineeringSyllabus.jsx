@@ -2,139 +2,113 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Programming Basics",
-      topics: [
-        {
-          title: "Introduction to programming concepts",
-          details: [
-            "Understanding the basics of programming",
-            "Learning different programming paradigms",
-          ],
-        },
-        {
-          title: "Variables, data types, and operators",
-          details: [
-            "Declaring and initializing variables",
-            "Understanding data types",
-            "Using operators for calculations and logic",
-          ],
-        },
-        {
-          title: "Control flow and loops",
-          details: [
-            "Using if-else statements for decision making",
-            "Implementing loops: for, while, and do-while",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Functions and Modules",
-      topics: [
-        {
-          title: "Writing functions and using libraries",
-          details: [
-            "Defining and calling functions",
-            "Using standard libraries for extended functionality",
-          ],
-        },
-        {
-          title: "Scope and namespaces",
-          details: [
-            "Understanding variable scope",
-            "Using namespaces to organize code",
-          ],
-        },
-        {
-          title: "Modular programming practices",
-          details: [
-            "Breaking code into reusable modules",
-            "Importing and exporting modules",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Data Structures",
-      topics: [
-        {
-          title: "Arrays, lists, and dictionaries",
-          details: [
-            "Working with arrays for fixed-size data",
-            "Using lists for dynamic data",
-            "Storing key-value pairs with dictionaries",
-          ],
-        },
-        {
-          title: "Introduction to algorithms",
-          details: [
-            "Understanding algorithm basics",
-            "Learning about complexity and efficiency",
-          ],
-        },
-        {
-          title: "Basic sorting and searching techniques",
-          details: [
-            "Implementing sorting algorithms: bubble sort, selection sort",
-            "Using search algorithms: linear search, binary search",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Object-Oriented Programming",
-      topics: [
-        {
-          title: "Principles of OOP (Object-Oriented Programming)",
-          details: [
-            "Learning the four pillars of OOP",
-            "Understanding the importance of OOP in software design",
-          ],
-        },
-        {
-          title: "Classes, objects, and inheritance",
-          details: [
-            "Defining classes and creating objects",
-            "Implementing inheritance for code reuse",
-          ],
-        },
-        {
-          title: "Encapsulation and polymorphism",
-          details: [
-            "Encapsulating data within classes",
-            "Using polymorphism for flexible code",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Project Development",
-      topics: [
-        {
-          title: "Applying learned concepts to a small project",
-          details: [
-            "Developing a project from scratch",
-            "Incorporating all learned programming concepts",
-          ],
-        },
-        {
-          title: "Version control basics (using Git for project management)",
-          details: [
-            "Understanding the basics of version control",
-            "Using Git for project tracking and collaboration",
-          ],
-        },
-        {
-          title: "Documentation and best practices",
-          details: [
-            "Writing clear and concise documentation",
-            "Following best practices in code development",
-          ],
-        },
-      ],
-    },
-  ];
+  {
+    phase: "Phase 1: Introduction to Software Engineering (Days 1-5)",
+    topics: [
+      {
+        title: "Software Engineering Overview",
+        details: [
+          "Introduction to software development lifecycle (SDLC)",
+          "Roles and responsibilities of software engineers",
+          "Importance of prompt engineering in modern software development",
+        ],
+      },
+      {
+        title: "Prompt Development Basics",
+        details: [
+          "Overview of prompt languages and frameworks",
+          "Setting up a prompt development environment",
+          "Basic prompt commands and operations",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Data Structures and Algorithms (Days 6-10)",
+    topics: [
+      {
+        title: "Data Structures",
+        details: [
+          "Arrays, linked lists, stacks, queues, and trees",
+          "Understanding hash tables and graphs",
+          "Implementing data structures in prompt",
+        ],
+      },
+      {
+        title: "Algorithms",
+        details: [
+          "Sorting algorithms (e.g., bubble sort, merge sort)",
+          "Searching algorithms (e.g., binary search, depth-first search)",
+          "Algorithm efficiency (time complexity and space complexity)",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Database Fundamentals (Days 11-15)",
+    topics: [
+      {
+        title: "Relational Databases",
+        details: [
+          "Introduction to SQL and relational database management systems (RDBMS)",
+          "SQL queries for data retrieval and manipulation",
+          "Database design principles and normalization",
+        ],
+      },
+      {
+        title: "NoSQL Databases",
+        details: [
+          "Overview of NoSQL databases (e.g., MongoDB, Redis)",
+          "Differences between SQL and NoSQL databases",
+          "Using NoSQL databases for prompt storage and retrieval",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Software Testing and Quality Assurance (Days 16-20)",
+    topics: [
+      {
+        title: "Introduction to Software Testing",
+        details: [
+          "Importance of testing in software development",
+          "Types of testing (unit testing, integration testing, system testing)",
+          "Test-driven development (TDD) and continuous integration (CI)",
+        ],
+      },
+      {
+        title: "Quality Assurance Processes",
+        details: [
+          "QA methodologies and best practices",
+          "Implementing quality checks and validation processes",
+          "Bug tracking and issue management",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Project Development and Deployment (Days 21-25)",
+    topics: [
+      {
+        title: "Project Planning and Management",
+        details: [
+          "Planning and defining project requirements",
+          "Agile methodologies and sprint planning",
+          "Version control and collaboration using Git",
+        ],
+      },
+      {
+        title: "Capstone Project",
+        details: [
+          "Developing a prompt engineering project from scratch",
+          "Implementing data structures, algorithms, and database integration",
+          "Testing, debugging, and deploying the project",
+        ],
+      },
+    ],
+  },
+];
+
   
 
 const PromptEngineeringSyllabus = () => {

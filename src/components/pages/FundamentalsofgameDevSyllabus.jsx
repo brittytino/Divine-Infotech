@@ -2,116 +2,137 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Introduction to Game Development (Days 1-4)",
+  {
+      phase: "Phase 1: Introduction to Game Development (Days 1-5)",
       topics: [
-        {
-          title: "Overview of Game Development",
-          details: [
-            "History and evolution of video games",
-            "Different types of games (2D, 3D, AR, VR)",
-            "Introduction to game development roles (designer, programmer, artist, etc.)",
-          ],
-        },
-        {
-          title: "Game Development Tools and Engines",
-          details: [
-            "Overview of popular game engines (Unity, Unreal Engine, Godot)",
-            "Setting up the development environment",
-            "Basic interface and features of chosen game engine",
-          ],
-        },
+          {
+              title: "Overview of Game Development",
+              details: [
+                  "Introduction to different types of games and genres",
+                  "Understanding the game development process",
+                  "Roles and responsibilities in game development teams",
+              ],
+          },
+          {
+              title: "Game Design Fundamentals",
+              details: [
+                  "Principles of game design (rules, mechanics, dynamics)",
+                  "Game loops and player interaction",
+                  "Creating compelling game narratives",
+              ],
+          },
+          {
+              title: "Game Engines and Tools",
+              details: [
+                  "Introduction to game engines (Unity, Unreal Engine)",
+                  "Setting up a development environment",
+                  "Overview of Unity interface and basic tools",
+              ],
+          },
       ],
-    },
-    {
-      phase: "Phase 2: Game Design Principles (Days 5-8)",
+  },
+  {
+      phase: "Phase 2: Game Development Basics (Days 6-10)",
       topics: [
-        {
-          title: "Fundamentals of Game Design",
-          details: [
-            "Game design documents and planning",
-            "Core mechanics, gameplay loops, and game flow",
-            "Designing levels and environments",
-          ],
-        },
-        {
-          title: "Prototyping and Iteration",
-          details: [
-            "Creating simple game prototypes",
-            "Playtesting and iterating on game design",
-          ],
-        },
+          {
+              title: "Unity Basics",
+              details: [
+                  "Understanding Unity's GameObjects and components",
+                  "Working with scenes and assets",
+                  "Scripting basics with C# in Unity",
+              ],
+          },
+          {
+              title: "2D Game Development",
+              details: [
+                  "Creating 2D sprites and animations",
+                  "Using Unity's 2D physics system",
+                  "Implementing basic gameplay mechanics (movement, collisions)",
+              ],
+          },
+          {
+              title: "Introduction to Game Art and Animation",
+              details: [
+                  "Basics of creating game assets (sprites, textures)",
+                  "Animation principles and techniques",
+                  "Using Unity's animation system",
+              ],
+          },
       ],
-    },
-    {
-      phase: "Phase 3: Basic Game Programming (Days 9-12)",
+  },
+  {
+      phase: "Phase 3: Intermediate Game Development (Days 11-15)",
       topics: [
-        {
-          title: "Introduction to Programming for Games",
-          details: [
-            "Basic programming concepts (variables, loops, functions, and conditionals)",
-            "Scripting languages used in game development (C# for Unity, GDScript for Godot, Blueprints for Unreal Engine)",
-          ],
-        },
-        {
-          title: "Creating Game Mechanics",
-          details: [
-            "Implementing player controls and movement",
-            "Collision detection and physics",
-            "Adding basic gameplay elements (collectibles, enemies, etc.)",
-          ],
-        },
+          {
+              title: "Unity Scripting and Gameplay Mechanics",
+              details: [
+                  "Intermediate scripting techniques in C#",
+                  "Implementing more complex gameplay mechanics (AI, UI interactions)",
+                  "Managing game state and transitions",
+              ],
+          },
+          {
+              title: "Advanced Unity Features",
+              details: [
+                  "Using Unity's particle system for effects",
+                  "Audio implementation and sound design",
+                  "Integrating third-party assets and plugins",
+              ],
+          },
+          {
+              title: "Game Optimization and Performance",
+              details: [
+                  "Understanding performance bottlenecks",
+                  "Optimization techniques for graphics and scripts",
+                  "Testing and profiling games for performance",
+              ],
+          },
       ],
-    },
-    {
-      phase: "Phase 4: Game Art and Animation (Days 13-16)",
+  },
+  {
+      phase: "Phase 4: Game Development Projects (Days 16-20)",
       topics: [
-        {
-          title: "Creating Game Assets",
-          details: [
-            "Introduction to 2D and 3D art creation",
-            "Tools for creating game assets (Photoshop, Blender, etc.)",
-            "Importing and using assets in the game engine",
-          ],
-        },
-        {
-          title: "Basic Animation",
-          details: [
-            "Creating and importing animations",
-            "Animating characters and objects",
-            "Using animation controllers and state machines",
-          ],
-        },
+          {
+              title: "Project Planning and Prototyping",
+              details: [
+                  "Defining game concepts and objectives",
+                  "Creating game design documents and wireframes",
+                  "Prototyping gameplay mechanics and features",
+              ],
+          },
+          {
+              title: "Developing Game Projects",
+              details: [
+                  "Implementing project milestones and timelines",
+                  "Collaborating in game development teams (if applicable)",
+                  "Iterative development and playtesting",
+              ],
+          },
       ],
-    },
-    {
-      phase: "Phase 5: Building and Testing a Simple Game (Days 17-20)",
+  },
+  {
+      phase: "Phase 5: Final Project and Showcase (Days 21-25)",
       topics: [
-        {
-          title: "Integrating Components",
-          details: [
-            "Bringing together game design, programming, and art",
-            "Building a simple, functional game",
-          ],
-        },
-        {
-          title: "Game Testing and Debugging",
-          details: [
-            "Testing the game for bugs and performance issues",
-            "Debugging common issues",
-            "Getting feedback and making improvements",
-          ],
-        },
-        {
-          title: "Project Presentation",
-          details: [
-            "Finalizing and polishing the game",
-            "Presenting the game project",
-          ],
-        },
+          {
+              title: "Final Game Development",
+              details: [
+                  "Refining and polishing the game project",
+                  "Adding finishing touches (sound, visual effects)",
+                  "Debugging and testing for final release",
+              ],
+          },
+          {
+              title: "Game Showcase and Feedback",
+              details: [
+                  "Presenting the final game project to peers and instructors",
+                  "Gathering feedback and evaluating project success",
+                  "Creating a portfolio and showcasing the game",
+              ],
+          },
       ],
-    },
-  ];
+  },
+];
+
   
 
 

@@ -2,135 +2,118 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Foundations of Stock Trading (Days 1-5)",
-      topics: [
-        {
-          title: "Introduction to Stock Trading",
-          details: [
-            "Overview of financial markets and trading",
-            "Understanding different types of trading: day trading, swing trading, position trading",
-            "Role of stock exchanges and market participants",
-          ],
-        },
-        {
-          title: "Trading Psychology",
-          details: [
-            "Emotions and biases in trading",
-            "Developing a disciplined trading mindset",
-            "Importance of risk management in trading",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Technical Analysis (Days 6-15)",
-      topics: [
-        {
-          title: "Advanced Charting Techniques",
-          details: [
-            "Advanced chart patterns: Fibonacci retracements, Elliott Wave Theory",
-            "Using advanced technical indicators: Bollinger Bands, Ichimoku Cloud, Volume Profile",
-          ],
-        },
-        {
-          title: "Candlestick Patterns",
-          details: [
-            "Identifying and interpreting complex candlestick patterns",
-            "Applying candlestick patterns in trading decisions",
-          ],
-        },
-        {
-          title: "Advanced Trading Strategies",
-          details: [
-            "Momentum trading strategies",
-            "Breakout and breakdown strategies",
-            "Pullback and retracement strategies",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Quantitative Trading Techniques (Days 16-25)",
-      topics: [
-        {
-          title: "Introduction to Quantitative Trading",
-          details: [
-            "Basics of algorithmic trading",
-            "Developing trading strategies based on quantitative analysis",
-          ],
-        },
-        {
-          title: "Backtesting and Optimization",
-          details: [
-            "Testing trading strategies using historical data",
-            "Optimizing strategies for performance and risk management",
-          ],
-        },
-        {
-          title: "Automated Trading Systems",
-          details: [
-            "Building and deploying automated trading systems",
-            "Understanding API integration and execution platforms",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Derivatives and Advanced Instruments (Days 26-35)",
-      topics: [
-        {
-          title: "Introduction to Derivatives",
-          details: [
-            "Types of derivatives: futures, options, swaps",
-            "Strategies using derivatives for hedging and speculation",
-          ],
-        },
-        {
-          title: "Option Trading Strategies",
-          details: [
-            "Basic and advanced option trading strategies",
-            "Greeks: Delta, Gamma, Theta, Vega, and their applications",
-          ],
-        },
-        {
-          title: "Risk Management in Derivatives Trading",
-          details: [
-            "Managing risks associated with derivatives trading",
-            "Using derivatives to manage portfolio risk",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Trading Psychology, Risk Management, and Final Project (Days 36-40)",
-      topics: [
-        {
-          title: "Advanced Trading Psychology",
-          details: [
-            "Dealing with stress and emotions in high-stakes trading",
-            "Psychological aspects of risk-taking and decision-making",
-          ],
-        },
-        {
-          title: "Risk Management Strategies",
-          details: [
-            "Advanced risk management techniques for traders",
-            "Position sizing and money management principles",
-          ],
-        },
-        {
-          title: "Final Project",
-          details: [
-            "Developing and presenting a comprehensive trading plan",
-            "Implementing advanced trading techniques in simulated trading scenarios",
-            "Review and feedback on the trading plan",
-          ],
-        },
-      ],
-    },
-  ];
-  
+  {
+    phase: "Phase 1: Introduction to Stock Market Fundamentals (Days 1-5)",
+    topics: [
+      {
+        title: "Objective: Gain a foundational understanding of the stock market and its operations.",
+        details: [
+          "Introduction to Financial Markets",
+          "Overview of stock exchanges and trading mechanisms",
+          "Understanding market participants (investors, brokers, institutions)",
+          "Basics of equity markets and trading terminology",
+        ],
+      },
+      {
+        title: "Market Analysis Approaches",
+        details: [
+          "Fundamental vs. technical analysis",
+          "Economic indicators and their impact on stock prices",
+          "Introduction to quantitative analysis techniques",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Fundamental Analysis (Days 6-15)",
+    topics: [
+      {
+        title: "Objective: Learn how to analyze stocks based on fundamental factors.",
+        details: [
+          "Financial Statement Analysis",
+          "Analyzing income statements, balance sheets, and cash flow statements",
+          "Ratios for financial health assessment (e.g., P/E ratio, debt-to-equity ratio)",
+          "Evaluating company management and governance",
+        ],
+      },
+      {
+        title: "Valuation Methods",
+        details: [
+          "Discounted cash flow (DCF) analysis",
+          "Comparable company analysis (comps)",
+          "Estimating intrinsic stock value",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Technical Analysis (Days 16-25)",
+    topics: [
+      {
+        title: "Objective: Explore technical analysis techniques for predicting stock price movements.",
+        details: [
+          "Chart Patterns and Trends",
+          "Recognizing and interpreting common chart patterns (e.g., head and shoulders, double tops/bottoms)",
+          "Identifying trendlines and support/resistance levels",
+          "Candlestick chart analysis and its applications",
+        ],
+      },
+      {
+        title: "Technical Indicators",
+        details: [
+          "Using moving averages and oscillators (e.g., RSI, MACD)",
+          "Volume analysis and its significance",
+          "Building trading strategies based on technical indicators",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Trading Strategies (Days 26-35)",
+    topics: [
+      {
+        title: "Objective: Develop and implement advanced trading strategies.",
+        details: [
+          "Risk Management",
+          "Importance of risk management in trading",
+          "Setting stop-loss orders and position sizing strategies",
+          "Portfolio diversification and asset allocation",
+        ],
+      },
+      {
+        title: "Advanced Trading Techniques",
+        details: [
+          "Momentum trading and swing trading strategies",
+          "Options trading strategies (basic overview)",
+          "Algorithmic trading and automated trading systems",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Practical Application and Simulation (Days 36-45)",
+    topics: [
+      {
+        title: "Objective: Apply learned techniques through practical trading simulations.",
+        details: [
+          "Simulated Trading Exercises",
+          "Using trading platforms for simulated trading",
+          "Implementing trading strategies in real-time scenarios",
+          "Analyzing performance and refining trading techniques",
+        ],
+      },
+      {
+        title: "Case Studies and Real-world Examples",
+        details: [
+          "Reviewing historical trades and outcomes",
+          "Learning from successful and unsuccessful trading scenarios",
+          "Developing a personalized trading plan and strategy",
+        ],
+      },
+    ],
+  },
+];
+
 
 
 const AdvancestockTradingSyllabus = () => {

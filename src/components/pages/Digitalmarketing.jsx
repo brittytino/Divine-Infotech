@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaChartLine, FaEdit, FaChartBar, FaBullhorn, FaSearch, FaLaptop, FaUsers } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 // syllabus 
 import DigitalmarketingSyllabus from './DigitalmarketingSyllabus';
@@ -70,7 +70,7 @@ const Digitalmarketing = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaUsers className="text-2xl text-blue-600 mr-3" />
-                                        <p>Engage with your audience effectively.</p>
+                                        <p>Preparation for digital marketing certifications and career advancement</p>
                                     </li>
                                 </ul>
                             </div>
@@ -80,8 +80,8 @@ const Digitalmarketing = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000 </span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹11,500 </span>
+                    <span className="text-xl font-semibold">Duration: 35 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

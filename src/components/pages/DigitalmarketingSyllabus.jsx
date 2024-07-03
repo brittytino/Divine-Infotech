@@ -3,113 +3,113 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 
 const syllabus = [
-    {
-      phase: "Phase 1: Introduction to Digital Marketing",
-      topics: [
-        {
-          title: "Overview of Digital Marketing Landscape",
-          details: [
-            "Introduction to digital marketing landscape",
-            "Importance of digital presence for businesses",
-            "Introduction to key digital marketing channels",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Website and Content Strategy",
-      topics: [
-        {
-          title: "Basics of Website Planning and Design",
-          details: [
-            "Basics of website planning and design",
-          ],
-        },
-        {
-          title: "Content Creation and Optimization",
-          details: [
-            "Content creation and optimization",
-          ],
-        },
-        {
-          title: "SEO Fundamentals",
-          details: [
-            "SEO fundamentals",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Social Media Marketing",
-      topics: [
-        {
-          title: "Understanding Major Social Media Platforms",
-          details: [
-            "Understanding major social media platforms",
-          ],
-        },
-        {
-          title: "Creating Effective Social Media Campaigns",
-          details: [
-            "Creating effective social media campaigns",
-          ],
-        },
-        {
-          title: "Engagement and Analytics",
-          details: [
-            "Engagement and analytics",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Paid Advertising",
-      topics: [
-        {
-          title: "Introduction to PPC (Pay-Per-Click) Advertising",
-          details: [
-            "Introduction to PPC (Pay-Per-Click) advertising",
-          ],
-        },
-        {
-          title: "Display Advertising Fundamentals",
-          details: [
-            "Display advertising fundamentals",
-          ],
-        },
-        {
-          title: "Campaign Setup and Optimization",
-          details: [
-            "Campaign setup and optimization",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Analytics and Optimization",
-      topics: [
-        {
-          title: "Web Analytics Tools and Metrics",
-          details: [
-            "Web analytics tools and metrics",
-          ],
-        },
-        {
-          title: "Conversion Rate Optimization (CRO)",
-          details: [
-            "Conversion rate optimization (CRO)",
-          ],
-        },
-        {
-          title: "Reporting and Performance Measurement",
-          details: [
-            "Reporting and performance measurement",
-          ],
-        },
-      ],
-    },
-  ];
-  
+  {
+    phase: "Phase 1: Introduction to Digital Marketing (Days 1-5)",
+    topics: [
+      {
+        title: "Overview of Digital Marketing",
+        details: [
+          "Evolution of digital marketing and its importance",
+          "Key digital marketing channels and platforms",
+          "Understanding the digital marketing ecosystem"
+        ],
+      },
+      {
+        title: "Digital Marketing Strategy",
+        details: [
+          "Setting SMART goals for digital marketing campaigns",
+          "Understanding buyer personas and target audience segmentation",
+          "Creating effective digital marketing strategies"
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Website Planning and Development (Days 6-10)",
+    topics: [
+      {
+        title: "Website Basics",
+        details: [
+          "Essential elements of a successful website",
+          "User experience (UX) and user interface (UI) considerations",
+          "Mobile responsiveness and website speed optimization"
+        ],
+      },
+      {
+        title: "Content Management Systems (CMS)",
+        details: [
+          "Introduction to popular CMS platforms (e.g., WordPress)",
+          "Content planning and creation strategies",
+          "SEO-friendly content writing and optimization"
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Search Engine Optimization (SEO) (Days 11-20)",
+    topics: [
+      {
+        title: "SEO Fundamentals",
+        details: [
+          "Understanding search engine algorithms",
+          "On-page SEO techniques (meta tags, keyword optimization)",
+          "Off-page SEO strategies (link building, social media signals)"
+        ],
+      },
+      {
+        title: "SEO Tools and Analytics",
+        details: [
+          "Using Google Analytics for SEO insights",
+          "Keyword research and competitive analysis tools",
+          "Monitoring and reporting SEO performance"
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Social Media Marketing (Days 21-28)",
+    topics: [
+      {
+        title: "Social Media Landscape",
+        details: [
+          "Overview of major social media platforms (Facebook, Instagram, Twitter, LinkedIn)",
+          "Developing a social media marketing plan",
+          "Creating engaging content and managing social media campaigns"
+        ],
+      },
+      {
+        title: "Paid Advertising on Social Media",
+        details: [
+          "Introduction to social media advertising platforms (Facebook Ads, Instagram Ads)",
+          "Setting up and optimizing paid ad campaigns",
+          "Budgeting, targeting, and measuring ad performance"
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Email Marketing and Digital Analytics (Days 29-35)",
+    topics: [
+      {
+        title: "Email Marketing Fundamentals",
+        details: [
+          "Building an email list and segmentation strategies",
+          "Designing effective email campaigns",
+          "Email automation and A/B testing"
+        ],
+      },
+      {
+        title: "Digital Marketing Analytics",
+        details: [
+          "Introduction to digital marketing analytics tools (Google Analytics, HubSpot)",
+          "Interpreting key metrics and KPIs",
+          "Data-driven decision-making and campaign optimization"
+        ],
+      },
+    ],
+  },
+];
+
 
 const DigitalmarketingSyllabus = () => {
     const [openSections, setOpenSections] = useState(new Array(syllabus.length).fill(false));

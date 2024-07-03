@@ -2,142 +2,144 @@ import React, { useState, useRef } from 'react';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
-    {
-      phase: "Phase 1: Introduction to Data Analysis (Days 1-5)",
-      topics: [
-        {
-          title: "Introduction to Data Analysis",
-          details: [
-            "Overview of data analysis process",
-            "Importance of Python in data analysis",
-          ],
-        },
-        {
-          title: "Setting Up Python Environment",
-          details: [
-            "Installing Anaconda distribution",
-            "Introduction to Jupyter Notebooks",
-          ],
-        },
-        {
-          title: "Python Basics Review",
-          details: [
-            "Quick review of Python programming fundamentals relevant to data analysis",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 2: Data Manipulation with Pandas (Days 6-10)",
-      topics: [
-        {
-          title: "Introduction to Pandas",
-          details: [
-            "Series and DataFrame objects",
-            "Indexing, slicing, and subsetting data",
-          ],
-        },
-        {
-          title: "Data Cleaning and Preparation",
-          details: [
-            "Handling missing data",
-            "Data transformation: merging, joining, and reshaping",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 3: Data Visualization with Matplotlib and Seaborn (Days 11-15)",
-      topics: [
-        {
-          title: "Introduction to Data Visualization",
-          details: [
-            "Importance of data visualization in analysis",
-          ],
-        },
-        {
-          title: "Matplotlib",
-          details: [
-            "Basic plots: line plots, bar plots, scatter plots",
-            "Customizing plots: labels, legends, colors",
-          ],
-        },
-        {
-          title: "Seaborn",
-          details: [
-            "Statistical data visualization",
-            "Seaborn plots: histograms, box plots, pair plots",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 4: Exploratory Data Analysis (EDA) (Days 16-20)",
-      topics: [
-        {
-          title: "Exploratory Data Analysis",
-          details: [
-            "Summary statistics and descriptive analysis",
-            "Distribution analysis and outlier detection",
-          ],
-        },
-        {
-          title: "Correlation and Heatmaps",
-          details: [
-            "Correlation analysis between variables",
-            "Visualizing correlations using heatmaps",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 5: Statistical Analysis with Python (Days 21-25)",
-      topics: [
-        {
-          title: "Statistical Tests and Hypothesis Testing",
-          details: [
-            "Introduction to statistical tests: t-tests, chi-square tests",
-            "Conducting hypothesis tests using Python",
-          ],
-        },
-        {
-          title: "Advanced Visualization Techniques",
-          details: [
-            "Advanced plotting techniques with Matplotlib and Seaborn",
-            "Interactive visualization with Plotly",
-          ],
-        },
-      ],
-    },
-    {
-      phase: "Phase 6: Time Series Analysis (Days 26-30)",
-      topics: [
-        {
-          title: "Introduction to Time Series Data",
-          details: [
-            "Handling time series data in Python",
-            "Time series visualization and analysis",
-          ],
-        },
-        {
-          title: "Forecasting Techniques",
-          details: [
-            "Introduction to forecasting methods",
-            "Implementing basic forecasting models in Python",
-          ],
-        },
-        {
-          title: "Final Project and Review",
-          details: [
-            "Final Data Analysis Project",
-            "Applying learned concepts to analyze a real-world dataset",
-            "Presenting findings and insights from the analysis",
-          ],
-        },
-      ],
-    },
-  ];
-  
+  {
+    phase: "Phase 1: Introduction to Python for Data Analysis (Days 1-7)",
+    topics: [
+      {
+        title: "Introduction to Python",
+        details: [
+          "Overview of Python programming language",
+          "Setting up Python environment (Anaconda, Jupyter Notebook)",
+          "Basic Python syntax and data types",
+        ],
+      },
+      {
+        title: "NumPy for Numerical Computing",
+        details: [
+          "Introduction to NumPy arrays and operations",
+          "Array manipulation and broadcasting",
+          "Linear algebra with NumPy",
+        ],
+      },
+      {
+        title: "Pandas for Data Handling",
+        details: [
+          "Introduction to Pandas DataFrames and Series",
+          "Data manipulation and cleaning with Pandas",
+          "Indexing, slicing, and filtering data",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 2: Data Visualization with Matplotlib and Seaborn (Days 8-14)",
+    topics: [
+      {
+        title: "Introduction to Data Visualization",
+        details: [
+          "Importance of data visualization in analysis",
+          "Overview of Matplotlib and Seaborn libraries",
+          "Creating basic plots (line plots, scatter plots, bar charts)",
+        ],
+      },
+      {
+        title: "Advanced Data Visualization",
+        details: [
+          "Customizing plots with Matplotlib",
+          "Visualizing relationships with Seaborn (scatter plots, pair plots)",
+          "Plotting categorical data (bar plots, box plots)",
+        ],
+      },
+      {
+        title: "Interactive Visualization with Plotly",
+        details: [
+          "Introduction to Plotly for interactive plotting",
+          "Creating interactive dashboards and visualizations",
+          "Incorporating Plotly into Jupyter Notebooks",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 3: Data Analysis and Statistics (Days 15-21)",
+    topics: [
+      {
+        title: "Descriptive Statistics",
+        details: [
+          "Measures of central tendency and dispersion",
+          "Summarizing data distributions",
+        ],
+      },
+      {
+        title: "Statistical Testing",
+        details: [
+          "Introduction to hypothesis testing",
+          "Performing t-tests and chi-square tests",
+          "Interpreting p-values and significance",
+        ],
+      },
+      {
+        title: "Correlation and Regression Analysis",
+        details: [
+          "Understanding correlation between variables",
+          "Linear and logistic regression models",
+          "Model evaluation and interpretation",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 4: Data Wrangling and Advanced Techniques (Days 22-28)",
+    topics: [
+      {
+        title: "Data Cleaning and Preprocessing",
+        details: [
+          "Handling missing data and outliers",
+          "Data normalization and standardization",
+          "Reshaping data with Pandas",
+        ],
+      },
+      {
+        title: "Time Series Analysis",
+        details: [
+          "Introduction to time series data",
+          "Analyzing trends and seasonality",
+          "Forecasting with time series models",
+        ],
+      },
+      {
+        title: "Dimensionality Reduction and Clustering",
+        details: [
+          "Principal Component Analysis (PCA)",
+          "Clustering algorithms (K-means, hierarchical clustering)",
+          "Visualizing clusters and interpreting results",
+        ],
+      },
+    ],
+  },
+  {
+    phase: "Phase 5: Real-World Applications and Project Work (Days 29-35)",
+    topics: [
+      {
+        title: "Case Studies and Project Implementation",
+        details: [
+          "Analyzing real-world datasets (e.g., finance, healthcare)",
+          "Identifying insights and drawing conclusions",
+          "Documenting and presenting findings",
+        ],
+      },
+      {
+        title: "Capstone Project",
+        details: [
+          "Developing a comprehensive data analysis project",
+          "Applying all learned techniques and methodologies",
+          "Presenting the project and receiving feedback",
+        ],
+      },
+    ],
+  },
+];
+
 
     
 

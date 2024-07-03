@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDownIcon, MenuIcon } from '@heroicons/react/outline';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from '../images/logo.png';
 import ScrollToTop from './ScrollToTop';
-import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [openNav, setOpenNav] = useState(false);
@@ -10,22 +10,19 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleNavigation = (path) => {
     navigate(path);
+    setOpenNav(false);
   }
 
   const navItems = [
     { title: "Home", href: "/" },
-    {
-      title: "Courses",
-      href: '/courses'
-    },
-    {
-      title: "Services",
-      href: '/services'
-    },
+    { title: "Courses", href: "/courses" },
+    { title: "Services", href: "/services" },
     { title: "Faculty", href: "#" },
-    { title: "Support", href: "#" },
+    { title: "Support", href: "#footer" },
     { title: "About Us", href: "#about" },
   ];
 
@@ -35,15 +32,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
+      setIsSticky(window.scrollY > 0);
     };
-
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -60,7 +51,7 @@ const Navbar = () => {
           {navItems.slice(0, 5).map((item, index) => (
             item.items ? (
               <div key={index} className="relative">
-                <button onClick={() => handleDropdownToggle(index)} className="flex items-center hover:text-[#453fe1] transition-all">
+                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600'}`}>
                   {item.title}
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
                 </button>
@@ -77,7 +68,7 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <a key={index} href={item.href} className="text-gray-600 hover:text-[#453fe1] transition-all">
+              <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
                 {item.title}
               </a>
             )
@@ -85,14 +76,14 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex space-x-6 items-center">
           {navItems.slice(5).map((item, index) => (
-            <a key={index} href={item.href} className="text-gray-600 hover:text-blue-500 transition-all">
+            <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
               {item.title}
             </a>
           ))}
-          <button className="bg-blue-700 hover:bg-blue-800 py-2 px-4 rounded-md text-[#f8f8fd]">Contact</button>
+         <button onClick={() => handleNavigation('/contact')} className="bg-blue-700 hover:bg-blue-800 py-2 px-4 rounded-md text-[#f8f8fd]">Contact</button>
         </div>
         <button className="lg:hidden" onClick={() => setOpenNav(!openNav)}>
-          {openNav ? <MenuIcon className="h-6 w-6" strokeWidth={2} /> : <MenuIcon className="h-6 w-6" strokeWidth={2} />}
+          <MenuIcon className="h-6 w-6" strokeWidth={2} />
         </button>
       </div>
       {openNav && (
@@ -100,7 +91,7 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             item.items ? (
               <div key={index}>
-                <button onClick={() => handleDropdownToggle(index)} className="flex items-center text-gray-900 hover:text-blue-500 transition-all">
+                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-900 hover:text-blue-500'}`}>
                   {item.title}
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
                 </button>
@@ -117,7 +108,7 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <a key={index} href={item.href} className="text-gray-900 hover:text-blue-500 transition-all">
+              <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-900 hover:text-blue-500'}`}>
                 {item.title}
               </a>
             )

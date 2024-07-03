@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaRegLightbulb,  } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import AdvancestockTradingSyllabus from './AdvancestockTradingSyllabus';
 
@@ -64,11 +64,11 @@ const AdvancestockTrading = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Understand derivatives and advanced instruments.</p>
+                                        <p>Guidance from experienced instructors with trading expertise</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Develop a comprehensive trading plan.</p>
+                                        <p>Access to resources and community support</p>
                                     </li>
                                 </ul>
                             </div>
@@ -78,8 +78,8 @@ const AdvancestockTrading = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000</span>
-                    <span className="text-xl font-semibold">Duration: 40 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹11,500</span>
+                    <span className="text-xl font-semibold">Duration: 45 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

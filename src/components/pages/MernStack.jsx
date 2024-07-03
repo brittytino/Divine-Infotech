@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, FaRegLightbulb, FaGraduationCap, FaFolderOpen, FaHandsHelping, FaRegClock } from 'react-icons/fa';
+import { FaDatabase, FaNodeJs, FaReact, FaCloud, FaProjectDiagram, FaCode, FaTools, FaServer, FaUsers, } from 'react-icons/fa';
 
 
 import videoFile from './videos/fullstack.mp4';
@@ -46,35 +46,36 @@ const MernStack = () => {
                                 </video>
                             </div>
                         </div>
-
-                        {/* course Highlights */}
+                        {/* Course Highlights */}
                         <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col justify-between bg-white p-8 rounded-md shadow-lg border border-blue-400">
-                            <div>
-                                <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
-                                <ul className="space-y-4 text-gray-800">
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master MongoDB, Express.js, and React from basics to advanced.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build RESTful APIs and dynamic UIs with state management.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
-                                        <p>Implement authentication using JWT for secure applications.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Deploy MERN stack apps and optimize performance.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore real-time applications with WebSocket and Socket.IO.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+    <div>
+        <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
+        <ul className="space-y-4 text-gray-800">
+            <li className="flex items-start">
+                <FaCode className="text-blue-600 w-8 h-8 mr-3" />
+                <p>Comprehensive curriculum from basics to advanced concepts</p>
+            </li>
+            <li className="flex items-start">
+                <FaCode className="text-blue-600 w-8 h-8 mr-3" />
+                <p>Hands-on projects and real-world application development</p>
+            </li>
+            <li className="flex items-start">
+                <FaCode className="text-blue-600 w-8 h-8 mr-3" />
+                <p>Expert guidance and support</p>
+            </li>
+            <li className="flex items-start">
+                <FaCode className="text-blue-600 w-8 h-8 mr-3" />
+                <p>Access to a community of fellow learners and professionals</p>
+            </li>
+            <li className="flex items-start">
+                <FaCode className="text-blue-600 w-8 h-8 mr-3" />
+                <p>Career advice and portfolio building</p>
+            </li>
+        </ul>
+    </div>
+</div>;
+
+
 
 
 
@@ -82,15 +83,15 @@ const MernStack = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹12,000</span>
-                    <span className="text-xl font-semibold">Duration: 50 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹11,500</span>
+                    <span className="text-xl font-semibold">Duration: 35 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                  {/* <a href="#footer"><button className='font-medium py-2 px-4 rounded-md text-xs transition-all text-blue-500 mt-5 hover:text-blue-700 '>Need more info ?</button></a>   */}
+                    {/* <a href="#footer"><button className='font-medium py-2 px-4 rounded-md text-xs transition-all text-blue-500 mt-5 hover:text-blue-700 '>Need more info ?</button></a>   */}
                 </div>
 
                 {/* Syllabus FAQ */}
@@ -184,7 +185,7 @@ const MernStack = () => {
                     <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
                         <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
-                   
+
                 </div>
             </div>
         </div>

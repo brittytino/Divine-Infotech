@@ -19,7 +19,8 @@ const CoursesPage = () => {
         "Programming Fundamentals",
         "Digital Marketing Fundamentals",
         "Prompt Engineering",
-        "Git and GitHub"
+        "Git and GitHub",
+        "Aptitude"
     ];
 
     const toggleDropdown = () => {
@@ -75,7 +76,7 @@ const CoursesPage = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-8">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-6">
                 {courses
                     .filter(course => {
                         if (selectedCategory === "All") {
@@ -103,6 +104,7 @@ const CoursesPage = () => {
                         </div>
                     ))}
             </div>
+           
         </section>
     );
 };

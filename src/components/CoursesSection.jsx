@@ -18,7 +18,8 @@ const CoursesSection = () => {
         "Java Programming",
         "Programming Fundamentals",
         "Digital Marketing Fundamentals",
-        "Git and GitHub"
+        "Git and GitHub",
+        "Aptitude"
     ];
 
     const handleCategoryChange = (category) => {
@@ -73,7 +74,11 @@ const CoursesSection = () => {
                             <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
                             <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
                             <div className="flex justify-between items-center">
-                                <span className="md:text-lg text-base font-semibold text-blue-600">{course.price}</span>
+                                <div className=' flex gap-4'>
+
+                                
+                                <span className="md:text-lg text-base font-semibold text-blue-600 decoration-red-700 line-through">{course.oldFees}</span>
+                                <span className="md:text-lg text-base font-semibold text-blue-600">{course.price}</span></div>
                                 <a href={course.url}>
                                     <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                                         Enroll Now

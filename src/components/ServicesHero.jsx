@@ -20,7 +20,7 @@ const ServicesHero = () => {
     };
 
     return (
-        <div className="bg-green-50 flex items-center pt-20 pb-32 px-6 lg:px-24">
+        <div className="bg-blue-50 flex items-center pt-20 pb-32 px-6 lg:px-24">
             <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
                 <div className="lg:w-1/2 md:mb-5 lg:mb-0">
                     <h3 className="text-gray-700 text-sm md:text-base">Web Development and Digital Marketing Firm</h3>

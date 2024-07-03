@@ -3,136 +3,117 @@ import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const syllabus = [
     {
-        phase: "Phase 1: Introduction to Programming and Basics of C (Days 1-5)",
+        phase: "Phase 1: Introduction to Programming (Days 1-7)",
         topics: [
             {
-                title: "Day 1-2: Introduction to Programming",
+                title: "Objective: Establish a foundational understanding of programming concepts and logic.",
                 details: [
-                    "Overview of programming languages and their importance",
-                    "Introduction to algorithms and problem-solving techniques",
+                    "Introduction to Programming",
+                    "Overview of programming paradigms (procedural, object-oriented)",
+                    "Importance of algorithms and problem-solving techniques",
+                    "Basics of compiling and executing programs",
                 ],
             },
             {
-                title: "Day 3-4: Basics of C Programming",
+                title: "Introduction to C Programming",
                 details: [
-                    "Introduction to C programming language",
-                    "Variables, data types, operators, and expressions",
-                    "Control flow: if-else statements, loops, switch-case",
-                ],
-            },
-            {
-                title: "Day 5: Functions and Arrays in C",
-                details: [
-                    "Functions: declaration, definition, and recursion",
-                    "Arrays: single-dimensional and multi-dimensional arrays",
+                    "Structure of a C program",
+                    "Variables, data types, and operators in C",
+                    "Control flow statements (if-else, loops) in C",
                 ],
             },
         ],
     },
     {
-        phase: "Phase 2: Intermediate C++ Programming (Days 6-10)",
+        phase: "Phase 2: Object-Oriented Programming with C++ (Days 8-14)",
         topics: [
             {
-                title: "Day 6-7: Object-Oriented Programming in C++",
+                title: "Objective: Learn the principles of object-oriented programming (OOP) using C++.",
                 details: [
-                    "Classes and objects in C++",
+                    "Basics of C++ Programming",
+                    "Classes, objects, and methods in C++",
+                    "Encapsulation and data abstraction",
+                    "Inheritance and polymorphism in C++",
+                ],
+            },
+            {
+                title: "Advanced Concepts in C++",
+                details: [
+                    "Templates and generic programming in C++",
+                    "Exception handling and error management",
+                    "Standard Template Library (STL) overview",
+                ],
+            },
+        ],
+    },
+    {
+        phase: "Phase 3: Python Programming Fundamentals (Days 15-21)",
+        topics: [
+            {
+                title: "Objective: Explore Python's syntax, data structures, and application development capabilities.",
+                details: [
+                    "Introduction to Python",
+                    "Python language fundamentals and syntax",
+                    "Variables, data types, and basic operators",
+                    "Control flow statements (if-else, loops) in Python",
+                ],
+            },
+            {
+                title: "Data Structures in Python",
+                details: [
+                    "Lists, tuples, dictionaries, and sets in Python",
+                    "Understanding mutability and immutability",
+                    "Iterators and generators in Python",
+                ],
+            },
+        ],
+    },
+    {
+        phase: "Phase 4: Core Java Programming (Days 22-28)",
+        topics: [
+            {
+                title: "Objective: Develop foundational skills in Java programming for application development.",
+                details: [
+                    "Introduction to Java",
+                    "Overview of Java language and its platform",
+                    "Setting up Java development environment (JDK, IDEs)",
+                    "Writing and executing Java programs",
+                ],
+            },
+            {
+                title: "Object-Oriented Programming in Java",
+                details: [
+                    "Classes, objects, and methods in Java",
                     "Inheritance, polymorphism, and encapsulation",
-                ],
-            },
-            {
-                title: "Day 8-9: C++ Programming Constructs",
-                details: [
-                    "Pointers and references in C++",
-                    "Exception handling and file handling",
-                ],
-            },
-            {
-                title: "Day 10: Standard Template Library (STL)",
-                details: [
-                    "Overview of STL containers (vectors, lists, maps)",
-                    "STL algorithms (sorting, searching)",
+                    "Interfaces and abstract classes in Java",
                 ],
             },
         ],
     },
     {
-        phase: "Phase 3: Python Programming Fundamentals (Days 11-15)",
+        phase: "Phase 5: Application Development and Project (Days 29-30)",
         topics: [
             {
-                title: "Day 11-12: Introduction to Python",
+                title: "Objective: Apply learned concepts to develop basic applications in each programming language.",
                 details: [
-                    "Overview of Python programming language",
-                    "Variables, data types, operators, and expressions",
+                    "Programming Exercises",
+                    "Solving programming problems using C, C++, Python, and Java",
+                    "Implementing algorithms and data structures",
+                    "Hands-on coding exercises to reinforce learning",
                 ],
             },
             {
-                title: "Day 13-14: Control Flow and Functions in Python",
+                title: "Capstone Project",
                 details: [
-                    "Control flow: if-else statements, loops",
-                    "Functions: defining functions, lambda functions",
-                ],
-            },
-            {
-                title: "Day 15: Data Structures in Python",
-                details: [
-                    "Lists, tuples, dictionaries, and sets",
-                    "File handling and exception handling in Python",
-                ],
-            },
-        ],
-    },
-    {
-        phase: "Phase 4: Java Programming Basics (Days 16-20)",
-        topics: [
-            {
-                title: "Day 16-17: Introduction to Java",
-                details: [
-                    "Basics of Java programming language",
-                    "Setting up Java Development Environment (JDK, IDE)",
-                ],
-            },
-            {
-                title: "Day 18-19: Object-Oriented Programming in Java",
-                details: [
-                    "Classes, objects, inheritance, polymorphism",
-                    "Abstract classes and interfaces",
-                ],
-            },
-            {
-                title: "Day 20: Arrays and Collections in Java",
-                details: [
-                    "Arrays: single-dimensional and multi-dimensional arrays",
-                    "Overview of Java collections framework (lists, sets, maps)",
-                ],
-            },
-        ],
-    },
-    {
-        phase: "Phase 5: Advanced Topics and Project Work (Days 21-25)",
-        topics: [
-            {
-                title: "Day 21-22: Advanced Concepts in Programming",
-                details: [
-                    "Recursion and dynamic programming",
-                    "Introduction to algorithms and data structures",
-                ],
-            },
-            {
-                title: "Day 23-24: Introduction to GUI Programming (Optional)",
-                details: [
-                    "Basics of GUI programming with Java Swing or Python Tkinter",
-                ],
-            },
-            {
-                title: "Day 25: Final Project and Review",
-                details: [
-                    "Designing and implementing a small project integrating concepts from C, C++, Python, and Java",
-                    "Project presentation and review",
+                    "Developing a small application or module in each language",
+                    "Applying programming concepts and best practices",
+                    "Presenting the project and receiving feedback",
                 ],
             },
         ],
     },
 ];
+
 
 
 const ProgrammingFundamentalsSyllabus = () => {

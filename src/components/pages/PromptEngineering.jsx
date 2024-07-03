@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaRegLightbulb, FaBook, FaHandsHelping, FaRegClock, FaCode, FaUsers } from 'react-icons/fa';
 
-import videoFile from './videos/fullstack.mp4';
+import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import PromptEngineeringSyllabus from './PromptEngineeringSyllabus';
 
@@ -64,7 +64,7 @@ const PromptEngineering = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Guidance on best programming practices and documentation.</p>
+                                        <p>Preparation for entry-level prompt engineering roles</p>
                                     </li>
                                 </ul>
                             </div>
@@ -74,8 +74,8 @@ const PromptEngineering = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹6,000 (Online)</span>
-                    <span className="text-xl font-semibold">Duration: 20 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹6,000</span>
+                    <span className="text-xl font-semibold">Duration: 25 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

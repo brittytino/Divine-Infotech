@@ -65,11 +65,11 @@ const FundamentalsofgameDev = () => {
                                     </li>
                                     <li className="flex items-start">
                                         <FaRegClock className="text-2xl text-blue-600 mr-3" />
-                                        <p>Develop and integrate game art and animations.</p>
+                                        <p>Access to resources and community support.</p>
                                     </li>
                                     <li className="flex items-start">
                                         <FaCode className="text-2xl text-blue-600 mr-3" />
-                                        <p>Build and test a complete functional game.</p>
+                                        <p>Preparation of a game development portfolio.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -78,8 +78,8 @@ const FundamentalsofgameDev = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹4,200</span>
-                    <span className="text-xl font-semibold">Duration: 20 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹4,000</span>
+                    <span className="text-xl font-semibold">Duration: 25 days</span>
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>

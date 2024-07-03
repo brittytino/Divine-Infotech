@@ -42,7 +42,7 @@ import Services from './components/Services';
 import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundPolicy from './components/RefundPolicy';
-import Contact from './components/Contact';
+import ContactServices from './components/ContactFormServices';
 
 
 
@@ -73,7 +73,7 @@ const App = () => {
         <Route path='/terms' element={<TermsAndConditions/>}/>
         <Route path='/privacypolicy' element={<PrivacyPolicy/>}/>
         <Route path='/RefundPolicy' element={<RefundPolicy/>}/>
-        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/contact' element={<ContactServices/>}/>
 
 
       </Routes>

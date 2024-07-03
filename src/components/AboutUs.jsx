@@ -1,11 +1,24 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import aboutImg from '../images/about.png';
+import { useInView } from 'react-intersection-observer';
 
 const AboutUs = () => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2 // Adjust threshold as needed
+    });
+
     return (
         <section id="about" className="py-16 px-4 pt-14 md:pt-20 md:px-10 lg:px-24 bg-[#1e40af] text-[#fafafc] grid grid-cols-1 lg:grid-cols-2">
-            <div className="max-w-6xl mx-auto">
+            <motion.div
+                ref={ref}
+                className="max-w-6xl mx-auto"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+                transition={{ duration: 0.8 }}
+            >
                 <h2 className="text-3xl md:text-4xl font-semibold mb-4 md:mb-8 text-left">
                     About Divine Infotech
                 </h2>
@@ -26,11 +39,17 @@ const AboutUs = () => {
                         Learn More
                     </Link>
                 </div>
-            </div>
+            </motion.div>
 
-            <div className="lg:ml-14 md:flex justify-center items-center mt-10">
+            <motion.div
+                ref={ref}
+                className="lg:ml-14 md:flex justify-center items-center mt-10"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
+                transition={{ duration: 0.8 }}
+            >
                 <img src={aboutImg} alt="About Us" className="rounded-md md:h-[400px]" />
-            </div>
+            </motion.div>
         </section>
     );
 };

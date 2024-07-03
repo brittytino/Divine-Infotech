@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import Home from '../images/home.jpg';
 
 const Hero = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
   return (
-    <div className="px-6 bg-[#fafafc] lg:px-12 lg:pl-28 mt-4 md:mt-20 pt-12 lg:flex">
+    <div className={`px-6 bg-[#fafafc] lg:px-12 lg:pl-28 mt-4 md:mt-20 pt-12 lg:flex transition-all duration-1000 ${isLoaded ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-10'}`}>
       {/* Left */}
       <div className="flex-1">
         <h1 className="text-2xl md:text-4xl lg:text-5xl md:mt-2 text-black font-semibold" style={{ lineHeight: '1.4' }}>
@@ -26,12 +32,11 @@ const Hero = () => {
             Contact Us
           </button></a>
         </div>
-
       </div>
 
       {/* Right */}
       <div className="flex-1 mt-10 md:mt-5 lg:pl-6 lg:pr-2">
-        <img src={Home} alt="Learning" className="md:h-[600px] lg:w-[1000px] lg:-mt-32" />
+        <img src={Home} alt="Learning" className="md:h-[600px] lg:w-[1000px] lg:-mt-32 transition-all duration-1000 ease-in-out" style={{ opacity: isLoaded ? 1 : 0 }} />
       </div>
     </div>
   );

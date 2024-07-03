@@ -16,16 +16,16 @@ const Footer = () => {
 
     const usefulLinks = [
         { name: 'About Us', href: '#' },
-        { name: 'Support', href: '#' },
         { name: 'Courses', href: '/courses' },
         { name: 'Services', href: '/services' },
+        { name: 'Contact Us', href: '/contact' },
     ];
-
+ 
     const otherResources = [
         { name: 'Faculty', href: '#' },
         { name: 'Terms & Conditions', href: '/terms' },
         { name: 'Privacy Policy', href: '/privacypolicy' },
-        { name: 'Contact Us', href: '#' },
+        { name: 'Refund Policy', href: '/refundpolicy' },
     ];
 
     return (

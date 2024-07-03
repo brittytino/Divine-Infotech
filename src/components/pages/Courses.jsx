@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import courses from './coursesData';
 
 const CoursesPage = () => {
@@ -88,24 +90,42 @@ const CoursesPage = () => {
                         return course.category === selectedCategory;
                     })
                     .map((course, index) => (
-                        <div key={index} className="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <img className="w-full h-48 object-fill object-center" src={course.img} alt="Course Image" />
-                            <div className="p-6">
-                                <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
-                                <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-lg font-semibold text-blue-600">{course.price}</span>
-                                  <a href={course.url}>  <button className="bg-blue-600 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                                        Enroll Now
-                                    </button></a>
-                                </div>
-                                <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">Duration: {course.duration}</p>
-                            </div>
-                        </div>
+                        <CourseCard key={index} course={course} index={index} />
                     ))}
             </div>
-           
         </section>
+    );
+};
+
+const CourseCard = ({ course, index }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2 // Adjust threshold as needed
+    });
+
+    return (
+        <motion.div
+            ref={ref}
+            className="bg-white shadow-lg rounded-lg overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
+            transition={{ duration: 0.6, delay: 0.1 * index }}
+        >
+            <img className="w-full h-48 object-fill object-center" src={course.img} alt="Course Image" />
+            <div className="p-6">
+                <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
+                <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
+                <div className="flex justify-between items-center">
+                    <span className="text-lg font-semibold text-blue-600">{course.price}</span>
+                    <a href={course.url}>
+                        <button className="bg-blue-600 text-white py-2 px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            Enroll Now
+                        </button>
+                    </a>
+                </div>
+                <p className="text-gray-700 mt-2 text-sm md:text-base font-medium">Duration: {course.duration}</p>
+            </div>
+        </motion.div>
     );
 };
 

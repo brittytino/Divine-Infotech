@@ -22,7 +22,7 @@ const Navbar = () => {
     { title: "Courses", href: "/courses" },
     { title: "Services", href: "/services" },
     { title: "Faculty", href: "#" },
-    { title: "Support", href: "#footer" },
+    { title: "", href: "#footer" },
     { title: "About Us", href: "#about" },
   ];
 

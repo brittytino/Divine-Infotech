@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 import Slider from 'react-slick';
+import { useInView } from 'react-intersection-observer';
 import ServiceImg1 from '../images/service img1.png';
 import ServiceImg2 from '../images/service img 2.png';
 import ServiceImg3 from '../images/service_img_3.png';
@@ -19,8 +21,19 @@ const ServicesHero = () => {
         arrows: false
     };
 
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Trigger animation once
+        threshold: 0.3 // Trigger animation when 30% of the element is in view
+    });
+
     return (
-        <div className="bg-blue-50 flex items-center pt-20 pb-32 px-6 lg:px-24">
+        <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="bg-blue-50 flex items-center pt-20 pb-32 px-6 lg:px-24"
+        >
             <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
                 <div className="lg:w-1/2 md:mb-5 lg:mb-0">
                     <h3 className="text-gray-700 text-sm md:text-base">Web Development and Digital Marketing Firm</h3>
@@ -43,7 +56,7 @@ const ServicesHero = () => {
                     </Slider>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

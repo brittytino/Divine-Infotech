@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaRegLightbulb,  } from 'react-icons/fa';
+import { FaRegLightbulb } from 'react-icons/fa';
 
 import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
@@ -21,6 +21,14 @@ const AdvancestockTrading = () => {
             { label: 'Not Really', percentage: '0%' },
         ],
     };
+
+    const courseHighlights = [
+        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Master the fundamentals of stock trading.' },
+        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Explore advanced trading strategies.' },
+        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Learn quantitative trading techniques.' },
+        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Guidance from experienced instructors with trading expertise.' },
+        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Access to resources and community support.' },
+    ];
 
     return (
         <div className="bg-gray-200 text-gray-900">
@@ -50,30 +58,15 @@ const AdvancestockTrading = () => {
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master the fundamentals of stock trading.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Explore advanced trading strategies.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn quantitative trading techniques.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Guidance from experienced instructors with trading expertise</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
-                                        <p>Access to resources and community support</p>
-                                    </li>
+                                    {courseHighlights.map((highlight, index) => (
+                                        <li key={index} className="flex items-start">
+                                            {highlight.icon}
+                                            <p>{highlight.text}</p>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </section>
 
@@ -82,9 +75,11 @@ const AdvancestockTrading = () => {
                     <span className="text-xl font-semibold">Duration: 45 days</span>
                 </div>
 
-                <div className='md:pl-60 pl-6 flex flex-col'>
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
-                        <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
+                <div className="md:pl-60 pl-6 flex flex-col">
+                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target="_blank" rel="noopener noreferrer">
+                        <button className="font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5">
+                            Enroll Now
+                        </button>
                     </a>
                 </div>
 
@@ -175,9 +170,11 @@ const AdvancestockTrading = () => {
                 {/* Class Rating */}
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
-                <div className='flex flex-col items-center justify-center gap-3'>
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
-                        <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
+                <div className="flex flex-col items-center justify-center gap-3">
+                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target="_blank" rel="noopener noreferrer">
+                        <button className="font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5">
+                            Enroll Now
+                        </button>
                     </a>
                 </div>
             </div>

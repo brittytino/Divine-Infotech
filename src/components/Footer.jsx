@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTwitter, FaFacebookSquare, FaGithub, FaLinkedin, FaDribbble } from 'react-icons/fa';
+import {  FaFacebookSquare, FaGithub, FaLinkedin, FaDribbble } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 
 

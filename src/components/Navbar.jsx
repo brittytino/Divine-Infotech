@@ -18,12 +18,12 @@ const Navbar = () => {
   }
 
   const navItems = [
-    { title: "Home", href: "/" },
-    { title: "Courses", href: "/courses" },
-    { title: "Services", href: "/services" },
-    { title: "Faculty", href: "#" },
+    { title: "HOME", href: "/" },
+    { title: "COURSES", href: "/courses" },
+    { title: "SERVICES", href: "/services" },
+    { title: "TESTIMONIAL", href: "#testimonial" },
     { title: "", href: "#footer" },
-    { title: "About Us", href: "#about" },
+    { title: "ABOUT", href: "#about" },
   ];
 
   const handleDropdownToggle = (index) => {
@@ -41,8 +41,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-[#fafafc] shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all duration-300' : ''}`}>
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
+    <nav className={`bg-[#fafafc] shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all  duration-300' : ''}`}>
+      <div className="container mx-auto flex items-center  justify-between py-4 px-6 md:px-24">
         <div onClick={() => handleNavigation('/')} className="text-xl hover:cursor-pointer font-semibold flex items-center gap-2 text-[#272727]">
           <img src={Logo} alt="Divine Infotech Logo" className='h-14 md:h-16' />
           Divine Infotech

@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import { FiUserCheck, FiCode, FiDollarSign, FiBriefcase, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 
 const WhyChooseDivineInfotech = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [selectedFeature, setSelectedFeature] = useState(null);
+    
+    const navigate = useNavigate();
+  
+    const handleNavigation = (path) => {
+      navigate(path);
+    }
 
     const features = [
         {
@@ -65,12 +72,12 @@ const WhyChooseDivineInfotech = () => {
                     ))}
                 </div>
                 <div className="mt-8 md:mt-12 text-center">
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg mr-4">
+                <a href="/courses">  <button  className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg mr-4">
                         Enroll Now
-                    </button>
-                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg">
+                    </button></a>
+               <a href="/contact">     <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 md:py-4 md:px-8 rounded-lg">
                         Contact Us
-                    </button>
+                    </button></a>
                 </div>
             </div>
 

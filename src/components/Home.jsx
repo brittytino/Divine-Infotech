@@ -7,6 +7,7 @@ import Testimonial from './Testimonial'
 import Stats from './Stats'
 import FaqServices from './FaqServices'
 import ContactServices from './ContactFormServices'
+import SocialServicespage from './SocialServicespage'
 
 
 
@@ -22,7 +23,9 @@ const Home=()=>{
       <AboutUs/>
       <FaqServices/>
       <Testimonial/>
+      
       <ContactServices bgColor="bg-gray-50" />
+      <SocialServicespage/>
       
       
       

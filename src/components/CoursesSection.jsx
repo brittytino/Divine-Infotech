@@ -13,19 +13,7 @@ const CoursesSection = () => {
 
     const categories = [
         "Best Selling",
-        "UI/UX Design",
-        "Web Development",
-        "Mobile App Development",
-        "Game Development",
-        "Prompt Engineering",
-        "Tally",
-        "Stock Market",
-        "Python Programming",
-        "Java Programming",
-        "Programming Fundamentals",
-        "Digital Marketing Fundamentals",
-        "Git and GitHub",
-        "Aptitude"
+        "Free courses"
     ];
 
     const handleCategoryChange = (category) => {

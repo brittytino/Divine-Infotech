@@ -16,8 +16,8 @@ const Stats = () => {
     ];
 
     return (
-        <div className=' px-6 mb-16 md:px-20'>        
-        <div ref={ref} className="bg-gradient-to-r from-blue-600 to-blue-900     rounded-md mt-20 py-14 px-10 md:px-20">
+        <div className=' px-4 mb-16 md:px-20'>        
+        <div ref={ref} className="bg-gradient-to-r from-blue-600 to-blue-800     rounded-lg mt-10 py-14 px-10 md:px-20">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6  text-center text-white">
                     {stats.map((stat, index) => (

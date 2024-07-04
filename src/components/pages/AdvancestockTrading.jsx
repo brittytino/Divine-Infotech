@@ -171,7 +171,7 @@ const AdvancestockTrading = () => {
                 <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
                 <div className="flex flex-col items-center justify-center gap-3">
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target="_blank" rel="noopener noreferrer">
+                    <a href="https://forms.gle/FiifeBofNwDZCgAd9" target="_blank" rel="noopener noreferrer">
                         <button className="font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5">
                             Enroll Now
                         </button>

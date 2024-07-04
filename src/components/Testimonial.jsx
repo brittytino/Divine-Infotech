@@ -11,7 +11,7 @@ const Testimonial = () => {
   // }, []);
 
   return (
-    <div className="testimonials-container bg-white text-blue-700 py-12">
+    <div id='testimonial' className="testimonials-container bg-white text-blue-700 py-12">
   
       <div class="elfsight-app-90157461-fe6c-4866-82d3-687964784247" data-elfsight-app-lazy></div>
     </div>

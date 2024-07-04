@@ -22,7 +22,8 @@ const CoursesPage = () => {
         "Digital Marketing Fundamentals",
         "Prompt Engineering",
         "Git and GitHub",
-        "Aptitude"
+        "Aptitude",
+        "Free courses"
     ];
 
     const toggleDropdown = () => {

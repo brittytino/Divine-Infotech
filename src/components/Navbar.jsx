@@ -15,19 +15,34 @@ const Navbar = () => {
   const handleNavigation = (path) => {
     navigate(path);
     setOpenNav(false);
-  }
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when navigating to a new page
+  };
 
   const navItems = [
-    { title: "HOME", href: "/" },
-    { title: "COURSES", href: "/courses" },
-    { title: "SERVICES", href: "/services" },
-    { title: "TESTIMONIAL", href: "#testimonial" },
-    { title: "", href: "#footer" },
-    { title: "ABOUT", href: "#about" },
+    { title: 'HOME', href: '/' },
+    { title: 'COURSES', href: '/courses' },
+    { title: 'SERVICES', href: '/services' },
+    { title: 'TESTIMONIAL', href: '#testimonial' },
+    { title: '', href: '#footer' },
+    { title: 'ABOUT', href: '#about' },
   ];
 
   const handleDropdownToggle = (index) => {
     setDropdownOpen(dropdownOpen === index ? null : index);
+  };
+
+  const handleClick = (href) => {
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        navigate('/', { state: { target: href } });
+      } else {
+        document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when navigating to a new page
+    }
+    setOpenNav(false);
   };
 
   useEffect(() => {
@@ -35,16 +50,29 @@ const Navbar = () => {
       setIsSticky(window.scrollY > 0);
     };
     window.addEventListener('scroll', handleScroll);
+
+    const handleLocationChange = () => {
+      if (location.state && location.state.target) {
+        const target = location.state.target;
+        setTimeout(() => {
+          document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+        window.history.replaceState({}, document.title);
+      }
+    };
+
+    handleLocationChange();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [location]);
 
   return (
-    <nav className={`bg-[#fafafc] shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all  duration-300' : ''}`}>
-      <div className="container mx-auto flex items-center  justify-between py-4 px-6 md:px-24">
+    <nav className={`bg-[#fafafc] shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all duration-300' : ''}`}>
+      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
         <div onClick={() => handleNavigation('/')} className="text-xl hover:cursor-pointer font-semibold flex items-center gap-2 text-[#272727]">
-          <img src={Logo} alt="Divine Infotech Logo" className='h-14 md:h-16' />
+          <img src={Logo} alt="Divine Infotech Logo" className="h-14 md:h-16" />
           Divine Infotech
         </div>
         <div className="hidden lg:flex space-x-6 text-[#212832]">
@@ -53,7 +81,7 @@ const Navbar = () => {
               <div key={index} className="relative">
                 <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600'}`}>
                   {item.title}
-                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
+                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? 'rotate-180' : ''}`} />
                 </button>
                 {dropdownOpen === index && (
                   <div className="absolute mt-2 w-96 bg-white shadow-lg rounded-lg p-4 z-50">
@@ -68,19 +96,21 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
+              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
                 {item.title}
-              </a>
+              </button>
             )
           ))}
         </div>
         <div className="hidden lg:flex space-x-6 items-center">
           {navItems.slice(5).map((item, index) => (
-            <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
+            <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'}`}>
               {item.title}
-            </a>
+            </button>
           ))}
-         <button onClick={() => handleNavigation('/contact')} className="bg-blue-700 hover:bg-blue-800 py-2 px-4 rounded-md text-[#f8f8fd]">Contact</button>
+          <button onClick={() => handleNavigation('/contact')} className="bg-blue-700 hover:bg-blue-800 py-2 px-4 rounded-md text-[#f8f8fd]">
+            Contact
+          </button>
         </div>
         <button className="lg:hidden" onClick={() => setOpenNav(!openNav)}>
           <MenuIcon className="h-6 w-6" strokeWidth={2} />
@@ -93,7 +123,7 @@ const Navbar = () => {
               <div key={index}>
                 <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-900 hover:text-blue-500'}`}>
                   {item.title}
-                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? "rotate-180" : ""}`} />
+                  <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? 'rotate-180' : ''}`} />
                 </button>
                 {dropdownOpen === index && (
                   <ul className="mt-2 bg-white shadow-lg rounded-lg">
@@ -108,9 +138,9 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <a key={index} href={item.href} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-900 hover:text-blue-500'}`}>
+              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-900 hover:text-blue-500'}`}>
                 {item.title}
-              </a>
+              </button>
             )
           ))}
         </div>

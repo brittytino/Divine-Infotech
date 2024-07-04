@@ -38,7 +38,7 @@ const ContactServices = ({ bgColor }) => {
                         className="mt-6 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all flex items-center"
                         whileHover={{ scale: 1.05 }}
                     >
-                        Consulting Service <FaArrowRight className="ml-2"/>
+                    <a href="/services" className='flex items-center justify-center'>   Consulting Service <FaArrowRight className="ml-2"/></a> 
                     </motion.button>
                 </motion.div>
                 <motion.div

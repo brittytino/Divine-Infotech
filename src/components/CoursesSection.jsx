@@ -24,8 +24,7 @@ const CoursesSection = () => {
         ? courses.filter(course => course.category.includes("Best Selling"))
         : courses.filter(course => course.category.includes(selectedCategory));
 
-    // Adjust max categories to show in mobile and larger screens
-    const maxCategoriesToShow = window.innerWidth < 768 ? 6 : categories.length;
+
 
     return (
         <section id='courses' className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100" ref={sectionRef}>
@@ -38,8 +37,8 @@ const CoursesSection = () => {
                 >
                     Our Courses
                 </motion.h2>
-                <div className="flex flex-wrap pt-6 md:pt-10 gap-2 md:gap-4">
-                    {categories.slice(0, maxCategoriesToShow).map((category, index) => (
+                <div className="flex flex-wrap items-center justify-center pt-6 md:pt-10 gap-2 md:gap-4">
+                    {categories.map((category, index) => (
                         <button
                             key={index}
                             className={`md:px-4 px-3 py-2 rounded-full text-xs md:text-sm font-medium transition-all ${

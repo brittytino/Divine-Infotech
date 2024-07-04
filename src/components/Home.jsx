@@ -8,13 +8,14 @@ import Stats from './Stats'
 import FaqServices from './FaqServices'
 import ContactServices from './ContactFormServices'
 import SocialServicespage from './SocialServicespage'
+import Popup from './Popup'
 
 
 
 const Home=()=>{
     return ( 
         <div>
-    
+    <Popup/>
       <Hero/>
       <AdvantagesSection/> 
       <Courses/> 

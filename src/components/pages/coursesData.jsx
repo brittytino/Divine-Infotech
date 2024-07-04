@@ -215,18 +215,6 @@ const courses = [
 
 
 
-    // Stock Market
-
-    {
-        img: AdvancedStockTradingTechniques,
-        title: "Advanced Stock Trading Techniques",
-        category: ["Stock Market", "Best Selling"],
-        oldFees: "₹13,000",
-        price: "₹11,500",
-        duration: "45 days",
-        url: '/AdvancestockTrading',
-        description: "Master stock trading with advanced technical analysis, quantitative techniques, derivatives, and risk management in this comprehensive course."
-    },
 
 
     // Tally

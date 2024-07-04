@@ -39,11 +39,11 @@ const CoursesPage = () => {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100">
             <div className="max-w-7xl mx-auto mb-8">
                 <h2 className="text-3xl font-semibold text-center text-gray-800 underline underline-offset-4 decoration-blue-500">Our Courses</h2>
-                <div className="relative inline-block text-left w-full md:w-auto">
-                    <div className='flex items-center justify-center pt-10'>
+                <div className="flex justify-center pt-10">
+                    <div className="relative inline-block text-left w-full md:w-auto">
                         <button
                             type="button"
-                            className="inline-flex justify-center w-auto md:w-auto rounded-md shadow-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-all text-white text-sm font-medium focus:outline-none"
+                            className="inline-flex justify-center w-auto rounded-md shadow-sm px-4 py-2 bg-blue-600 hover:bg-blue-700 transition-all text-white text-sm font-medium focus:outline-none"
                             id="options-menu"
                             aria-haspopup="true"
                             aria-expanded={isDropdownOpen ? 'true' : 'false'}
@@ -52,30 +52,30 @@ const CoursesPage = () => {
                             {selectedCategory === 'All' ? 'Select Courses' : selectedCategory}
                             <FaChevronDown className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
                         </button>
-                    </div>
 
-                    {/* Dropdown panel, show/hide based on dropdown state */}
-                    {isDropdownOpen && (
-                        <div
-                            className="origin-top w-full md:w-auto md:right-0 mt-2 md:absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu"
-                            aria-orientation="vertical"
-                            aria-labelledby="options-menu"
-                        >
-                            <div className="py-1">
-                                {categories.map((category, index) => (
-                                    <button
-                                        key={index}
-                                        className={`block px-4 py-2 text-sm text-gray-700 hover:text-black transition-all hover:font-medium hover:bg-blue-100 w-full text-left`}
-                                        role="menuitem"
-                                        onClick={() => handleCategoryChange(category)}
-                                    >
-                                        {category}
-                                    </button>
-                                ))}
+                        {/* Dropdown panel, show/hide based on dropdown state */}
+                        {isDropdownOpen && (
+                            <div
+                                className="origin-top w-full md:w-auto mt-2 md:absolute rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                role="menu"
+                                aria-orientation="vertical"
+                                aria-labelledby="options-menu"
+                            >
+                                <div className="py-1">
+                                    {categories.map((category, index) => (
+                                        <button
+                                            key={index}
+                                            className="block px-4 py-2 text-sm text-gray-700 hover:text-black transition-all hover:font-medium hover:bg-blue-100 w-full text-left"
+                                            role="menuitem"
+                                            onClick={() => handleCategoryChange(category)}
+                                        >
+                                            {category}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
             </div>
 

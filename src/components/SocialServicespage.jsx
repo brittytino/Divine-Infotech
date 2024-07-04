@@ -11,7 +11,7 @@ const SocialServicespage = () =>{
                         <div className="flex flex-col items-center">
                             <FaLinkedin className="text-6xl text-blue-700" />
                             <p className=" text-base md:text-lg mt-2">LinkedIn</p>
-                            <p className="text-gray-600 text-sm">Top Startup India 2023</p>
+                            <p className="text-gray-600 text-sm">100+ Followers</p>
                         </div>
                         <div className="flex flex-col items-center">
                             <FaGoogle className="text-6xl text-red-600" />
@@ -26,7 +26,7 @@ const SocialServicespage = () =>{
                         <div className="flex flex-col items-center">
                             <FaInstagram className="text-6xl text-pink-500" />
                             <p className= " text-base md:text-lg mt-2">Instagram</p>
-                            <p className="text-gray-600 text-sm">35k+ Followers (Family)</p>
+                            <p className="text-gray-600 text-sm">5k+ Followers</p>
                         </div>
                     </div>
                 </div>

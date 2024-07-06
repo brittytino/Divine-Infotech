@@ -4,10 +4,14 @@ import { FaRegLightbulb } from 'react-icons/fa';
 import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import AdvancestockTradingSyllabus from './AdvancestockTradingSyllabus';
+import EnrollmentForm from './EnrollmentForm';
 
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
-
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [price, setPrice] = useState(7000); // Default price
+    const [couponCode, setCouponCode] = useState('');
+    const [notification, setNotification] = useState('');
     const courseData = {
         mostLiked: [
             { count: 350, text: 'Clear explanations' },
@@ -21,14 +25,26 @@ const AdvancestockTrading = () => {
             { label: 'Not Really', percentage: '0%' },
         ],
     };
+    const handleCouponApply = () => {
+       if (couponCode === 'DIVINE30') {
+            setPrice(7000 * 0.7);
+            setNotification('Coupon applied successfully! You got 30% discount.');
+        } else if (couponCode === 'SAVE20') {
+            setPrice(7000 * 0.8);
+            setNotification('Coupon applied successfully! You got 20% discount.');
+        } else {
+            setNotification('Invalid Coupon Code');
+        }
+    };
 
-    const courseHighlights = [
-        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Master the fundamentals of stock trading.' },
-        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Explore advanced trading strategies.' },
-        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Learn quantitative trading techniques.' },
-        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Guidance from experienced instructors with trading expertise.' },
-        { icon: <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />, text: 'Access to resources and community support.' },
-    ];
+    const handleEnrollClick = () => {
+        setIsFormOpen(true);
+    };
+
+    const handleCloseForm = () => {
+        setIsFormOpen(false);
+    };
+    
 
     return (
         <div className="bg-gray-200 text-gray-900">
@@ -58,30 +74,70 @@ const AdvancestockTrading = () => {
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
-                                    {courseHighlights.map((highlight, index) => (
-                                        <li key={index} className="flex items-start">
-                                            {highlight.icon}
-                                            <p>{highlight.text}</p>
-                                        </li>
-                                    ))}
+                                    <li className="flex items-start">
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Master advanced strategies in stock trading.</p>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Explore algorithmic and quantitative trading techniques.</p>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Learn risk management strategies for complex trading scenarios.</p>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Receive personalized mentorship from industry experts.</p>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
+                                        <p>Access exclusive resources and advanced trading tools.</p>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
+
+
                     </div>
                 </section>
 
+
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹11,500</span>
-                    <span className="text-xl font-semibold">Duration: 45 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹{price}</span>
+                    <span className="text-xl font-semibold">Duration: 25 days</span>
                 </div>
 
-                <div className="md:pl-60 pl-6 flex flex-col">
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target="_blank" rel="noopener noreferrer">
-                        <button className="font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5">
-                            Enroll Now
-                        </button>
-                    </a>
+                <div className="flex flex-col md:pl-60 pl-6 mt-5">
+                    <input
+                        type="text"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        placeholder="Enter Coupon Code"
+                        className="mb-2 p-2 border rounded-md"
+                    />
+                    <button
+                        onClick={handleCouponApply}
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700"
+                    >
+                        Apply Coupon
+                    </button>
+                    {notification && (
+                        <div className={`mt-4 p-2 text-center ${notification.includes('Invalid') ? 'text-red-500' : 'text-green-500'}`}>
+                            {notification}
+                        </div>
+                    )}
                 </div>
+
+                <div className='md:pl-60 pl-6 flex flex-col'>
+                    <button
+                        onClick={handleEnrollClick}
+                        className='font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'
+                    >
+                        Enroll Now
+                    </button>
+                </div>
+
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -112,29 +168,30 @@ const AdvancestockTrading = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand and use different types of mobile app architectures.</p>
-                                </li>
-                                <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
-                                    <p>Develop mobile applications with robust UI/UX designs.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Master advanced technical analysis and charting techniques.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Implement native functionality using Dart or Swift.</p>
+                                    <p>Understand and implement complex trading strategies like options, futures, and derivatives.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-teal-600 mr-4" />
-                                    <p>Deploy mobile apps to different platforms and environments.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Develop skills in quantitative analysis and algorithmic trading.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-gray-800 mr-4" />
-                                    <p>Optimize mobile app performance and user experience.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Gain insights into risk management and portfolio optimization techniques.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Learn from real-world case studies and simulations to enhance trading proficiency.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
+
 
                 {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
@@ -144,41 +201,48 @@ const AdvancestockTrading = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Hands-on projects to apply Android development skills.</p>
+                                    <p>Hands-on projects focusing on advanced trading strategies.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Comprehensive coverage of Android UI/UX design and development.</p>
+                                    <p>Comprehensive coverage of risk management in volatile markets.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Guidance on deploying Android applications across platforms.</p>
+                                    <p>Access to cutting-edge trading platforms and tools.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Insights into industry standards and best practices for Android development.</p>
+                                    <p>Guidance from industry professionals with extensive trading experience.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Access to a community of learners and professional mentors.</p>
+                                    <p>Networking opportunities with fellow traders and mentors.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
 
-                {/* Class Rating */}
-                <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
 
-                <div className="flex flex-col items-center justify-center gap-3">
-                    <a href="https://forms.gle/FiifeBofNwDZCgAd9" target="_blank" rel="noopener noreferrer">
-                        <button className="font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5">
-                            Enroll Now
-                        </button>
-                    </a>
+                {/* Ratings and Review */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                    <ClassRating
+                        courseName="Advanced Stock Trading Techniques"
+                        mostLiked={courseData.mostLiked}
+                        expectationsMet={courseData.expectationsMet}
+                    />
                 </div>
             </div>
-        </div>
+
+                {isFormOpen && (
+                    <EnrollmentForm
+                        courseName="Advanced Stock Trading Techniques"
+                        price={price}
+                        onClose={handleCloseForm}
+                    />
+                )}
+            </div>
     );
 };
 

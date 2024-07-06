@@ -3,10 +3,14 @@ import { FaLightbulb, FaCode, FaServer, FaTools, FaUsers } from 'react-icons/fa'
 import videoFile from './videos/common.mp4';
 import ClassRating from '../classRating';
 import ProgrammingFundamentalsSyllabus from './ProgrammingFundamentalsSyllabus';
+import EnrollmentForm from './EnrollmentForm';
 
 const ProgrammingFundamentals = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
-
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [price, setPrice] = useState(7000); // Default price
+    const [couponCode, setCouponCode] = useState('');
+    const [notification, setNotification] = useState('');
     const courseData = {
         mostLiked: [
             { count: 350, text: 'Clear explanations' },
@@ -20,7 +24,26 @@ const ProgrammingFundamentals = () => {
             { label: 'Not Really', percentage: '0%' },
         ],
     };
+    const handleCouponApply = () => {
+       if (couponCode === 'DIVINE30') {
+            setPrice(7000 * 0.7);
+            setNotification('Coupon applied successfully! You got 30% discount.');
+        } else if (couponCode === 'SAVE20') {
+            setPrice(7000 * 0.8);
+            setNotification('Coupon applied successfully! You got 20% discount.');
+        } else {
+            setNotification('Invalid Coupon Code');
+        }
+    };
 
+    const handleEnrollClick = () => {
+        setIsFormOpen(true);
+    };
+
+    const handleCloseForm = () => {
+        setIsFormOpen(false);
+    };
+    
     return (
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
@@ -73,15 +96,41 @@ const ProgrammingFundamentals = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹6,000</span>
-                    <span className="text-xl font-semibold">Duration: 30 days</span>
+                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹{price}</span>
+                    <span className="text-xl font-semibold">Duration: 25 days</span>
+                </div>
+
+                <div className="flex flex-col md:pl-60 pl-6 mt-5">
+                    <input
+                        type="text"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        placeholder="Enter Coupon Code"
+                        className="mb-2 p-2 border rounded-md"
+                    />
+                    <button
+                        onClick={handleCouponApply}
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700"
+                    >
+                        Apply Coupon
+                    </button>
+                    {notification && (
+                        <div className={`mt-4 p-2 text-center ${notification.includes('Invalid') ? 'text-red-500' : 'text-green-500'}`}>
+                            {notification}
+                        </div>
+                    )}
                 </div>
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
-                    <a href="https://forms.gle/FiifeBofNwDZCgAd9" target='_blank' rel='noopener noreferrer'>
-                        <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
-                    </a>
+                    <button
+                        onClick={handleEnrollClick}
+                        className='font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'
+                    >
+                        Enroll Now
+                    </button>
                 </div>
+
+
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -167,17 +216,25 @@ const ProgrammingFundamentals = () => {
                     </section>
                 )}
 
-                {/* Class Rating */}
-                <ClassRating mostLiked={courseData.mostLiked} expectationsMet={courseData.expectationsMet} />
-
-                <div className='flex flex-col items-center justify-center gap-3'>
-                    <a href="https://forms.gle/ygY2fAGq8XWDm3ZT6" target='blank'>
-                        <button className='font-medium py-2 px-4 rounded-md text-2xl mb-10 bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
-                    </a>
-
+                
+                {/* Ratings and Review */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                    <ClassRating
+                        courseName="Fundamentals of C, C++, Python, and Java"
+                        mostLiked={courseData.mostLiked}
+                        expectationsMet={courseData.expectationsMet}
+                    />
                 </div>
             </div>
-        </div>
+
+                {isFormOpen && (
+                    <EnrollmentForm
+                        courseName="Fundamentals of C, C++, Python, and Java"
+                        price={price}
+                        onClose={handleCloseForm}
+                    />
+                )}
+            </div>
     );
 };
 

@@ -43,6 +43,7 @@ import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundPolicy from './components/RefundPolicy';
 import ContactServices from './components/ContactFormServices';
+import Tallyfundamentals from './components/pages/Tallyfundamentals';
 
 
 
@@ -53,6 +54,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/tally" element={<Tallyfundamentals />} />
         <Route path="/MernStack" element={<MernStack />} />
         <Route path='/courses' element={<CoursesPage />} />
         <Route path='/CompletefullStack' element={<CompletefullStack />} />

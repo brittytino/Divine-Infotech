@@ -19,19 +19,19 @@ const EmailMarketingServices = () => {
             <div className="flex pt-10 justify-center mb-4">
               <ul className="flex ">
                 <li
-                  className={`py-2 px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                  className={`py-2 px-4 md:px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                   onClick={() => setActiveTab(1)}
                 >
                   Step: 1
                 </li>
                 <li
-                  className={`py-2 px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                  className={`py-2 px-4 md:px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                   onClick={() => setActiveTab(2)}
                 >
                   Step: 2
                 </li>
                 <li
-                  className={`py-2 px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 3 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
+                  className={`py-2 px-4 md:px-6 text-xl md:text-2xl rounded-sm cursor-pointer ${activeTab === 3 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'}`}
                   onClick={() => setActiveTab(3)}
                 >
                   Step: 3

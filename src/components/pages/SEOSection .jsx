@@ -21,7 +21,7 @@ const SEOSection = () => {
       <div className="w-full md:w-1/2 mb-8 md:mb-0">
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-600">Professional SEO Services</h2>
         <div className="w-20 h-1 bg-blue-700 my-4"></div>
-        <p className="text-gray-700 mb-6">
+        <p className="text-gray-700 mb-6 text-xs md:text-base">
           Elevate your online presence with our professional SEO services. We employ strategic tactics
           including keyword research, on-page optimization, and link building to improve your website’s
           visibility and attract more qualified leads. Let our team of experts optimize your digital presence

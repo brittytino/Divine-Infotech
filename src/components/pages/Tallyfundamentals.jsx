@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock, FaRegLightbulb, FaGraduationCap } from 'react-icons/fa';
+import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock, FaRegLightbulb, FaGraduationCap,FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/Tally Fundamentals & Applications.mp4';
 import ClassRating from '../classRating';
 import TallyfundamentalsSyllabus from './TallyfundamentalsSyllabus';
@@ -133,11 +133,16 @@ const Tallyfundamentals = () => {
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <button
                         onClick={handleEnrollClick}
-                        className='font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'
+                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
+                        style={{ width: 'fit-content' }}
                     >
-                        Enroll Now
+                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
+                    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
+                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance 1</p>
                 </div>
+
+
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

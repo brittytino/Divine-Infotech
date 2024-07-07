@@ -132,36 +132,37 @@ const Azurecloud = () => {
                 </div>
 
                 <div className="flex flex-col md:pl-60 pl-6 mt-5">
-    <input
-        type="text"
-        value={couponCode}
-        onChange={(e) => setCouponCode(e.target.value)}
-        placeholder="Enter Coupon Code"
-        className="mb-2 p-2 border rounded-md"
-    />
-    <button
-        onClick={handleCouponApply}
-        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 text-white border border-blue-500 hover:border-blue-700 hover:bg-white hover:text-blue-700 transition-all duration-300"
-    >
-        Apply Coupon
-    </button>
-    {notification && (
-        <div className={`mt-4 p-2 text-center ${notification.includes('Invalid') ? 'text-red-500' : 'text-green-500'}`}>
-            {notification}
-        </div>
-    )}
-</div>
+                    <input
+                        type="text"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        placeholder="Enter Coupon Code"
+                        className="mb-2 p-2 border rounded-md"
+                    />
+                    <button
+                        onClick={handleCouponApply}
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 text-white border border-blue-500 hover:border-blue-700 hover:bg-white hover:text-blue-700 transition-all duration-300"
+                    >
+                        Apply Coupon
+                    </button>
+                    {notification && (
+                        <div className={`mt-4 p-2 text-center ${notification.includes('Invalid') ? 'text-red-500' : 'text-green-500'}`}>
+                            {notification}
+                        </div>
+                    )}
+                </div>
 
-<div className='md:pl-60 pl-6 flex flex-col'>
-    <button
-        onClick={handleEnrollClick}
-        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
-        style={{ width: 'fit-content' }}
-    >
-        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
-    </button>
-    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
-</div>
+                <div className='md:pl-60 pl-6 flex flex-col'>
+                    <button
+                        onClick={handleEnrollClick}
+                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
+                        style={{ width: 'fit-content' }}
+                    >
+                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
+                    </button>
+                    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
+                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance 1</p>
+                </div>
 
 
 

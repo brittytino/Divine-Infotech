@@ -32,10 +32,10 @@ const Footer = () => {
     // Determine the footer background gradient based on the currentPage
     const getFooterBackground = () => {
         if (pathname === '/services') {
-            return "bg-gradient-to-r from-green-800 to-green-600";
+            return "bg-gradient-to-r from-blue-600 to-blue-700";
         }
         // Default to blue gradient for all other pages
-        return "bg-gradient-to-r from-blue-800 to-blue-600";
+        return "bg-gradient-to-r from-blue-700 to-blue-600";
     };
 
     // Determine the <hr> color based on the currentPage

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
-const EnrollmentForm = ({ courseName, price, onClose }) => {
+const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -9,6 +9,7 @@ const EnrollmentForm = ({ courseName, price, onClose }) => {
         course: courseName,
         background: '',
         fee: price,
+        coupon: appliedCoupon,
     });
     const [result, setResult] = useState('');
 
@@ -31,6 +32,7 @@ const EnrollmentForm = ({ courseName, price, onClose }) => {
         submissionData.append('course', formData.course);
         submissionData.append('background', formData.background);
         submissionData.append('fee', formData.fee);
+        submissionData.append('coupon', formData.coupon);
         submissionData.append('access_key', '5203fa70-07f3-4c97-9ede-b414c14b7e68');
 
         const response = await fetch('https://api.web3forms.com/submit', {
@@ -49,6 +51,7 @@ const EnrollmentForm = ({ courseName, price, onClose }) => {
                 course: courseName,
                 background: '',
                 fee: price,
+                coupon: appliedCoupon,
             });
         } else {
             console.log('Error sending your response, try here directly - divineinfotech.edu@gmail.com', data);
@@ -58,100 +61,107 @@ const EnrollmentForm = ({ courseName, price, onClose }) => {
 
     return (
         <div className="fixed inset-0 z-50 overflow-y-auto">
-            <div className="flex items-center justify-center min-h-screen">
-                <div className="relative bg-white w-full max-w-lg mx-auto p-8 rounded-md shadow-lg border-2 border-blue-400">
+            <div className="flex items-center justify-center min-h-screen bg-black bg-opacity-50">
+                <div className="bg-white p-8 rounded-md shadow-lg max-w-lg mx-auto w-full relative">
                     <button
-                        className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                        className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                         onClick={onClose}
                     >
-                        <FaTimes className="text-xl" />
+                        <FaTimes className="text-2xl" />
                     </button>
-                    <h2 className="text-2xl font-semibold mb-6">Enroll in {courseName}</h2>
-                    <form onSubmit={handleSubmit} className="space-y-4">
-                        <div>
-                            <label htmlFor="name" className="block text-gray-700">Name:</label>
+                    <h2 className="text-2xl font-semibold mb-4 text-center">Enroll in {courseName}</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
+                                Full Name
+                            </label>
                             <input
                                 type="text"
                                 id="name"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full px-3 py-2 border rounded-md"
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md"
                                 required
                             />
                         </div>
-                        <div>
-                            <label htmlFor="email" className="block text-gray-700">Email:</label>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="email">
+                                Email
+                            </label>
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full px-3 py-2 border rounded-md"
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md"
                                 required
                             />
                         </div>
-                        <div>
-                            <label htmlFor="phone" className="block text-gray-700">Phone:</label>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="phone">
+                                Phone Number
+                            </label>
                             <input
                                 type="tel"
                                 id="phone"
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
-                                className="w-full px-3 py-2 border rounded-md"
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md"
                                 required
                             />
                         </div>
-                        <div>
-                            <label htmlFor="background" className="block text-gray-700">Background:</label>
-                            <select
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="background">
+                                Tell us about your background
+                            </label>
+                            <textarea
                                 id="background"
                                 name="background"
                                 value={formData.background}
                                 onChange={handleChange}
-                                className="w-full px-3 py-2 border rounded-md"
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md"
                                 required
-                            >
-                                <option value="">Select</option>
-                                <option value="college">College</option>
-                                <option value="work">Work</option>
-                                <option value="other">Other</option>
-                            </select>
+                            ></textarea>
                         </div>
-                        <div>
-                            <label htmlFor="course" className="block text-gray-700">Course:</label>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                                Course Fee
+                            </label>
                             <input
                                 type="text"
-                                id="course"
-                                name="course"
-                                value={formData.course}
-                                className="w-full px-3 py-2 border rounded-md"
-                                readOnly
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="fee" className="block text-gray-700">Fee:</label>
-                            <input
-                                type="text"
-                                id="fee"
                                 name="fee"
                                 value={`₹${formData.fee}`}
-                                className="w-full px-3 py-2 border rounded-md"
                                 readOnly
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
                             />
                         </div>
-                        <button
-                            type="submit"
-                            className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
-                        >
-                            Enroll Now
-                        </button>
+                        <div className="mb-4">
+                            <label className="block text-sm font-medium text-gray-700 mb-1">
+                                Applied Coupon Code
+                            </label>
+                            <input
+                                type="text"
+                                name="coupon"
+                                value={formData.coupon}
+                                readOnly
+                                className="w-full px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
+                            />
+                        </div>
+                        <div className="text-center">
+                            <button
+                                type="submit"
+                                className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600"
+                            >
+                                Submit
+                            </button>
+                        </div>
                     </form>
                     {result && (
                         <div className="mt-4 text-center text-green-600">
-                            {result}
+                            <p>{result}</p>
                         </div>
                     )}
                 </div>

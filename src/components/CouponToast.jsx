@@ -8,7 +8,7 @@ const CouponToast = () => {
         setTimeout(() => {
             toast.info(
                 <div>
-                    Use coupon code <span className="text-green-500 font-semibold">"SAVE20"</span> for a 20% discount! (Only for first 5 Enrolls)
+                    Use coupon code <span className="text-green-500 font-semibold">"TRYNEW"</span> for a 12% discount! (Only for first 5 Enrolls)
                 </div>,
                 {
                     position: "top-right",
@@ -18,29 +18,29 @@ const CouponToast = () => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    icon: <div className="text-green-400 mr-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>,
+                    icon: <div className="text-green-500 mr-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>,
                 }
             );
         }, 2000); // Display after 2 seconds
 
         // Display second coupon after a delay
-        setTimeout(() => {
-            toast.info(
-                <div>
-                    Use coupon code <span className="text-purple-500 font-semibold">"DIVINE30"</span> for a 30% discount!
-                </div>,
-                {
-                    position: "top-right",
-                    autoClose: 10000, // Close after 10 seconds
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    icon: <div className="text-purple-400 mr-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>,
-                }
-            );
-        }, 13000); // Display after 13 seconds (slightly adjusted for better timing)
+        // setTimeout(() => {
+        //     toast.info(
+        //         <div>
+        //             Use coupon code <span className="text-purple-500 font-semibold">"DIVINE30"</span> for a 30% discount!
+        //         </div>,
+        //         {
+        //             position: "top-right",
+        //             autoClose: 10000, // Close after 10 seconds
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //             progress: undefined,
+        //             icon: <div className="text-purple-400 mr-2"><svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></div>,
+        //         }
+        //     );
+        // }, 13000); // Display after 13 seconds (slightly adjusted for better timing)
 
     }, []);
 

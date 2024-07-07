@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock, FaRegLightbulb, FaGraduationCap,FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/Tally Fundamentals & Applications.mp4';
-import ClassRating from '../classRating';
 import TallyfundamentalsSyllabus from './TallyfundamentalsSyllabus';
 import EnrollmentForm from './EnrollmentForm';
+import CourseTestimonial from './CourseTestimonial';
+
 
 const Tallyfundamentals = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
@@ -12,30 +13,10 @@ const Tallyfundamentals = () => {
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
 
-    const courseData = {
-        mostLiked: [
-            { count: 350, text: 'Clear explanations' },
-            { count: 312, text: 'Dedicated Mentor Support' },
-            { count: 150, text: 'Project-based learning' },
-        ],
-        expectationsMet: [
-            { label: 'Exceeded', percentage: '85%' },
-            { label: 'Yes', percentage: '75%' },
-            { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '0%' },
-        ],
-    };
-
     const handleCouponApply = () => {
-        if (couponCode === 'DISCOUNT50') {
-            setPrice(7000 * 0.5);
-            setNotification('Coupon applied successfully! You got 50% discount.');
-        } else if (couponCode === 'DIVINE30') {
-            setPrice(7000 * 0.7);
-            setNotification('Coupon applied successfully! You got 30% discount.');
-        } else if (couponCode === 'SAVE20') {
-            setPrice(7000 * 0.8);
-            setNotification('Coupon applied successfully! You got 20% discount.');
+        if (couponCode === 'TRYNEW') {
+            setPrice(7000 * 0.88);
+            setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');
         }
@@ -138,10 +119,10 @@ const Tallyfundamentals = () => {
                     >
                         Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
-                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance 1</p>
+                    <p className="text-sm text-gray-600 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2">HURRY UP !! only 3 slots available.</p>
                 </div>
-
+  
 
 
                 {/* Syllabus FAQ */}
@@ -232,23 +213,12 @@ const Tallyfundamentals = () => {
                     </section>
                 )}
 
-                {/* Ratings and Review */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <ClassRating
-                        courseName="Tally Fundamentals"
-                        mostLiked={courseData.mostLiked}
-                        expectationsMet={courseData.expectationsMet}
-                    />
-                </div>
-            </div>
+              </div>
+             <CourseTestimonial/>
 
-                {isFormOpen && (
-                    <EnrollmentForm
-                        courseName="Tally Prime with GST"
-                        price={price}
-                        onClose={handleCloseForm}
-                    />
-                )}
+            {isFormOpen && (
+                <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+            )}
             </div>
         
     );

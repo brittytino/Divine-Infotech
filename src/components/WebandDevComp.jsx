@@ -27,28 +27,28 @@ const WebDevComp = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto max-w-6xl">
                 <div className="bg-white shadow-lg p-6 rounded-md flex items-center space-x-4">
-                    <FaLaptopCode className="text-6xl text-green-600" />
+                    <FaLaptopCode className="text-6xl text-blue-600" />
                     <div className="text-left">
                         <h3 className="text-2xl font-medium mb-2">Website Development & Design</h3>
                         <p className="text-gray-600">We specialize in crafting user-friendly websites that cater to businesses of all sizes.</p>
                     </div>
                 </div>
                 <div className="bg-white shadow-lg p-6 rounded-md flex items-center space-x-4">
-                    <FaShoppingCart className="text-6xl text-green-600" />
+                    <FaShoppingCart className="text-6xl text-blue-600" />
                     <div className="text-left">
                         <h3 className="text-2xl font-medium mb-2">Ecommerce Solutions</h3>
                         <p className="text-gray-600">Take your online store to the next level with our comprehensive ecommerce solutions.</p>
                     </div>
                 </div>
                 <div className="bg-white shadow-lg p-6 rounded-md flex items-center space-x-4">
-                    <FaWrench className="text-6xl text-green-600" />
+                    <FaWrench className="text-6xl text-blue-600" />
                     <div className="text-left">
                         <h3 className="text-2xl font-medium mb-2">Website Maintenance</h3>
                         <p className="text-gray-600">Our website maintenance services ensure that your website remains up-to-date and secure.</p>
                     </div>
                 </div>
                 <div className="bg-white shadow-lg p-6 rounded-md flex items-center space-x-4">
-                    <FaRedo className="text-6xl text-green-600" />
+                    <FaRedo className="text-6xl text-blue-600" />
                     <div className="text-left">
                         <h3 className="text-2xl font-medium mb-2">Website Revamp</h3>
                         <p className="text-gray-600">Our website revamp services are designed to breathe new life into outdated websites.</p>

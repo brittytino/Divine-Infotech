@@ -74,8 +74,8 @@ const CourseCard = ({ course, index }) => {
     const [isCouponApplied, setIsCouponApplied] = useState(false);
 
     const validCoupons = {
-        'DISCOUNT30': 0.3,
-        'SAVE20': 0.2
+        // 'DISCOUNT30': 0.3,
+        'TRYNEW': 0.88
     };
 
     const handleApplyCoupon = () => {
@@ -84,7 +84,7 @@ const CourseCard = ({ course, index }) => {
             const discountedPrice = (parseFloat(course.price.replace(/₹|,/g, '')) * (1 - discount)).toFixed(2);
             setPrice(discountedPrice);
             setIsCouponApplied(true);
-            alert('Coupon applied successfully!');
+           alert('Coupon applied successfully!');
         } else {
             alert('Invalid coupon code!');
         }
@@ -107,11 +107,21 @@ const CourseCard = ({ course, index }) => {
                         <span className="md:text-lg text-base font-semibold text-blue-600 decoration-red-700 line-through">{course.oldFees}</span>
                         <span className="md:text-lg text-base font-semibold text-blue-600">₹{price}</span>
                     </div>
-                    <a href={course.url}>
-                        <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                            Enroll Now
-                        </button>
-                    </a>
+                    {course.availability ? (
+                        <a href={course.url}>
+                            <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                Enroll Now
+                            </button>
+                        </a>
+                    ) : (
+                        <div>
+                             <a href={course.url}>
+                            <button className="bg-gray-300 text-gray-600 py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                                Show Syllabus
+                            </button></a>
+                            <p className="text-xs text-gray-500 mt-2">Coming Soon</p>
+                        </div>
+                    )}
                 </div>
                 {!isCouponApplied && (
                     <div className="mt-2">

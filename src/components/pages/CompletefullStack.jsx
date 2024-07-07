@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { FaTools, FaBook, FaProjectDiagram, FaUsers, FaLightbulb, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/Completefullstack.mp4';
 import { useInView } from 'react-intersection-observer';
-import ClassRating from '../classRating';
 import CompletefullStackSyllabus from './CompletefullStackSyllabus';
 import EnrollmentForm from './EnrollmentForm';
+import courses from './coursesData';
 
 const CompletefullStack = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
@@ -12,39 +12,35 @@ const CompletefullStack = () => {
     const [price, setPrice] = useState(14500); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
-    const courseData = {
-        mostLiked: [
-            { count: 350, text: 'Clear explanations' },
-            { count: 312, text: 'Dedicated Mentor Support' },
-            { count: 150, text: 'Project-based learning' },
-        ],
-        expectationsMet: [
-            { label: 'Exceeded', percentage: '85%' },
-            { label: 'Yes', percentage: '75%' },
-            { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '0%' },
-        ],
-    };
+    const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
+
+    const { ref: introRef, inView: introInView } = useInView();
+    const { ref: highlightsRef, inView: highlightsInView } = useInView();
+
     const handleCouponApply = () => {
-       if (couponCode === 'DIVINE30') {
-            setPrice(14500 * 0.7);
-            setNotification('Coupon applied successfully! You got 30% discount.');
-        } else if (couponCode === 'SAVE20') {
-            setPrice(14500 * 0.8);
-            setNotification('Coupon applied successfully! You got 20% discount.');
+        if (couponCode === 'TRYNEW') {
+            setPrice(12000 * 0.88);
+            setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');
         }
     };
 
     const handleEnrollClick = () => {
-        setIsFormOpen(true);
+        if (courses.availability) {
+            setIsFormOpen(true); // Open enrollment form
+        } else {
+            setShowComingSoonModal(true); // Show coming soon modal
+        }
     };
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
     };
-    
+
+    const handleCloseModal = () => {
+        setShowComingSoonModal(false);
+    };
 
     return (
         <div className="bg-gray-200 text-gray-900">
@@ -132,14 +128,11 @@ const CompletefullStack = () => {
                         className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
                         style={{ width: 'fit-content' }}
                     >
-                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
+                        Coming Soon ! <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
-                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance 1</p>
+                    {/* <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
+                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance</p> */}
                 </div>
-
-
-
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -202,24 +195,24 @@ const CompletefullStack = () => {
                                 <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
                                 <ul className="space-y-4">
                                     <li className="flex items-start">
-                                        <FaBook className="text-2xl text-blue-600 mr-4" />
-                                        <p>Comprehensive coverage of frontend and backend development.</p>
+                                        <FaLightbulb className="text-2xl text-blue-600 mr-4" />
+                                        <p>Hands-on projects and real-world application development</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaBook className="text-2xl text-blue-600 mr-4" />
-                                        <p>Hands-on real-world projects to build your portfolio.</p>
+                                        <FaProjectDiagram className="text-2xl text-blue-600 mr-4" />
+                                        <p>Expert guidance and support</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaBook className="text-2xl text-blue-600 mr-4" />
-                                        <p>In-depth tutorials on deploying applications to cloud servers.</p>
+                                        <FaUsers className="text-2xl text-blue-600 mr-4" />
+                                        <p>Access to a community of fellow learners and professionals</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaBook className="text-2xl text-blue-600 mr-4" />
-                                        <p>Guidance on industry best practices and coding standards.</p>
+                                        <FaUsers className="text-2xl text-blue-600 mr-4" />
+                                        <p>Personal career advice and portfolio building</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaBook className="text-2xl text-blue-600 mr-4" />
-                                        <p>Access to a supportive learning community and expert mentors.</p>
+                                        <FaTools className="text-2xl text-blue-600 mr-4" />
+                                        <p>Flexible learning schedule with online access anytime</p>
                                     </li>
                                 </ul>
                             </div>
@@ -227,24 +220,43 @@ const CompletefullStack = () => {
                     )}
                 </div>
 
-                  {/* Ratings and Review */}
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <ClassRating
-                        courseName="Complete Full Stack Development"
-                        mostLiked={courseData.mostLiked}
-                        expectationsMet={courseData.expectationsMet}
-                    />
-                </div>
-            </div>
-
-                {isFormOpen && (
-                    <EnrollmentForm
-                        courseName="Complete Full Stack Development"
-                        price={price}
-                        onClose={handleCloseForm}
-                    />
+                      {/* Conditional Rendering for Enrollment Form and Coming Soon Modal */}
+                      {courses.availability ? (
+                    // If course is available, render EnrollmentForm when isFormOpen is true
+                    isFormOpen && (
+                        <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+                    )
+                ) : (
+                    // If course is not available, render Coming Soon Modal when showComingSoonModal is true
+                    showComingSoonModal && (
+                        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
+                            <div className="bg-white rounded-lg p-8 max-w-md text-center">
+                                <h2 className="text-3xl font-semibold mb-4">Course Coming Soon</h2>
+                                <p className="text-lg text-gray-700 mb-6">
+                                    This course will be available soon. Until then, check the syllabus and explore our other available courses.
+                                </p>
+                                <div className="flex justify-center space-x-4">
+                                    <button
+                                        onClick={handleCloseModal}
+                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-medium transition-all"
+                                    >
+                                        Check Syllabus
+                                    </button>
+                                    <button
+                                        onClick={() => window.location.href = '/courses'} // Replace with actual link
+                                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-md font-medium transition-all"
+                                    >
+                                        Check Other Courses
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )
                 )}
+
+                
             </div>
+        </div>
     );
 };
 

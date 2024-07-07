@@ -33,7 +33,7 @@ const ServicesHero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="bg-[#e6ffd2] flex items-center pt-20 pb-32 px-6 lg:px-24"
+            className="bg-green-50 flex items-center pt-20 pb-32 px-6 lg:px-24"
         >
             <div className="container mx-auto flex flex-col lg:flex-row pb-10 items-center justify-between">
                 <div className="lg:w-1/2 md:mb-5 lg:mb-0">

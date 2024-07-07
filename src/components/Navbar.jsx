@@ -69,7 +69,7 @@ const Navbar = () => {
   }, [location]);
 
   // Determine the background color and text hover color based on the current page
-  const bgColor = location.pathname === '/services' ? 'bg-[#e6ffd2]' : 'bg-[#fafafc]';
+  const bgColor = location.pathname === '/services' ? 'bg-green-50' : 'bg-[#fafafc]';
   const textHoverColor = location.pathname === '/services' ? 'hover:text-green-600' : 'hover:text-blue-600';
   const btnBg = location.pathname === '/services' ? 'bg-black' : 'bg-blue-600'
   const btnbgHover = location.pathname === '/services' ? 'hover:bg-gray-800' : 'bg-blue-600'

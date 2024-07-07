@@ -1,66 +1,52 @@
 import React, { useState } from 'react';
-import { FaRegLightbulb, FaGraduationCap, FaHandsHelping, FaRegClock, FaUserGraduate } from 'react-icons/fa'; // Importing FaUserGraduate icon
+import { FaRegLightbulb, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/common.mp4';
-import ClassRating from '../classRating';
-import AzurecloudSyllabus from './AzurecloudSyllabus'; // Assuming you have a component for Azure syllabus
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import AzurecloudSyllabus from './AzurecloudSyllabus';
 import EnrollmentForm from './EnrollmentForm';
+import { motion } from 'framer-motion';
+import courses from './coursesData';
+import { useInView } from 'react-intersection-observer';
 
 const Azurecloud = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
-
-    const { ref: introRef, inView: introInView } = useInView({
-        triggerOnce: true,
-        threshold: 0.2 // Adjust threshold as needed
-    });
-
-    const { ref: highlightsRef, inView: highlightsInView } = useInView({
-        triggerOnce: true,
-        threshold: 0.2 // Adjust threshold as needed
-    });
-
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(7000); // Default price
+    const [price, setPrice] = useState(12000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
-    const courseData = {
-        mostLiked: [
-            { count: 350, text: 'Clear explanations' },
-            { count: 312, text: 'Dedicated Mentor Support' },
-            { count: 150, text: 'Project-based learning' },
-        ],
-        expectationsMet: [
-            { label: 'Exceeded', percentage: '85%' },
-            { label: 'Yes', percentage: '75%' },
-            { label: 'Somewhat', percentage: '10%' },
-            { label: 'Not Really', percentage: '0%' },
-        ],
-    };
+    const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
+
+    const { ref: introRef, inView: introInView } = useInView();
+    const { ref: highlightsRef, inView: highlightsInView } = useInView();
 
     const handleCouponApply = () => {
-        if (couponCode === 'DIVINE30') {
-            setPrice(7000 * 0.7);
-            setNotification('Coupon applied successfully! You got 30% discount.');
-        } else if (couponCode === 'SAVE20') {
-            setPrice(7000 * 0.8);
-            setNotification('Coupon applied successfully! You got 20% discount.');
+        if (couponCode === 'TRYNEW') {
+            setPrice(12000 * 0.88);
+            setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');
         }
     };
 
     const handleEnrollClick = () => {
-        setIsFormOpen(true);
+        if (courses.availability) {
+            setIsFormOpen(true); // Open enrollment form
+        } else {
+            setShowComingSoonModal(true); // Show coming soon modal
+        }
     };
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
     };
 
+    const handleCloseModal = () => {
+        setShowComingSoonModal(false);
+    };
+
     return (
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
+                {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <motion.h1
@@ -78,6 +64,7 @@ const Azurecloud = () => {
                     </div>
                 </header>
 
+                {/* Video Section */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <motion.h2
                         className="text-3xl font-semibold mb-4"
@@ -91,15 +78,13 @@ const Azurecloud = () => {
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 gap-5 md:gap-10">
                         <div className="relative lg:w-2/3">
                             <div style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}>
-                                <video
-                                    controls
-                                    className="absolute top-0 left-0 w-full h-full object-cover border-2 border-blue-400 rounded-md shadow-lg"
-                                >
+                                <video controls className="absolute top-0 left-0 w-full h-full object-cover border-2 border-blue-400 rounded-md shadow-lg">
                                     <source src={videoFile} type="video/mp4" />
                                 </video>
                             </div>
                         </div>
 
+                        {/* Course Highlights */}
                         <div className="mt-8 lg:mt-0 lg:w-1/3 flex flex-col justify-between bg-white p-8 rounded-md shadow-lg border border-blue-400">
                             <div>
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
@@ -109,15 +94,15 @@ const Azurecloud = () => {
                                         <p>Comprehensive coverage of Azure services.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaGraduationCap className="text-2xl text-blue-600 mr-3" />
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
                                         <p>Hands-on labs and real-world projects.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaHandsHelping className="text-2xl text-blue-600 mr-3" />
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
                                         <p>Expert guidance on cloud architecture.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaRegClock className="text-2xl text-blue-600 mr-3" />
+                                        <FaRegLightbulb className="text-2xl text-blue-600 mr-3" />
                                         <p>Practical insights into Azure deployment.</p>
                                     </li>
                                 </ul>
@@ -141,7 +126,7 @@ const Azurecloud = () => {
                     />
                     <button
                         onClick={handleCouponApply}
-                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 text-white border border-blue-500 hover:border-blue-700 hover:bg-white hover:text-blue-700 transition-all duration-300"
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700"
                     >
                         Apply Coupon
                     </button>
@@ -152,24 +137,23 @@ const Azurecloud = () => {
                     )}
                 </div>
 
-                <div className='md:pl-60 pl-6 flex flex-col'>
+                <div className="md:pl-60 pl-6 flex flex-col">
                     <button
                         onClick={handleEnrollClick}
-                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
+                        className="font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300"
                         style={{ width: 'fit-content' }}
                     >
-                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
+                        Coming Soon ! <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
-                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance 1</p>
                 </div>
 
-
-
+                {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <AzurecloudSyllabus />
                 </section>
 
+                {/* Dynamic content */}
+                {/* Buttons for switching content */}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-center space-x-4">
                     <button
                         onClick={() => setActiveTab('learningOutcomes')}
@@ -185,77 +169,94 @@ const Azurecloud = () => {
                     </button>
                 </div>
 
+                {/* Learning Outcomes Section */}
                 {activeTab === 'learningOutcomes' && (
-                    <motion.section
-                        className="bg-gray-100 py-12 transition-all"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <section className="bg-gray-100 py-12 transition-all">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-green-600 mr-4" />
-                                    <p>Master Azure services and solutions.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive coverage of Azure services.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaGraduationCap className="text-2xl text-green-600 mr-4" />
-                                    <p>Deploy scalable applications on Azure.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on labs and real-world projects.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaHandsHelping className="text-2xl text-green-600 mr-4" />
-                                    <p>Implement cloud architecture best practices.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Expert guidance on cloud architecture.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaRegClock className="text-2xl text-green-600 mr-4" />
-                                    <p>Optimize cloud solutions for performance and cost-efficiency.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Practical insights into Azure deployment.</p>
                                 </li>
                             </ul>
                         </div>
-                    </motion.section>
+                    </section>
                 )}
 
+                {/* Key Features Section */}
                 {activeTab === 'keyFeatures' && (
-                    <motion.section
-                        className="bg-gray-100 py-12 transition-all"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
+                    <section className="bg-gray-100 py-12 transition-all">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaHandsHelping className="text-2xl text-blue-600 mr-4" />
-                                    <p>Guidance on implementing microservices with Spring Cloud.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>High-quality course materials.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaRegClock className="text-2xl text-blue-600 mr-4" />
-                                    <p>Insights into performance tuning and optimization techniques.</p>
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Live sessions with industry experts.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>24/7 access to course content.</p>
+                                </li>
+                                <li className="flex items-start">
+                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
+                                    <p>Certification upon completion.</p>
                                 </li>
                             </ul>
                         </div>
-                    </motion.section>
+                    </section>
                 )}
 
-                {/* Ratings and Review */}
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                    <ClassRating
-                        courseName="Advanced Stock Trading Techniques"
-                        mostLiked={courseData.mostLiked}
-                        expectationsMet={courseData.expectationsMet}
-                    />
-                </div>
+                 {/* Conditional Rendering for Enrollment Form and Coming Soon Modal */}
+                 {courses.availability ? (
+                    // If course is available, render EnrollmentForm when isFormOpen is true
+                    isFormOpen && (
+                        <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+                    )
+                ) : (
+                    // If course is not available, render Coming Soon Modal when showComingSoonModal is true
+                    showComingSoonModal && (
+                        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
+                            <div className="bg-white rounded-lg p-8 max-w-md text-center">
+                                <h2 className="text-3xl font-semibold mb-4">Course Coming Soon</h2>
+                                <p className="text-lg text-gray-700 mb-6">
+                                    This course will be available soon. Until then, check the syllabus and explore our other available courses.
+                                </p>
+                                <div className="flex justify-center space-x-4">
+                                    <button
+                                        onClick={handleCloseModal}
+                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-medium transition-all"
+                                    >
+                                        Check Syllabus
+                                    </button>
+                                    <button
+                                        onClick={() => window.location.href = '/courses'} // Replace with actual link
+                                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-md font-medium transition-all"
+                                    >
+                                        Check Other Courses
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                )}
             </div>
-
-            {isFormOpen && (
-                <EnrollmentForm
-                    courseName="Advanced Stock Trading Techniques"
-                    price={price}
-                    onClose={handleCloseForm}
-                />
-            )}
         </div>
     );
 };

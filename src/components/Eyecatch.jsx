@@ -14,7 +14,7 @@ const Eyecatch = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 1 }}
-      className="flex flex-col lg:flex-row items-center  bg-[#379237] p-8"
+      className="flex flex-col lg:flex-row items-center  bg-blue-500 p-8"
     >
       <div className="flex-1 flex justify-center mb-8 lg:mb-0">
         <motion.img
@@ -42,15 +42,15 @@ const Eyecatch = () => {
           Whether your goal is to engage visitors or showcase products, we've got the expertise to make your website shine.
         </p>
         <div className="flex flex-col md:flex-row justify-center lg:justify-start space-y-4 md:space-y-0 md:space-x-4">
-          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:text-green-600 hover:bg-white  transition">
+          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:text-blue-600 hover:bg-white  transition">
             <FaLaptopCode className="inline-block mr-2" />
             UI/UX DESIGN
           </button>
-          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:bg-white hover:text-green-600 transition">
+          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:bg-white hover:text-blue-600 transition">
             <FaUserCheck className="inline-block mr-2" />
             USER FRIENDLY
           </button>
-          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:bg-white hover:text-green-600 transition">
+          <button className="px-5 py-3 rounded-sm border-2 border-white text-white font-medium hover:bg-white hover:text-blue-600 transition">
             <FaMobileAlt className="inline-block mr-2" />
             RESPONSIVENESS
           </button>

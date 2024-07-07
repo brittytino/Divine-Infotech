@@ -15,6 +15,7 @@ import WebDevComp from './WebandDevComp';
 import WebDesignSection from './WebDesignSection ';
 import DigitalMarketingSection from './DigitalMarketingSection ';
 import SocialMediaMarketing from './SocialMediaMarketing ';
+import EmailMarketingServices from './EmailMarketingServices ';
 
 const Services = () => {
   return (
@@ -25,9 +26,10 @@ const Services = () => {
       <Eyecatch />
       <WebDevComp />
       <WebDesignSection />
-      <hr className='bg-green-100 shadow-md py-1' />
+      <hr className=' shadow-lg py-1' />
 
       {/* digital marketing  */}
+      <EmailMarketingServices/>
       <DigitalMarketingSection/>
       <SocialMediaMarketing/>
 

@@ -33,9 +33,9 @@ const ServicesHero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="bg-gray-50 flex items-center pt-20 pb-32 px-6 lg:px-24"
+            className="bg-[#e6ffd2] flex items-center pt-20 pb-32 px-6 lg:px-24"
         >
-            <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+            <div className="container mx-auto flex flex-col lg:flex-row pb-10 items-center justify-between">
                 <div className="lg:w-1/2 md:mb-5 lg:mb-0">
                     <h3 className="text-gray-700 text-sm md:text-base">Web Development and Digital Marketing Firm</h3>
                     <h1 className=" text-4xl md:text-5xl font-bold text-gray-900 mt-4" style={{ lineHeight: '1.2' }}>
@@ -43,7 +43,7 @@ const ServicesHero = () => {
                     </h1>
                     <p className="text-gray-700 mt-4">Get a professional website and digital marketing support for your business within your budget.</p>
                     <button className="mt-6 px-6 py-3 text-lg bg-black hover:text-white font-medium flex items-center space-x-2 bg-transparent hover:bg-black border-2 text-black border-black transition-all rounded-full">
-                        <span>Let's Talk</span>
+                      <a href="/contact">  <span>Let's Talk</span></a>
                         <FaArrowRight />
                     </button>
                 </div>

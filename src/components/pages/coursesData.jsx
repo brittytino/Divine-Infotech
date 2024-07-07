@@ -64,12 +64,12 @@ const courses = [
 
     {
         img: azureCloud,
-        title: "Azure Cloud",
+        title: "Mastering Azure: Cloud Computing Excellence",
         category: ["Cloud", "Best Selling"],
         oldFees: "₹10,000",
         price: "₹10,000",
         duration: "30 days",
-        url: '/CompletefullStack',  
+        url: '/azurecloud',  
         description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
 
     },

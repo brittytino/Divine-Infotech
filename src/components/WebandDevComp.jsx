@@ -21,7 +21,7 @@ const WebDevComp = () => {
                 <h2 className="text-4xl font-semibold text-gray-800 mb-4">
                     Website Design and Development
                 </h2>
-                <p className="text-lg text-gray-700 mb-12">
+                <p className=" text-base md:text-lg text-gray-700 mb-12">
                     Our experienced team of designers crafts custom web designs that reflect your brand identity and resonate with your target customers. We prioritize user experience, ensuring seamless navigation and responsiveness across all devices, from desktops to mobiles.
                 </p>
             </div>

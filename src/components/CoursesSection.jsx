@@ -104,14 +104,14 @@ const CourseCard = ({ course, index }) => {
                     </div>
                     {course.availability ? (
                         <a href={course.url}>
-                            <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                            <button className="bg-blue-600 text-white py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                                 Enroll Now
                             </button>
                         </a>
                     ) : (
                         <div>
                              <a href={course.url}>
-                            <button className="bg-gray-300 text-gray-600 py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                            <button className="bg-gray-300 text-gray-600 py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
                                 Show Syllabus
                             </button></a>
                             <p className="text-xs text-gray-500 mt-2">Coming Soon</p>

@@ -4,9 +4,9 @@ import sampleImage from '../images/web illustration.png';
 
 const WebDesignSection = () => {
   return (
-    <div className="bg-white  py-16 px-8 md:px-32 grid grid-cols-1 md:grid-cols-2 items-center">
+    <div className="bg-white  py-16 px-8 md:px-12 lg:px-32 grid grid-cols-1 lg:grid-cols-2 items-center">
      
-      <div className="text-left md:pl-24">
+      <div className="text-left lg:pl-24">
         <h2 className="text-3xl font-semibold text-blue-600 mb-4">Web Development & Design</h2>
         <p className="text-xs md:text-base text-gray-700 mb-6">
         At Divine Infotech, we create user-friendly, optimized websites for businesses of all sizes. Our team ensures seamless experiences on both desktop and mobile devices, utilizing advanced SEO techniques to boost visibility and attract organic traffic. Whether you're a store expanding online or a university needing a modern website, we’ve got you covered.

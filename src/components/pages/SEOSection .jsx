@@ -16,9 +16,9 @@ const SEOSection = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8 }}
-      className="flex flex-col md:flex-row items-center bg-[#f6f6f6] py-10 px-5 md:px-24"
+      className="flex flex-col lg:flex-row items-center bg-[#f6f6f6] py-10 px-5 md:px-10 lg:px-24"
     >
-      <div className="w-full md:w-1/2 mb-8 md:mb-0">
+      <div className="w-full lg:w-1/2 mb-8 md:mb-0">
         <h2 className="text-3xl md:text-4xl font-bold text-yellow-600">Professional SEO Services</h2>
         <div className="w-20 h-1 bg-blue-700 my-4"></div>
         <p className="text-gray-700 mb-6 text-xs md:text-base">

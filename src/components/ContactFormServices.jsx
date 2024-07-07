@@ -16,8 +16,8 @@ const ContactServices = ({ bgColor }) => {
     });
 
     return (
-        <div className={`container mx-auto py-12 lg:py-20 px-6 md:px-20 lg:px-40 ${bgColor}`}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className={`container mx-auto py-12 lg:py-20 px-6 md:px-6 lg:px-40 ${bgColor}`}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <motion.div
                     className="text-left"
                     ref={ref1}
@@ -25,13 +25,13 @@ const ContactServices = ({ bgColor }) => {
                     animate={{ opacity: inView1 ? 1 : 0, y: inView1 ? 0 : 50 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-4xl md:text-5xl font-semibold text-gray-800">Startup and Online Growth Consultation</h1>
+                    <h1 className="text-4xl lg:text-5xl font-semibold text-gray-800">Startup and Online Growth Consultation</h1>
                     <div className="mt-4 mb-8 h-1 w-24 md:w-32 bg-blue-500 rounded"></div>
-                    <p className="md:text-base text-sm text-gray-700">
+                    <p className="lg:text-base text-sm text-gray-700">
                         In this one-on-one session, our founder will personally connect with you to share his expert insights on growing your business through website development, UI/UX design, and data analytics. We’ll conduct special research tailored to your niche and offer tips that can propel your business forward. This isn’t just generic advice – it’s actionable, personalized strategies to help you succeed.
                     </p>
                     <h2 className="mt-8 text-2xl font-semibold text-gray-800">Increase Your Profit from ₹10,000 to ₹10 Lakhs</h2>
-                    <p className="md:text-base text-sm mt-2 text-gray-700">
+                    <p className="lg:text-base text-sm mt-2 text-gray-700">
                         Ready to take your business to the next level? We’ll show you how to scale your profits from ₹10,000 to ₹10 Lakhs. With our expert guidance, proven strategies, and personalized advice in website development, UI/UX design, and data analytics, you’ll be equipped to grow your revenue and achieve your financial goals. Let’s turn your vision into reality!
                     </p>
                     <motion.button

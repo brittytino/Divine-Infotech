@@ -4,12 +4,12 @@ const EmailMarketingServices = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className="flex flex-col items-center bg-gray-50 p-5 md:px-20">
-      <div className=" flex flex-col md:flex-row">
+    <div className="flex flex-col items-center bg-gray-50 p-5 lg:px-20">
+      <div className=" flex flex-col lg:flex-row">
         <div className="md:w-1/3 flex pb-5 justify-center items-center">
           <img src={emailImg} alt="Email Icon" className="" />
         </div>
-        <div className="md:w-2/3 pt-5  md:pl-20">
+        <div className="lg:w-2/3 pt-5 px-8  lg:pl-20">
           <h3 className="text-2xl font-semibold">Email Marketing Services</h3>
           <hr className="my-4 border-t-2 border-gray-200" />
           <p className="text-gray-700 text-xs md:text-base mb-4">

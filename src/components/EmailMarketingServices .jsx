@@ -9,7 +9,7 @@ const EmailMarketingServices = () => {
         <div className="md:w-1/3 flex pb-5 justify-center items-center">
           <img src={emailImg} alt="Email Icon" className="" />
         </div>
-        <div className="md:w-2/3 pt-5 pl-6 md:pl-20">
+        <div className="md:w-2/3 pt-5  md:pl-20">
           <h3 className="text-2xl font-semibold">Email Marketing Services</h3>
           <hr className="my-4 border-t-2 border-gray-200" />
           <p className="text-gray-700 text-xs md:text-base mb-4">

@@ -16,6 +16,7 @@ import WebDesignSection from './WebDesignSection ';
 import DigitalMarketingSection from './DigitalMarketingSection ';
 import SocialMediaMarketing from './SocialMediaMarketing ';
 import EmailMarketingServices from './EmailMarketingServices ';
+import SEOSection from './pages/SEOSection ';
 
 const Services = () => {
   return (
@@ -31,6 +32,7 @@ const Services = () => {
       {/* digital marketing  */}
       <EmailMarketingServices/>
       <DigitalMarketingSection/>
+      <SEOSection/>
       <SocialMediaMarketing/>
 
       <a href="/contact" className=' flex justify-center items-center my-5'><button className="bg-black text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-transparent transition-all border-2 hover:border-black hover:text-black ">

@@ -89,7 +89,7 @@ const Digitalmarketing = () => {
                         <button className='font-medium py-2 px-4 rounded-md text-2xl bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700 mt-5'>Enroll Now</button>
                     </a>
                 </div>
-
+  
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <DigitalmarketingSyllabus />

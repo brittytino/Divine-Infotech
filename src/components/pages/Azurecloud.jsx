@@ -10,7 +10,7 @@ import { useInView } from 'react-intersection-observer';
 const Azurecloud = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(12000); // Default price
+    const [price, setPrice] = useState(18000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
     const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
@@ -20,7 +20,7 @@ const Azurecloud = () => {
 
     const handleCouponApply = () => {
         if (couponCode === 'TRYNEW') {
-            setPrice(12000 * 0.88);
+            setPrice(18000 * 0.88);
             setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');

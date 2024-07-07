@@ -47,7 +47,7 @@ const DigitalMarketingSection = () => {
   };
 
   return (
-    <div ref={ref} className="bg-[#edfbe2] py-16 px-10 md:px-28 mb-10">
+    <div ref={ref} className="bg-[#edfbe2] py-16 px-10 md:px-28 ">
       <div className="text-left mb-12">
         <h2 className="text-4xl font-semibold text-gray-800">Unlock Your Digital Potential</h2>
         <p className="text-lg text-gray-600 mt-4">

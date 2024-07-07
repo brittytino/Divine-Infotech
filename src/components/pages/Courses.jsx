@@ -57,8 +57,6 @@ const CoursesPage = () => {
                     <CourseCard key={index} course={course} index={index} />
                 ))}
             </div>
-
-           
         </section>
     );
 };
@@ -71,22 +69,19 @@ const CourseCard = ({ course, index }) => {
     const [showCouponInput, setShowCouponInput] = useState(false);
     const [couponCode, setCouponCode] = useState('');
     const [price, setPrice] = useState(parseFloat(course.price.replace(/₹|,/g, '')));
+    const [notification, setNotification] = useState('');
     const [isCouponApplied, setIsCouponApplied] = useState(false);
+    const [isValidCoupon, setIsValidCoupon] = useState(true);
 
-    const validCoupons = {
-        // 'DISCOUNT30': 0.3,
-        'TRYNEW': 0.88
-    };
-
-    const handleApplyCoupon = () => {
-        const discount = validCoupons[couponCode];
-        if (discount) {
-            const discountedPrice = (parseFloat(course.price.replace(/₹|,/g, '')) * (1 - discount)).toFixed(2);
-            setPrice(discountedPrice);
+    const handleCouponApply = () => {
+        if (couponCode === 'TRYNEW') {
+            setPrice((18000 * 0.88).toFixed(2));
+            setNotification('Coupon applied successfully! You got 12% discount.');
             setIsCouponApplied(true);
-           alert('Coupon applied successfully!');
+            setIsValidCoupon(true);
         } else {
-            alert('Invalid coupon code!');
+            setNotification('Invalid Coupon Code');
+            setIsValidCoupon(false);
         }
     };
 
@@ -98,7 +93,7 @@ const CourseCard = ({ course, index }) => {
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
             transition={{ duration: 0.6, delay: 0.1 * index }}
         >
-            <img className="w-full md:h-48 h-40 object-fill object-center" src={course.img} alt="Course Image" />
+            <img className="w-full md:h-60 h-52 object-fill object-center" src={course.img} alt="Course Image" />
             <div className="p-6">
                 <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
                 <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
@@ -142,13 +137,18 @@ const CourseCard = ({ course, index }) => {
                                 />
                                 <button
                                     className="bg-green-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-                                    onClick={handleApplyCoupon}
+                                    onClick={handleCouponApply}
                                 >
                                     Apply
                                 </button>
                             </div>
                         )}
                     </div>
+                )}
+                {notification && (
+                    <p className={`mt-2 ${isValidCoupon ? 'text-green-600' : 'text-red-600'}`}>
+                        {notification}
+                    </p>
                 )}
             </div>
         </motion.div>

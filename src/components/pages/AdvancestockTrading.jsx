@@ -8,14 +8,14 @@ import courses from './coursesData';
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(7000); // Default price
+    const [price, setPrice] = useState(15000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
     const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
 
     const handleCouponApply = () => {
         if (couponCode === 'TRYNEW') {
-            setPrice(7000 * 0.88);
+            setPrice(15000 * 0.88);
             setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');

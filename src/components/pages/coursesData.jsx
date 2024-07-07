@@ -4,7 +4,7 @@ import fullStack from './img/course/fullstack.png';
 
 
 // Tally 
-import tallyprimewithGst from './img/course/tallyprime with gst.webp';
+import tallyprimewithGst from './img//course/tally fundamentals.jpg';
 
 // Stock Market 
 import AdvancedStockTradingTechniques from './img/course/Advanced Stock Trading Techniques.jpeg';
@@ -24,8 +24,8 @@ const courses = [
         availability : true,
         title: "Mastering Tally Prime with GST",
         category: ["Tally" , "Best Selling"],
-        oldFees: "₹13,000",
-        price: "₹11,500",
+        oldFees: "₹28,000",
+        price: "₹20,000",
         duration: "45 days",
         url: 'tally',
         description: "Master Tally Prime with GST, covering basic to advanced accounting, inventory management, GST implementation, payroll, and final project integration."
@@ -38,8 +38,8 @@ const courses = [
         availability : false,
         title: "Advanced Stock Trading Techniques",
         category: ["Stock Market", "Best Selling"], 
-        oldFees: "₹13,000",
-        price: "₹11,500",
+        oldFees: "₹20,000",
+        price: "₹15,000",
         duration: "45 days",
         url: '/AdvancestockTrading',
         description: "Master stock trading with advanced technical analysis, quantitative techniques, derivatives, and risk management in this comprehensive course."
@@ -50,8 +50,8 @@ const courses = [
         availability : false,
         title: "Mastering Azure: Cloud Computing Excellence",
         category: ["Cloud", "Best Selling"],
-        oldFees: "₹10,000",
-        price: "₹10,000",
+        oldFees: "₹25,000",
+        price: "₹18,000",
         duration: "30 days",
         url: '/azurecloud',  
         description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
@@ -64,8 +64,8 @@ const courses = [
         availability : false,
         title: "Complete Full Stack Development",
         category: ["Web Development", "Best Selling"],
-        oldFees: "₹16,000",
-        price: "₹14,500",
+        oldFees: "₹40,000",
+        price: "₹30,000",
         duration: "65 days",
         url: '/CompletefullStack',
         description: "Master Complete Full Stack Development with HTML, CSS, JavaScript, and backend technologies to build dynamic web applications.",
@@ -78,8 +78,8 @@ const courses = [
         availability : false,
         title: "Fundamentals of C, C++, Python, and Java",
         category: ["Programming Fundamentals" , "Best Selling"],
-        oldFees: "₹7,000",
-        price: "₹6,000",
+        oldFees: "₹25,000",
+        price: "₹20,000",
         duration: "30 days",
         url: '/ProgrammingFundamentals',
         description: "Master programming basics and advanced concepts in C, C++, Python, and Java with a final integrated project in this 25-day course."

@@ -25,7 +25,7 @@ const WebDevComp = () => {
                     Our experienced team of designers crafts custom web designs that reflect your brand identity and resonate with your target customers. We prioritize user experience, ensuring seamless navigation and responsiveness across all devices, from desktops to mobiles.
                 </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 lg:gap-10 mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 mx-auto max-w-6xl">
                 <div className="bg-white shadow-lg p-6 rounded-md flex items-center space-x-4">
                     <FaLaptopCode className="text-6xl text-blue-600" />
                     <div className="text-left">

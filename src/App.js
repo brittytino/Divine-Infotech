@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -17,8 +17,20 @@ import Tallyfundamentals from './components/pages/Tallyfundamentals';
 import CouponToast from './components/CouponToast';
 import Azurecloud from './components/pages/Azurecloud';
 
+// analytics
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-YLX8WB7CZ2");
+
 const AppContent = () => {
     const location = useLocation();
+
+    useEffect(() => {
+        ReactGA.send({ 
+            hitType: "pageview", 
+            page: location.pathname 
+        });
+    }, [location]);
 
     // Function to determine if CouponToast should be displayed
     const shouldDisplayCouponToast = () => {

@@ -1,8 +1,9 @@
+// CoursesSection.jsx or wherever CourseCard is used
 import React, { useState } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import courses from '../components/pages/coursesData';
+import CourseCard from '../components/pages/CourseCard'; // Adjust path as necessary
+import courses from '../components/pages/coursesData'; // Assuming you have course data
 
 const CoursesSection = () => {
     const [selectedCategory, setSelectedCategory] = useState("Best Selling");
@@ -54,104 +55,10 @@ const CoursesSection = () => {
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-8">
                 {filteredCourses.map((course, index) => (
-                    <CourseCard key={index} course={course} index={index} />
+                    <CourseCard key={index} course={course} index={index} selectedCategory={selectedCategory} />
                 ))}
             </div>
         </section>
-    );
-};
-
-const CourseCard = ({ course, index }) => {
-    const { ref, inView } = useInView({
-        triggerOnce: true,
-        threshold: 0.2
-    });
-    const [showCouponInput, setShowCouponInput] = useState(false);
-    const [couponCode, setCouponCode] = useState('');
-    const [price, setPrice] = useState(parseFloat(course.price.replace(/₹|,/g, '')));
-    const [notification, setNotification] = useState('');
-    const [isCouponApplied, setIsCouponApplied] = useState(false);
-    const [isValidCoupon, setIsValidCoupon] = useState(true);
-
-    const handleCouponApply = () => {
-        if (couponCode === 'TRYNEW') {
-            setPrice((18000 * 0.88).toFixed(2));
-            setNotification('Coupon applied successfully! You got 12% discount.');
-            setIsCouponApplied(true);
-            setIsValidCoupon(true);
-        } else {
-            setNotification('Invalid Coupon Code');
-            setIsValidCoupon(false);
-        }
-    };
-
-    return (
-        <motion.div
-            ref={ref}
-            className="bg-white shadow-lg rounded-lg overflow-hidden"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
-            transition={{ duration: 0.6, delay: 0.1 * index }}
-        >
-            <img className="w-full md:h-60 h-52 object-fill object-center" src={course.img} alt="Course Image" />
-            <div className="p-6">
-                <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
-                <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
-                <div className="flex justify-between items-center">
-                    <div className='flex gap-4'>
-                        <span className="md:text-lg text-base font-semibold text-blue-600 decoration-red-700 line-through">{course.oldFees}</span>
-                        <span className="md:text-lg text-base font-semibold text-blue-600">₹{price}</span>
-                    </div>
-                    {course.availability ? (
-                        <a href={course.url}>
-                            <button className="bg-blue-600 text-white py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                                Enroll Now
-                            </button>
-                        </a>
-                    ) : (
-                        <div>
-                             <a href={course.url}>
-                            <button className="bg-gray-300 text-gray-600 py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                                Show Syllabus
-                            </button></a>
-                            <p className="text-xs text-gray-500 mt-2">Coming Soon</p>
-                        </div>
-                    )}
-                </div>
-                {!isCouponApplied && (
-                    <div className="mt-2">
-                        <span
-                            className="text-blue-600 cursor-pointer"
-                            onClick={() => setShowCouponInput(!showCouponInput)}
-                        >
-                            Have a coupon?
-                        </span>
-                        {showCouponInput && (
-                            <div className="mt-2">
-                                <input
-                                    type="text"
-                                    className="border border-gray-300 p-2 rounded-md w-full"
-                                    placeholder="Enter coupon code"
-                                    value={couponCode}
-                                    onChange={(e) => setCouponCode(e.target.value)}
-                                />
-                                <button
-                                    className="bg-green-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-                                    onClick={handleCouponApply}
-                                >
-                                    Apply
-                                </button>
-                            </div>
-                        )}
-                    </div>
-                )}
-                {notification && (
-                    <p className={`mt-2 ${isValidCoupon ? 'text-green-600' : 'text-red-600'}`}>
-                        {notification}
-                    </p>
-                )}
-            </div>
-        </motion.div>
     );
 };
 

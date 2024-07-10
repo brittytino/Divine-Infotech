@@ -13,7 +13,7 @@ const Testimonial = () => {
   return (
     <div id='testimonial' className="testimonials-container bg-white text-blue-700 py-12">
   
-      <div class="elfsight-app-8a12bbaf-6508-47d2-b8e0-9db0ad87cec5" data-elfsight-app-lazy></div>
+  <div class="elfsight-app-012d44d5-cf12-4b33-ba02-f18edd9bc0e1" data-elfsight-app-lazy></div>
     </div>
   );
 };

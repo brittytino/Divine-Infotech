@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock, FaRegLightbulb, FaGraduationCap,FaUserGraduate } from 'react-icons/fa';
+import { FaDatabase, FaFileAlt, FaCogs, FaListAlt, FaChartLine, FaUsers, FaHandsHelping, FaRegClock, FaRegLightbulb, FaGraduationCap, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/Tally Fundamentals & Applications.mp4';
 import TallyfundamentalsSyllabus from './TallyfundamentalsSyllabus';
 import EnrollmentForm from './EnrollmentForm';
@@ -41,8 +41,8 @@ const Tallyfundamentals = () => {
                     </div>
                 </header>
 
-         {/* Video Section */}
-         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                {/* Video Section */}
+                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                     <h2 className="text-3xl font-semibold mb-4">Introduction</h2>
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 gap-5 md:gap-10">
                         <div className="relative lg:w-2/3">
@@ -86,47 +86,47 @@ const Tallyfundamentals = () => {
                 </section>
 
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-    <span className="text-xl md:text-2xl font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-700 px-4 py-2 rounded-lg shadow-md w-fit">
-        Fee: <span className='text-yellow-400'>₹{price}</span>
-    </span>
-    <span className="text-xl md:text-2xl font-semibold text-gray-800">
-        Duration: <span className="text-blue-600">25 days</span>
-    </span>
-</div>
+                    <span className="text-xl md:text-2xl font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-700 px-4 py-2 rounded-lg shadow-md w-fit">
+                        Fee: <span className='text-yellow-400'>₹{price}</span>
+                    </span>
+                    <span className="text-xl md:text-2xl font-semibold text-gray-800">
+                        Duration: <span className="text-blue-600">25 days</span>
+                    </span>
+                </div>
 
 
-<div className="flex flex-col md:pl-60 pl-6 mt-5">
-    <input
-        type="text"
-        value={couponCode}
-        onChange={(e) => setCouponCode(e.target.value)}
-        placeholder="Enter Coupon Code"
-        className="mb-2 p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-    />
-    <button
-        onClick={handleCouponApply}
-        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-700 text-white border border-blue-700 transition-all hover:bg-white hover:text-blue-700 hover:shadow-md"
-    >
-        Apply Coupon
-    </button>
-    {notification && (
-        <div className={`mt-4 p-2 text-center rounded-md ${notification.includes('Invalid') ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'} shadow-sm`}>
-            {notification}
-        </div>
-    )}
-</div>
+                <div className="flex flex-col md:pl-60 pl-6 mt-5">
+                    <input
+                        type="text"
+                        value={couponCode}
+                        onChange={(e) => setCouponCode(e.target.value)}
+                        placeholder="Enter Coupon Code"
+                        className="mb-2 p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    />
+                    <button
+                        onClick={handleCouponApply}
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-700 text-white border border-blue-700 transition-all hover:bg-white hover:text-blue-700 hover:shadow-md"
+                    >
+                        Apply Coupon
+                    </button>
+                    {notification && (
+                        <div className={`mt-4 p-2 text-center rounded-md ${notification.includes('Invalid') ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'} shadow-sm`}>
+                            {notification}
+                        </div>
+                    )}
+                </div>
 
-<div className='md:pl-60 pl-6 flex flex-col'>
-    <button
-        onClick={handleEnrollClick}
-        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-800 text-white border border-blue-800 transition-all hover:bg-white hover:text-blue-800 hover:shadow-md mt-5 flex items-center'
-        style={{ width: 'fit-content' }}
-    >
-        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
-    </button>
-    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
-    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
-</div>
+                <div className='md:pl-60 pl-6 flex flex-col'>
+                    <button
+                        onClick={handleEnrollClick}
+                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-800 text-white border border-blue-800 transition-all hover:bg-white hover:text-blue-800 hover:shadow-md mt-5 flex items-center'
+                        style={{ width: 'fit-content' }}
+                    >
+                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
+                    </button>
+                    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
+                </div>
 
 
 
@@ -219,14 +219,14 @@ const Tallyfundamentals = () => {
                     </section>
                 )}
 
-              </div>
-             <CourseTestimonial/>
+            </div>
+            <CourseTestimonial />
 
             {isFormOpen && (
                 <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
             )}
-            </div>
-        
+        </div>
+
     );
 };
 

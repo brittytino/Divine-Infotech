@@ -9,13 +9,13 @@ import avatar3 from './img/avatar 3.jpg';
 const testimonials = [
   {
     name: "Pravin B",
-    review: "The course 'Mastering Tally Prime with GST' is extremely useful. It helped me get placed in a top company.",
+    review: "The course was extremely useful. It helped me get placed in a top company.",
     company: "Batch - JUNE 2024",
     avatar: avatar1,
   },
   {
     name: "Sudharshini P",
-    review: "A very comprehensive course on Tally Prime with GST. I am now working with one of the leading firms in the industry.",
+    review: "A very comprehensive course. I am now working with one of the leading firms in the industry.",
     company: "Batch - FEB 2024",
     avatar: avatar2,
   },
@@ -26,6 +26,7 @@ const testimonials = [
     avatar: avatar3,
   },
 ];
+
 
 const CourseTestimonial = () => {
   const sliderRef = useRef(null);

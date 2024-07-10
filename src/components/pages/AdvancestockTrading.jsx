@@ -3,19 +3,18 @@ import { FaRegLightbulb, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/common.mp4';
 import AdvancestockTradingSyllabus from './AdvancestockTradingSyllabus';
 import EnrollmentForm from './EnrollmentForm';
-import courses from './coursesData';
+import CourseTestimonial from './CourseTestimonial';
 
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(15000); // Default price
+    const [price, setPrice] = useState(16999); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
-    const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
 
     const handleCouponApply = () => {
         if (couponCode === 'TRYNEW') {
-            setPrice(15000 * 0.88);
+            setPrice(16999 * 0.88);
             setNotification('Coupon applied successfully! You got 12% discount.');
         } else {
             setNotification('Invalid Coupon Code');
@@ -23,20 +22,14 @@ const AdvancestockTrading = () => {
     };
 
     const handleEnrollClick = () => {
-        if (courses.availability) {
-            setIsFormOpen(true); // Open enrollment form
-        } else {
-            setShowComingSoonModal(true); // Show coming soon modal
-        }
-    };
+ setIsFormOpen(true); // Open enrollment form
+       };
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
     };
 
-    const handleCloseModal = () => {
-        setShowComingSoonModal(false);
-    };
+   
 
     return (
         <div className="bg-gray-200 text-gray-900">
@@ -92,11 +85,15 @@ const AdvancestockTrading = () => {
                     </div>
                 </section>
 
-                {/* Course details and buttons */}
                 <div className="flex flex-col pl-6 md:pl-60 gap-3">
-                    <span className="text-xl font-semibold text-yellow-500">Fee: ₹{price}</span>
-                    <span className="text-xl font-semibold">Duration: 25 days</span>
+                    <span className="text-xl md:text-2xl font-semibold text-white bg-gradient-to-r from-blue-500 to-blue-700 px-4 py-2 rounded-lg shadow-md w-fit">
+                        Fee: <span className='text-yellow-400'>₹{price}</span>
+                    </span>
+                    <span className="text-xl md:text-2xl font-semibold text-gray-800">
+                        Duration: <span className="text-blue-600">45 days</span>
+                    </span>
                 </div>
+
 
                 <div className="flex flex-col md:pl-60 pl-6 mt-5">
                     <input
@@ -104,16 +101,16 @@ const AdvancestockTrading = () => {
                         value={couponCode}
                         onChange={(e) => setCouponCode(e.target.value)}
                         placeholder="Enter Coupon Code"
-                        className="mb-2 p-2 border rounded-md"
+                        className="mb-2 p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <button
                         onClick={handleCouponApply}
-                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-500 transition-all text-white border hover:border-blue-700 hover:bg-white hover:text-blue-700"
+                        className="font-medium py-2 px-4 rounded-md text-lg bg-blue-700 text-white border border-blue-700 transition-all hover:bg-white hover:text-blue-700 hover:shadow-md"
                     >
                         Apply Coupon
                     </button>
                     {notification && (
-                        <div className={`mt-4 p-2 text-center ${notification.includes('Invalid') ? 'text-red-500' : 'text-green-500'}`}>
+                        <div className={`mt-4 p-2 text-center rounded-md ${notification.includes('Invalid') ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'} shadow-sm`}>
                             {notification}
                         </div>
                     )}
@@ -122,14 +119,16 @@ const AdvancestockTrading = () => {
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <button
                         onClick={handleEnrollClick}
-                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300'
+                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-800 text-white border border-blue-800 transition-all hover:bg-white hover:text-blue-800 hover:shadow-md mt-5 flex items-center'
                         style={{ width: 'fit-content' }}
                     >
-                        Coming Soon ! <FaUserGraduate className="ml-2 text-lg" />
+                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    {/* <p className="text-sm text-gray-600 mt-2">3/5 students enrolled in this month's batch</p>
-                    <p className="text-sm text-red-600 mt-2">HURRY UP !! Don't Miss the Chance</p> */}
+                    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
                 </div>
+
+
 
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -171,20 +170,13 @@ const AdvancestockTrading = () => {
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
                                     <p>Develop skills in quantitative analysis and algorithmic trading.</p>
                                 </li>
-                                <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Gain insights into risk management and portfolio optimization techniques.</p>
-                                </li>
-                                <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Prepare for professional trading certifications and exams.</p>
-                                </li>
                             </ul>
                         </div>
                     </section>
                 )}
 
                 {/* Key Features Section */}
+
                 {activeTab === 'keyFeatures' && (
                     <section className="bg-gray-100 py-12 transition-all">
                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -192,64 +184,32 @@ const AdvancestockTrading = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Comprehensive video lectures and interactive quizzes.</p>
+                                    <p>Interactive live trading sessions with real-time market simulations.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Live trading simulations with real-time market data.</p>
+                                    <p>Access to premium trading tools and proprietary trading algorithms.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Access to a community forum for discussions and Q&A sessions.</p>
-                                </li>
-                                <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>One-on-one mentoring sessions with industry experts.</p>
-                                </li>
-                                <li className="flex items-start">
-                                    <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Flexible learning schedule with 24/7 access to course materials.</p>
+                                    <p>One-on-one mentoring and personalized feedback sessions.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
+</div>
+<CourseTestimonial />
 
-                {/* Conditional Rendering for Enrollment Form and Coming Soon Modal */}
-                {courses.availability ? (
-                    // If course is available, render EnrollmentForm when isFormOpen is true
-                    isFormOpen && (
-                        <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
-                    )
-                ) : (
-                    // If course is not available, render Coming Soon Modal when showComingSoonModal is true
-                    showComingSoonModal && (
-                        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
-                            <div className="bg-white rounded-lg p-8 max-w-md text-center">
-                                <h2 className="text-3xl font-semibold mb-4">Course Coming Soon</h2>
-                                <p className="text-lg text-gray-700 mb-6">
-                                    This course will be available soon. Until then, check the syllabus and explore our other available courses.
-                                </p>
-                                <div className="flex justify-center space-x-4">
-                                    <button
-                                        onClick={handleCloseModal}
-                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-medium transition-all"
-                                    >
-                                        Check Syllabus
-                                    </button>
-                                    <button
-                                        onClick={() => window.location.href = '/courses'} // Replace with actual link
-                                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-md font-medium transition-all"
-                                    >
-                                        Check Other Courses
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                )}
-            </div>
-        </div>
+{isFormOpen && (
+    <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+)}
+</div>
+                           
+                           
+                        
+               
+        
     );
 };
 

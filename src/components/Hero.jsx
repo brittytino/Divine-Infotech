@@ -23,12 +23,12 @@ const Hero = () => {
           At Divine Infotech, we offer expert-led tech courses to equip you with essential digital skills. Our programs, ranging from Fullstack Web Development to Digital Marketing, meet the evolving demands of the tech industry.
         </p>
         <div className="md:gap-5 gap-3 flex flex-row mt-12 md:mb-10 transition-all">
-          <button className="bg-[#453fe1] transition-all flex items-center justify-center hover:bg-transparent text-white border border-[#453fe1] hover:text-[#628ce9] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium rounded-md">
+          <button className="bg-[#453fe1] transition-all flex items-center justify-center hover:bg-transparent text-white border-2 border-[#453fe1] hover:text-[#453fe1] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium rounded-md">
             <a href="#courses"> <span className="flex items-center gap-2">
               Explore Courses <GoArrowUpRight className="text-xl  lg:text-2xl font-bold" />
             </span></a>
           </button>
-          <a href="#footer"> <button className="rounded-md border transition-all text-[#453fe1] bg-[#efeef3] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium hover:border-[#8d6adb]">
+          <a href="#footer"> <button className="rounded-md border-2 transition-all text-[#453fe1] bg-[#efeef3] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium hover:border-[#8d6adb]">
             Contact Us
           </button></a>
         </div>

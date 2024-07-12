@@ -218,7 +218,7 @@ const CompletefullStack = () => {
                 <CourseTestimonial />
 
                 {isFormOpen && (
-                    <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+                    <EnrollmentForm onClose={handleCloseForm} courseName="Complete Full stack Development" price={price} appliedCoupon={couponCode} />
                 )}
             </div>
         </div>

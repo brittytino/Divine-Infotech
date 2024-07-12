@@ -220,7 +220,7 @@ const ProgrammingFundamentals = () => {
             <CourseTestimonial />
 
             {isFormOpen && (
-                <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+                <EnrollmentForm onClose={handleCloseForm} courseName="Programming Fundamentals course" price={price} appliedCoupon={couponCode} />
             )}
 
         </div>

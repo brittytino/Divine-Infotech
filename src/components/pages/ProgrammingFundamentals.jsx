@@ -10,15 +10,23 @@ import CourseTestimonial from './CourseTestimonial';
 const ProgrammingFundamentals = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(17000); // Default price
+    const [price, setPrice] = useState(12000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
 
 
+    const coupons = {
+        TRYNEW: 0.12, // 12% discount
+        trynew: 0.12, // 12% discount
+        
+    };
+    
     const handleCouponApply = () => {
-        if (couponCode === 'TRYNEW') {
-            setPrice(17000 * 0.88);
-            setNotification('Coupon applied successfully! You got 12% discount.');
+        const discount = coupons[couponCode.toUpperCase()];
+    
+        if (discount) {
+            setPrice(12000 * (1 - discount));
+            setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');
         }

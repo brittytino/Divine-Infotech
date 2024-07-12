@@ -8,18 +8,27 @@ import CourseTestimonial from './CourseTestimonial';
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(16999); // Default price
+    const [price, setPrice] = useState(10000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
 
+    const coupons = {
+        TRYNEW: 0.12, // 12% discount
+        trynew: 0.12, // 12% discount
+        
+    };
+    
     const handleCouponApply = () => {
-        if (couponCode === 'TRYNEW') {
-            setPrice(16999 * 0.88);
-            setNotification('Coupon applied successfully! You got 12% discount.');
+        const discount = coupons[couponCode.toUpperCase()];
+    
+        if (discount) {
+            setPrice(10000 * (1 - discount));
+            setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');
         }
     };
+    
 
     const handleEnrollClick = () => {
  setIsFormOpen(true); // Open enrollment form

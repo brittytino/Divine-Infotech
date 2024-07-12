@@ -19,6 +19,8 @@ import Azurecloud from './components/pages/Azurecloud';
 
 // analytics
 import ReactGA from "react-ga4";
+// import ToastNotifications from './components/pages/ToastNotify';
+import ReferralModal from './components/pages/ReferralModal';
 
 ReactGA.initialize("G-YLX8WB7CZ2");
 
@@ -34,6 +36,16 @@ const AppContent = () => {
 
     // Function to determine if CouponToast should be displayed
     const shouldDisplayCouponToast = () => {
+        return location.pathname !== '/services';
+    };
+
+    // Function to determine if ToastNotifications should be displayed
+    const shouldDisplayToastNotifications = () => {
+        return location.pathname !== '/services';
+    };
+
+    // Function to determine if ReferralModal should be displayed
+    const shouldDisplayReferralModal = () => {
         return location.pathname !== '/services';
     };
 
@@ -56,6 +68,8 @@ const AppContent = () => {
                 <Route path="/contact" element={<ContactServices />} />
             </Routes>
             {shouldDisplayCouponToast() && <CouponToast />} {/* Render CouponToast conditionally */}
+            {/* {shouldDisplayToastNotifications() && <ToastNotifications />} Render ToastNotifications conditionally */}
+            {shouldDisplayReferralModal() && <ReferralModal />} {/* Render ReferralModal conditionally */}
             <Footer />
         </>
     );

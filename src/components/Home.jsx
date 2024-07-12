@@ -15,6 +15,7 @@ const Home = () => {
   return (
     <div>
       <Popup />
+      
       <div id="content" className="relative">
         <Hero />
         <AdvantagesSection />

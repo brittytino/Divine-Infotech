@@ -7,37 +7,26 @@ import azureCloud from './img/course/azure cloud.png';
 
 const courses = [
     {
-        img: tallyprimewithGst,
-        availability: true,
-        title: "Mastering Tally Prime with GST",
-        category: ["Tally", "Best Selling"],
-        oldFees: "₹18,000",
-        price: "₹15,000",
-        duration: "45 days",
-        url: 'tally',
-        description: "Master Tally Prime with GST, covering basic to advanced accounting, inventory management, GST implementation, payroll, and final project integration."
-    },
-    {
         img: AdvancedStockTradingTechniques,
         availability: true,
         title: "Advanced Stock Trading Techniques",
         category: ["Stock Market", "Best Selling"], 
-        oldFees: "₹19,999",
-        price: "₹16,999",
+        oldFees: "₹12,000",
+        price: "₹10,000",
         duration: "45 days",
         url: '/AdvancestockTrading',
         description: "Master stock trading with advanced technical analysis, quantitative techniques, derivatives, and risk management in this comprehensive course."
     },
     {
-        img: azureCloud,
-        availability: false,
-        title: "Mastering Azure: Cloud Computing Excellence",
-        category: ["Cloud", "Best Selling"],
-        oldFees: "₹25,000",
-        price: "₹18,000",
+        img: fundamentalsofLang,
+        availability: true,
+        title: "Fundamentals of C, C++, Python, and Java",
+        category: ["Programming Fundamentals", "Best Selling"],
+        oldFees: "₹14,000",
+        price: "₹12,000",
         duration: "30 days",
-        url: '/azurecloud',
-        description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
+        url: '/ProgrammingFundamentals',
+        description: "Master programming basics and advanced concepts in C, C++, Python, and Java with a final integrated project in this 25-day course."
     },
     {
         img: fullStack,
@@ -45,22 +34,38 @@ const courses = [
         title: "Complete Full Stack Development",
         category: ["Web Development", "Best Selling"],
         oldFees: "₹18,000",
-        price: "₹16,000",
+        price: "₹15,000",
         duration: "65 days",
         url: '/CompletefullStack',
         description: "Master Complete Full Stack Development with HTML, CSS, JavaScript, and backend technologies to build dynamic web applications.",
     },
     {
-        img: fundamentalsofLang,
+        img: azureCloud,
         availability: true,
-        title: "Fundamentals of C, C++, Python, and Java",
-        category: ["Programming Fundamentals", "Best Selling"],
-        oldFees: "₹18,000",
-        price: "₹17,000",
+        title: "Mastering Azure: Cloud Computing Excellence",
+        category: ["Cloud", "Best Selling"],
+        oldFees: "₹18,500",
+        price: "₹15,000",
         duration: "30 days",
-        url: '/ProgrammingFundamentals',
-        description: "Master programming basics and advanced concepts in C, C++, Python, and Java with a final integrated project in this 25-day course."
+        url: '/azurecloud',
+        description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
+    },  
+    
+    {
+        img: tallyprimewithGst,
+        availability: true,
+        title: "Mastering Tally Prime with GST",
+        category: ["Tally", "Best Selling"],
+        oldFees: "₹20,000",
+        price: "₹18,000",
+        duration: "45 days",
+        url: 'tally',
+        description: "Master Tally Prime with GST, covering basic to advanced accounting, inventory management, GST implementation, payroll, and final project integration."
     },
+    
+
+   
+    
     {
         img: comingSoon,
         availability: true,

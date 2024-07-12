@@ -3,44 +3,39 @@ import { FaRegLightbulb, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/common.mp4';
 import AzurecloudSyllabus from './AzurecloudSyllabus';
 import EnrollmentForm from './EnrollmentForm';
-import { motion } from 'framer-motion';
 import courses from './coursesData';
-import { useInView } from 'react-intersection-observer';
+import CourseTestimonial from './CourseTestimonial';
 
 const Azurecloud = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(18000); // Default price
+    const [price, setPrice] = useState(15000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
-    const [showComingSoonModal, setShowComingSoonModal] = useState(!courses.availability);
 
-    const { ref: introRef, inView: introInView } = useInView();
-    const { ref: highlightsRef, inView: highlightsInView } = useInView();
+    const coupons = {
+        TRYNEW: 0.12, // 12% discount
+        SAVE20: 0.20, // 20% discount
+        DISCOUNT15: 0.15, // 15% discount
+    };
 
     const handleCouponApply = () => {
-        if (couponCode === 'TRYNEW') {
-            setPrice(18000 * 0.88);
-            setNotification('Coupon applied successfully! You got 12% discount.');
+        const discount = coupons[couponCode.toUpperCase()];
+
+        if (discount) {
+            setPrice(15000 * (1 - discount));
+            setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');
         }
     };
 
     const handleEnrollClick = () => {
-        if (courses.availability) {
-            setIsFormOpen(true); // Open enrollment form
-        } else {
-            setShowComingSoonModal(true); // Show coming soon modal
-        }
+        setIsFormOpen(true); // Open enrollment form
     };
 
     const handleCloseForm = () => {
         setIsFormOpen(false);
-    };
-
-    const handleCloseModal = () => {
-        setShowComingSoonModal(false);
     };
 
     return (
@@ -49,15 +44,9 @@ const Azurecloud = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <motion.h1
-                            className="text-4xl font-bold mb-2"
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: introInView ? 1 : 0, y: introInView ? 0 : 50 }}
-                            transition={{ duration: 0.6 }}
-                            ref={introRef}
-                        >
+                        <h1 className="text-4xl font-bold mb-2">
                             Mastering Azure: Cloud Computing Excellence
-                        </motion.h1>
+                        </h1>
                         <p className="md:text-lg text-sm text-gray-300">
                             Become an expert in Azure cloud computing solutions
                         </p>
@@ -66,15 +55,9 @@ const Azurecloud = () => {
 
                 {/* Video Section */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <motion.h2
-                        className="text-3xl font-semibold mb-4"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: highlightsInView ? 1 : 0, y: highlightsInView ? 0 : 50 }}
-                        transition={{ duration: 0.6 }}
-                        ref={highlightsRef}
-                    >
+                    <h2 className="text-3xl font-semibold mb-4">
                         Introduction
-                    </motion.h2>
+                    </h2>
                     <div className="flex flex-col lg:flex-row lg:items-start lg:space-x-8 gap-5 md:gap-10">
                         <div className="relative lg:w-2/3">
                             <div style={{ paddingBottom: '56.25%', position: 'relative', height: 0 }}>
@@ -137,14 +120,16 @@ const Azurecloud = () => {
                     )}
                 </div>
 
-                <div className="md:pl-60 pl-6 flex flex-col">
+                <div className='md:pl-60 pl-6 flex flex-col'>
                     <button
                         onClick={handleEnrollClick}
-                        className="font-medium py-3 px-6 rounded-md text-lg bg-blue-600 text-white border border-blue-600 hover:bg-white hover:text-blue-600 mt-5 flex items-center transition-all duration-300"
+                        className='font-medium py-3 px-6 rounded-md text-lg bg-blue-800 text-white border border-blue-800 transition-all hover:bg-white hover:text-blue-800 hover:shadow-md mt-5 flex items-center'
                         style={{ width: 'fit-content' }}
                     >
-                        Coming Soon ! <FaUserGraduate className="ml-2 text-lg" />
+                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
+                    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
                 </div>
 
                 {/* Syllabus FAQ */}
@@ -204,60 +189,32 @@ const Azurecloud = () => {
                             <ul className="space-y-4">
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>High-quality course materials.</p>
+                                    <p>24/7 access to Azure labs.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Live sessions with industry experts.</p>
+                                    <p>Live projects with real-world application.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>24/7 access to course content.</p>
+                                    <p>Industry-recognized certification.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <FaRegLightbulb className="text-2xl text-blue-600 mr-4" />
-                                    <p>Certification upon completion.</p>
+                                    <p>Community support and mentorship.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
+          </div>
+<CourseTestimonial />
 
-                 {/* Conditional Rendering for Enrollment Form and Coming Soon Modal */}
-                 {courses.availability ? (
-                    // If course is available, render EnrollmentForm when isFormOpen is true
-                    isFormOpen && (
-                        <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
-                    )
-                ) : (
-                    // If course is not available, render Coming Soon Modal when showComingSoonModal is true
-                    showComingSoonModal && (
-                        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-500 bg-opacity-50 z-50">
-                            <div className="bg-white rounded-lg p-8 max-w-md text-center">
-                                <h2 className="text-3xl font-semibold mb-4">Course Coming Soon</h2>
-                                <p className="text-lg text-gray-700 mb-6">
-                                    This course will be available soon. Until then, check the syllabus and explore our other available courses.
-                                </p>
-                                <div className="flex justify-center space-x-4">
-                                    <button
-                                        onClick={handleCloseModal}
-                                        className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-md font-medium transition-all"
-                                    >
-                                        Check Syllabus
-                                    </button>
-                                    <button
-                                        onClick={() => window.location.href = '/courses'} // Replace with actual link
-                                        className="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-6 rounded-md font-medium transition-all"
-                                    >
-                                        Check Other Courses
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    )
-                )}
-            </div>
-        </div>
+{isFormOpen && (
+    <EnrollmentForm onClose={handleCloseForm} courseName="Mastering Azure: Cloud Computing Excellence" price={price} appliedCoupon={couponCode} />
+)}
+</div>
+          
     );
 };
 

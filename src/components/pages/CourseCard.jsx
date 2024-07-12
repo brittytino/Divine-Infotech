@@ -16,10 +16,20 @@ const CourseCard = ({ course, index, selectedCategory }) => {
     const [isValidCoupon, setIsValidCoupon] = useState(true);
 
     const handleCouponApply = () => {
-        if (couponCode === 'TRYNEW') {
-            const discountedPrice = (price * 0.88).toFixed(2);
+        const coupons = {
+            'TRYNEW': 0.88,  // 12% discount
+            'trynew' : 0.88
+            // Add more coupons here
+            // 'NEWYEAR': 0.85, // Example: 15% discount
+            // 'SUMMER21': 0.90 // Example: 10% discount
+        };
+    
+        const discount = coupons[couponCode];
+    
+        if (discount) {
+            const discountedPrice = (price * discount).toFixed(2);
             setPrice(discountedPrice);
-            setNotification('Coupon applied successfully! You got 12% discount.');
+            setNotification(`Coupon applied successfully! You got ${(1 - discount) * 100}% discount.`);
             setIsCouponApplied(true);
             setIsValidCoupon(true);
         } else {
@@ -27,7 +37,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
             setIsValidCoupon(false);
         }
     };
-
+    
     return (
         <motion.div
             ref={ref}

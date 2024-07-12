@@ -223,7 +223,7 @@ const Tallyfundamentals = () => {
             <CourseTestimonial />
 
             {isFormOpen && (
-                <EnrollmentForm onClose={handleCloseForm} courseName="Advanced Stock Trading Techniques" price={price} appliedCoupon={couponCode} />
+                <EnrollmentForm onClose={handleCloseForm} courseName="Mastering Tally Prime with GST" price={price} appliedCoupon={couponCode} />
             )}
         </div>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import aboutImg from '../images/about.png';
+import aboutImg from '../images/about us.png';
 import { useInView } from 'react-intersection-observer';
 
 const AboutUs = () => {
@@ -48,7 +48,7 @@ const AboutUs = () => {
                 animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
                 transition={{ duration: 0.8 }}
             >
-                <img src={aboutImg} alt="About Us" className="rounded-md md:h-[400px]" />
+                <img src={aboutImg} alt="About Us" className="rounded-md md:h-[400px] md:w-[500px] border-4 border-[#c0a0ff]" />
             </motion.div>
         </section>
     );

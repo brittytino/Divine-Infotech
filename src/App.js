@@ -15,39 +15,44 @@ import RefundPolicy from './components/RefundPolicy';
 import ContactServices from './components/ContactFormServices';
 import Tallyfundamentals from './components/pages/Tallyfundamentals';
 import CouponToast from './components/CouponToast';
-import Azurecloud from './components/pages/Azurecloud';
-
-// analytics
-import ReactGA from "react-ga4";
 import ReferralModal from './components/pages/ReferralModal';
 import ToastPromotion from './components/ToastPromotion';
+import Azurecloud from './components/pages/Azurecloud';
 import WhatsAppWidget from './components/WhatsAppWidget';
+import ServiceModal from './components/pages/ServiceModal';
 
+// Initialize Google Analytics
+import ReactGA from "react-ga4";
 ReactGA.initialize("G-YLX8WB7CZ2");
 
 const AppContent = () => {
     const location = useLocation();
 
     useEffect(() => {
-        ReactGA.send({ 
-            hitType: "pageview", 
-            page: location.pathname 
+        ReactGA.send({
+            hitType: "pageview",
+            page: location.pathname
         });
     }, [location]);
 
     // Function to determine if CouponToast should be displayed
     const shouldDisplayCouponToast = () => {
-        return location.pathname !== '/services';
+        return location.pathname !== '/services' && location.pathname !== '/';
     };
 
     // Function to determine if ReferralModal should be displayed
     const shouldDisplayReferralModal = () => {
-        return location.pathname !== '/services';
+        return location.pathname !== '/services' && location.pathname !== '/';
     };
 
     // Function to determine if ToastPromotion should be displayed
     const shouldDisplayToastPromotion = () => {
-        return location.pathname !== '/services';
+        return location.pathname !== '/services' && location.pathname !== '/';
+    };
+
+    // Function to determine if ServiceModal should be displayed
+    const shouldDisplayServiceModal = () => {
+        return location.pathname === '/';
     };
 
     return (
@@ -68,10 +73,11 @@ const AppContent = () => {
                 <Route path="/RefundPolicy" element={<RefundPolicy />} />
                 <Route path="/contact" element={<ContactServices />} />
             </Routes>
-            {shouldDisplayCouponToast() && <CouponToast />} {/* Render CouponToast conditionally */}
-            {shouldDisplayReferralModal() && <ReferralModal />} {/* Render ReferralModal conditionally */}
-            {shouldDisplayToastPromotion() && <ToastPromotion />} {/* Render ToastPromotion conditionally */}
-            <WhatsAppWidget/>
+            {shouldDisplayCouponToast() && <CouponToast />}
+            {shouldDisplayReferralModal() && <ReferralModal />}
+            {shouldDisplayToastPromotion() && <ToastPromotion />}
+            {shouldDisplayServiceModal() && <ServiceModal />}
+            <WhatsAppWidget />
             <Footer />
         </>
     );

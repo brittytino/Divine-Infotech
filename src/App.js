@@ -39,9 +39,13 @@ const AppContent = () => {
         return location.pathname !== '/services';
     };
 
-
     // Function to determine if ReferralModal should be displayed
     const shouldDisplayReferralModal = () => {
+        return location.pathname !== '/services';
+    };
+
+    // Function to determine if ToastPromotion should be displayed
+    const shouldDisplayToastPromotion = () => {
         return location.pathname !== '/services';
     };
 
@@ -65,7 +69,7 @@ const AppContent = () => {
             </Routes>
             {shouldDisplayCouponToast() && <CouponToast />} {/* Render CouponToast conditionally */}
             {shouldDisplayReferralModal() && <ReferralModal />} {/* Render ReferralModal conditionally */}
-            <ToastPromotion/>
+            {shouldDisplayToastPromotion() && <ToastPromotion />} {/* Render ToastPromotion conditionally */}
             <Footer />
         </>
     );

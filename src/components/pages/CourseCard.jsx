@@ -1,4 +1,3 @@
-// CourseCard.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -18,14 +17,20 @@ const CourseCard = ({ course, index, selectedCategory }) => {
     const handleCouponApply = () => {
         const coupons = {
             'TRYNEW': 0.88,  // 12% discount
-            'trynew' : 0.88
-            // Add more coupons here
-            // 'NEWYEAR': 0.85, // Example: 15% discount
-            // 'SUMMER21': 0.90 // Example: 10% discount
+            'trynew': 0.88,
         };
-    
-        const discount = coupons[couponCode];
-    
+
+        const specificCoupons = {
+            'VAGAYARA2024': 0.75,  // 25% discount
+            'vagayara2024': 0.75,
+        };
+
+        let discount = coupons[couponCode];
+
+        if (course.title === 'Complete Full Stack Development' && !discount) {
+            discount = specificCoupons[couponCode];
+        }
+
         if (discount) {
             const discountedPrice = (price * discount).toFixed(2);
             setPrice(discountedPrice);
@@ -37,7 +42,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
             setIsValidCoupon(false);
         }
     };
-    
+
     return (
         <motion.div
             ref={ref}

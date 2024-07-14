@@ -3,9 +3,22 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaCheckCircle } from 'react-icons/fa';
 
-const names = ['Priya', 'Pravin', 'Tharun Sanjay', 'Vijay Kumar', 'Shivakumar'];
-const courses = ['Full Stack Development', 'Tally', 'Azure Fundamentals', 'Advanced Stock Trading', 'Programming Fundamentals'];
-const times = ['5 minutes ago', '30 minutes ago', '1 hour ago', '2 hours ago', '3 hours ago'];
+// Mapping names to specific courses
+const nameCourseMap = {
+  'Vishal': 'Full Stack Development',
+  'Nithika': 'Tally',
+  'Sivasudhan': 'Azure Fundamentals',
+  'Sudharshini': 'Advanced Stock Trading',
+  'Sathyasri': 'Programming Fundamentals',
+  'Ranganathan': 'Data Science',
+  'Anselm Jochim': 'Machine Learning',
+  'Infant Andrew': 'Cyber Security',
+  'Joyel': 'Cloud Computing',
+  'Mohammad Muzzambil': 'Web Development',
+  'Althaf': 'Data Analytics'
+};
+
+const times = ['10 minutes ago', '40 minutes ago', '1 day ago', '2 days ago', '3 hours ago'];
 
 const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
@@ -14,11 +27,11 @@ const ToastPromotion = () => {
   const isToastVisible = useRef(false);
 
   const showToast = () => {
-    const name = getRandomElement(names);
-    const course = getRandomElement(courses);
+    const name = getRandomElement(Object.keys(nameCourseMap));
+    const course = nameCourseMap[name];
     const time = getRandomElement(times);
 
-    const toastId = toast(
+    toast(
       <div className="flex items-center">
         <FaCheckCircle className="text-green-500 mr-2" />
         <div>

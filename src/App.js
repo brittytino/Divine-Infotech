@@ -21,6 +21,7 @@ import Azurecloud from './components/pages/Azurecloud';
 import ReactGA from "react-ga4";
 import ReferralModal from './components/pages/ReferralModal';
 import ToastPromotion from './components/ToastPromotion';
+import WhatsAppWidget from './components/WhatsAppWidget';
 
 ReactGA.initialize("G-YLX8WB7CZ2");
 
@@ -70,6 +71,7 @@ const AppContent = () => {
             {shouldDisplayCouponToast() && <CouponToast />} {/* Render CouponToast conditionally */}
             {shouldDisplayReferralModal() && <ReferralModal />} {/* Render ReferralModal conditionally */}
             {shouldDisplayToastPromotion() && <ToastPromotion />} {/* Render ToastPromotion conditionally */}
+            <WhatsAppWidget/>
             <Footer />
         </>
     );

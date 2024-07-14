@@ -37,20 +37,20 @@ const AppContent = () => {
 
     // Function to determine if CouponToast should be displayed
     const shouldDisplayCouponToast = () => {
-        return location.pathname !== '/services' && location.pathname !== '/';
+        return location.pathname !== '/services';
     };
 
     // Function to determine if ReferralModal should be displayed
     const shouldDisplayReferralModal = () => {
-        return location.pathname !== '/services' && location.pathname !== '/';
+        return location.pathname !== '/services';
     };
 
     // Function to determine if ToastPromotion should be displayed
     const shouldDisplayToastPromotion = () => {
-        return location.pathname !== '/services' && location.pathname !== '/';
+        return location.pathname !== '/services';
     };
 
-    // Function to determine if ServiceModal should be displayed
+    // Function to determine if ServiceModal should be displayed on the home page
     const shouldDisplayServiceModal = () => {
         return location.pathname === '/';
     };

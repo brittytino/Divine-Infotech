@@ -18,6 +18,7 @@ const CompletefullStack = () => {
     const coupons = {
         TRYNEW: 0.12, // 12% discount
         trynew: 0.12, // 12% discount
+        VAGAYARA2024 : 0.25, //25% discount (CBE vagayara)
         
     };
     

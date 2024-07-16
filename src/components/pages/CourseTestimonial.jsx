@@ -94,7 +94,7 @@ const CourseTestimonial = () => {
             <div id="keen-slider" className="keen-slider mx-auto">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="keen-slider__slide">
-                  <blockquote className="flex h-full flex-col justify-between bg-white border border-blue-600 rounded-md p-6 shadow-sm sm:p-8 lg:p-12">
+                  <blockquote className="flex h-full flex-col justify-between bg-white border-2 border-blue-500 rounded-md p-6 shadow-sm sm:p-8 lg:p-12">
                     <div className="flex items-center space-x-4">
                       <img
                         src={testimonial.avatar}

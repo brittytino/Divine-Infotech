@@ -4,6 +4,9 @@ import AdvancedStockTradingTechniques from './img/course/Advanced Stock Trading 
 import fundamentalsofLang from './img/course/Programming_Fundamentals.jpg';
 import comingSoon from './img/coming soon.jpeg';
 import azureCloud from './img/course/azure cloud.png';
+import aptitude from './img/course/aptitude.webp'
+import digitalMarketing from './img/course/digitalMarketingFundamentals.jpeg'
+
 
 const courses = [
     {
@@ -38,18 +41,30 @@ const courses = [
         duration: "65 days",
         url: '/CompletefullStack',
         description: "Master Complete Full Stack Development with HTML, CSS, JavaScript, and backend technologies to build dynamic web applications.",
-    },
-    {
-        img: azureCloud,
-        availability: true,
-        title: "Mastering Azure: Cloud Computing Excellence",
-        category: ["Cloud", "Best Selling"],
-        oldFees: "₹18,500",
-        price: "₹15,000",
-        duration: "30 days",
-        url: '/azurecloud',
-        description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
     },  
+    {
+        img: aptitude,
+        availability: true,
+        title: "Comprehensive Aptitude Training",
+        category: "Best Selling",
+        oldFees: "₹15,000",
+        price: "₹12,000",
+        duration: "30 days",
+        url: '/aptitude',
+        description: "Enhance your problem-solving skills with our Comprehensive Aptitude Training. Master key concepts and techniques to excel in competitive exams.",
+    },  
+    {
+        img: digitalMarketing,
+        availability: true,
+        title: "Comprehensive Aptitude Training",
+        category: "Best Selling",
+        oldFees: "₹14,999",
+        price: "₹11,499",
+        duration: "35 days",
+        url: '/digital-marketing',
+        description: "Enhance your problem-solving skills with our Comprehensive Aptitude Training. Master key concepts and techniques to excel in competitive exams.",
+    },  
+
     
     {
         img: tallyprimewithGst,
@@ -63,7 +78,17 @@ const courses = [
         description: "Master Tally Prime with GST, covering basic to advanced accounting, inventory management, GST implementation, payroll, and final project integration."
     },
     
-
+    {
+        img: azureCloud,
+        availability: false,
+        title: "Mastering Azure: Cloud Computing Excellence",
+        category: ["Cloud", "Best Selling"],
+        oldFees: "₹18,500",
+        price: "₹15,000",
+        duration: "30 days",
+        url: '/azurecloud',
+        description: "Master Azure Cloud and enhance your IT skills by learning to deploy, manage, and scale applications seamlessly.",
+    },
    
     
     {

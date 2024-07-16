@@ -1,30 +1,28 @@
 import React, { useState } from 'react';
-import { FaChartLine, FaEdit, FaChartBar, FaBullhorn, FaSearch, FaLaptop, FaUsers , FaUserGraduate} from 'react-icons/fa';
+import { FaCheckCircle, FaUserGraduate } from 'react-icons/fa';
 
 import videoFile from './videos/common.mp4';
 import EnrollmentForm from './EnrollmentForm';
-// syllabus 
-import DigitalmarketingSyllabus from './DigitalmarketingSyllabus';
+
+import AptitudeSyllabus from './AptitudeSyllabus';
 import CourseTestimonial from './CourseTestimonial';
 
-
-const Digitalmarketing = () => {
+const Aptitude = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(11499); // Default price
+    const [price, setPrice] = useState(12000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
 
     const coupons = {
         TRYNEW: 0.12, // 12% discount
-        trynew: 0.12,
     };
 
     const handleCouponApply = () => {
         const discount = coupons[couponCode.toUpperCase()];
 
         if (discount) {
-            setPrice(11500 * (1 - discount));
+            setPrice(12000 * (1 - discount));
             setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');
@@ -40,15 +38,14 @@ const Digitalmarketing = () => {
     };
 
 
-
     return (
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Digital Marketing Fundamentals</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn digital marketing step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">Comprehensive Aptitude Training</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Master aptitude skills for personal and professional growth</p>
                     </div>
                 </header>
 
@@ -70,24 +67,20 @@ const Digitalmarketing = () => {
                                 <h3 className="text-2xl font-semibold mb-6">Course Highlights</h3>
                                 <ul className="space-y-4 text-gray-800">
                                     <li className="flex items-start">
-                                        <FaBullhorn className="text-2xl text-blue-600 mr-3" />
-                                        <p>Master digital marketing channels.</p>
+                                        <FaCheckCircle className="text-2xl text-blue-600 mr-3" />
+                                        <p>Comprehensive coverage of aptitude skills.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaEdit className="text-2xl text-blue-600 mr-3" />
-                                        <p>Learn to create and optimize content.</p>
+                                        <FaCheckCircle className="text-2xl text-blue-600 mr-3" />
+                                        <p>Hands-on practice problems and mock tests.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaSearch className="text-2xl text-blue-600 mr-3" />
-                                        <p>Understand SEO fundamentals.</p>
+                                        <FaCheckCircle className="text-2xl text-blue-600 mr-3" />
+                                        <p>Expert guidance and support from mentors.</p>
                                     </li>
                                     <li className="flex items-start">
-                                        <FaChartBar className="text-2xl text-blue-600 mr-3" />
-                                        <p>Analyze and optimize digital campaigns.</p>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <FaUsers className="text-2xl text-blue-600 mr-3" />
-                                        <p>Preparation for digital marketing certifications and career advancement</p>
+                                        <FaCheckCircle className="text-2xl text-blue-600 mr-3" />
+                                        <p>Focus on logical reasoning and quantitative skills.</p>
                                     </li>
                                 </ul>
                             </div>
@@ -101,7 +94,7 @@ const Digitalmarketing = () => {
                         Fee: <span className='text-yellow-400'>₹{price}</span>
                     </span>
                     <span className="text-xl md:text-2xl font-semibold text-gray-800">
-                        Duration: <span className="text-blue-600">35 days</span>
+                        Duration: <span className="text-blue-600">30 days</span>
                     </span>
                 </div>
 
@@ -134,13 +127,13 @@ const Digitalmarketing = () => {
                     >
                         Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    <p className="text-sm text-gray-700 mt-2">1/5 students enrolled in this batch</p>
-                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 4 slots available.</p>
+                    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
                 </div>
-  
+
                 {/* Syllabus FAQ */}
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <DigitalmarketingSyllabus />
+                    <AptitudeSyllabus />
                 </section>
 
                 {/* Dynamic content */}
@@ -167,24 +160,24 @@ const Digitalmarketing = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Learning Outcomes</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaChartLine className="text-2xl text-green-600 mr-4" />
-                                    <p>Understand digital marketing landscape.</p>
+                                    <FaCheckCircle className="text-2xl text-green-600 mr-4" />
+                                    <p>Develop strong arithmetic and algebra skills.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaChartLine className="text-2xl text-green-600 mr-4" />
-                                    <p>Plan and design effective websites.</p>
+                                    <FaCheckCircle className="text-2xl text-green-600 mr-4" />
+                                    <p>Master logical reasoning and analytical thinking.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaChartLine className="text-2xl text-green-600 mr-4" />
-                                    <p>Optimize content for SEO.</p>
+                                    <FaCheckCircle className="text-2xl text-green-600 mr-4" />
+                                    <p>Enhance problem-solving abilities.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaChartLine className="text-2xl text-green-600 mr-4" />
-                                    <p>Create effective social media campaigns.</p>
+                                    <FaCheckCircle className="text-2xl text-green-600 mr-4" />
+                                    <p>Improve verbal ability and reading comprehension.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaChartLine className="text-2xl text-green-600 mr-4" />
-                                    <p>Analyze and optimize PPC campaigns.</p>
+                                    <FaCheckCircle className="text-2xl text-green-600 mr-4" />
+                                    <p>Gain proficiency in data interpretation.</p>
                                 </li>
                             </ul>
                         </div>
@@ -198,41 +191,39 @@ const Digitalmarketing = () => {
                             <h2 className="text-2xl md:text-3xl font-semibold mb-6">Key Features</h2>
                             <ul className="space-y-4">
                                 <li className="flex items-start">
-                                    <FaLaptop className="text-2xl text-blue-600 mr-4" />
-                                    <p>Hands-on projects to apply digital marketing skills.</p>
+                                    <FaCheckCircle className="text-2xl text-blue-600 mr-4" />
+                                    <p>Hands-on practice with real-world problems.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaLaptop className="text-2xl text-blue-600 mr-4" />
-                                    <p>Comprehensive coverage of digital marketing strategies.</p>
+                                    <FaCheckCircle className="text-2xl text-blue-600 mr-4" />
+                                    <p>Access to expert mentors for guidance.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaLaptop className="text-2xl text-blue-600 mr-4" />
-                                    <p>Guidance on effective content creation and optimization.</p>
+                                    <FaCheckCircle className="text-2xl text-blue-600 mr-4" />
+                                    <p>Structured curriculum for systematic learning.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaLaptop className="text-2xl text-blue-600 mr-4" />
-                                    <p>Insights into industry standards and best practices for digital marketing.</p>
+                                    <FaCheckCircle className="text-2xl text-blue-600 mr-4" />
+                                    <p>Regular mock tests to track progress.</p>
                                 </li>
                                 <li className="flex items-start">
-                                    <FaLaptop className="text-2xl text-blue-600 mr-4" />
-                                    <p>Access to a community of learners and professional mentors.</p>
+                                    <FaCheckCircle className="text-2xl text-blue-600 mr-4" />
+                                    <p>Comprehensive study material and resources.</p>
                                 </li>
                             </ul>
                         </div>
                     </section>
                 )}
 
-
                 <CourseTestimonial/>
 
-                
+
                 {isFormOpen && (
                     <EnrollmentForm onClose={handleCloseForm} courseName="Comprehensive Aptitude Training" price={price} appliedCoupon={couponCode} />
                 )}
-
             </div>
         </div>
     );
 };
 
-export default Digitalmarketing; 
+export default Aptitude;

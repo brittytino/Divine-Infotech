@@ -3,7 +3,6 @@ import { FaRegLightbulb, FaUserGraduate } from 'react-icons/fa';
 import videoFile from './videos/common.mp4';
 import AzurecloudSyllabus from './AzurecloudSyllabus';
 import EnrollmentForm from './EnrollmentForm';
-import courses from './coursesData';
 import CourseTestimonial from './CourseTestimonial';
 
 const Azurecloud = () => {
@@ -15,8 +14,6 @@ const Azurecloud = () => {
 
     const coupons = {
         TRYNEW: 0.12, // 12% discount
-        SAVE20: 0.20, // 20% discount
-        DISCOUNT15: 0.15, // 15% discount
     };
 
     const handleCouponApply = () => {
@@ -122,14 +119,15 @@ const Azurecloud = () => {
 
                 <div className='md:pl-60 pl-6 flex flex-col'>
                     <button
-                        onClick={handleEnrollClick}
+                        // onClick={handleEnrollClick} enable if u need to show form  submit !
                         className='font-medium py-3 px-6 rounded-md text-lg bg-blue-800 text-white border border-blue-800 transition-all hover:bg-white hover:text-blue-800 hover:shadow-md mt-5 flex items-center'
                         style={{ width: 'fit-content' }}
                     >
-                        Enroll Now <FaUserGraduate className="ml-2 text-lg" />
+                        Coming Soon ! 
+                        {/* <FaUserGraduate className="ml-2 text-lg" /> */}
                     </button>
-                    <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
-                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p>
+                    {/* <p className="text-sm text-gray-700 mt-2">2/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 3 slots available.</p> */}
                 </div>
 
                 {/* Syllabus FAQ */}

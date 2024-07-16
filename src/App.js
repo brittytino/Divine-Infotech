@@ -23,6 +23,8 @@ import ServiceModal from './components/pages/ServiceModal';
 
 // Initialize Google Analytics
 import ReactGA from "react-ga4";
+import Aptitude from './components/pages/Aptitude';
+import Digitalmarketing from './components/pages/Digitalmarketing';
 ReactGA.initialize("G-YLX8WB7CZ2");
 
 const AppContent = () => {
@@ -66,6 +68,8 @@ const AppContent = () => {
                 <Route path="/CompletefullStack" element={<CompletefullStack />} />
                 <Route path="/azurecloud" element={<Azurecloud />} />
                 <Route path="/ProgrammingFundamentals" element={<ProgrammingFundamentals />} />
+                <Route path="/digital-marketing" element={<Digitalmarketing />} />
+                <Route path="/Aptitude" element={<Aptitude />} />
                 <Route path="/courses" element={<CoursesPage />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/terms" element={<TermsAndConditions />} />

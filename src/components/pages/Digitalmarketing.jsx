@@ -14,6 +14,7 @@ const Digitalmarketing = () => {
     const [price, setPrice] = useState(11499); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
+    const courseTitle = 'Digital Marketing Fundamentals'
 
     const coupons = {
         TRYNEW: 0.12, // 12% discount
@@ -47,8 +48,8 @@ const Digitalmarketing = () => {
                 {/* Header Section */}
                 <header className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 className="text-4xl font-bold mb-2">Digital Marketing Fundamentals</h1>
-                        <p className="md:text-lg text-sm text-gray-300">Learn digital marketing step-by-step</p>
+                        <h1 className="text-4xl font-bold mb-2">{courseTitle}</h1>
+                        <p className="md:text-lg text-sm text-gray-300">Learn key digital marketing strategies to boost your brand's online presence and engagement.</p>
                     </div>
                 </header>
 
@@ -134,8 +135,8 @@ const Digitalmarketing = () => {
                     >
                         Enroll Now <FaUserGraduate className="ml-2 text-lg" />
                     </button>
-                    <p className="text-sm text-gray-700 mt-2">1/5 students enrolled in this batch</p>
-                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 4 slots available.</p>
+                    <p className="text-sm text-gray-700 mt-2">3/5 students enrolled in this batch</p>
+                    <p className="text-sm text-red-600 mt-2 font-semibold">HURRY UP! Only 2 slots available.</p>
                 </div>
   
                 {/* Syllabus FAQ */}
@@ -227,7 +228,7 @@ const Digitalmarketing = () => {
 
                 
                 {isFormOpen && (
-                    <EnrollmentForm onClose={handleCloseForm} courseName="Comprehensive Aptitude Training" price={price} appliedCoupon={couponCode} />
+                    <EnrollmentForm onClose={handleCloseForm} courseName={courseTitle} price={price} appliedCoupon={couponCode} />
                 )}
 
             </div>

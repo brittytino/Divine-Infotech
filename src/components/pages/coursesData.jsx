@@ -56,13 +56,13 @@ const courses = [
     {
         img: digitalMarketing,
         availability: true,
-        title: "Comprehensive Aptitude Training",
+        title: "Digital Marketing Fundamentals",
         category: "Best Selling",
         oldFees: "₹14,999",
         price: "₹11,499",
         duration: "35 days",
         url: '/digital-marketing',
-        description: "Enhance your problem-solving skills with our Comprehensive Aptitude Training. Master key concepts and techniques to excel in competitive exams.",
+        description: "Learn key digital marketing strategies to boost your brand's online presence and engagement.",
     },  
 
     

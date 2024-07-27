@@ -1,6 +1,6 @@
 import fullStack from './img/course/fullstack.png';
 import tallyprimewithGst from './img/course/tally fundamentals.jpg';
-import AdvancedStockTradingTechniques from './img/course/Advanced Stock Trading Techniques.jpeg';
+import AdvancedStockTradingTechniques from './img/course/stock market.jpg';
 import fundamentalsofLang from './img/course/Programming_Fundamentals.jpg';
 import comingSoon from './img/coming soon.jpeg';
 import azureCloud from './img/course/azure cloud.png';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
-import Home from '../images/home.jpg';
+import Home from '../images/home img.png';
 
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);

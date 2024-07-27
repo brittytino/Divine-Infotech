@@ -56,7 +56,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                 <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
                 <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
                 <div className="flex justify-between items-center">
-                    <div className='flex gap-4'>
+                    {/* <div className='flex gap-4'>
                         {course.oldFees && course.price !== 'Free' && (
                             <span className="md:text-lg text-base font-semibold text-blue-600 decoration-red-700 line-through">{course.oldFees}</span>
                         )}
@@ -69,10 +69,10 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                                 ₹{price}
                             </span>
                         )}
-                    </div>
+                    </div> */}
                     {selectedCategory === "Best Selling" && !course.availability ? (
                         <div>
-                            <a href={course.url}>
+                            <a href={course.url} className='mt-2'>
                                 <button className="bg-gray-300 text-gray-600 py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
                                     Show Syllabus
                                 </button>
@@ -84,11 +84,19 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                             <p className="text-lg font-semibold text-gray-600 mt-2">Coming Soon</p>
                         </div>
                     ) : (
+                        <div className='mt-2 flex space-x-2'>
                         <a href={course.url}>
                             <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                                 Enroll Now
                             </button>
                         </a>
+                        <a href={course.url}>
+                            <button className="bg-gray-300 text-gray-600 py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                                Show Syllabus
+                            </button>
+                        </a>                    
+                    </div>
+                    
                     )}
                 </div>
                 {course.price !== 'Free' && !isCouponApplied && (

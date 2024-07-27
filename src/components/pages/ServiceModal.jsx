@@ -28,9 +28,9 @@ const ServiceModal = () => {
             className="modal"
             overlayClassName="overlay fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
         >
-            <div className="bg-gradient-to-br from-purple-600 to-blue-600 bg-opacity-75 backdrop-filter backdrop-blur-lg rounded-lg mx-4 md:mx-auto p-8 md:max-w-lg w-11/12 md:w-full">
+            <div className="bg-blue-600 border-2 border-gray-400 bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-lg mx-4 md:mx-auto p-8 md:max-w-lg w-11/12 md:w-full shadow-xl">
                 <div className="flex justify-end">
-                    <button onClick={closeModal} className="text-gray-600 transition-all bg-white rounded-full p-1 hover:text-gray-700 focus:outline-none">
+                    <button onClick={closeModal} className="text-gray-300 transition-all bg-blue-700 rounded-full p-1 hover:text-white focus:outline-none">
                         <FiX className="h-6 w-6" />
                     </button>
                 </div>
@@ -55,7 +55,7 @@ const ServiceModal = () => {
                     </div>
                     <a
                         href="/services"
-                        className="block bg-white font-medium text-blue-600 py-3 px-8 rounded-full transition-all duration-300 hover:bg-transparent border-2 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 mt-6"
+                        className="block bg-white font-medium text-blue-600 py-3 px-8 rounded-full transition-all duration-300 hover:bg-transparent border-2 border-white hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 mt-6"
                         onClick={closeModal}
                     >
                         View All Services

@@ -25,6 +25,7 @@ import ServiceModal from './components/pages/ServiceModal';
 import ReactGA from "react-ga4";
 import Aptitude from './components/pages/Aptitude';
 import Digitalmarketing from './components/pages/Digitalmarketing';
+import PythonBeginner from './components/pages/PythonBeginner';
 ReactGA.initialize("G-YLX8WB7CZ2");
 
 const AppContent = () => {
@@ -69,6 +70,7 @@ const AppContent = () => {
                 <Route path="/azurecloud" element={<Azurecloud />} />
                 <Route path="/ProgrammingFundamentals" element={<ProgrammingFundamentals />} />
                 <Route path="/digital-marketing" element={<Digitalmarketing />} />
+                <Route path="/python" element={<PythonBeginner />} />
                 <Route path="/Aptitude" element={<Aptitude />} />
                 <Route path="/courses" element={<CoursesPage />} />
                 <Route path="/services" element={<Services />} />

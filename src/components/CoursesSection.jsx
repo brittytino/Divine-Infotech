@@ -14,7 +14,7 @@ const CoursesSection = () => {
 
     const categories = [
         "Best Selling",
-        "Free courses"
+        "Upcoming courses"
     ];
 
     const handleCategoryChange = (category) => {
@@ -34,7 +34,7 @@ const CoursesSection = () => {
                     animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50 }}
                     transition={{ duration: 0.6 }}
                 >
-                    Our Courses
+                    Our Premium Courses
                 </motion.h2>
                 <div className="flex flex-wrap items-center justify-center pt-6 md:pt-10 gap-2 md:gap-4">
                     {categories.map((category, index) => (

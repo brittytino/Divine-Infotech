@@ -63,7 +63,7 @@ const WhyChooseDivineInfotech = () => {
                         Why Choose <span className="text-yellow-600">Divine Infotech?</span>
                     </h2>
                     <p className="mt-3 md:mt-4 text-sm md:text-lg text-gray-600">
-                        Transform your future with Divine Infotech. Enroll now and take the first step towards a successful career in tech!
+                    At Divine Infotech, we are committed to providing comprehensive and practical training that bridges the gap between academic knowledge and real-world application. Our experienced instructors and hands-on approach ensure that you gain valuable insights and skills that are in high demand.
                     </p>
                 </div>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-8">

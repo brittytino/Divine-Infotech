@@ -51,7 +51,7 @@ const DigitalMarketingSection = () => {
       <div className="text-left mb-12">
         <h2 className="text-4xl font-semibold text-gray-800">Unlock Your Digital Potential</h2>
         <p className="text-lg text-gray-600 mt-4">
-          Elevate your online presence with our strategic digital marketing solutions tailored to your business needs.
+        Our digital marketing services are designed to boost your online presence and drive traffic to your website. We specialize in SEO, social media marketing, PPC, and content marketing, ensuring your business reaches its target audience effectively.
         </p>
       </div>
       <motion.div

@@ -3,33 +3,20 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaCheckCircle } from 'react-icons/fa';
 
-// Mapping names to specific courses
-const nameCourseMap = {
-  'Vishal': 'Full Stack Development',
-  'Nithika': 'Tally',
-  'Sivasudhan': 'Azure Fundamentals',
-  'Sudharshini': 'Advanced Stock Trading',
-  'Sathyasri': 'Programming Fundamentals',
-  'Ranganathan': 'Data Science',
-  'Anselm Jochim': 'Machine Learning',
-  'Infant Andrew': 'Cyber Security',
-  'Joyel': 'Cloud Computing',
-  'Mohammad Muzzambil': 'Web Development',
-  'Althaf': 'Data Analytics'
-};
-
-const times = ['10 minutes ago', '40 minutes ago', '1 day ago', '2 days ago', '3 hours ago'];
-
-const getRandomElement = (arr) => arr[Math.floor(Math.random() * arr.length)];
+// Fixed names, courses, and times
+const toastMessages = [
+  { name: 'Sudharshini', course: 'Advanced Stock Trading', time: '20 minutes ago' },
+  { name: 'Vishal', course: 'Full Stack Development', time: '30 minutes ago' },
+  { name: 'Raghul', course: 'Python for Beginners', time: '10 minutes ago' },
+  { name: 'Arun Kumar', course: 'Full Stack Development', time: '2 days ago' }
+];
 
 const ToastPromotion = () => {
-  const [toastQueue, setToastQueue] = useState([]);
+  const [toastIndex, setToastIndex] = useState(0);
   const isToastVisible = useRef(false);
 
   const showToast = () => {
-    const name = getRandomElement(Object.keys(nameCourseMap));
-    const course = nameCourseMap[name];
-    const time = getRandomElement(times);
+    const { name, course, time } = toastMessages[toastIndex];
 
     toast(
       <div className="flex items-center">
@@ -44,7 +31,7 @@ const ToastPromotion = () => {
         position: "bottom-left",
         autoClose: 5000,
         transition: Slide,
-        onClose: () => handleToastClose(),
+        onClose: handleToastClose,
       }
     );
 
@@ -53,31 +40,27 @@ const ToastPromotion = () => {
 
   const handleToastClose = () => {
     isToastVisible.current = false;
-    if (toastQueue.length > 0) {
-      setToastQueue(prevQueue => prevQueue.slice(1));
-    }
+    setToastIndex(prevIndex => (prevIndex + 1) % toastMessages.length);
   };
 
   useEffect(() => {
-    if (!isToastVisible.current && toastQueue.length > 0) {
-      showToast();
-    }
-  }, [toastQueue]);
-
-  useEffect(() => {
     const initialDelay = setTimeout(() => {
-      setToastQueue(prevQueue => [...prevQueue, {}]);
+      if (!isToastVisible.current) {
+        showToast();
+      }
     }, 5000); // 5 seconds initial delay
 
     const intervalId = setInterval(() => {
-      setToastQueue(prevQueue => [...prevQueue, {}]);
-    }, 10000); // Add to queue every 10 seconds
+      if (!isToastVisible.current) {
+        showToast();
+      }
+    }, 10000); // 10 seconds interval
 
     return () => {
       clearTimeout(initialDelay);
       clearInterval(intervalId);
     };
-  }, []);
+  }, [toastIndex]);
 
   return <ToastContainer />;
 };

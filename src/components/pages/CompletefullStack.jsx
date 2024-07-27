@@ -6,28 +6,32 @@ import SEO from '../SEO';
 import CompletefullStackSyllabus from './CompletefullStackSyllabus';
 import EnrollmentForm from './EnrollmentForm';
 
+
 import CourseTestimonial from './CourseTestimonial';
 
 const CompletefullStack = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(15000); // Default price
+    const [price, setPrice] = useState(13000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
+    const courseTitle = 'Complete Full Stack Development'
+
 
 
     const coupons = {
-        TRYNEW: 0.12, // 12% discount
-        trynew: 0.12, // 12% discount
-        VAGAYARA2024: 0.25, //25% discount (CBE vagayara)
-
+        TRYNEW: 0.08, // 8% discount
+        trynew: 0.08, // 8% discount
+        VAGAYARA2024: 0.16, // 16% discount
+        vagayara2024:0.16 ,
     };
+    
 
     const handleCouponApply = () => {
         const discount = coupons[couponCode.toUpperCase()];
 
         if (discount) {
-            setPrice(15000 * (1 - discount));
+            setPrice(13000 * (1 - discount));
             setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');
@@ -236,7 +240,7 @@ const CompletefullStack = () => {
                     <CourseTestimonial />
 
                     {isFormOpen && (
-                        <EnrollmentForm onClose={handleCloseForm} courseName="Complete Full stack Development" price={price} appliedCoupon={couponCode} />
+                        <EnrollmentForm onClose={handleCloseForm} courseName={courseTitle} price={price} appliedCoupon={couponCode} />
                     )}
                 </div>
             </div></div>

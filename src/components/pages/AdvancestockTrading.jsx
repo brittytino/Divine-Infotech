@@ -9,21 +9,23 @@ import SEO from '../SEO';
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
     const [isFormOpen, setIsFormOpen] = useState(false);
-    const [price, setPrice] = useState(10000); // Default price
+    const [price, setPrice] = useState(8000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
 
     const coupons = {
-        TRYNEW: 0.12, // 12% discount
-        trynew: 0.12, // 12% discount
-
+        TRYNEW: 0.08, // 8% discount
+        trynew: 0.08, // 8% discount
+        VAGAYARA2024: 0.16, // 16% discount
+        vagayara2024:0.16 ,
     };
+    
 
     const handleCouponApply = () => {
         const discount = coupons[couponCode.toUpperCase()];
 
         if (discount) {
-            setPrice(10000 * (1 - discount));
+            setPrice(8000 * (1 - discount));
             setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
         } else {
             setNotification('Invalid Coupon Code');

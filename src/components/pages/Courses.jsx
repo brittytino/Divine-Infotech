@@ -13,7 +13,7 @@ const CoursesPage = () => {
 
     const categories = [
         "Best Selling",
-        "Upcoming courses"
+        "Other courses"
     ];
 
     const handleCategoryChange = (category) => {

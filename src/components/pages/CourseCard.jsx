@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -13,16 +13,40 @@ const CourseCard = ({ course, index, selectedCategory }) => {
     const [notification, setNotification] = useState('');
     const [isCouponApplied, setIsCouponApplied] = useState(false);
     const [isValidCoupon, setIsValidCoupon] = useState(true);
+    const [timer, setTimer] = useState(300); // 5 minutes in seconds
+    const [isTimerActive, setIsTimerActive] = useState(false);
+
+    useEffect(() => {
+        let interval;
+
+        if (isTimerActive) {
+            interval = setInterval(() => {
+                setTimer(prevTimer => {
+                    if (prevTimer <= 1) {
+                        clearInterval(interval);
+                        setIsTimerActive(false);
+                        return 0;
+                    }
+                    return prevTimer - 1;
+                });
+            }, 1000);
+        }
+
+        return () => clearInterval(interval);
+    }, [isTimerActive]);
 
     const handleCouponApply = () => {
         const coupons = {
-            'TRYNEW': 0.88,  // 12% discount
-            'trynew': 0.88,
+            'TRYNEW': 0.92,  // 8% discount
+            'trynew': 0.92,
+        
+            'VAGAYARA2024': 0.84,  // 16% discount
+            'vagayara2024': 0.84,
         };
 
         const specificCoupons = {
-            'VAGAYARA2024': 0.75,  // 25% discount
-            'vagayara2024': 0.75,
+            'VAGAYARA2024': 0.84,  // 16% discount
+            'vagayara2024': 0.84,
         };
 
         let discount = coupons[couponCode];
@@ -33,14 +57,27 @@ const CourseCard = ({ course, index, selectedCategory }) => {
 
         if (discount) {
             const discountedPrice = (price * discount).toFixed(2);
+            const discountPercentage = Math.round((1 - discount) * 100); // Round the percentage
             setPrice(discountedPrice);
-            setNotification(`Coupon applied successfully! You got ${(1 - discount) * 100}% discount.`);
+            setNotification(`Coupon applied successfully! You got ${discountPercentage}% discount.`);
             setIsCouponApplied(true);
             setIsValidCoupon(true);
+            setIsTimerActive(true); // Start the timer
         } else {
             setNotification('Invalid Coupon Code');
             setIsValidCoupon(false);
         }
+    };
+
+    const handleOfferGrab = () => {
+        // Redirect to the course page
+        window.location.href = course.url;
+    };
+
+    const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${minutes}:${secs < 10 ? `0${secs}` : secs}`;
     };
 
     return (
@@ -56,20 +93,6 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                 <h2 className="md:text-xl text-lg font-semibold mb-2">{course.title}</h2>
                 <p className="text-gray-700 mb-4 text-xs md:text-base leading-relaxed">{course.description}</p>
                 <div className="flex justify-between items-center">
-                    {/* <div className='flex gap-4'>
-                        {course.oldFees && course.price !== 'Free' && (
-                            <span className="md:text-lg text-base font-semibold text-blue-600 decoration-red-700 line-through">{course.oldFees}</span>
-                        )}
-                        {course.price === 'Free' ? (
-                            <span className="md:text-lg text-base font-semibold text-blue-600">
-                                Free
-                            </span>
-                        ) : (
-                            <span className="md:text-lg text-base font-semibold text-blue-600">
-                                ₹{price}
-                            </span>
-                        )}
-                    </div> */}
                     {selectedCategory === "Best Selling" && !course.availability ? (
                         <div>
                             <a href={course.url} className='mt-2'>
@@ -127,9 +150,23 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                     </div>
                 )}
                 {notification && (
-                    <p className={`mt-2 ${isValidCoupon ? 'text-green-600' : 'text-red-600'}`}>
-                        {notification}
-                    </p>
+                    <div className="mt-2">
+                        <p className={`text-lg ${isValidCoupon ? 'text-green-600' : 'text-red-600'}`}>
+                            {notification}
+                        </p>
+                        {isCouponApplied && isTimerActive && (
+                            <div className="mt-4 bg-gray-100 p-4 rounded-md text-center">
+                                <p className="text-lg font-semibold">Hurry up! Offer expires in:</p>
+                                <p className="text-2xl font-bold text-red-600">{formatTime(timer)}</p>
+                                <button
+                                    className="bg-red-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                                    onClick={handleOfferGrab}
+                                >
+                                    Grab offer now
+                                </button>
+                            </div>
+                        )}
+                    </div>
                 )}
             </div>
         </motion.div>

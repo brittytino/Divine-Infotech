@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../SEO';
 import { FaLightbulb, FaRegClock,FaUserGraduate } from 'react-icons/fa'; // Changed icons for learning outcomes and key features
 
 import videoFile from './videos/common.mp4';
@@ -43,6 +44,13 @@ const PythonBeginner = () => {
     };
 
     return (
+        <div>
+             <SEO
+        title="Python for Beginners - Divine Infotech"
+        description="Learn Python programming from scratch and build a strong foundation for advanced coding skills."
+        keywords="Python Programming, Beginners Python Course, Coding Skills, Divine Infotech"
+      />
+      
         <div className="bg-gray-200 text-gray-900">
             <div className="bg-gray-50 text-gray-900">
                 {/* Header Section */}
@@ -224,6 +232,7 @@ const PythonBeginner = () => {
                     <EnrollmentForm onClose={handleCloseForm} courseName={courseTitle} price={price} appliedCoupon={couponCode} />
                 )}
             </div>
+        </div>
         </div>
     );
 };

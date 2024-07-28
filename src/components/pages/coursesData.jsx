@@ -6,7 +6,7 @@ import comingSoon from './img/coming soon.jpeg';
 import azureCloud from './img/course/azure cloud.png';
 import aptitude from './img/course/aptitude.webp'
 import digitalMarketing from './img/course/digitalMarketingFundamentals.jpeg'
-import pythonImg from './img/course/python for beginners.webp'
+import pythonImg from './img/course/python fullstack.webp'
 
 const courses = [
     {

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+// CourseCard.js
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import Timer from './Timer';
 
 const CourseCard = ({ course, index, selectedCategory }) => {
     const { ref, inView } = useInView({
@@ -13,33 +15,13 @@ const CourseCard = ({ course, index, selectedCategory }) => {
     const [notification, setNotification] = useState('');
     const [isCouponApplied, setIsCouponApplied] = useState(false);
     const [isValidCoupon, setIsValidCoupon] = useState(true);
-    const [timer, setTimer] = useState(300); // 5 minutes in seconds
     const [isTimerActive, setIsTimerActive] = useState(false);
-
-    useEffect(() => {
-        let interval;
-
-        if (isTimerActive) {
-            interval = setInterval(() => {
-                setTimer(prevTimer => {
-                    if (prevTimer <= 1) {
-                        clearInterval(interval);
-                        setIsTimerActive(false);
-                        return 0;
-                    }
-                    return prevTimer - 1;
-                });
-            }, 1000);
-        }
-
-        return () => clearInterval(interval);
-    }, [isTimerActive]);
 
     const handleCouponApply = () => {
         const coupons = {
             'TRYNEW': 0.92,  // 8% discount
             'trynew': 0.92,
-        
+
             'VAGAYARA2024': 0.84,  // 16% discount
             'vagayara2024': 0.84,
         };
@@ -74,12 +56,6 @@ const CourseCard = ({ course, index, selectedCategory }) => {
         window.location.href = course.url;
     };
 
-    const formatTime = (seconds) => {
-        const minutes = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${minutes}:${secs < 10 ? `0${secs}` : secs}`;
-    };
-
     return (
         <motion.div
             ref={ref}
@@ -108,18 +84,19 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                         </div>
                     ) : (
                         <div className='mt-2 flex space-x-2'>
-                        <a href={course.url}>
-                            <button className="bg-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                                Enroll Now
-                            </button>
-                        </a>
-                        <a href={course.url}>
-                            <button className="bg-gray-300 text-gray-600 py-2 px-2 lg:py-2 lg:px-4 rounded-md transition-all duration-300 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
-                                Show Syllabus
-                            </button>
-                        </a>                    
-                    </div>
-                    
+                            <a href={course.url}>
+                                <button className="bg-gradient-to-r border from-blue-500 to-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-semibold text-sm md:text-base">
+                                    Enroll Now
+                                </button>
+                            </a>
+                            <a href={course.url}>
+                                <button className="bg-gray-200 border border-gray-400 text-gray-700 py-2 px-4 rounded-md transition-all duration-300 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+                                    Show Syllabus
+                                </button>
+                            </a>
+
+                        </div>
+
                     )}
                 </div>
                 {course.price !== 'Free' && !isCouponApplied && (
@@ -157,7 +134,10 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                         {isCouponApplied && isTimerActive && (
                             <div className="mt-4 bg-gray-100 p-4 rounded-md text-center">
                                 <p className="text-lg font-semibold">Hurry up! Offer expires in:</p>
-                                <p className="text-2xl font-bold text-red-600">{formatTime(timer)}</p>
+                                <Timer
+                                    initialTime={300} // 5 minutes
+                                    onExpire={() => setIsTimerActive(false)}
+                                />
                                 <button
                                     className="bg-red-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                                     onClick={handleOfferGrab}

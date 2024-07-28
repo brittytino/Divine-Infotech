@@ -8,7 +8,7 @@ const CouponToast = () => {
         setTimeout(() => {
             toast.info(
                 <div>
-                    Use coupon code <span className="text-green-500 font-semibold">"TRYNEW"</span> for a 12% discount! (Only for first 5 Enrolls)
+                    Use coupon code <span className="text-green-500 font-semibold">"TRYNEW"</span> for a discount! (Only for first 5 Enrolls)
                 </div>,
                 {
                     position: "top-right",

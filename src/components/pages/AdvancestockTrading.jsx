@@ -5,6 +5,7 @@ import AdvancestockTradingSyllabus from './AdvancestockTradingSyllabus';
 import EnrollmentForm from './EnrollmentForm';
 import CourseTestimonial from './CourseTestimonial';
 import SEO from '../SEO';
+import Timer from './Timer';
 
 const AdvancestockTrading = () => {
     const [activeTab, setActiveTab] = useState('learningOutcomes');
@@ -12,6 +13,10 @@ const AdvancestockTrading = () => {
     const [price, setPrice] = useState(8000); // Default price
     const [couponCode, setCouponCode] = useState('');
     const [notification, setNotification] = useState('');
+
+    const [isCouponApplied, setIsCouponApplied] = useState(false);
+    const [isValidCoupon, setIsValidCoupon] = useState(true);
+    const [isTimerActive, setIsTimerActive] = useState(false);   
 
     const coupons = {
         TRYNEW: 0.08, // 8% discount
@@ -27,8 +32,12 @@ const AdvancestockTrading = () => {
         if (discount) {
             setPrice(8000 * (1 - discount));
             setNotification(`Coupon applied successfully! You got ${discount * 100}% discount.`);
+            setIsCouponApplied(true);
+            setIsValidCoupon(true);
+            setIsTimerActive(true); // Start the timer
         } else {
             setNotification('Invalid Coupon Code');
+            setIsValidCoupon(false);
         }
     };
 
@@ -113,7 +122,7 @@ const AdvancestockTrading = () => {
                     </div>
 
 
-                    <div className="flex flex-col md:pl-60 pl-6 mt-5">
+                    <div className="flex flex-col md:pl-60 pl-6 md:w-2/4 mt-5">
                         <input
                             type="text"
                             value={couponCode}
@@ -132,7 +141,28 @@ const AdvancestockTrading = () => {
                                 {notification}
                             </div>
                         )}
+
+                        {/* timer */}
+                        {isCouponApplied && isTimerActive && (
+                            <div className="mt-4 bg-gray-100 p-4 rounded-md text-center">
+                                <p className="text-lg font-semibold">Hurry up! Offer expires in:</p>
+                                <Timer
+                                    initialTime={300} // 5 minutes
+                                    onExpire={() => setIsTimerActive(false)}
+                                />
+                                <button
+                                    className="bg-red-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                                    onClick={handleEnrollClick}
+                                >
+                                    Grab offer now
+                                </button>
+                            </div>
+                        )}
+
+
+
                     </div>
+
 
                     <div className='md:pl-60 pl-6 flex flex-col'>
                         <button

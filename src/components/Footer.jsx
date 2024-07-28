@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
-import { FaFacebookSquare, FaGithub, FaLinkedin, FaDribbble } from 'react-icons/fa';
+import { FaFacebookSquare, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
@@ -8,12 +8,23 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { name: 'Twitter', icon: <FaTwitter className="text-gray-800 hover:text-black transform hover:scale-110 transition-transform duration-300" />, href: 'https://twitter.com' },
-        { name: 'Facebook', icon: <FaFacebookSquare className="text-blue-700 hover:text-blue-800 transform hover:scale-110 transition-transform duration-300" />, href: 'https://facebook.com' },
-        { name: 'LinkedIn', icon: <FaLinkedin className="text-blue-500 hover:text-blue-600 transform hover:scale-110 transition-transform duration-300" />, href: 'https://www.linkedin.com/company/divineinfotech-edu/' },
-        { name: 'Dribbble', icon: <FaDribbble className="text-pink-600 hover:text-pink-700 transform hover:scale-110 transition-transform duration-300" />, href: 'https://dribbble.com' },
-        { name: 'GitHub', icon: <FaGithub className="text-gray-600 hover:text-gray-700 transform hover:scale-110 transition-transform duration-300" />, href: 'https://github.com' },
+        { 
+            name: 'Facebook', 
+            icon: <FaFacebookSquare className="text-blue-700 hover:text-blue-800 transform hover:scale-110 transition-transform duration-300" />, 
+            href: '' 
+        },
+        { 
+            name: 'Instagram', 
+            icon: <FaInstagram className="text-pink-500 hover:text-pink-600 transform hover:scale-110 transition-transform duration-300" />, 
+            href: 'https://www.instagram.com/divine.infotech' 
+        },
+        { 
+            name: 'LinkedIn', 
+            icon: <FaLinkedin className="text-blue-500 hover:text-blue-600 transform hover:scale-110 transition-transform duration-300" />, 
+            href: 'https://www.linkedin.com/company/divineinfotech-edu/' 
+        },
     ];
+    
 
     const usefulLinks = [
         { name: 'About Us', href: '#' },

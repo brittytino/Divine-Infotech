@@ -2,18 +2,12 @@ import React, { useEffect } from 'react';
 import './Testimonial.css'; // Import the custom CSS file
 
 const Testimonial = () => {
-  // useEffect(() => {
-  //   const script = document.createElement('script');
-  //   script.src = 'https://widgets.sociablekit.com/google-reviews/widget.js';
-  //   script.async = true;
-  //   script.defer = true;
-  //   document.body.appendChild(script);
-  // }, []);
+
 
   return (
     <div id='testimonial' className="testimonials-container bg-white text-blue-700 py-12">
   
-  <div class="elfsight-app-012d44d5-cf12-4b33-ba02-f18edd9bc0e1" data-elfsight-app-lazy></div>
+  <div class="elfsight-app-166ca150-e541-40d2-ab72-1e5e44816b01" data-elfsight-app-lazy></div>
     </div>
   );
 };

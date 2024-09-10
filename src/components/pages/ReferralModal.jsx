@@ -28,11 +28,11 @@ const ReferralModal = () => {
         </button>
         <div className="flex items-center mb-4">
           <FaGift className="text-blue-600 text-3xl mr-3" />
-          <h2 className="text-2xl font-semibold">Refer a Friend & Get 25% Off!</h2>
+          <h2 className="text-2xl font-semibold">Refer a Friend & Get 25% Cashback!</h2>
         </div>
         <p className="text-gray-700 mb-6">
-          Refer your friends to purchase our courses and enjoy a 25% discount on your next course
-          purchase. It's a win-win for both of you!
+          Refer your friends to purchase our courses and enjoy a 25% cashback !
+           It's a win-win for both of you!
         </p>
         <button
           className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"

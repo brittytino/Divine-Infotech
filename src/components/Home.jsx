@@ -12,6 +12,8 @@ import ContactServices from './ContactFormServices';
 import SocialServicespage from './SocialServicespage';
 import Popup from './Popup';
 import SEO from './SEO';
+import InternshipSection from './InternshipSection ';
+import Intern from './Intern';
 
 const Home = () => {
   return (
@@ -24,6 +26,8 @@ const Home = () => {
       <Popup />
       <div id="content" className="relative">
         <Hero />
+        <InternshipSection/>
+        <Intern/>
         <AdvantagesSection />
         <Courses />
         <WhyChooseDivineInfotech />

@@ -23,10 +23,12 @@ const Intern = () => {
         return `${hours}h ${minutes}m ${seconds}s`;
     };
 
-    // Get current date and day
-    const getCurrentDate = () => {
+    // Get date and day for the next day
+    const getNextDayDate = () => {
+        const nextDay = new Date();
+        nextDay.setDate(nextDay.getDate() + 1);
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date().toLocaleDateString(undefined, options);
+        return nextDay.toLocaleDateString(undefined, options);
     };
 
     return (
@@ -38,40 +40,40 @@ const Intern = () => {
                     <div className="flex items-center mb-4">
                         <img
                             src={internImg}
-                            alt="Full Stack Internship"
+                            alt="Career Guidance"
                             className="rounded-full w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 mr-4"
                         />
                         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800">
-                            Attend a Free Full Stack Internship Call Session
+                            Attend a Free Career Guidance Call Session
                         </h2>
                     </div>
                     <ul className="list-none space-y-2 text-gray-600 mb-6">
                         <li className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Learn about Full Stack Web Development in Detail
+                            Get Personalized Career Guidance
                         </li>
                         <li className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Attend the Demo & Earn a Certificate of Participation
+                            Understand Career Paths and Opportunities
                         </li>
                     </ul>
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">Internship Program Details</h3>
+                    <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">Guidance Program Details</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-600">
                         <div className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Live instructor-led session
+                            One-on-one career consultation
                         </div>
                         <div className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Details on Projects & Technologies
+                            Explore various career options
                         </div>
                         <div className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Know Full-Stack Job Opportunities
+                            Get advice on career growth strategies
                         </div>
                         <div className="flex items-center">
                             <FaCheckCircle className="text-blue-600 mr-2" />
-                            Learn about Fees & Exciting Offers
+                            Learn about industry trends and demands
                         </div>
                     </div>
                 </div>
@@ -82,20 +84,20 @@ const Intern = () => {
                         Register for the upcoming session now!
                     </h3>
                     <p className="text-center mb-4 text-sm md:text-base lg:text-lg">
-                        {getCurrentDate()} <br /> 8:00 PM to 9:00 PM
+                        {getNextDayDate()} <br /> 8:00 PM to 9:00 PM
                     </p>
                     <div className="text-center my-4 md:my-6">
                         <FaClock className="text-white text-xl md:text-2xl mb-2 inline-block" />
-                        <div className="text-3xl md:text-4xl font-bold ">
+                        <div className="text-3xl md:text-4xl font-bold">
                             {formatTime(timeLeft)}
                         </div>
                         <span className="text-sm md:text-base lg:text-lg text-gray-800">Time left to register!</span>
                     </div>
                     <a
-                       href="https://forms.gle/hbHBBRKjnxufJTVq7" target="blank"
+                        href="https://forms.gle/hbHBBRKjnxufJTVq7" target="_blank"
                         className="bg-blue-400 text-white py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-6 rounded-full flex justify-center items-center hover:bg-blue-500 transition-colors font-bold text-sm md:text-base lg:text-xl"
                     >
-                        REGISTER FOR FREE Call ? <AiOutlineArrowRight className="ml-2" />
+                        REGISTER FOR FREE CALL <AiOutlineArrowRight className="ml-2" />
                     </a>
                 </div>
 

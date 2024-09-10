@@ -14,6 +14,7 @@ import Popup from './Popup';
 import SEO from './SEO';
 import InternshipSection from './InternshipSection ';
 import Intern from './Intern';
+import InternshipPrograms from './InternshipPrograms';
 
 const Home = () => {
   return (
@@ -28,6 +29,7 @@ const Home = () => {
         <Hero />
         <InternshipSection/>
         <Intern/>
+        <InternshipPrograms/>
         <AdvantagesSection />
         <Courses />
         <WhyChooseDivineInfotech />

@@ -21,10 +21,7 @@ const Navbar = () => {
   const navItems = [
     { title: 'HOME', href: '/' },
     { title: 'COURSES', href: '/courses' },
-    { title: 'SERVICES', href: '/services' },
-    { title: 'TESTIMONIAL', href: '#testimonial' },
-    { title: '', href: '#footer' },
-    { title: 'ABOUT', href: '#about' },
+    { title: 'ENROLL NOW', href: '/enroll' },
   ];
 
   const handleDropdownToggle = (index) => {
@@ -68,12 +65,12 @@ const Navbar = () => {
     };
   }, [location]);
 
-  // Determine the background color and text hover color based on the current page
-  const bgColor = location.pathname === '/services' ? 'bg-green-50' : 'bg-[#fafafc]';
-  const textHoverColor = location.pathname === '/services' ? 'hover:text-green-600' : 'hover:text-blue-600';
-  const btnBg = location.pathname === '/services' ? 'bg-black' : 'bg-blue-600'
-  const btnbgHover = location.pathname === '/services' ? 'hover:bg-gray-800' : 'bg-blue-600'
+  const bgColor = location.pathname === '/services' ? 'bg-[#fff7f7]' : 'bg-[#fafafc]';
+  const textHoverColor = location.pathname === '/services' ? 'hover:text-[#ce0903]' : 'hover:text-[#c50900]';
 
+  const contactBtnBg = 'bg-red-600'; // Softer background for contrast
+  const contactTextColor = 'text-white'; // Red for the contact text
+  
   return (
     <nav className={`${bgColor} shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all duration-300' : ''}`}>
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
@@ -85,7 +82,7 @@ const Navbar = () => {
           {navItems.slice(0, 5).map((item, index) => (
             item.items ? (
               <div key={index} className="relative">
-                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : 'text-gray-600'}`}>
+                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-[#c50900]' : 'text-gray-600'}`}>
                   {item.title}
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? 'rotate-180' : ''}`} />
                 </button>
@@ -102,7 +99,7 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : `text-gray-600 ${textHoverColor}`}`}>
+              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-[#ce0903]' : `text-gray-600 ${textHoverColor}`}`}>
                 {item.title}
               </button>
             )
@@ -110,11 +107,11 @@ const Navbar = () => {
         </div>
         <div className="hidden lg:flex space-x-6 items-center">
           {navItems.slice(5).map((item, index) => (
-            <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : `text-gray-600 ${textHoverColor}`}`}>
+            <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-[#ce0903]' : `text-gray-600 ${textHoverColor}`}`}>
               {item.title}
             </button>
           ))}
-          <button onClick={() => handleNavigation('/contact')} className= {`${btnBg} ${btnbgHover} py-2 px-4 rounded-md text-[#f8f8fd]`} >
+          <button onClick={() => handleNavigation('/contact')} className={`${contactBtnBg} ${contactTextColor} py-2 px-4 font-medium rounded-md border-2 border-red-600 transition-all hover:text-red-600 hover:border-red-600 hover:bg-transparent`}>
             Contact
           </button>
         </div>
@@ -127,7 +124,7 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             item.items ? (
               <div key={index}>
-                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-blue-600' : `text-gray-900 ${textHoverColor}`}`}>
+                <button onClick={() => handleDropdownToggle(index)} className={`flex items-center transition-all ${location.pathname === item.href ? 'text-[#ce0903]' : `text-gray-900 ${textHoverColor}`}`}>
                   {item.title}
                   <ChevronDownIcon className={`ml-1 h-4 w-4 transition-transform ${dropdownOpen === index ? 'rotate-180' : ''}`} />
                 </button>
@@ -144,7 +141,7 @@ const Navbar = () => {
                 )}
               </div>
             ) : (
-              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-blue-600' : `text-gray-900 ${textHoverColor}`}`}>
+              <button key={index} onClick={() => handleClick(item.href)} className={`transition-all ${location.pathname === item.href ? 'text-[#ce0903]' : `text-gray-900 ${textHoverColor}`}`}>
                 {item.title}
               </button>
             )

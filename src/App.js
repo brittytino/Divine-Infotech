@@ -8,7 +8,6 @@ import CoursesPage from './components/pages/Courses';
 import CompletefullStack from './components/pages/CompletefullStack';
 import AdvancestockTrading from './components/pages/AdvancestockTrading';
 import ProgrammingFundamentals from './components/pages/ProgrammingFundamentals';
-import Services from './components/Services';
 import TermsAndConditions from './TermsAndConditions';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import RefundPolicy from './components/RefundPolicy';
@@ -19,13 +18,14 @@ import ReferralModal from './components/pages/ReferralModal';
 import ToastPromotion from './components/ToastPromotion';
 import Azurecloud from './components/pages/Azurecloud';
 import WhatsAppWidget from './components/WhatsAppWidget';
-import ServiceModal from './components/pages/ServiceModal';
+
 
 // Initialize Google Analytics
 import ReactGA from "react-ga4";
 import Aptitude from './components/pages/Aptitude';
 import Digitalmarketing from './components/pages/Digitalmarketing';
 import PythonFullstack from './components/pages/PythonFullstack';
+import ResumeBuildingPage from './components/pages/ResumeBuilding';
 ReactGA.initialize("G-YLX8WB7CZ2");
 
 const AppContent = () => {
@@ -53,10 +53,7 @@ const AppContent = () => {
         return location.pathname !== '/services';
     };
 
-    // Function to determine if ServiceModal should be displayed on the home page
-    const shouldDisplayServiceModal = () => {
-        return location.pathname === '/';
-    };
+   
 
     return (
         <>
@@ -65,6 +62,7 @@ const AppContent = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/tally" element={<Tallyfundamentals />} />
+                <Route path="/resume-building" element={<ResumeBuildingPage />} />
                 <Route path="/AdvancestockTrading" element={<AdvancestockTrading />} />
                 <Route path="/CompletefullStack" element={<CompletefullStack />} />
                 <Route path="/azurecloud" element={<Azurecloud />} />
@@ -73,16 +71,14 @@ const AppContent = () => {
                 <Route path="/python-full-stack" element={<PythonFullstack />} />
                 <Route path="/Aptitude" element={<Aptitude />} />
                 <Route path="/courses" element={<CoursesPage />} />
-                <Route path="/services" element={<Services />} />
                 <Route path="/terms" element={<TermsAndConditions />} />
                 <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                 <Route path="/RefundPolicy" element={<RefundPolicy />} />
                 <Route path="/contact" element={<ContactServices />} />
             </Routes>
-            {shouldDisplayCouponToast() && <CouponToast />}
-            {shouldDisplayReferralModal() && <ReferralModal />}
-            {shouldDisplayToastPromotion() && <ToastPromotion />}
-            {shouldDisplayServiceModal() && <ServiceModal />}
+            {/* {shouldDisplayCouponToast() && <CouponToast />} */}
+            {/* {shouldDisplayReferralModal() && <ReferralModal />} */}
+            {/* {shouldDisplayToastPromotion() && <ToastPromotion />} */}
             <WhatsAppWidget />
             <Footer />
         </>

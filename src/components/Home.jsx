@@ -15,6 +15,7 @@ import SEO from './SEO';
 import InternshipSection from './InternshipSection ';
 import Intern from './Intern';
 import InternshipPrograms from './InternshipPrograms';
+import ResumeCourseCTA from './ResumeCourseCTA';
 
 const Home = () => {
   return (
@@ -29,6 +30,7 @@ const Home = () => {
         <Hero />
         <InternshipSection/>
         <Intern/>
+        <ResumeCourseCTA/>
         <InternshipPrograms/>
         <AdvantagesSection />
         <Courses />

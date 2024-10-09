@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.2",
     "canvas-confetti": "^1.9.3",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.11.4",
     "keen-slider": "^6.8.6",
     "react": "^18.3.1",
     "react-countup": "^6.5.3",

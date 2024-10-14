@@ -94,7 +94,7 @@ const ContactServices = ({ bgColor }) => {
                         Your journey to success begins with a simple message!
                     </p>
                     <motion.button
-                        className="mt-6 bg-red-600 text-white font-bold py-3 px-6 rounded-full hover:bg-red-700 transition-all flex items-center"
+                        className="mt-6 bg-blue-600 text-white font-bold py-3 px-6 rounded-full hover:bg-blue-700 transition-all flex items-center"
                         whileHover={{ scale: 1.05 }}
                     >
                     <a href="#" className='flex items-center justify-center'>Contact Us <FaArrowRight className="ml-2"/></a> 
@@ -109,7 +109,7 @@ const ContactServices = ({ bgColor }) => {
                 >
                     <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Form</h2>
                     {isSubmitted && <p className="text-green-500 mb-4 text-center">Your message has been sent!</p>}
-                    {errorMessage && <p className="text-red-500 font-medium  text-lg mb-4 text-center">{errorMessage}</p>}
+                    {errorMessage && <p className="text-blue-500 font-medium  text-lg mb-4 text-center">{errorMessage}</p>}
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-gray-700 mb-2" htmlFor="name">Name</label>
@@ -178,7 +178,7 @@ const ContactServices = ({ bgColor }) => {
                         </div>
                         <button 
                             type="submit"
-                            className="mt-4 w-full bg-red-600 text-white font-bold py-3 rounded-full hover:bg-red-700 transition-all"
+                            className="mt-4 w-full bg-blue-600 text-white font-bold py-3 rounded-full hover:bg-blue-700 transition-all"
                         >
                             Send Message
                         </button>

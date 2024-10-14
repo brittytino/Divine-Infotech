@@ -1,24 +1,26 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { FaCheckCircle, FaClock } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import internImg from '../images/intern.webp';
-
-import { IoIosCall } from "react-icons/io";
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Intern = () => {
-    // Timer state and logic - 2 hours countdown
+    const navigate = useNavigate();
+    const handleNavigation = (path) => {
+        navigate(path);
+    };
+
     const [timeLeft, setTimeLeft] = useState(2 * 60 * 60); // 2 hours in seconds
 
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
         }, 1000);
-
-        return () => clearInterval(timer); // Cleanup the interval on component unmount
+        return () => clearInterval(timer);
     }, []);
 
-    // Format time as Hours:Minutes:Seconds
     const formatTime = (time) => {
         const hours = Math.floor(time / (60 * 60));
         const minutes = Math.floor((time % (60 * 60)) / 60);
@@ -26,7 +28,6 @@ const Intern = () => {
         return `${hours}h ${minutes}m ${seconds}s`;
     };
 
-    // Get date and day for the next day
     const getNextDayDate = () => {
         const nextDay = new Date();
         nextDay.setDate(nextDay.getDate() + 1);
@@ -34,10 +35,19 @@ const Intern = () => {
         return nextDay.toLocaleDateString(undefined, options);
     };
 
+    // Framer Motion InView hook
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+
     return (
         <section className="py-6 px-4 md:py-12 md:px-8 lg:py-20 lg:px-20 bg-gray-100">
-            <div className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between bg-white p-4 md:p-6 lg:p-8 rounded-lg shadow-lg">
-                
+            <motion.div
+                ref={ref}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8 }}
+                className="container mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between bg-white p-4 md:p-6 lg:p-8 rounded-lg shadow-lg"
+            >
                 {/* Left Side - Image and Details */}
                 <div className="lg:w-2/3 flex flex-col items-start mb-8 lg:mb-0">
                     <div className="flex items-center mb-4">
@@ -52,37 +62,37 @@ const Intern = () => {
                     </div>
                     <ul className="list-none space-y-2 text-gray-600 mb-6">
                         <li className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             Get Personalized Career Guidance
                         </li>
                         <li className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             Understand Career Paths and Opportunities
                         </li>
                     </ul>
                     <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 mb-4">Guidance Program Details</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-600">
                         <div className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             One-on-one career consultation
                         </div>
                         <div className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             Explore various career options
                         </div>
                         <div className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             Get advice on career growth strategies
                         </div>
                         <div className="flex items-center">
-                            <FaCheckCircle className="text-green-600 mr-2" />
+                            <FaCheckCircle className="text-blue-600 mr-2" />
                             Learn about industry trends and demands
                         </div>
                     </div>
                 </div>
 
                 {/* Right Side - Registration Info */}
-                <div className="lg:w-1/3 bg-gradient-to-r from-yellow-500 via-red-600 to-red-700 p-4 md:p-6 lg:p-8 rounded-lg shadow-lg text-white">
+                <div className="lg:w-1/3 bg-gradient-to-r from-indigo-500 via-blue-600 to-indigo-700 p-4 md:p-6 lg:p-8 rounded-lg shadow-lg text-white">
                     <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-center mb-2">
                         Register for the upcoming session now!
                     </h3>
@@ -94,17 +104,18 @@ const Intern = () => {
                         <div className="text-3xl md:text-4xl font-bold">
                             {formatTime(timeLeft)}
                         </div>
-                        <span className="text-xs md:text-base lg:text-lg text-gray-100">Time left to register!</span>
+                        <span className="text-sm md:text-base lg:text-lg text-gray-200">Time left to register!</span>
                     </div>
-                    <a
-                        href="https://forms.gle/hbHBBRKjnxufJTVq7" target="_blank"
-                        className="hover:bg-transparent border-2 border-gray-200 hover:text-white py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-6 rounded-full flex justify-center items-center text-red-600 bg-white hover:border-white transition-colors font-bold text-sm md:text-base lg:text-xl"
-                    >
-                        REGISTER FOR FREE CALL <IoIosCall className="ml-2" />
-                    </a>
+                    <div className="flex justify-center">
+                        <button
+                            onClick={() => handleNavigation('/contactform')}
+                            className="bg-white text-blue-500 py-2 px-4 md:py-3 md:px-6 lg:py-3 lg:px-6 rounded-full flex justify-center items-center hover:bg-transparent border-2 border-white hover:text-white transition-colors font-bold text-sm md:text-base lg:text-xl"
+                        >
+                            REGISTER FOR FREE CALL <AiOutlineArrowRight className="ml-2" />
+                        </button>
+                    </div>
                 </div>
-
-            </div>
+            </motion.div>
         </section>
     );
 };

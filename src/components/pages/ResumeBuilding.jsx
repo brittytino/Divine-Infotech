@@ -31,7 +31,7 @@ const ResumeBuildingPage = () => {
       <div className="bg-gray-50 text-black py-8 md:px-12 lg:px-24">
         {/* Top Section - Hook */}
         <div className="text-center mb-10">
-          <h1 className="text-2xl md:text-5xl px-2 font-bold text-red-600 mb-2">
+          <h1 className="text-2xl md:text-5xl px-2 font-bold text-blue-600 mb-2">
             Struggling to Land Interviews? 📄👎
           </h1>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600">

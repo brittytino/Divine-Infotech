@@ -7,7 +7,7 @@ const ReferralModal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 10000); // Show modal after 6 seconds
+    }, 6000); // Show modal after 6 seconds
     return () => clearTimeout(timer);
   }, []);
 

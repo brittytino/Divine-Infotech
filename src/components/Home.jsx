@@ -14,8 +14,9 @@ import Popup from './Popup';
 import SEO from './SEO';
 import InternshipSection from './InternshipSection ';
 import Intern from './Intern';
-import InternshipPrograms from './InternshipPrograms';
 import ResumeCourseCTA from './ResumeCourseCTA';
+import MentorshipSessions from './MentorshipSessions';
+import CTAcodemaster from './CTAcodemaster';
 
 const Home = () => {
   return (
@@ -28,13 +29,15 @@ const Home = () => {
       <Popup />
       <div id="content" className="relative">
         <Hero />
-        <InternshipSection/>
-        <Intern/>
         <ResumeCourseCTA/>
-        <InternshipPrograms/>
+        <MentorshipSessions/>
+       
+        <Intern/>
         <AdvantagesSection />
         <Courses />
+        <CTAcodemaster/>
         <WhyChooseDivineInfotech />
+        <InternshipSection/>
         <Stats />
         <AboutUs />
         <FaqServices />

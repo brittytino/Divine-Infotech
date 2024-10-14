@@ -9,7 +9,7 @@ const ComboCTA = () => {
   const [showForm, setShowForm] = useState(false);
 
   const courseDetails = {
-    courseName: "Combo Resume + LinkedIn Mastery",
+    courseName: "Resume + LinkedIn Mastery Combo",
     price: "2000",
     appliedCoupon: "SAVE498", // Sample coupon
   };
@@ -65,7 +65,7 @@ const ComboCTA = () => {
          <div className='justify-center items-center'>
           <button 
             onClick={handleEnrollClick} 
-            className="inline-block bg-red-600 text-white text-lg md:text-xl font-semibold py-3 px-6 rounded-lg hover:bg-transparent border border-red-600 hover:text-red-600 transition-all"
+            className="inline-block bg-blue-600 text-white text-lg md:text-xl font-semibold py-3 px-6 rounded-lg hover:bg-transparent border border-blue-600 hover:text-blue-600 transition-all"
           >
            Enroll Now
           </button></div>

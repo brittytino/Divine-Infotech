@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { GoArrowUpRight } from 'react-icons/go';
 import Home from '../images/home img.png';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Hero = () => {
+  const navigate = useNavigate();
+const handleNavigation = () => {
+  navigate('/contactform');
+}
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -28,9 +36,9 @@ const Hero = () => {
               Explore Courses <GoArrowUpRight className="text-xl  lg:text-2xl font-bold" />
             </span></a>
           </button>
-          <a href="#footer"> <button className="rounded-md border-2 transition-all text-[#453fe1] bg-[#efeef3] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium hover:border-[#453fe1]">
+          <button onClick={handleNavigation} className="rounded-md border-2 transition-all text-[#453fe1] bg-[#efeef3] py-2 px-4 md:py-3 md:px-6 text-base md:text-xl font-medium hover:border-[#453fe1]">
             Contact Us
-          </button></a>
+          </button>
         </div>
       </div>
 

@@ -79,19 +79,19 @@ const MentorshipSessions = () => {
                     <Slider {...settings}>
                         {sessions.map((session, index) => (
                             <div key={index} className="px-4">
-                                <div className="flex flex-col items-center text-left rounded-lg shadow-lg w-full">
+                                <div className="flex flex-col items-center text-left rounded-lg shadow-lg ">
                                     <img
                                         src={session.image}
                                         alt={session.title}
                                         className="w-full object-contain rounded-t-lg"
                                     />
                                     <div className='p-4'>
-                                        <h3 className="text-sm font-semibold text-gray-800">
+                                        <h3 className="text-lg font-semibold text-gray-800">
                                             {session.title}
                                         </h3>
                                         <div className="mt-2 text-gray-500">
                                             {session.description.map((sentence, i) => (
-                                                <p key={i} className="mb-2 text-xs">
+                                                <p key={i} className="mb-2 text-sm">
                                                     {sentence}
                                                 </p>
                                             ))}
@@ -106,19 +106,19 @@ const MentorshipSessions = () => {
                 {/* Default grid layout for medium and larger screens */}
                 <div className="hidden md:flex justify-center space-x-8">
                     {sessions.map((session, index) => (
-                        <div key={index} className="flex flex-col items-start text-left rounded-lg shadow-lg w-64">
+                        <div key={index} className="flex flex-col items-start text-left rounded-lg shadow-lg ">
                             <img
                                 src={session.image}
                                 alt={session.title}
                                 className="w-full object-contain"
                             />
                             <div className='p-4'>
-                                <h3 className="text-sm font-semibold text-gray-800">
+                                <h3 className="text-lg font-semibold text-gray-800">
                                     {session.title}
                                 </h3>
                                 <div className="mt-2 text-gray-500">
                                     {session.description.map((sentence, i) => (
-                                        <p key={i} className="mb-2 text-xs">
+                                        <p key={i} className="mb-2 text-base">
                                             {sentence}
                                         </p>
                                     ))}

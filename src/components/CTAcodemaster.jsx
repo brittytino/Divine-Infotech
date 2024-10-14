@@ -16,17 +16,18 @@ const CTAcodemaster = () => {
       };
 
     return(
-        <div className='bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]'>
+        <div className='bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)] px-4'>
              {/* Solution Section */}
       <div className="py-16   text-white relative overflow-hidden">
         <div className="container  text-center">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-400 mb-8">
-            The CodeMaster Bootcamp: Your Path to Mastery
+          <h2 className="text-3xl md:text-5xl font-extrabold text-blue-600 mb-2">
+            The CodeMaster
           </h2>
-          <p className="text-xl mb-6">Master C, C++, Java, and Python in just a few weeks!</p>
+          <h2 className='text-2xl md:text-4xl font-semibold text-yellow-500 mb-8'> ZERO to HERO in Programming</h2>
+          <p className="text-xl text-gray-700  mb-6">Master C, C++, Java, and Python in just a few weeks!</p>
 
           {/* Placeholder for Success Image */}
-          <div className="w-64 h-64 bg-gray-200 rounded-full shadow-lg mx-auto overflow-hidden mb-8">
+          <div className="w-64 h-64 bg-gray-200 border-2 border-blue-500 rounded-full shadow-lg mx-auto overflow-hidden mb-8">
             <img
               src={thirdImg}
               alt="Success Story"
@@ -40,7 +41,7 @@ const CTAcodemaster = () => {
               <motion.div
                 key={idx}
                 
-                className="hover:bg-transparent hover:text-white text-gray-800 cursor-pointer font-medium py-2 px-2 rounded-lg bg-white shadow-md border-2 border- pink-400 transition duration-300"
+                className="hover:bg-transparent  text-gray-800 cursor-pointer font-medium py-2 px-2 rounded-lg hover:border-gray-800 bg-white shadow-md border-2  transition duration-300"
               >
                 {language}
               </motion.div>
@@ -58,14 +59,13 @@ const CTAcodemaster = () => {
           </motion.a>
 
           {/* Countdown Timer for Urgency */}
-          <div className="mt-6">
+          <div className="mt-6 ">
             <p className="text-lg text-red-500 font-bold">Hurry! Offer ends in:</p>
-            <p className="text-3xl font-bold">2 Days 14 Hours</p>
+            <p className="text-3xl font-bold text-red-600">2 Days 14 Hours</p>
           </div>
         </div>
 
-        {/* Subtle Background Animation */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent to-[#0f172a] opacity-20 pointer-events-none animate-pulse"></div>
+        
       </div>
         </div>
     )

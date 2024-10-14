@@ -41,7 +41,7 @@ const CodemasterHero = () => {
   ];
 
   return (
-    <section className="relative text-white py-6 md:py-16 px-4 lg:px-8">
+    <section className="relative bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] bg-white text-white py-6 md:py-16 px-4 lg:px-8">
       {/* Breadcrumb */}
       <Breadcrumb items={breadcrumbItems} marginX=" px-4 lg:px-16" />
 
@@ -55,19 +55,19 @@ const CodemasterHero = () => {
           }`}
         >
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
-            <span className="block">Master Programming with</span>
-            <span className="text-yellow-300 mt-2 block">CodeMaster Bootcamp</span>
+            <span className="block text-gray-700">Master Programming with</span>
+            <span className="text-blue-600 mt-2 block">CodeMaster Bootcamp</span>
           </h1>
-          <p className="text-gray-300 text-base md:text-xl font-light mb-6">
-            Learn <span className="font-semibold text-yellow-300">C, C++, Java, Python</span> from scratch and become a programming hero. Build real-world projects and get job-ready!
+          <p className="text-gray-700 text-base md:text-xl font-light mb-6">
+            Learn <span className="font-semibold text-blue-600">C, C++, Java, Python</span> from scratch and become a programming hero. Build real-world projects and get job-ready!
           </p>
 
           {/* Call to Action Buttons for Desktop */}
           <div className="hidden lg:flex justify-center md:justify-start gap-4 text-sm md:text-base lg:text-lg">
-          <button  onClick={handleEnrollClick} className="bg-orange-500 hover:bg-orange-600 py-3 px-3 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300 flex items-center gap-2">
+          <button  onClick={handleEnrollClick} className="bg-blue-500 hover:bg-blue-600 py-3 px-3 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300 flex items-center gap-2">
               Enroll Now <FaArrowRight />
             </button>
-            <button onClick={handleNavigation} className="bg-transparent border-2  border-yellow-500 text-yellow-500 hover:bg-yellow-300 hover:text-gray-900 py-2 px-2 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300">
+            <button onClick={handleNavigation} className="bg-transparent border-2  border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-gray-100 py-2 px-2 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300">
               Attend Guidance Call (FREE)
             </button>
           </div>
@@ -82,7 +82,7 @@ const CodemasterHero = () => {
           <img
             src={HeroImg}
             alt="CodeMaster Bootcamp"
-            className="w-full h-auto"
+            className="w-full h-auto "
           />
         </div>
       </div>
@@ -93,10 +93,10 @@ const CodemasterHero = () => {
           isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
         }`}
       >
-         <button  onClick={handleEnrollClick} className="bg-orange-500 hover:bg-orange-600 py-3 px-3 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300 flex items-center gap-2">
+        <button  onClick={handleEnrollClick} className="bg-blue-500 hover:bg-blue-600 py-3 px-3 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300 flex items-center gap-2">
               Enroll Now <FaArrowRight />
             </button>
-            <button className="bg-transparent border-2  border-yellow-500 text-yellow-500 hover:bg-yellow-300 hover:text-gray-900 py-2 px-2 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300">
+            <button onClick={handleNavigation} className="bg-transparent border-2  border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-gray-100 py-2 px-2 md:py-3 md:px-6 rounded-3xl font-semibold transition-all duration-300">
               Attend Guidance Call (FREE)
             </button>
       </div>

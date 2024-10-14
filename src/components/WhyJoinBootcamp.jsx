@@ -10,7 +10,7 @@ const WhyJoinBootcamp = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h2 className=" text-2xl md:text-4xl font-bold text-gray-200">Why Join CodeMaster Bootcamp?</h2>
+          <h2 className=" text-2xl md:text-4xl font-bold text-yellow-500">Why Join CodeMaster Bootcamp?</h2>
           <p className="text-sm md:text-lg text-gray-400 mt-4">
             Unlock your potential with the ultimate programming experience. Here’s why you shouldn’t miss out:
           </p>

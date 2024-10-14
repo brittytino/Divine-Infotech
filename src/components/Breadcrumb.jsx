@@ -15,7 +15,7 @@ const Breadcrumb = ({ items, marginX = 'mx-6' }) => { // Default mx value if not
         <React.Fragment key={index}>
           <p 
             onClick={() => !item.isActive && handleNavigation(item.link)} 
-            className={`font-medium cursor-pointer transition duration-200 ${item.isActive ? 'text-yellow-500' : 'text-gray-600 hover:text-gray-300'}`}
+            className={`font-medium cursor-pointer transition duration-200 ${item.isActive ? 'text-gray-800' : 'text-gray-600 hover:text-gray-300'}`}
           >
             {item.label}
           </p>

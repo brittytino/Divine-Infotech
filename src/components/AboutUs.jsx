@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import aboutImg from '../images/about us.png';
+import aboutImg from '../images/about.svg'
 import { useInView } from 'react-intersection-observer';
 
 const AboutUs = () => {
@@ -43,12 +43,12 @@ const AboutUs = () => {
 
             <motion.div
                 ref={ref}
-                className="lg:ml-14 md:flex justify-center items-center mt-10"
+                className="lg:ml-14 md:flex justify-center items-center mt-6"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
                 transition={{ duration: 0.8 }}
             >
-                <img src={aboutImg} alt="About Us" className="rounded-md md:h-[400px] md:w-[500px] border-4 border-[#c0a0ff]" />
+                <img src={aboutImg} alt="About Us" className="md:h-[400px] md:w-[500px] " />
             </motion.div>
         </section>
     );

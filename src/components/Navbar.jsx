@@ -69,8 +69,8 @@ const Navbar = () => {
   }, [location]);
 
   // Determine the background color and text hover color based on the current page
-  const bgColor = location.pathname === '/codemaster-bootcamp' ? 'bg-[#00091d]' : 'bg-[#fafafc]';
-  const textHoverColor = location.pathname === '/codemaster-bootcamp' ? 'hover:text-yellow-600' : 'hover:text-blue-600';
+  const bgColor = location.pathname === '/codemaster-bootcamp' ? 'bg-[#fafafc]' : 'bg-[#fafafc]';
+  const textHoverColor = location.pathname === '/codemaster-bootcamp' ? 'hover:text-blue-600' : 'hover:text-blue-600';
   const btnBg = location.pathname === '/services' ? 'bg-black' : 'bg-blue-600'
   const btnbgHover = location.pathname === '/services' ? 'hover:bg-gray-800' : 'bg-blue-600'
 
@@ -79,7 +79,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
         <div onClick={() => handleNavigation('/')} className="text-xl hover:cursor-pointer font-semibold flex items-center gap-2 text-[#272727]">
           <img src={Logo} alt="Divine Infotech Logo" className="h-14 md:h-16 " />
-         <span className='text-yellow-500'>Divine Infotech</span> 
+         <span className='text-black'>Divine Infotech</span> 
         </div>
         <div className="hidden lg:flex space-x-6 text-[#212832]">
           {navItems.slice(0, 5).map((item, index) => (

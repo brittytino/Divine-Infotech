@@ -21,6 +21,7 @@ const LimitedOffer = () => {
     
   return (
     <div id='code-footer' className="  text-white py-16 px-6 md:px-20 relative overflow-hidden">
+      <hr className='py-8' />
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
         
         {/* Fear and Motivation Section */}
@@ -67,25 +68,27 @@ const LimitedOffer = () => {
       </div>
 
       <div className="relative  text-white">
-        <div className="container mx-auto text-center">
+        
+        <div className="container  text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-black p-8 rounded-lg shadow-lg relative"
+            className="text-black p-5 px-0 rounded-lg shadow-lg relative"
           >
            
-            <h3 className="text-4xl text-yellow-400 font-extrabold mb-4">
-              Your Future Is at Risk!
-            </h3>
-            <p className="text-lg text-gray-300">
-              Miss out on career opportunities. Stay stuck while the world moves forward.
-            </p>
+              {/* <h3 className="text-4xl text-red-600 font-extrabold mb-4">
+                Your Future Is at Risk!
+              </h3> */}
+              
+           
             <p className="text-lg mt-2 text-gray-300">Every second wasted is a missed opportunity!</p>
             {/* Urgency and Course Price */}
             <div className="mt-4">
-              <p className="text-2xl font-bold text-[#b91c1c]">Limited-Time Offer: Just ₹4999</p>
+              <p className="text-2xl font-bold text-gray-300">Limited-Time Offer: Just <span className='text-yellow-500'> <span className=' line-through text-red-500'>₹7999</span> ₹4999</span></p>
               <p className="text-sm text-gray-100">Enroll now before the price goes up!</p>
+              <p className="text-sm text-gray-400 mt-8"> ~ Invest in your future, not in the endless scroll of social media. ~ </p>
+
             </div>
           </motion.div>
         </div>

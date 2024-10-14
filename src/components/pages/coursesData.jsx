@@ -7,7 +7,7 @@ const courses = [
     {
         img: fullStack,
         availability: true,
-        title: "Complete Full Stack Development",
+        title: "Full Stack Development",
         category: ["Web Development", "Best Selling"],
         oldFees: "₹18,000",
         price: "₹15,000",
@@ -30,7 +30,7 @@ const courses = [
         img: digitalMarketing,
         availability: true,
         title: "Digital Marketing Mastery",
-        category: ["Best Selling"],
+        category: ["Other courses"],
         oldFees: "₹14,999",
         price: "₹11,499",
         duration: "35 days",
@@ -42,8 +42,8 @@ const courses = [
     {
         img: flutterImg,
         availability: true,
-        title: "Flutter Beginner",
-        category: ["Other courses"],
+        title: "App Development - Flutter",
+        category: ["Best Selling"],
         price: "Free",
         duration: "20 days",
         url: '',

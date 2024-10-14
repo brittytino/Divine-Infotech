@@ -14,13 +14,13 @@ const CodeMasterBootcamp = () => {
   }, []);
 
   return (
-    <div className='bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]'>
+    <div className='bg-[#fafafc]  '>
 
       <CodemasterHero />
       <BootcampDetails />
       <PainAgitateSolution />
       <BootcampJourney />
-      <div className='[background:radial-gradient(125%_125%_at_50%_30%,#000_40%,#63e_100%)]'>
+      <div className=' bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]  bg-slate-950'>
         <WhyJoinBootcamp />
         <LimitedOffer />
       </div>

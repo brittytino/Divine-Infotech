@@ -85,7 +85,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                     ) : (
                         <div className='mt-2 flex space-x-2'>
                             <a href={course.url}>
-                                <button className="bg-gradient-to-r border from-red-500 to-red-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:from-red-600 hover:to-red-700 hover:shadow-lg shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 font-semibold text-sm md:text-base">
+                                <button className="bg-gradient-to-r border from-blue-500 to-blue-600 text-white py-2 px-2 md:py-2 md:px-4 rounded-md transition-all duration-300 hover:from-blue-600 hover:to-blue-700 hover:shadow-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 font-semibold text-sm md:text-base">
                                     Enroll Now
                                 </button>
                             </a>
@@ -102,7 +102,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                 {course.price !== 'Free' && !isCouponApplied && (
                     <div className="mt-2">
                         <span
-                            className="text-red-600 cursor-pointer"
+                            className="text-blue-600 cursor-pointer"
                             onClick={() => setShowCouponInput(!showCouponInput)}
                         >
                             Have a coupon?
@@ -139,7 +139,7 @@ const CourseCard = ({ course, index, selectedCategory }) => {
                                     onExpire={() => setIsTimerActive(false)}
                                 />
                                 <button
-                                    className="bg-yellow-500 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                                    className="bg-red-600 text-white py-2 px-4 mt-2 rounded-md transition-all duration-300 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                                     onClick={handleOfferGrab}
                                 >
                                     Grab offer now

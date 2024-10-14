@@ -69,13 +69,15 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                     >
                         <FaTimes className="text-2xl" />
                     </button>
-                    <h2 className="text-2xl font-semibold mb-4 text-center">Enroll in {courseName}</h2>
+                    <h2 className="text-2xl font-semibold mb-4 text-center text-white rounded-md p-2 bg-blue-600">Enroll in {courseName}</h2>
+                   
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
                             <label className="block text-sm font-medium text-gray-700 mb-1" htmlFor="name">
                                 Full Name
                             </label>
                             <input
+                            placeholder='Enter your name'
                                 type="text"
                                 id="name"
                                 name="name"
@@ -91,6 +93,7 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                             </label>
                             <input
                                 type="email"
+                                placeholder='Enter your Mail'
                                 id="email"
                                 name="email"
                                 value={formData.email}
@@ -105,6 +108,7 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                             </label>
                             <input
                                 type="tel"
+                                placeholder='Enter your Valid 10 digit Phone number'
                                 id="phone"
                                 name="phone"
                                 value={formData.phone}
@@ -119,6 +123,7 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                             </label>
                             <textarea
                                 id="background"
+                                placeholder='For eg: UG,PG , Year of study , Passed out etc..'
                                 name="background"
                                 value={formData.background}
                                 onChange={handleChange}
@@ -135,7 +140,7 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                                 name="fee"
                                 value={`₹${formData.fee}`}
                                 readOnly
-                                className="w-full px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
+                                className="w-full text-red-500 font-semibold  px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
                             />
                         </div>
                         <div className="mb-4">
@@ -147,9 +152,10 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
                                 name="coupon"
                                 value={formData.coupon}
                                 readOnly
-                                className="w-full px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
+                                className="w-full text-gray-900 font-semibold px-3 py-2 border border-blue-400 rounded-md bg-gray-100"
                             />
                         </div>
+                        <p className='text-gray-700 text-xs'><span className='text-gray-900 font-medium'>Disclaimer : </span>You are going to just submit the details and not going to pay now ! Our Team will contact you soon ! </p><br />
                         <div className="text-center">
                             <button
                                 type="submit"

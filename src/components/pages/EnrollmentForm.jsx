@@ -60,7 +60,7 @@ const EnrollmentForm = ({ courseName, price, appliedCoupon, onClose }) => {
     };
 
     return (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
+        <div className="fixed inset-0 z-50 overflow-y-auto text-gray-800">
             <div className="flex items-center justify-center min-h-screen bg-black bg-opacity-50">
                 <div className="bg-white p-8 rounded-md shadow-lg max-w-lg mx-auto w-full relative">
                     <button

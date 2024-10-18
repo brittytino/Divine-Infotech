@@ -73,10 +73,11 @@ const Navbar = () => {
   const textHoverColor = location.pathname === '/codemaster-bootcamp' ? 'hover:text-blue-600' : 'hover:text-blue-600';
   const btnBg = location.pathname === '/services' ? 'bg-black' : 'bg-blue-600'
   const btnbgHover = location.pathname === '/services' ? 'hover:bg-gray-800' : 'bg-blue-600'
+  const stickyNav = location.pathname === '/fullstack' ? 'static' : 'sticky'
 
   return (
-    <nav className={`${bgColor} shadow-md ${isSticky ? 'sticky top-0 z-50 transition-all duration-300' : ''}`}>
-      <div className="container mx-auto flex items-center justify-between py-4 px-6 md:px-24">
+    <nav className={`${bgColor}   rounded-md transition-all duration-300 shadow-md ${isSticky ? `${stickyNav} top-0 z-50  md:mx-20   transition-all duration-300` : ''}`}>
+      <div className="container flex items-center justify-between py-4 px-6 md:px-24">
         <div onClick={() => handleNavigation('/')} className="text-xl hover:cursor-pointer font-semibold flex items-center gap-2 text-[#272727]">
           <img src={Logo} alt="Divine Infotech Logo" className="h-14 md:h-16 " />
          <span className='text-black'>Divine Infotech</span> 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom'; // Import useLocation from react-router-dom
 import { FaFacebookSquare, FaLinkedin, FaInstagram } from 'react-icons/fa';
-import { FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     const { pathname } = useLocation(); // use useLocation hook to get current pathname
@@ -56,7 +55,7 @@ const Footer = () => {
     const footLink = pathname === '/services' ? 'text-green-50' : 'text-blue-300';
 
     return (
-        <footer id='footer' className={`${getFooterBackground()} text-white py-8 px-5 md:pt-20 md:px-20`}>
+        <footer id='footer' className={`${getFooterBackground()} text-white z-50 py-8 px-5 md:pt-20 md:px-20`}>
             <div className="container mx-auto">
                 <div className="flex flex-wrap justify-between lg:justify-evenly">
                     <div className="w-full lg:w-4/12 px-4 mb-8 lg:mb-0">

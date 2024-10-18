@@ -13,7 +13,7 @@ const CoursesPage = () => {
 
     const categories = [
         "Best Selling",
-        "Other courses"
+        "Other Courses"
     ];
 
     const handleCategoryChange = (category) => {
@@ -25,41 +25,48 @@ const CoursesPage = () => {
         : courses.filter(course => course.category.includes(selectedCategory));
 
     return (
-        <section id='courses' className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-100" ref={sectionRef}>
-        <div className="max-w-7xl mx-auto mb-8">
-            <motion.h2
-                className="text-3xl font-semibold text-center text-gray-800 underline underline-offset-4 decoration-blue-500"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50 }}
-                transition={{ duration: 0.6 }}
-            >
-                Our Premium Courses
-            </motion.h2>
-            <div className="flex flex-wrap items-center justify-center pt-6 md:pt-10 gap-2 md:gap-4">
-                {categories.map((category, index) => (
-                    <button
-                        key={index}
-                        className={`md:px-4 px-3 py-2 rounded-full text-xs md:text-sm font-medium transition-all ${
-                            selectedCategory === category
-                                ? 'bg-gradient-to-r from-blue-500 to-blue-700 text-white shadow-lg'
-                                : 'bg-white text-gray-800 border border-gray-300 hover:bg-gray-200'
-                        }`}
-                        onClick={() => handleCategoryChange(category)}
-                    >
-                        {category}
-                    </button>
+        <section id='courses' className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-100 via-white to-blue-100" ref={sectionRef}>
+            <div className="max-w-7xl mx-auto mb-8">
+                <motion.h2
+                    className="md:text-4xl text-2xl font-bold text-center text-blue-900 md:underline  md:underline-offset-8 decoration-wavy decoration-pink-500"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    Boost Your Career with Our Premium Courses
+                </motion.h2>
+                <motion.p
+                    className="text-lg text-center text-gray-700 mt-4 font-medium italic"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: sectionInView ? 1 : 0, y: sectionInView ? 0 : 50 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    Unlock your future potential! Invest in yourself today.
+                </motion.p>
+                <div className="flex flex-wrap items-center justify-center pt-6 md:pt-10 gap-4 md:gap-6">
+                    {categories.map((category, index) => (
+                        <button
+                            key={index}
+                            className={`md:px-5 px-4 py-2 rounded-full text-sm md:text-md font-bold transition-all shadow-md hover:scale-105 ${
+                                selectedCategory === category
+                                    ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg'
+                                    : 'bg-white text-gray-800 border-2 border-blue-300 hover:bg-blue-200'
+                            }`}
+                            onClick={() => handleCategoryChange(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredCourses.map((course, index) => (
+                    <CourseCard key={index} course={course} index={index} selectedCategory={selectedCategory} />
                 ))}
             </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-4 lg:gap-8">
-            {filteredCourses.map((course, index) => (
-                <CourseCard key={index} course={course} index={index} selectedCategory={selectedCategory} />
-            ))}
-        </div>
-    </section>
-);
+        </section>
+    );
 };
-   
 
 export default CoursesPage;

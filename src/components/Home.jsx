@@ -17,6 +17,7 @@ import Intern from './Intern';
 import ResumeCourseCTA from './ResumeCourseCTA';
 import MentorshipSessions from './MentorshipSessions';
 import CTAcodemaster from './CTAcodemaster';
+import HomePageCourseCard from './pages/HomePageCourseCard';
 
 const Home = () => {
   return (
@@ -34,6 +35,7 @@ const Home = () => {
        
         <Intern/>
         <AdvantagesSection />
+        <HomePageCourseCard/>
         <Courses />
         <CTAcodemaster/>
         <WhyChooseDivineInfotech />

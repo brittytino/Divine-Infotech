@@ -17,7 +17,7 @@ import Tallyfundamentals from './components/pages/Tallyfundamentals';
 import CouponToast from './components/CouponToast';
 import ReferralModal from './components/pages/ReferralModal';
 import ToastPromotion from './components/ToastPromotion';
-import Azurecloud from './components/pages/Azurecloud';
+
 import WhatsAppWidget from './components/WhatsAppWidget';
 import ServiceModal from './components/pages/ServiceModal';
 
@@ -25,11 +25,13 @@ import ServiceModal from './components/pages/ServiceModal';
 import ReactGA from "react-ga4";
 import Aptitude from './components/pages/Aptitude';
 import Digitalmarketing from './components/pages/Digitalmarketing';
-import PythonFullstack from './components/pages/PythonFullstack';
+
 import ResumeBuildingPage from './components/pages/ResumeBuilding';
 import ReferAndEarnToast from './components/ReferAndEarnToast';
 import ContactForm from './components/ContactForm';
 import CodeMasterBootcamp from './components/CodeMasterBootcamp';
+import Fullstack from './components/pages/Fullstack';
+
 ReactGA.initialize("G-YLX8WB7CZ2");
 
 const AppContent = () => {
@@ -69,15 +71,16 @@ const AppContent = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/resume-building" element={<ResumeBuildingPage />} />
+                <Route path="/Fullstack" element={<Fullstack />} />
+              
                 <Route path="/codemaster-bootcamp" element={<CodeMasterBootcamp />} />
                 <Route path="/contactform" element={<ContactForm />} />
                 <Route path="/tally" element={<Tallyfundamentals />} />
                 <Route path="/AdvancestockTrading" element={<AdvancestockTrading />} />
                 <Route path="/CompletefullStack" element={<CompletefullStack />} />
-                <Route path="/azurecloud" element={<Azurecloud />} />
                 <Route path="/ProgrammingFundamentals" element={<ProgrammingFundamentals />} />
                 <Route path="/digital-marketing" element={<Digitalmarketing />} />
-                <Route path="/python-full-stack" element={<PythonFullstack />} />
+
                 <Route path="/Aptitude" element={<Aptitude />} />
                 <Route path="/courses" element={<CoursesPage />} />
                 <Route path="/services" element={<Services />} />

@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import aboutImg from '../images/about.svg'
 import { useInView } from 'react-intersection-observer';
 
+
 const AboutUs = () => {
     const { ref, inView } = useInView({
         triggerOnce: true,

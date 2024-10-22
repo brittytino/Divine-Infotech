@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#fafafc] text-gray-800;
+}
+
+.blurred-bg {
+  filter: blur(4px);
+}
